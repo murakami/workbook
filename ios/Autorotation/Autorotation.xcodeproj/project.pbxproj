@@ -1,0 +1,445 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5629B4BF14CDA54E00EFDD6C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5629B4BE14CDA54E00EFDD6C /* UIKit.framework */; };
+		5629B4C114CDA54E00EFDD6C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5629B4C014CDA54E00EFDD6C /* Foundation.framework */; };
+		5629B4C314CDA54E00EFDD6C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5629B4C214CDA54E00EFDD6C /* CoreGraphics.framework */; };
+		5629B4C914CDA54E00EFDD6C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5629B4C714CDA54E00EFDD6C /* InfoPlist.strings */; };
+		5629B4CB14CDA54E00EFDD6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5629B4CA14CDA54E00EFDD6C /* main.m */; };
+		5629B4CF14CDA54E00EFDD6C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5629B4CE14CDA54E00EFDD6C /* AppDelegate.m */; };
+		5629B4D214CDA54E00EFDD6C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5629B4D114CDA54E00EFDD6C /* ViewController.m */; };
+		5629B4D514CDA54E00EFDD6C /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5629B4D314CDA54E00EFDD6C /* ViewController.xib */; };
+		5629B4DD14CDA54E00EFDD6C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5629B4DC14CDA54E00EFDD6C /* SenTestingKit.framework */; };
+		5629B4DE14CDA54E00EFDD6C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5629B4BE14CDA54E00EFDD6C /* UIKit.framework */; };
+		5629B4DF14CDA54E00EFDD6C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5629B4C014CDA54E00EFDD6C /* Foundation.framework */; };
+		5629B4E714CDA54E00EFDD6C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5629B4E514CDA54E00EFDD6C /* InfoPlist.strings */; };
+		5629B4EA14CDA54E00EFDD6C /* AutorotationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5629B4E914CDA54E00EFDD6C /* AutorotationTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5629B4E014CDA54E00EFDD6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5629B4B114CDA54E00EFDD6C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5629B4B914CDA54E00EFDD6C;
+			remoteInfo = Autorotation;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5629B4BA14CDA54E00EFDD6C /* Autorotation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Autorotation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5629B4BE14CDA54E00EFDD6C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5629B4C014CDA54E00EFDD6C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5629B4C214CDA54E00EFDD6C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5629B4C614CDA54E00EFDD6C /* Autorotation-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Autorotation-Info.plist"; sourceTree = "<group>"; };
+		5629B4C814CDA54E00EFDD6C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5629B4CA14CDA54E00EFDD6C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5629B4CC14CDA54E00EFDD6C /* Autorotation-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Autorotation-Prefix.pch"; sourceTree = "<group>"; };
+		5629B4CD14CDA54E00EFDD6C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5629B4CE14CDA54E00EFDD6C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5629B4D014CDA54E00EFDD6C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		5629B4D114CDA54E00EFDD6C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		5629B4D414CDA54E00EFDD6C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		5629B4DB14CDA54E00EFDD6C /* AutorotationTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutorotationTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5629B4DC14CDA54E00EFDD6C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		5629B4E414CDA54E00EFDD6C /* AutorotationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AutorotationTests-Info.plist"; sourceTree = "<group>"; };
+		5629B4E614CDA54E00EFDD6C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5629B4E814CDA54E00EFDD6C /* AutorotationTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutorotationTests.h; sourceTree = "<group>"; };
+		5629B4E914CDA54E00EFDD6C /* AutorotationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutorotationTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5629B4B714CDA54E00EFDD6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5629B4BF14CDA54E00EFDD6C /* UIKit.framework in Frameworks */,
+				5629B4C114CDA54E00EFDD6C /* Foundation.framework in Frameworks */,
+				5629B4C314CDA54E00EFDD6C /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5629B4D714CDA54E00EFDD6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5629B4DD14CDA54E00EFDD6C /* SenTestingKit.framework in Frameworks */,
+				5629B4DE14CDA54E00EFDD6C /* UIKit.framework in Frameworks */,
+				5629B4DF14CDA54E00EFDD6C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5629B4AF14CDA54E00EFDD6C = {
+			isa = PBXGroup;
+			children = (
+				5629B4C414CDA54E00EFDD6C /* Autorotation */,
+				5629B4E214CDA54E00EFDD6C /* AutorotationTests */,
+				5629B4BD14CDA54E00EFDD6C /* Frameworks */,
+				5629B4BB14CDA54E00EFDD6C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5629B4BB14CDA54E00EFDD6C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5629B4BA14CDA54E00EFDD6C /* Autorotation.app */,
+				5629B4DB14CDA54E00EFDD6C /* AutorotationTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5629B4BD14CDA54E00EFDD6C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5629B4BE14CDA54E00EFDD6C /* UIKit.framework */,
+				5629B4C014CDA54E00EFDD6C /* Foundation.framework */,
+				5629B4C214CDA54E00EFDD6C /* CoreGraphics.framework */,
+				5629B4DC14CDA54E00EFDD6C /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5629B4C414CDA54E00EFDD6C /* Autorotation */ = {
+			isa = PBXGroup;
+			children = (
+				5629B4CD14CDA54E00EFDD6C /* AppDelegate.h */,
+				5629B4CE14CDA54E00EFDD6C /* AppDelegate.m */,
+				5629B4D014CDA54E00EFDD6C /* ViewController.h */,
+				5629B4D114CDA54E00EFDD6C /* ViewController.m */,
+				5629B4D314CDA54E00EFDD6C /* ViewController.xib */,
+				5629B4C514CDA54E00EFDD6C /* Supporting Files */,
+			);
+			path = Autorotation;
+			sourceTree = "<group>";
+		};
+		5629B4C514CDA54E00EFDD6C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5629B4C614CDA54E00EFDD6C /* Autorotation-Info.plist */,
+				5629B4C714CDA54E00EFDD6C /* InfoPlist.strings */,
+				5629B4CA14CDA54E00EFDD6C /* main.m */,
+				5629B4CC14CDA54E00EFDD6C /* Autorotation-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5629B4E214CDA54E00EFDD6C /* AutorotationTests */ = {
+			isa = PBXGroup;
+			children = (
+				5629B4E814CDA54E00EFDD6C /* AutorotationTests.h */,
+				5629B4E914CDA54E00EFDD6C /* AutorotationTests.m */,
+				5629B4E314CDA54E00EFDD6C /* Supporting Files */,
+			);
+			path = AutorotationTests;
+			sourceTree = "<group>";
+		};
+		5629B4E314CDA54E00EFDD6C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5629B4E414CDA54E00EFDD6C /* AutorotationTests-Info.plist */,
+				5629B4E514CDA54E00EFDD6C /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5629B4B914CDA54E00EFDD6C /* Autorotation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5629B4ED14CDA54E00EFDD6C /* Build configuration list for PBXNativeTarget "Autorotation" */;
+			buildPhases = (
+				5629B4B614CDA54E00EFDD6C /* Sources */,
+				5629B4B714CDA54E00EFDD6C /* Frameworks */,
+				5629B4B814CDA54E00EFDD6C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Autorotation;
+			productName = Autorotation;
+			productReference = 5629B4BA14CDA54E00EFDD6C /* Autorotation.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5629B4DA14CDA54E00EFDD6C /* AutorotationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5629B4F014CDA54E00EFDD6C /* Build configuration list for PBXNativeTarget "AutorotationTests" */;
+			buildPhases = (
+				5629B4D614CDA54E00EFDD6C /* Sources */,
+				5629B4D714CDA54E00EFDD6C /* Frameworks */,
+				5629B4D814CDA54E00EFDD6C /* Resources */,
+				5629B4D914CDA54E00EFDD6C /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5629B4E114CDA54E00EFDD6C /* PBXTargetDependency */,
+			);
+			name = AutorotationTests;
+			productName = AutorotationTests;
+			productReference = 5629B4DB14CDA54E00EFDD6C /* AutorotationTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5629B4B114CDA54E00EFDD6C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "ビッツ有限会社";
+			};
+			buildConfigurationList = 5629B4B414CDA54E00EFDD6C /* Build configuration list for PBXProject "Autorotation" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5629B4AF14CDA54E00EFDD6C;
+			productRefGroup = 5629B4BB14CDA54E00EFDD6C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5629B4B914CDA54E00EFDD6C /* Autorotation */,
+				5629B4DA14CDA54E00EFDD6C /* AutorotationTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5629B4B814CDA54E00EFDD6C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5629B4C914CDA54E00EFDD6C /* InfoPlist.strings in Resources */,
+				5629B4D514CDA54E00EFDD6C /* ViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5629B4D814CDA54E00EFDD6C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5629B4E714CDA54E00EFDD6C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5629B4D914CDA54E00EFDD6C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5629B4B614CDA54E00EFDD6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5629B4CB14CDA54E00EFDD6C /* main.m in Sources */,
+				5629B4CF14CDA54E00EFDD6C /* AppDelegate.m in Sources */,
+				5629B4D214CDA54E00EFDD6C /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5629B4D614CDA54E00EFDD6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5629B4EA14CDA54E00EFDD6C /* AutorotationTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5629B4E114CDA54E00EFDD6C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5629B4B914CDA54E00EFDD6C /* Autorotation */;
+			targetProxy = 5629B4E014CDA54E00EFDD6C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5629B4C714CDA54E00EFDD6C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5629B4C814CDA54E00EFDD6C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5629B4D314CDA54E00EFDD6C /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5629B4D414CDA54E00EFDD6C /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+		5629B4E514CDA54E00EFDD6C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5629B4E614CDA54E00EFDD6C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5629B4EB14CDA54E00EFDD6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5629B4EC14CDA54E00EFDD6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5629B4EE14CDA54E00EFDD6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Autorotation/Autorotation-Prefix.pch";
+				INFOPLIST_FILE = "Autorotation/Autorotation-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5629B4EF14CDA54E00EFDD6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Autorotation/Autorotation-Prefix.pch";
+				INFOPLIST_FILE = "Autorotation/Autorotation-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		5629B4F114CDA54E00EFDD6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Autorotation.app/Autorotation";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Autorotation/Autorotation-Prefix.pch";
+				INFOPLIST_FILE = "AutorotationTests/AutorotationTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		5629B4F214CDA54E00EFDD6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Autorotation.app/Autorotation";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Autorotation/Autorotation-Prefix.pch";
+				INFOPLIST_FILE = "AutorotationTests/AutorotationTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5629B4B414CDA54E00EFDD6C /* Build configuration list for PBXProject "Autorotation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5629B4EB14CDA54E00EFDD6C /* Debug */,
+				5629B4EC14CDA54E00EFDD6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5629B4ED14CDA54E00EFDD6C /* Build configuration list for PBXNativeTarget "Autorotation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5629B4EE14CDA54E00EFDD6C /* Debug */,
+				5629B4EF14CDA54E00EFDD6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5629B4F014CDA54E00EFDD6C /* Build configuration list for PBXNativeTarget "AutorotationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5629B4F114CDA54E00EFDD6C /* Debug */,
+				5629B4F214CDA54E00EFDD6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5629B4B114CDA54E00EFDD6C /* Project object */;
+}
