@@ -20,6 +20,7 @@
 		5629B4DF14CDA54E00EFDD6C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5629B4C014CDA54E00EFDD6C /* Foundation.framework */; };
 		5629B4E714CDA54E00EFDD6C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5629B4E514CDA54E00EFDD6C /* InfoPlist.strings */; };
 		5629B4EA14CDA54E00EFDD6C /* AutorotationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5629B4E914CDA54E00EFDD6C /* AutorotationTests.m */; };
+		5629B4F414CDA5FF00EFDD6C /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = 5629B4F314CDA5FF00EFDD6C /* sample.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		5629B4E614CDA54E00EFDD6C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5629B4E814CDA54E00EFDD6C /* AutorotationTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutorotationTests.h; sourceTree = "<group>"; };
 		5629B4E914CDA54E00EFDD6C /* AutorotationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutorotationTests.m; sourceTree = "<group>"; };
+		5629B4F314CDA5FF00EFDD6C /* sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				5629B4D114CDA54E00EFDD6C /* ViewController.m */,
 				5629B4D314CDA54E00EFDD6C /* ViewController.xib */,
 				5629B4C514CDA54E00EFDD6C /* Supporting Files */,
+				5629B4F514CDA61F00EFDD6C /* Resources */,
 			);
 			path = Autorotation;
 			sourceTree = "<group>";
@@ -149,6 +152,14 @@
 				5629B4E514CDA54E00EFDD6C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5629B4F514CDA61F00EFDD6C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5629B4F314CDA5FF00EFDD6C /* sample.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +235,7 @@
 			files = (
 				5629B4C914CDA54E00EFDD6C /* InfoPlist.strings in Resources */,
 				5629B4D514CDA54E00EFDD6C /* ViewController.xib in Resources */,
+				5629B4F414CDA5FF00EFDD6C /* sample.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
