@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'AnonymousCategories' target in the 'AnonymousCategories' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
