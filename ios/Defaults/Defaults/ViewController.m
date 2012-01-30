@@ -24,6 +24,7 @@
 
 - (void)viewDidLoad
 {
+    DBGMSG(@"%s", __func__);
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
@@ -38,6 +39,7 @@
 
 - (void)viewDidUnload
 {
+    DBGMSG(@"%s", __func__);
     self.messageTextField.delegate = nil;
     
     [super viewDidUnload];
@@ -47,21 +49,25 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    DBGMSG(@"%s", __func__);
     [super viewWillAppear:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    DBGMSG(@"%s", __func__);
     [super viewDidAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
+    DBGMSG(@"%s", __func__);
 	[super viewWillDisappear:animated];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
+    DBGMSG(@"%s", __func__);
 	[super viewDidDisappear:animated];
 }
 
@@ -71,10 +77,14 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
-    DBGMSG(@"%s, text:%@", __func__, textField.text);
-    DBGMSG(@"self.document.message:%@", self.document.message);
     self.document.message = textField.text;
 }
 

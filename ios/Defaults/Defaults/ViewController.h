@@ -11,7 +11,7 @@
 
 @interface ViewController : UIViewController <UITextFieldDelegate>
 
-@property (strong, nonatomic) UITextField   *messageTextField;
-@property (strong, nonatomic) Document      *document;
+@property (strong, nonatomic) IBOutlet UITextField  *messageTextField;
+@property (strong, nonatomic) Document              *document;
 
 @end
