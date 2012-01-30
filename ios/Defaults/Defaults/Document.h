@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface Document : NSObject
+
+@property (strong, nonatomic) NSString  *message;
+
 - (void)clearDefaults;
 - (void)updateDefaults;
 - (void)loadDefaults;

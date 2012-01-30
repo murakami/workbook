@@ -6,9 +6,13 @@
 //  Copyright (c) 2012年 ビッツ有限会社. All rights reserved.
 //
 
+#import "AppDelegate.h"
 #import "ViewController.h"
 
 @implementation ViewController
+
+@synthesize messageTextField = _messageTextField;
+@synthesize document = _document;
 
 - (void)didReceiveMemoryWarning
 {
@@ -22,6 +26,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    AppDelegate	*appl = nil;
+	appl = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+	self.document = appl.document;
+    
+    self.messageTextField.text = self.document.message;
 }
 
 - (void)viewDidUnload

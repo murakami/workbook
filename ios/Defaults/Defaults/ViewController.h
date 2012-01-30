@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Document.h"
 
 @interface ViewController : UIViewController
+
+@property (strong, nonatomic) UITextField   *messageTextField;
+@property (strong, nonatomic) Document      *document;
 
 @end
