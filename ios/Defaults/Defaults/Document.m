@@ -43,10 +43,14 @@
         aMessage = [[NSUserDefaults standardUserDefaults] objectForKey:@"message"];
         DBGMSG(@"current aMessage:%@", aMessage);
     }
-    if ((aMessage == nil) || ([aMessage compare:self.message] != NSOrderedSame)) {
-        [[NSUserDefaults standardUserDefaults] setObject:self.message forKey:@"message"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        DBGMSG(@"save message:%@", self.message);
+    if (self.message) {
+        if ((aMessage) && ([aMessage compare:self.message] == NSOrderedSame)) {
+        }
+        else {
+            [[NSUserDefaults standardUserDefaults] setObject:self.message forKey:@"message"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            DBGMSG(@"save message:%@", self.message);
+        }
     }
 }
 

@@ -32,10 +32,14 @@
 	self.document = appl.document;
     
     self.messageTextField.text = self.document.message;
+    
+    self.messageTextField.delegate = self;
 }
 
 - (void)viewDidUnload
 {
+    self.messageTextField.delegate = nil;
+    
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -65,6 +69,13 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    DBGMSG(@"%s, text:%@", __func__, textField.text);
+    DBGMSG(@"self.document.message:%@", self.document.message);
+    self.document.message = textField.text;
 }
 
 @end
