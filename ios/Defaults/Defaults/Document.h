@@ -10,6 +10,7 @@
 
 @interface Document : NSObject
 
+@property (strong, nonatomic) NSString  *version;
 @property (strong, nonatomic) NSString  *message;
 
 - (void)clearDefaults;
