@@ -87,7 +87,7 @@
 - (void)loadDefaults
 {
     DBGMSG(@"%s", __func__);
-    NSString    *aVersion = @"1.0";
+    NSString    *aVersion = @"";
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"version"]) {
         aVersion = [[NSUserDefaults standardUserDefaults] objectForKey:@"version"];
     }
