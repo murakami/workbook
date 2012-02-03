@@ -14,9 +14,17 @@
 
 @synthesize window = _window;
 @synthesize viewController = _viewController;
+@synthesize bgTask = _bgTask;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    UILocalNotification *localNotif = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
+    if (localNotif) {
+        NSString *value = [localNotif.userInfo objectForKey:@"Key"];
+        NSLog(@"%s, Notify: %@", __func__, value);
+        application.applicationIconBadgeNumber = localNotif.applicationIconBadgeNumber - 1;
+    }
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
@@ -39,6 +47,29 @@
      Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
      If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
      */
+    NSLog(@"Application entered background state.");
+    NSAssert(self.bgTask == UIBackgroundTaskInvalid, nil);
+    self.bgTask = [application beginBackgroundTaskWithExpirationHandler: ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [application endBackgroundTask:self.bgTask];
+            self.bgTask = UIBackgroundTaskInvalid;
+        });
+    }];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        while ([application backgroundTimeRemaining] > 1.0) {
+            UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+            if (localNotif) {
+                localNotif.alertBody = [NSString stringWithString:NSLocalizedString(@"background", nil)];
+                localNotif.alertAction = NSLocalizedString(@"action", nil);
+                localNotif.soundName = UILocalNotificationDefaultSoundName;
+                localNotif.applicationIconBadgeNumber = localNotif.applicationIconBadgeNumber + 1;
+                [application presentLocalNotificationNow:localNotif];
+                break;
+            }
+        }
+        [application endBackgroundTask:self.bgTask];
+        self.bgTask = UIBackgroundTaskInvalid;
+    });
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -62,6 +93,13 @@
      Save data if appropriate.
      See also applicationDidEnterBackground:.
      */
+}
+
+- (void)application:(UIApplication *)app didReceiveLocalNotification:(UILocalNotification *)notif
+{
+    NSString *value = [notif.userInfo objectForKey:@"Key"];
+    NSLog(@"%s, Notify: %@", __func__, value);
+    app.applicationIconBadgeNumber = notif.applicationIconBadgeNumber - 1;
 }
 
 @end

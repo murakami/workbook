@@ -10,4 +10,6 @@
 
 @interface ViewController : UIViewController
 
+- (IBAction)scheduleNotification:(id)sender;
+
 @end

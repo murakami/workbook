@@ -16,4 +16,6 @@
 
 @property (strong, nonatomic) ViewController *viewController;
 
+@property UIBackgroundTaskIdentifier    bgTask;
+
 @end

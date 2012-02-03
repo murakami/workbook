@@ -57,4 +57,22 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+- (IBAction)scheduleNotification:(id)sender
+{
+    DBGMSG(@"%s", __func__);
+    NSDate  *today = [NSDate date];
+    UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+    if (localNotif == nil)
+        return;
+    localNotif.fireDate = [today dateByAddingTimeInterval:10];
+    localNotif.timeZone = [NSTimeZone defaultTimeZone];
+    localNotif.alertBody = [NSString stringWithString:NSLocalizedString(@"Local Notify", nil)];
+    localNotif.alertAction = NSLocalizedString(@"local notify", nil);
+    localNotif.soundName = UILocalNotificationDefaultSoundName;
+    localNotif.applicationIconBadgeNumber = localNotif.applicationIconBadgeNumber + 1;
+    NSDictionary *infoDict = [NSDictionary dictionaryWithObject:@"local notify" forKey:@"Key"];
+    localNotif.userInfo = infoDict;
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
+}
+
 @end
