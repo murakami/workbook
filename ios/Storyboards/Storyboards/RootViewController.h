@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Document.h"
 
 @interface RootViewController : UIViewController
+
+@property (strong, nonatomic) Document  *document;
 
 @end
