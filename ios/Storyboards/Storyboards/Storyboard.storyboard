@@ -25,7 +25,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="MKe-qe-jyK" kind="push" id="fkd-1i-4uf"/>
+                                    <segue destination="MKe-qe-jyK" kind="push" identifier="segue01" id="fkd-1i-4uf"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="RootViewController" lineBreakMode="tailTruncation" minimumFontSize="10" id="xGF-fx-AnF">
