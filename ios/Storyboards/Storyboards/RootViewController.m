@@ -67,4 +67,10 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    DBGMSG(@"%s", __func__);
+    DBGMSG(@"segue identifier:%@", [segue identifier]);
+}
+
 @end
