@@ -11,6 +11,8 @@
 
 @implementation ViewController
 
+@synthesize itemImageView = _itemImageView;
+@synthesize itemLabel = _itemLabel;
 @synthesize document = _document;
 
 - (void)didReceiveMemoryWarning
@@ -33,6 +35,8 @@
 
 - (void)viewDidUnload
 {
+    self.itemImageView = nil;
+    self.itemLabel = nil;
     self.document = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
@@ -63,6 +67,22 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+- (IBAction)selectImage:(id)sender
+{
+    if (self.itemImageView.highlighted)
+        self.itemImageView.highlighted = NO;
+    else
+        self.itemImageView.highlighted = YES;   
+}
+
+- (IBAction)selectLabel:(id)sender
+{
+    if (self.itemLabel.highlighted)
+        self.itemLabel.highlighted = NO;
+    else
+        self.itemLabel.highlighted = YES;
 }
 
 @end

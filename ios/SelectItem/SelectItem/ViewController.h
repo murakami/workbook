@@ -11,6 +11,11 @@
 
 @interface ViewController : UIViewController
 
-@property (strong, nonatomic) Document  *document;
+@property (strong, nonatomic) IBOutlet UIImageView  *itemImageView;
+@property (strong, nonatomic) IBOutlet UILabel      *itemLabel;
+@property (strong, nonatomic) Document              *document;
+
+- (IBAction)selectImage:(id)sender;
+- (IBAction)selectLabel:(id)sender;
 
 @end
