@@ -11,10 +11,12 @@
 @implementation AppDelegate
 
 @synthesize window = _window;
+@synthesize document = _document;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    self.document = [[Document alloc] init];
     return YES;
 }
 							
@@ -55,6 +57,7 @@
      Save data if appropriate.
      See also applicationDidEnterBackground:.
      */
+    self.document = nil;
 }
 
 @end
