@@ -6,9 +6,12 @@
 //  Copyright (c) 2012年 ビッツ有限会社. All rights reserved.
 //
 
+#import "AppDelegate.h"
 #import "ViewController.h"
 
 @implementation ViewController
+
+@synthesize document = _document;
 
 - (void)didReceiveMemoryWarning
 {
@@ -22,10 +25,15 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    AppDelegate	*appl = nil;
+	appl = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+	self.document = appl.document;
 }
 
 - (void)viewDidUnload
 {
+    self.document = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
