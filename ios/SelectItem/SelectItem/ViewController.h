@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "Document.h"
+#import "MyImageView.h"
+#import "MyLabel.h"
 
 @interface ViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UIImageView  *itemImageView;
-@property (strong, nonatomic) IBOutlet UILabel      *itemLabel;
+@property (strong, nonatomic) IBOutlet MyImageView  *itemImageView;
+@property (strong, nonatomic) IBOutlet MyLabel      *itemLabel;
 @property (strong, nonatomic) Document              *document;
 
 - (IBAction)selectImage:(id)sender;

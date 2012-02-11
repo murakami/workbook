@@ -31,10 +31,15 @@
     AppDelegate	*appl = nil;
 	appl = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 	self.document = appl.document;
+    
+    self.itemImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle]
+                                                   pathForResource:@"none"
+                                                   ofType:@"png"]];
 }
 
 - (void)viewDidUnload
 {
+    self.itemImageView.image = nil;
     self.itemImageView = nil;
     self.itemLabel = nil;
     self.document = nil;
