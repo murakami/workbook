@@ -6,6 +6,7 @@
 //  Copyright (c) 2012年 ビッツ有限会社. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
 #import "MyImageView.h"
 
 @interface MyImageView ()
@@ -14,14 +15,18 @@
 
 @implementation MyImageView
 
-@synthesize imageView = _imageView;
 @synthesize selected = _selected;
 
 - (void)awakeFromNib
 {
     DBGMSG(@"%s", __func__);
     self.selected = NO;
-    self.backgroundColor = [UIColor grayColor];
+    
+    self.layer.masksToBounds = YES;
+    self.layer.cornerRadius = 4.0f;
+    
+    self.layer.borderWidth = 3.0f;
+    self.layer.borderColor = [[UIColor grayColor] CGColor];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -36,12 +41,12 @@
     if (self.selected) {
         DBGMSG(@"set self.selected to NO.");
         self.selected = NO;
-        self.backgroundColor = [UIColor grayColor];
+        self.layer.borderColor = [[UIColor grayColor] CGColor];
     }
     else {
         DBGMSG(@"set self.selected to YES.");
         self.selected = YES;
-        self.backgroundColor = [UIColor blueColor];
+        self.layer.borderColor = [[UIColor blueColor] CGColor];
     }
 }
 

@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyImageView : UIView
+@interface MyImageView : UIImageView
 
-@property (strong, nonatomic) IBOutlet UIImageView  *imageView;
-@property (assign, nonatomic) BOOL                  selected;
+@property (assign, nonatomic) BOOL  selected;
 
 @end

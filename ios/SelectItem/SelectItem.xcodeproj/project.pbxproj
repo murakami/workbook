@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5625F29914E7CB6900DD1400 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5625F29814E7CB6900DD1400 /* QuartzCore.framework */; };
 		564FEE9214E6A6E700A656F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 564FEE9114E6A6E700A656F4 /* UIKit.framework */; };
 		564FEE9414E6A6E700A656F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 564FEE9314E6A6E700A656F4 /* Foundation.framework */; };
 		564FEE9614E6A6E700A656F4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 564FEE9514E6A6E700A656F4 /* CoreGraphics.framework */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5625F29814E7CB6900DD1400 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		564FEE8D14E6A6E700A656F4 /* SelectItem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SelectItem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		564FEE9114E6A6E700A656F4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		564FEE9314E6A6E700A656F4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -73,6 +75,7 @@
 				564FEE9214E6A6E700A656F4 /* UIKit.framework in Frameworks */,
 				564FEE9414E6A6E700A656F4 /* Foundation.framework in Frameworks */,
 				564FEE9614E6A6E700A656F4 /* CoreGraphics.framework in Frameworks */,
+				5625F29914E7CB6900DD1400 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +118,7 @@
 				564FEE9314E6A6E700A656F4 /* Foundation.framework */,
 				564FEE9514E6A6E700A656F4 /* CoreGraphics.framework */,
 				564FEEAF14E6A6E700A656F4 /* SenTestingKit.framework */,
+				5625F29814E7CB6900DD1400 /* QuartzCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

@@ -13,35 +13,25 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="CD1-4d-33o" customClass="MyImageView">
-                                <rect key="frame" x="20" y="20" width="72" height="72"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <subviews>
-                                    <imageView contentMode="scaleToFill" image="none.png" id="lF6-H4-cDl">
-                                        <rect key="frame" x="4" y="4" width="64" height="64"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
-                                        </accessibility>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <outlet property="imageView" destination="lF6-H4-cDl" id="Sv2-V8-DdX"/>
-                                </connections>
-                            </view>
                             <label opaque="NO" clipsSubviews="YES" contentMode="left" text="ABCD" lineBreakMode="tailTruncation" minimumFontSize="10" id="HFw-f0-7BO" customClass="MyLabel">
-                                <rect key="frame" x="20" y="100" width="48" height="21"/>
+                                <rect key="frame" x="20" y="92" width="48" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView contentMode="scaleToFill" image="none.png" id="lF6-H4-cDl" customClass="MyImageView">
+                                <rect key="frame" x="20" y="20" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="itemImageView" destination="lF6-H4-cDl" id="A2b-os-ajk"/>
+                        <outlet property="itemImageView" destination="lF6-H4-cDl" id="jiM-bQ-SPX"/>
                         <outlet property="itemLabel" destination="HFw-f0-7BO" id="kzj-AX-k4R"/>
                     </connections>
                 </viewController>
@@ -52,11 +42,8 @@
         <image name="none.png" width="128" height="128"/>
     </resources>
     <classes>
-        <class className="MyImageView" superclassName="UIView">
+        <class className="MyImageView" superclassName="UIImageView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MyImageView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-            </relationships>
         </class>
         <class className="MyLabel" superclassName="UILabel">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MyLabel.h"/>
