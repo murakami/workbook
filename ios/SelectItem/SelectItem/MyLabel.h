@@ -10,4 +10,6 @@
 
 @interface MyLabel : UILabel
 
+@property (assign, nonatomic) BOOL  selected;
+
 @end

@@ -17,7 +17,4 @@
 @property (strong, nonatomic) IBOutlet MyLabel      *itemLabel;
 @property (strong, nonatomic) Document              *document;
 
-- (IBAction)selectImage:(id)sender;
-- (IBAction)selectLabel:(id)sender;
-
 @end

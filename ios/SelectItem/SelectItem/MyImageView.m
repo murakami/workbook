@@ -8,18 +8,40 @@
 
 #import "MyImageView.h"
 
+@interface MyImageView ()
+- (void)toggleSwitch;
+@end
+
 @implementation MyImageView
+
+@synthesize imageView = _imageView;
+@synthesize selected = _selected;
+
+- (void)awakeFromNib
+{
+    DBGMSG(@"%s", __func__);
+    self.selected = NO;
+    self.backgroundColor = [UIColor grayColor];
+}
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     DBGMSG(@"%s", __func__);
-    if (self.highlighted) {
-        DBGMSG(@"set self.highlighted to NO.");
-        self.highlighted = NO;
+    [self toggleSwitch];
+}
+
+- (void)toggleSwitch
+{
+    DBGMSG(@"%s", __func__);
+    if (self.selected) {
+        DBGMSG(@"set self.selected to NO.");
+        self.selected = NO;
+        self.backgroundColor = [UIColor grayColor];
     }
     else {
-        DBGMSG(@"set self.highlighted to YES.");
-        self.highlighted = YES;
+        DBGMSG(@"set self.selected to YES.");
+        self.selected = YES;
+        self.backgroundColor = [UIColor blueColor];
     }
 }
 

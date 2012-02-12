@@ -8,18 +8,39 @@
 
 #import "MyLabel.h"
 
+@interface MyLabel ()
+- (void)toggleSwitch;
+@end
+
 @implementation MyLabel
+
+@synthesize selected = _selected;
+
+- (void)awakeFromNib
+{
+    DBGMSG(@"%s", __func__);
+    self.selected = NO;
+    self.textColor = [UIColor grayColor];
+}
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     DBGMSG(@"%s", __func__);
-    if (self.highlighted) {
-        DBGMSG(@"set self.highlighted to NO.");
-        self.highlighted = NO;
+    [self toggleSwitch];
+}
+
+- (void)toggleSwitch
+{
+    DBGMSG(@"%s", __func__);
+    if (self.selected) {
+        DBGMSG(@"set self.selected to NO.");
+        self.selected = NO;
+        self.textColor = [UIColor grayColor];
     }
     else {
-        DBGMSG(@"set self.highlighted to YES.");
-        self.highlighted = YES;
+        DBGMSG(@"set self.selected to YES.");
+        self.selected = YES;
+        self.textColor = [UIColor blueColor];
     }
 }
 

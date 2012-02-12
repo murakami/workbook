@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 
+@interface ViewController ()
+@end
+
 @implementation ViewController
 
 @synthesize itemImageView = _itemImageView;
@@ -31,15 +34,10 @@
     AppDelegate	*appl = nil;
 	appl = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 	self.document = appl.document;
-    
-    self.itemImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle]
-                                                   pathForResource:@"none"
-                                                   ofType:@"png"]];
 }
 
 - (void)viewDidUnload
 {
-    self.itemImageView.image = nil;
     self.itemImageView = nil;
     self.itemLabel = nil;
     self.document = nil;
@@ -72,22 +70,6 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-}
-
-- (IBAction)selectImage:(id)sender
-{
-    if (self.itemImageView.highlighted)
-        self.itemImageView.highlighted = NO;
-    else
-        self.itemImageView.highlighted = YES;   
-}
-
-- (IBAction)selectLabel:(id)sender
-{
-    if (self.itemLabel.highlighted)
-        self.itemLabel.highlighted = NO;
-    else
-        self.itemLabel.highlighted = YES;
 }
 
 @end

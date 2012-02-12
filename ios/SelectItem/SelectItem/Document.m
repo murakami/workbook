@@ -8,6 +8,9 @@
 
 #import "Document.h"
 
+@interface Document ()
+@end
+
 @implementation Document
 
 @end
