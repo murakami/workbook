@@ -22,6 +22,7 @@
 		566A98FD14E941610028B838 /* ImageMaskingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 566A98FC14E941610028B838 /* ImageMaskingTests.m */; };
 		566A990C14E942710028B838 /* pict.png in Resources */ = {isa = PBXBuildFile; fileRef = 566A990B14E942710028B838 /* pict.png */; };
 		566A990E14E9427F0028B838 /* mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 566A990D14E9427F0028B838 /* mask.png */; };
+		566A991114E942ED0028B838 /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 566A991014E942ED0028B838 /* MyView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		566A98FC14E941610028B838 /* ImageMaskingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageMaskingTests.m; sourceTree = "<group>"; };
 		566A990B14E942710028B838 /* pict.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pict.png; sourceTree = "<group>"; };
 		566A990D14E9427F0028B838 /* mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask.png; sourceTree = "<group>"; };
+		566A990F14E942EC0028B838 /* MyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyView.h; sourceTree = "<group>"; };
+		566A991014E942ED0028B838 /* MyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,8 @@
 				566A98E314E941600028B838 /* MainStoryboard.storyboard */,
 				566A98E614E941600028B838 /* ViewController.h */,
 				566A98E714E941600028B838 /* ViewController.m */,
+				566A990F14E942EC0028B838 /* MyView.h */,
+				566A991014E942ED0028B838 /* MyView.m */,
 				566A98D814E941600028B838 /* Supporting Files */,
 				566A990A14E9424C0028B838 /* Resources */,
 			);
@@ -277,6 +282,7 @@
 				566A98DE14E941600028B838 /* main.m in Sources */,
 				566A98E214E941600028B838 /* AppDelegate.m in Sources */,
 				566A98E814E941600028B838 /* ViewController.m in Sources */,
+				566A991114E942ED0028B838 /* MyView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
