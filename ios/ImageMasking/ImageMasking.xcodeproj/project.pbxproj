@@ -20,6 +20,8 @@
 		566A98F214E941610028B838 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 566A98D314E941600028B838 /* Foundation.framework */; };
 		566A98FA14E941610028B838 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 566A98F814E941610028B838 /* InfoPlist.strings */; };
 		566A98FD14E941610028B838 /* ImageMaskingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 566A98FC14E941610028B838 /* ImageMaskingTests.m */; };
+		566A990C14E942710028B838 /* pict.png in Resources */ = {isa = PBXBuildFile; fileRef = 566A990B14E942710028B838 /* pict.png */; };
+		566A990E14E9427F0028B838 /* mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 566A990D14E9427F0028B838 /* mask.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		566A98F914E941610028B838 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		566A98FB14E941610028B838 /* ImageMaskingTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageMaskingTests.h; sourceTree = "<group>"; };
 		566A98FC14E941610028B838 /* ImageMaskingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageMaskingTests.m; sourceTree = "<group>"; };
+		566A990B14E942710028B838 /* pict.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pict.png; sourceTree = "<group>"; };
+		566A990D14E9427F0028B838 /* mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,7 @@
 				566A98E614E941600028B838 /* ViewController.h */,
 				566A98E714E941600028B838 /* ViewController.m */,
 				566A98D814E941600028B838 /* Supporting Files */,
+				566A990A14E9424C0028B838 /* Resources */,
 			);
 			path = ImageMasking;
 			sourceTree = "<group>";
@@ -149,6 +154,15 @@
 				566A98F814E941610028B838 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		566A990A14E9424C0028B838 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				566A990B14E942710028B838 /* pict.png */,
+				566A990D14E9427F0028B838 /* mask.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +238,8 @@
 			files = (
 				566A98DC14E941600028B838 /* InfoPlist.strings in Resources */,
 				566A98E514E941600028B838 /* MainStoryboard.storyboard in Resources */,
+				566A990C14E942710028B838 /* pict.png in Resources */,
+				566A990E14E9427F0028B838 /* mask.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
