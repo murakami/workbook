@@ -1,0 +1,445 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		566A98D214E941600028B838 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 566A98D114E941600028B838 /* UIKit.framework */; };
+		566A98D414E941600028B838 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 566A98D314E941600028B838 /* Foundation.framework */; };
+		566A98D614E941600028B838 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 566A98D514E941600028B838 /* CoreGraphics.framework */; };
+		566A98DC14E941600028B838 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 566A98DA14E941600028B838 /* InfoPlist.strings */; };
+		566A98DE14E941600028B838 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 566A98DD14E941600028B838 /* main.m */; };
+		566A98E214E941600028B838 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 566A98E114E941600028B838 /* AppDelegate.m */; };
+		566A98E514E941600028B838 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 566A98E314E941600028B838 /* MainStoryboard.storyboard */; };
+		566A98E814E941600028B838 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566A98E714E941600028B838 /* ViewController.m */; };
+		566A98F014E941610028B838 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 566A98EF14E941610028B838 /* SenTestingKit.framework */; };
+		566A98F114E941610028B838 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 566A98D114E941600028B838 /* UIKit.framework */; };
+		566A98F214E941610028B838 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 566A98D314E941600028B838 /* Foundation.framework */; };
+		566A98FA14E941610028B838 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 566A98F814E941610028B838 /* InfoPlist.strings */; };
+		566A98FD14E941610028B838 /* ImageMaskingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 566A98FC14E941610028B838 /* ImageMaskingTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		566A98F314E941610028B838 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 566A98C414E941600028B838 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 566A98CC14E941600028B838;
+			remoteInfo = ImageMasking;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		566A98CD14E941600028B838 /* ImageMasking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageMasking.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		566A98D114E941600028B838 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		566A98D314E941600028B838 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		566A98D514E941600028B838 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		566A98D914E941600028B838 /* ImageMasking-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImageMasking-Info.plist"; sourceTree = "<group>"; };
+		566A98DB14E941600028B838 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		566A98DD14E941600028B838 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		566A98DF14E941600028B838 /* ImageMasking-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ImageMasking-Prefix.pch"; sourceTree = "<group>"; };
+		566A98E014E941600028B838 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		566A98E114E941600028B838 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		566A98E414E941600028B838 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		566A98E614E941600028B838 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		566A98E714E941600028B838 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		566A98EE14E941610028B838 /* ImageMaskingTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageMaskingTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		566A98EF14E941610028B838 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		566A98F714E941610028B838 /* ImageMaskingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImageMaskingTests-Info.plist"; sourceTree = "<group>"; };
+		566A98F914E941610028B838 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		566A98FB14E941610028B838 /* ImageMaskingTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageMaskingTests.h; sourceTree = "<group>"; };
+		566A98FC14E941610028B838 /* ImageMaskingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageMaskingTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		566A98CA14E941600028B838 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				566A98D214E941600028B838 /* UIKit.framework in Frameworks */,
+				566A98D414E941600028B838 /* Foundation.framework in Frameworks */,
+				566A98D614E941600028B838 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		566A98EA14E941610028B838 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				566A98F014E941610028B838 /* SenTestingKit.framework in Frameworks */,
+				566A98F114E941610028B838 /* UIKit.framework in Frameworks */,
+				566A98F214E941610028B838 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		566A98C214E941600028B838 = {
+			isa = PBXGroup;
+			children = (
+				566A98D714E941600028B838 /* ImageMasking */,
+				566A98F514E941610028B838 /* ImageMaskingTests */,
+				566A98D014E941600028B838 /* Frameworks */,
+				566A98CE14E941600028B838 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		566A98CE14E941600028B838 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				566A98CD14E941600028B838 /* ImageMasking.app */,
+				566A98EE14E941610028B838 /* ImageMaskingTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		566A98D014E941600028B838 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				566A98D114E941600028B838 /* UIKit.framework */,
+				566A98D314E941600028B838 /* Foundation.framework */,
+				566A98D514E941600028B838 /* CoreGraphics.framework */,
+				566A98EF14E941610028B838 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		566A98D714E941600028B838 /* ImageMasking */ = {
+			isa = PBXGroup;
+			children = (
+				566A98E014E941600028B838 /* AppDelegate.h */,
+				566A98E114E941600028B838 /* AppDelegate.m */,
+				566A98E314E941600028B838 /* MainStoryboard.storyboard */,
+				566A98E614E941600028B838 /* ViewController.h */,
+				566A98E714E941600028B838 /* ViewController.m */,
+				566A98D814E941600028B838 /* Supporting Files */,
+			);
+			path = ImageMasking;
+			sourceTree = "<group>";
+		};
+		566A98D814E941600028B838 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				566A98D914E941600028B838 /* ImageMasking-Info.plist */,
+				566A98DA14E941600028B838 /* InfoPlist.strings */,
+				566A98DD14E941600028B838 /* main.m */,
+				566A98DF14E941600028B838 /* ImageMasking-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		566A98F514E941610028B838 /* ImageMaskingTests */ = {
+			isa = PBXGroup;
+			children = (
+				566A98FB14E941610028B838 /* ImageMaskingTests.h */,
+				566A98FC14E941610028B838 /* ImageMaskingTests.m */,
+				566A98F614E941610028B838 /* Supporting Files */,
+			);
+			path = ImageMaskingTests;
+			sourceTree = "<group>";
+		};
+		566A98F614E941610028B838 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				566A98F714E941610028B838 /* ImageMaskingTests-Info.plist */,
+				566A98F814E941610028B838 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		566A98CC14E941600028B838 /* ImageMasking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 566A990014E941610028B838 /* Build configuration list for PBXNativeTarget "ImageMasking" */;
+			buildPhases = (
+				566A98C914E941600028B838 /* Sources */,
+				566A98CA14E941600028B838 /* Frameworks */,
+				566A98CB14E941600028B838 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ImageMasking;
+			productName = ImageMasking;
+			productReference = 566A98CD14E941600028B838 /* ImageMasking.app */;
+			productType = "com.apple.product-type.application";
+		};
+		566A98ED14E941610028B838 /* ImageMaskingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 566A990314E941610028B838 /* Build configuration list for PBXNativeTarget "ImageMaskingTests" */;
+			buildPhases = (
+				566A98E914E941610028B838 /* Sources */,
+				566A98EA14E941610028B838 /* Frameworks */,
+				566A98EB14E941610028B838 /* Resources */,
+				566A98EC14E941610028B838 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				566A98F414E941610028B838 /* PBXTargetDependency */,
+			);
+			name = ImageMaskingTests;
+			productName = ImageMaskingTests;
+			productReference = 566A98EE14E941610028B838 /* ImageMaskingTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		566A98C414E941600028B838 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "ビッツ有限会社";
+			};
+			buildConfigurationList = 566A98C714E941600028B838 /* Build configuration list for PBXProject "ImageMasking" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 566A98C214E941600028B838;
+			productRefGroup = 566A98CE14E941600028B838 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				566A98CC14E941600028B838 /* ImageMasking */,
+				566A98ED14E941610028B838 /* ImageMaskingTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		566A98CB14E941600028B838 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				566A98DC14E941600028B838 /* InfoPlist.strings in Resources */,
+				566A98E514E941600028B838 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		566A98EB14E941610028B838 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				566A98FA14E941610028B838 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		566A98EC14E941610028B838 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		566A98C914E941600028B838 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				566A98DE14E941600028B838 /* main.m in Sources */,
+				566A98E214E941600028B838 /* AppDelegate.m in Sources */,
+				566A98E814E941600028B838 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		566A98E914E941610028B838 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				566A98FD14E941610028B838 /* ImageMaskingTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		566A98F414E941610028B838 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 566A98CC14E941600028B838 /* ImageMasking */;
+			targetProxy = 566A98F314E941610028B838 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		566A98DA14E941600028B838 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				566A98DB14E941600028B838 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		566A98E314E941600028B838 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				566A98E414E941600028B838 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		566A98F814E941610028B838 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				566A98F914E941610028B838 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		566A98FE14E941610028B838 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		566A98FF14E941610028B838 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		566A990114E941610028B838 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ImageMasking/ImageMasking-Prefix.pch";
+				INFOPLIST_FILE = "ImageMasking/ImageMasking-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		566A990214E941610028B838 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ImageMasking/ImageMasking-Prefix.pch";
+				INFOPLIST_FILE = "ImageMasking/ImageMasking-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		566A990414E941610028B838 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ImageMasking.app/ImageMasking";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ImageMasking/ImageMasking-Prefix.pch";
+				INFOPLIST_FILE = "ImageMaskingTests/ImageMaskingTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		566A990514E941610028B838 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ImageMasking.app/ImageMasking";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ImageMasking/ImageMasking-Prefix.pch";
+				INFOPLIST_FILE = "ImageMaskingTests/ImageMaskingTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		566A98C714E941600028B838 /* Build configuration list for PBXProject "ImageMasking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				566A98FE14E941610028B838 /* Debug */,
+				566A98FF14E941610028B838 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		566A990014E941610028B838 /* Build configuration list for PBXNativeTarget "ImageMasking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				566A990114E941610028B838 /* Debug */,
+				566A990214E941610028B838 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		566A990314E941610028B838 /* Build configuration list for PBXNativeTarget "ImageMaskingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				566A990414E941610028B838 /* Debug */,
+				566A990514E941610028B838 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 566A98C414E941600028B838 /* Project object */;
+}
