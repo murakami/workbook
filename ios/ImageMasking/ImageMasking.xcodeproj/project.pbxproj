@@ -14,7 +14,7 @@
 		566A98DE14E941600028B838 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 566A98DD14E941600028B838 /* main.m */; };
 		566A98E214E941600028B838 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 566A98E114E941600028B838 /* AppDelegate.m */; };
 		566A98E514E941600028B838 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 566A98E314E941600028B838 /* MainStoryboard.storyboard */; };
-		566A98E814E941600028B838 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566A98E714E941600028B838 /* ViewController.m */; };
+		566A98E814E941600028B838 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566A98E714E941600028B838 /* RootViewController.m */; };
 		566A98F014E941610028B838 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 566A98EF14E941610028B838 /* SenTestingKit.framework */; };
 		566A98F114E941610028B838 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 566A98D114E941600028B838 /* UIKit.framework */; };
 		566A98F214E941610028B838 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 566A98D314E941600028B838 /* Foundation.framework */; };
@@ -22,7 +22,7 @@
 		566A98FD14E941610028B838 /* ImageMaskingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 566A98FC14E941610028B838 /* ImageMaskingTests.m */; };
 		566A990C14E942710028B838 /* pict.png in Resources */ = {isa = PBXBuildFile; fileRef = 566A990B14E942710028B838 /* pict.png */; };
 		566A990E14E9427F0028B838 /* mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 566A990D14E9427F0028B838 /* mask.png */; };
-		566A991114E942ED0028B838 /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 566A991014E942ED0028B838 /* MyView.m */; };
+		566A991114E942ED0028B838 /* ImageMaskingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 566A991014E942ED0028B838 /* ImageMaskingView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +47,8 @@
 		566A98E014E941600028B838 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		566A98E114E941600028B838 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		566A98E414E941600028B838 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		566A98E614E941600028B838 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		566A98E714E941600028B838 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		566A98E614E941600028B838 /* RootViewController.h */ = {isa = PBXFileReference; path = RootViewController.h; sourceTree = "<group>"; };
+		566A98E714E941600028B838 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		566A98EE14E941610028B838 /* ImageMaskingTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageMaskingTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		566A98EF14E941610028B838 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		566A98F714E941610028B838 /* ImageMaskingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImageMaskingTests-Info.plist"; sourceTree = "<group>"; };
@@ -57,8 +57,8 @@
 		566A98FC14E941610028B838 /* ImageMaskingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageMaskingTests.m; sourceTree = "<group>"; };
 		566A990B14E942710028B838 /* pict.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pict.png; sourceTree = "<group>"; };
 		566A990D14E9427F0028B838 /* mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask.png; sourceTree = "<group>"; };
-		566A990F14E942EC0028B838 /* MyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyView.h; sourceTree = "<group>"; };
-		566A991014E942ED0028B838 /* MyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
+		566A990F14E942EC0028B838 /* ImageMaskingView.h */ = {isa = PBXFileReference; fileEncoding = 4; path = ImageMaskingView.h; sourceTree = "<group>"; };
+		566A991014E942ED0028B838 /* ImageMaskingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageMaskingView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,10 +121,10 @@
 				566A98E014E941600028B838 /* AppDelegate.h */,
 				566A98E114E941600028B838 /* AppDelegate.m */,
 				566A98E314E941600028B838 /* MainStoryboard.storyboard */,
-				566A98E614E941600028B838 /* ViewController.h */,
-				566A98E714E941600028B838 /* ViewController.m */,
-				566A990F14E942EC0028B838 /* MyView.h */,
-				566A991014E942ED0028B838 /* MyView.m */,
+				566A98E614E941600028B838 /* RootViewController.h */,
+				566A98E714E941600028B838 /* RootViewController.m */,
+				566A990F14E942EC0028B838 /* ImageMaskingView.h */,
+				566A991014E942ED0028B838 /* ImageMaskingView.m */,
 				566A98D814E941600028B838 /* Supporting Files */,
 				566A990A14E9424C0028B838 /* Resources */,
 			);
@@ -281,8 +281,8 @@
 			files = (
 				566A98DE14E941600028B838 /* main.m in Sources */,
 				566A98E214E941600028B838 /* AppDelegate.m in Sources */,
-				566A98E814E941600028B838 /* ViewController.m in Sources */,
-				566A991114E942ED0028B838 /* MyView.m in Sources */,
+				566A98E814E941600028B838 /* RootViewController.m in Sources */,
+				566A991114E942ED0028B838 /* ImageMaskingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +452,7 @@
 				566A990214E941610028B838 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		566A990314E941610028B838 /* Build configuration list for PBXNativeTarget "ImageMaskingTests" */ = {
 			isa = XCConfigurationList;
@@ -460,6 +461,7 @@
 				566A990514E941610028B838 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
