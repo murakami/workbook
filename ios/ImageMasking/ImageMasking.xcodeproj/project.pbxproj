@@ -23,6 +23,7 @@
 		566A990C14E942710028B838 /* pict.png in Resources */ = {isa = PBXBuildFile; fileRef = 566A990B14E942710028B838 /* pict.png */; };
 		566A990E14E9427F0028B838 /* mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 566A990D14E9427F0028B838 /* mask.png */; };
 		566A991114E942ED0028B838 /* ImageMaskingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 566A991014E942ED0028B838 /* ImageMaskingView.m */; };
+		5688B30414EA964B00DA1350 /* ClippingADrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5688B30314EA964B00DA1350 /* ClippingADrawingView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +48,7 @@
 		566A98E014E941600028B838 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		566A98E114E941600028B838 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		566A98E414E941600028B838 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		566A98E614E941600028B838 /* RootViewController.h */ = {isa = PBXFileReference; path = RootViewController.h; sourceTree = "<group>"; };
+		566A98E614E941600028B838 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		566A98E714E941600028B838 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		566A98EE14E941610028B838 /* ImageMaskingTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageMaskingTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		566A98EF14E941610028B838 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -57,8 +58,10 @@
 		566A98FC14E941610028B838 /* ImageMaskingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageMaskingTests.m; sourceTree = "<group>"; };
 		566A990B14E942710028B838 /* pict.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pict.png; sourceTree = "<group>"; };
 		566A990D14E9427F0028B838 /* mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask.png; sourceTree = "<group>"; };
-		566A990F14E942EC0028B838 /* ImageMaskingView.h */ = {isa = PBXFileReference; fileEncoding = 4; path = ImageMaskingView.h; sourceTree = "<group>"; };
+		566A990F14E942EC0028B838 /* ImageMaskingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageMaskingView.h; sourceTree = "<group>"; };
 		566A991014E942ED0028B838 /* ImageMaskingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageMaskingView.m; sourceTree = "<group>"; };
+		5688B30214EA964B00DA1350 /* ClippingADrawingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClippingADrawingView.h; sourceTree = "<group>"; };
+		5688B30314EA964B00DA1350 /* ClippingADrawingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClippingADrawingView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,8 @@
 				566A98E714E941600028B838 /* RootViewController.m */,
 				566A990F14E942EC0028B838 /* ImageMaskingView.h */,
 				566A991014E942ED0028B838 /* ImageMaskingView.m */,
+				5688B30214EA964B00DA1350 /* ClippingADrawingView.h */,
+				5688B30314EA964B00DA1350 /* ClippingADrawingView.m */,
 				566A98D814E941600028B838 /* Supporting Files */,
 				566A990A14E9424C0028B838 /* Resources */,
 			);
@@ -283,6 +288,7 @@
 				566A98E214E941600028B838 /* AppDelegate.m in Sources */,
 				566A98E814E941600028B838 /* RootViewController.m in Sources */,
 				566A991114E942ED0028B838 /* ImageMaskingView.m in Sources */,
+				5688B30414EA964B00DA1350 /* ClippingADrawingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
