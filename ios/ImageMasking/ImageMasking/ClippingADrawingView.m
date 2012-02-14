@@ -53,29 +53,12 @@
     /* 現状の描画環境を保存 */
     CGContextSaveGState(context);
     
-    /*
-     * a--b--c
-     * |  |  |
-     * d--e--f
-     * |  |  |
-     * g--h--i
-     */
-    /* d点に移動 */
+    /* 四角形の辺に接する、半径radiusの円弧を四隅に追加 */
     CGContextMoveToPoint(context, minX, midY);
-    
-    /* 左下：線分dgと線分ghに接する半径radiusの円弧を追加 */
     CGContextAddArcToPoint(context, minX, minY, midX, minY, radius);
-    
-    /* 右下：線分hiと線分ifに接する半径radiusの円弧を追加 */
     CGContextAddArcToPoint(context, maxX, minY, maxX, midY, radius);
-    
-    /* 右上：線分fcと線分cbに接する半径radiusの円弧を追加 */
     CGContextAddArcToPoint(context, maxX, maxY, midX, maxY, radius);
-    
-    /* 左上：線分baと線分adに接する半径radiusの円弧を追加 */
     CGContextAddArcToPoint(context, minX, maxY, minX, midY, radius);
-    
-    /* パスを閉じる */
     CGContextClosePath(context);
     
     /* 先ほどのパスをクリップ領域として設定 */
