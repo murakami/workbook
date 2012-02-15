@@ -10,4 +10,6 @@
 
 @interface MyView : UIView
 
+@property (strong, nonatomic) UIImage   *upperLeftOriginImage;
+
 @end

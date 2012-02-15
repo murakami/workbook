@@ -21,6 +21,7 @@
 		563D2A5614EBF49B004C7878 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 563D2A5414EBF49B004C7878 /* InfoPlist.strings */; };
 		563D2A5914EBF49B004C7878 /* CoordinateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 563D2A5814EBF49B004C7878 /* CoordinateTests.m */; };
 		563D2A6414EBF4FD004C7878 /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 563D2A6314EBF4FD004C7878 /* MyView.m */; };
+		563DBD4014EC4D0300707F8B /* upper-left-origin.png in Resources */ = {isa = PBXBuildFile; fileRef = 563DBD3F14EC4D0300707F8B /* upper-left-origin.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		563D2A5814EBF49B004C7878 /* CoordinateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoordinateTests.m; sourceTree = "<group>"; };
 		563D2A6214EBF4FD004C7878 /* MyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyView.h; sourceTree = "<group>"; };
 		563D2A6314EBF4FD004C7878 /* MyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
+		563DBD3F14EC4D0300707F8B /* upper-left-origin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "upper-left-origin.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				563D2A6214EBF4FD004C7878 /* MyView.h */,
 				563D2A6314EBF4FD004C7878 /* MyView.m */,
 				563D2A3414EBF49B004C7878 /* Supporting Files */,
+				563D2A6914EBF70A004C7878 /* Resources */,
 			);
 			path = Coordinate;
 			sourceTree = "<group>";
@@ -154,6 +157,14 @@
 				563D2A5414EBF49B004C7878 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		563D2A6914EBF70A004C7878 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				563DBD3F14EC4D0300707F8B /* upper-left-origin.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +240,7 @@
 			files = (
 				563D2A3814EBF49B004C7878 /* InfoPlist.strings in Resources */,
 				563D2A4114EBF49B004C7878 /* MainStoryboard.storyboard in Resources */,
+				563DBD4014EC4D0300707F8B /* upper-left-origin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +448,7 @@
 				563D2A5E14EBF49B004C7878 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		563D2A5F14EBF49B004C7878 /* Build configuration list for PBXNativeTarget "CoordinateTests" */ = {
 			isa = XCConfigurationList;
@@ -444,6 +457,7 @@
 				563D2A6114EBF49B004C7878 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
