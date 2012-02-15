@@ -41,6 +41,17 @@
 {
     /* ULO(upper-left-origin) */
     [self.upperLeftOriginImage drawAtPoint:CGPointMake(10.0, 10.0)];
+    
+    /* LLO(lower-left-origin) */
+    CGContextRef    context = UIGraphicsGetCurrentContext();
+    CGContextSetLineWidth(context, 4.0);
+    CGContextBeginPath(context);
+    CGContextMoveToPoint(context, 10.0, 30.0);
+    CGContextAddLineToPoint(context, 10, 10);
+    CGContextDrawPath(context, kCGPathStroke);
+    CGContextMoveToPoint(context, 10.0, 10.0);
+    CGContextAddLineToPoint(context, 30.0, 10.0);
+    CGContextDrawPath(context, kCGPathStroke);
 }
 
 @end
