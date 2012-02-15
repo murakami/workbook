@@ -20,6 +20,7 @@
 		563D2A4E14EBF49B004C7878 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 563D2A2F14EBF49B004C7878 /* Foundation.framework */; };
 		563D2A5614EBF49B004C7878 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 563D2A5414EBF49B004C7878 /* InfoPlist.strings */; };
 		563D2A5914EBF49B004C7878 /* CoordinateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 563D2A5814EBF49B004C7878 /* CoordinateTests.m */; };
+		563D2A6414EBF4FD004C7878 /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 563D2A6314EBF4FD004C7878 /* MyView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		563D2A5514EBF49B004C7878 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		563D2A5714EBF49B004C7878 /* CoordinateTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoordinateTests.h; sourceTree = "<group>"; };
 		563D2A5814EBF49B004C7878 /* CoordinateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoordinateTests.m; sourceTree = "<group>"; };
+		563D2A6214EBF4FD004C7878 /* MyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyView.h; sourceTree = "<group>"; };
+		563D2A6314EBF4FD004C7878 /* MyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +119,8 @@
 				563D2A3F14EBF49B004C7878 /* MainStoryboard.storyboard */,
 				563D2A4214EBF49B004C7878 /* ViewController.h */,
 				563D2A4314EBF49B004C7878 /* ViewController.m */,
+				563D2A6214EBF4FD004C7878 /* MyView.h */,
+				563D2A6314EBF4FD004C7878 /* MyView.m */,
 				563D2A3414EBF49B004C7878 /* Supporting Files */,
 			);
 			path = Coordinate;
@@ -261,6 +266,7 @@
 				563D2A3A14EBF49B004C7878 /* main.m in Sources */,
 				563D2A3E14EBF49B004C7878 /* AppDelegate.m in Sources */,
 				563D2A4414EBF49B004C7878 /* ViewController.m in Sources */,
+				563D2A6414EBF4FD004C7878 /* MyView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
