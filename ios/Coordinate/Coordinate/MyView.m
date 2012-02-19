@@ -36,11 +36,13 @@
 
 -(void)dealloc
 {
+    DBGMSG(@"%s", __func__);
     self.upperLeftOriginImage = nil;
 }
 
 - (void)drawRect:(CGRect)rect
 {
+    DBGMSG(@"%s", __func__);
     CGContextRef    context = UIGraphicsGetCurrentContext();
 
     /* LLO(lower-left-origin) */
@@ -50,36 +52,45 @@
     bytesPerRow = COMPUTE_BEST_BYTES_PER_ROW(bytesPerRow);
     unsigned char   *rasterData = calloc(1, bytesPerRow * height);
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    CGContextRef    ctx = CGBitmapContextCreate(rasterData, witdh, height,
+    CGContextRef    bitmapContext = CGBitmapContextCreate(rasterData, witdh, height,
                                                 8, bytesPerRow,
                                                 colorSpace,
-                                                kCGImageAlphaPremultipliedFirst);
-    CGContextSetRGBStrokeColor(ctx, 1.0, 0.0, 0.0, 1.0);
-    CGContextSetLineWidth(ctx, 4.0);
-    CGContextBeginPath(ctx);
-    CGContextMoveToPoint(ctx, 5.0, 25.0);
-    CGContextAddLineToPoint(ctx, 5.0, 5.0);
-    CGContextDrawPath(ctx, kCGPathStroke);
-    CGContextMoveToPoint(ctx, 5.0, 5.0);
-    CGContextAddLineToPoint(ctx, 25.0, 5.0);
-    CGContextDrawPath(ctx, kCGPathStroke);
-    CGImageRef  cgimage = CGBitmapContextCreateImage(ctx);
+                                                kCGImageAlphaPremultipliedLast);
+    
+    CGContextSetRGBStrokeColor(bitmapContext, 1.0, 0.0, 0.0, 1.0);
+    CGContextSetLineWidth(bitmapContext, 4.0);
+    CGContextBeginPath(bitmapContext);
+    CGContextMoveToPoint(bitmapContext, 5.0, 25.0);
+    CGContextAddLineToPoint(bitmapContext, 5.0, 5.0);
+    CGContextDrawPath(bitmapContext, kCGPathStroke);
+    CGContextMoveToPoint(bitmapContext, 5.0, 5.0);
+    CGContextAddLineToPoint(bitmapContext, 25.0, 5.0);
+    CGContextDrawPath(bitmapContext, kCGPathStroke);
+
+    CGImageRef  cgimage = CGBitmapContextCreateImage(bitmapContext);
     CGContextDrawImage(context, rect, cgimage);
-    CGContextRelease(ctx);
+#if 0
+    UIImage *uiimage = [[UIImage alloc] initWithCGImage:cgimage];
+    NSData  *data = UIImagePNGRepresentation(uiimage);
+    NSString    *filePath = [NSString stringWithFormat:@"%@/demo.png" ,
+                          [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"]];
+    NSLog(@"%@", filePath);
+    [data writeToFile:filePath atomically:YES];
+#endif
+    CGContextRelease(bitmapContext);
     free(rasterData);
     CGColorSpaceRelease(colorSpace);
 
     /* ULO(upper-left-origin) */
-    [self.upperLeftOriginImage drawAtPoint:CGPointMake(10.0, 10.0)];
+    [self.upperLeftOriginImage drawAtPoint:CGPointMake(20.0, 20.0)];
     
-    /* LLO(lower-left-origin) */
     CGContextSetLineWidth(context, 4.0);
     CGContextBeginPath(context);
-    CGContextMoveToPoint(context, 10.0, 30.0);
-    CGContextAddLineToPoint(context, 10, 10);
+    CGContextMoveToPoint(context, 20.0, 40.0);
+    CGContextAddLineToPoint(context, 20.0, 20.0);
     CGContextDrawPath(context, kCGPathStroke);
-    CGContextMoveToPoint(context, 10.0, 10.0);
-    CGContextAddLineToPoint(context, 30.0, 10.0);
+    CGContextMoveToPoint(context, 20.0, 20.0);
+    CGContextAddLineToPoint(context, 40.0, 20.0);
     CGContextDrawPath(context, kCGPathStroke);
 }
 
