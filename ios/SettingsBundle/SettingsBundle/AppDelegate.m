@@ -15,6 +15,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    NSLog(@"%s", __func__);
+    NSString    *name = [[NSUserDefaults standardUserDefaults] stringForKey:@"name_preference"];
+    NSLog(@"Name:%@", name);
+    BOOL    enabled = [[NSUserDefaults standardUserDefaults] boolForKey:@"enabled_preference"];
+    NSLog(@"Enabled:%d", (int)enabled);
+    float    slider = [[NSUserDefaults standardUserDefaults] floatForKey:@"slider_preference"];
+    NSLog(@"Slider:%f", slider);
     return YES;
 }
 							
@@ -38,6 +46,14 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+
+    NSLog(@"%s", __func__);
+    NSString    *name = [[NSUserDefaults standardUserDefaults] stringForKey:@"name_preference"];
+    NSLog(@"Name:%@", name);
+    BOOL    enabled = [[NSUserDefaults standardUserDefaults] boolForKey:@"enabled_preference"];
+    NSLog(@"Enabled:%d", (int)enabled);
+    float    slider = [[NSUserDefaults standardUserDefaults] floatForKey:@"slider_preference"];
+    NSLog(@"Slider:%f", slider);
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
