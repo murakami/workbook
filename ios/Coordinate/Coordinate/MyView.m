@@ -44,7 +44,26 @@
 {
     DBGMSG(@"%s", __func__);
     CGContextRef    context = UIGraphicsGetCurrentContext();
+    
+    /* ULO(upper-left-origin) */
+    UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0.0);
+    CGContextRef    bitmapContext = UIGraphicsGetCurrentContext();
+    
+    CGContextSetRGBStrokeColor(bitmapContext, 1.0, 0.0, 0.0, 1.0);
+    CGContextSetLineWidth(bitmapContext, 4.0);
+    CGContextBeginPath(bitmapContext);
+    CGContextMoveToPoint(bitmapContext, 5.0, 25.0);
+    CGContextAddLineToPoint(bitmapContext, 5.0, 5.0);
+    CGContextDrawPath(bitmapContext, kCGPathStroke);
+    CGContextMoveToPoint(bitmapContext, 5.0, 5.0);
+    CGContextAddLineToPoint(bitmapContext, 25.0, 5.0);
+    CGContextDrawPath(bitmapContext, kCGPathStroke);
 
+    UIImage*    uiimage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    [uiimage drawAtPoint:CGPointMake(0.0, 0.0)];
+
+#if 0
     /* LLO(lower-left-origin) */
     size_t  witdh = rect.size.width;
     size_t  height = rect.size.height;
@@ -69,17 +88,18 @@
 
     CGImageRef  cgimage = CGBitmapContextCreateImage(bitmapContext);
     CGContextDrawImage(context, rect, cgimage);
-#if 0
+    /*
     UIImage *uiimage = [[UIImage alloc] initWithCGImage:cgimage];
     NSData  *data = UIImagePNGRepresentation(uiimage);
     NSString    *filePath = [NSString stringWithFormat:@"%@/demo.png" ,
                           [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"]];
     NSLog(@"%@", filePath);
     [data writeToFile:filePath atomically:YES];
-#endif
+    */
     CGContextRelease(bitmapContext);
     free(rasterData);
     CGColorSpaceRelease(colorSpace);
+#endif
 
     /* ULO(upper-left-origin) */
     [self.upperLeftOriginImage drawAtPoint:CGPointMake(20.0, 20.0)];
