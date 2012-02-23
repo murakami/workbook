@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5649580B14F671BC007185D7 /* BezierPathsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5649580A14F671BC007185D7 /* BezierPathsView.m */; };
 		566A98D214E941600028B838 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 566A98D114E941600028B838 /* UIKit.framework */; };
 		566A98D414E941600028B838 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 566A98D314E941600028B838 /* Foundation.framework */; };
 		566A98D614E941600028B838 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 566A98D514E941600028B838 /* CoreGraphics.framework */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5649580914F671BC007185D7 /* BezierPathsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BezierPathsView.h; sourceTree = "<group>"; };
+		5649580A14F671BC007185D7 /* BezierPathsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BezierPathsView.m; sourceTree = "<group>"; };
 		566A98CD14E941600028B838 /* ImageMasking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageMasking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		566A98D114E941600028B838 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		566A98D314E941600028B838 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -130,6 +133,8 @@
 				566A991014E942ED0028B838 /* ImageMaskingView.m */,
 				5688B30214EA964B00DA1350 /* ClippingADrawingView.h */,
 				5688B30314EA964B00DA1350 /* ClippingADrawingView.m */,
+				5649580914F671BC007185D7 /* BezierPathsView.h */,
+				5649580A14F671BC007185D7 /* BezierPathsView.m */,
 				566A98D814E941600028B838 /* Supporting Files */,
 				566A990A14E9424C0028B838 /* Resources */,
 			);
@@ -289,6 +294,7 @@
 				566A98E814E941600028B838 /* RootViewController.m in Sources */,
 				566A991114E942ED0028B838 /* ImageMaskingView.m in Sources */,
 				5688B30414EA964B00DA1350 /* ClippingADrawingView.m in Sources */,
+				5649580B14F671BC007185D7 /* BezierPathsView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
