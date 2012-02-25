@@ -1,0 +1,451 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5618F76514F9099000212237 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5618F76414F9099000212237 /* Cocoa.framework */; };
+		5618F76F14F9099000212237 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5618F76D14F9099000212237 /* InfoPlist.strings */; };
+		5618F77114F9099000212237 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5618F77014F9099000212237 /* main.m */; };
+		5618F77514F9099000212237 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 5618F77314F9099000212237 /* Credits.rtf */; };
+		5618F77814F9099100212237 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5618F77714F9099100212237 /* AppDelegate.m */; };
+		5618F77B14F9099100212237 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5618F77914F9099100212237 /* MainMenu.xib */; };
+		5618F78314F9099100212237 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5618F78214F9099100212237 /* SenTestingKit.framework */; };
+		5618F78414F9099100212237 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5618F76414F9099000212237 /* Cocoa.framework */; };
+		5618F78C14F9099100212237 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5618F78A14F9099100212237 /* InfoPlist.strings */; };
+		5618F78F14F9099100212237 /* TextToSpeechTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5618F78E14F9099100212237 /* TextToSpeechTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5618F78514F9099100212237 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5618F75714F9099000212237 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5618F75F14F9099000212237;
+			remoteInfo = TextToSpeech;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5618F76014F9099000212237 /* TextToSpeech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextToSpeech.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5618F76414F9099000212237 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		5618F76714F9099000212237 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		5618F76814F9099000212237 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		5618F76914F9099000212237 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5618F76C14F9099000212237 /* TextToSpeech-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TextToSpeech-Info.plist"; sourceTree = "<group>"; };
+		5618F76E14F9099000212237 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5618F77014F9099000212237 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5618F77214F9099000212237 /* TextToSpeech-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TextToSpeech-Prefix.pch"; sourceTree = "<group>"; };
+		5618F77414F9099000212237 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		5618F77614F9099000212237 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5618F77714F9099100212237 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5618F77A14F9099100212237 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		5618F78114F9099100212237 /* TextToSpeechTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TextToSpeechTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5618F78214F9099100212237 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		5618F78914F9099100212237 /* TextToSpeechTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TextToSpeechTests-Info.plist"; sourceTree = "<group>"; };
+		5618F78B14F9099100212237 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5618F78D14F9099100212237 /* TextToSpeechTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextToSpeechTests.h; sourceTree = "<group>"; };
+		5618F78E14F9099100212237 /* TextToSpeechTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextToSpeechTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5618F75D14F9099000212237 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5618F76514F9099000212237 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5618F77D14F9099100212237 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5618F78314F9099100212237 /* SenTestingKit.framework in Frameworks */,
+				5618F78414F9099100212237 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5618F75514F9099000212237 = {
+			isa = PBXGroup;
+			children = (
+				5618F76A14F9099000212237 /* TextToSpeech */,
+				5618F78714F9099100212237 /* TextToSpeechTests */,
+				5618F76314F9099000212237 /* Frameworks */,
+				5618F76114F9099000212237 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5618F76114F9099000212237 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5618F76014F9099000212237 /* TextToSpeech.app */,
+				5618F78114F9099100212237 /* TextToSpeechTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5618F76314F9099000212237 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5618F76414F9099000212237 /* Cocoa.framework */,
+				5618F78214F9099100212237 /* SenTestingKit.framework */,
+				5618F76614F9099000212237 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5618F76614F9099000212237 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5618F76714F9099000212237 /* AppKit.framework */,
+				5618F76814F9099000212237 /* CoreData.framework */,
+				5618F76914F9099000212237 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		5618F76A14F9099000212237 /* TextToSpeech */ = {
+			isa = PBXGroup;
+			children = (
+				5618F77614F9099000212237 /* AppDelegate.h */,
+				5618F77714F9099100212237 /* AppDelegate.m */,
+				5618F77914F9099100212237 /* MainMenu.xib */,
+				5618F76B14F9099000212237 /* Supporting Files */,
+			);
+			path = TextToSpeech;
+			sourceTree = "<group>";
+		};
+		5618F76B14F9099000212237 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5618F76C14F9099000212237 /* TextToSpeech-Info.plist */,
+				5618F76D14F9099000212237 /* InfoPlist.strings */,
+				5618F77014F9099000212237 /* main.m */,
+				5618F77214F9099000212237 /* TextToSpeech-Prefix.pch */,
+				5618F77314F9099000212237 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5618F78714F9099100212237 /* TextToSpeechTests */ = {
+			isa = PBXGroup;
+			children = (
+				5618F78D14F9099100212237 /* TextToSpeechTests.h */,
+				5618F78E14F9099100212237 /* TextToSpeechTests.m */,
+				5618F78814F9099100212237 /* Supporting Files */,
+			);
+			path = TextToSpeechTests;
+			sourceTree = "<group>";
+		};
+		5618F78814F9099100212237 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5618F78914F9099100212237 /* TextToSpeechTests-Info.plist */,
+				5618F78A14F9099100212237 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5618F75F14F9099000212237 /* TextToSpeech */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5618F79214F9099100212237 /* Build configuration list for PBXNativeTarget "TextToSpeech" */;
+			buildPhases = (
+				5618F75C14F9099000212237 /* Sources */,
+				5618F75D14F9099000212237 /* Frameworks */,
+				5618F75E14F9099000212237 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TextToSpeech;
+			productName = TextToSpeech;
+			productReference = 5618F76014F9099000212237 /* TextToSpeech.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5618F78014F9099100212237 /* TextToSpeechTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5618F79514F9099100212237 /* Build configuration list for PBXNativeTarget "TextToSpeechTests" */;
+			buildPhases = (
+				5618F77C14F9099100212237 /* Sources */,
+				5618F77D14F9099100212237 /* Frameworks */,
+				5618F77E14F9099100212237 /* Resources */,
+				5618F77F14F9099100212237 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5618F78614F9099100212237 /* PBXTargetDependency */,
+			);
+			name = TextToSpeechTests;
+			productName = TextToSpeechTests;
+			productReference = 5618F78114F9099100212237 /* TextToSpeechTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5618F75714F9099000212237 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "ビッツ有限会社";
+			};
+			buildConfigurationList = 5618F75A14F9099000212237 /* Build configuration list for PBXProject "TextToSpeech" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5618F75514F9099000212237;
+			productRefGroup = 5618F76114F9099000212237 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5618F75F14F9099000212237 /* TextToSpeech */,
+				5618F78014F9099100212237 /* TextToSpeechTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5618F75E14F9099000212237 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5618F76F14F9099000212237 /* InfoPlist.strings in Resources */,
+				5618F77514F9099000212237 /* Credits.rtf in Resources */,
+				5618F77B14F9099100212237 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5618F77E14F9099100212237 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5618F78C14F9099100212237 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5618F77F14F9099100212237 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5618F75C14F9099000212237 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5618F77114F9099000212237 /* main.m in Sources */,
+				5618F77814F9099100212237 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5618F77C14F9099100212237 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5618F78F14F9099100212237 /* TextToSpeechTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5618F78614F9099100212237 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5618F75F14F9099000212237 /* TextToSpeech */;
+			targetProxy = 5618F78514F9099100212237 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5618F76D14F9099000212237 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5618F76E14F9099000212237 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5618F77314F9099000212237 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5618F77414F9099000212237 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		5618F77914F9099100212237 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5618F77A14F9099100212237 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		5618F78A14F9099100212237 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5618F78B14F9099100212237 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5618F79014F9099100212237 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		5618F79114F9099100212237 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		5618F79314F9099100212237 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TextToSpeech/TextToSpeech-Prefix.pch";
+				INFOPLIST_FILE = "TextToSpeech/TextToSpeech-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5618F79414F9099100212237 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TextToSpeech/TextToSpeech-Prefix.pch";
+				INFOPLIST_FILE = "TextToSpeech/TextToSpeech-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		5618F79614F9099100212237 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TextToSpeech.app/Contents/MacOS/TextToSpeech";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TextToSpeech/TextToSpeech-Prefix.pch";
+				INFOPLIST_FILE = "TextToSpeechTests/TextToSpeechTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		5618F79714F9099100212237 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TextToSpeech.app/Contents/MacOS/TextToSpeech";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TextToSpeech/TextToSpeech-Prefix.pch";
+				INFOPLIST_FILE = "TextToSpeechTests/TextToSpeechTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5618F75A14F9099000212237 /* Build configuration list for PBXProject "TextToSpeech" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5618F79014F9099100212237 /* Debug */,
+				5618F79114F9099100212237 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5618F79214F9099100212237 /* Build configuration list for PBXNativeTarget "TextToSpeech" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5618F79314F9099100212237 /* Debug */,
+				5618F79414F9099100212237 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5618F79514F9099100212237 /* Build configuration list for PBXNativeTarget "TextToSpeechTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5618F79614F9099100212237 /* Debug */,
+				5618F79714F9099100212237 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5618F75714F9099000212237 /* Project object */;
+}
