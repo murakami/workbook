@@ -17,6 +17,10 @@
 		5618F78414F9099100212237 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5618F76414F9099000212237 /* Cocoa.framework */; };
 		5618F78C14F9099100212237 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5618F78A14F9099100212237 /* InfoPlist.strings */; };
 		5618F78F14F9099100212237 /* TextToSpeechTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5618F78E14F9099100212237 /* TextToSpeechTests.m */; };
+		5618F79F14F90D5300212237 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5618F79E14F90D5300212237 /* AudioToolbox.framework */; };
+		5618F7A114F90D5900212237 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5618F7A014F90D5900212237 /* AudioUnit.framework */; };
+		5618F7A314F90D6200212237 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5618F7A214F90D6200212237 /* CoreAudio.framework */; };
+		5618F7A514F90D6C00212237 /* CoreAudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5618F7A414F90D6C00212237 /* CoreAudioKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		5618F78B14F9099100212237 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5618F78D14F9099100212237 /* TextToSpeechTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextToSpeechTests.h; sourceTree = "<group>"; };
 		5618F78E14F9099100212237 /* TextToSpeechTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextToSpeechTests.m; sourceTree = "<group>"; };
+		5618F79E14F90D5300212237 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		5618F7A014F90D5900212237 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		5618F7A214F90D6200212237 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		5618F7A414F90D6C00212237 /* CoreAudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioKit.framework; path = System/Library/Frameworks/CoreAudioKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +65,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5618F76514F9099000212237 /* Cocoa.framework in Frameworks */,
+				5618F79F14F90D5300212237 /* AudioToolbox.framework in Frameworks */,
+				5618F7A114F90D5900212237 /* AudioUnit.framework in Frameworks */,
+				5618F7A314F90D6200212237 /* CoreAudio.framework in Frameworks */,
+				5618F7A514F90D6C00212237 /* CoreAudioKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +107,10 @@
 			isa = PBXGroup;
 			children = (
 				5618F76414F9099000212237 /* Cocoa.framework */,
+				5618F79E14F90D5300212237 /* AudioToolbox.framework */,
+				5618F7A014F90D5900212237 /* AudioUnit.framework */,
+				5618F7A214F90D6200212237 /* CoreAudio.framework */,
+				5618F7A414F90D6C00212237 /* CoreAudioKit.framework */,
 				5618F78214F9099100212237 /* SenTestingKit.framework */,
 				5618F76614F9099000212237 /* Other Frameworks */,
 			);
