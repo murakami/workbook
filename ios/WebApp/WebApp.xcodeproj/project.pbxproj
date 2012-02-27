@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5602EBEA14FBC6D300234E8B /* info in Resources */ = {isa = PBXBuildFile; fileRef = 5602EBE914FBC6D300234E8B /* info */; };
+		5602EBEC14FBC78500234E8B /* about in Resources */ = {isa = PBXBuildFile; fileRef = 5602EBEB14FBC78500234E8B /* about */; };
 		56E5237514FA75CA00630F7C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E5237414FA75CA00630F7C /* UIKit.framework */; };
 		56E5237714FA75CA00630F7C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E5237614FA75CA00630F7C /* Foundation.framework */; };
 		56E5237914FA75CA00630F7C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E5237814FA75CA00630F7C /* CoreGraphics.framework */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5602EBE914FBC6D300234E8B /* info */ = {isa = PBXFileReference; lastKnownFileType = folder; path = info; sourceTree = "<group>"; };
+		5602EBEB14FBC78500234E8B /* about */ = {isa = PBXFileReference; lastKnownFileType = folder; path = about; sourceTree = "<group>"; };
 		56E5237014FA75CA00630F7C /* WebApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56E5237414FA75CA00630F7C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		56E5237614FA75CA00630F7C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -157,6 +161,8 @@
 		56E523A914FA75F700630F7C /* webapp */ = {
 			isa = PBXGroup;
 			children = (
+				5602EBEB14FBC78500234E8B /* about */,
+				5602EBE914FBC6D300234E8B /* info */,
 				56E523AA14FA762200630F7C /* index.html */,
 			);
 			path = webapp;
@@ -236,6 +242,8 @@
 				56E5237F14FA75CA00630F7C /* InfoPlist.strings in Resources */,
 				56E5238814FA75CA00630F7C /* MainStoryboard.storyboard in Resources */,
 				56E523AB14FA762200630F7C /* index.html in Resources */,
+				5602EBEA14FBC6D300234E8B /* info in Resources */,
+				5602EBEC14FBC78500234E8B /* about in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +450,7 @@
 				56E523A514FA75CB00630F7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		56E523A614FA75CB00630F7C /* Build configuration list for PBXNativeTarget "WebAppTests" */ = {
 			isa = XCConfigurationList;
@@ -450,6 +459,7 @@
 				56E523A814FA75CB00630F7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
