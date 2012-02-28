@@ -17,6 +17,7 @@
 		5674C0DE14FD07FC0063488C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5674C0BE14FD07FC0063488C /* Cocoa.framework */; };
 		5674C0E614FD07FC0063488C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5674C0E414FD07FC0063488C /* InfoPlist.strings */; };
 		5674C0E914FD07FC0063488C /* UnZipTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5674C0E814FD07FC0063488C /* UnZipTests.m */; };
+		569E6AE714FD16330027B7D6 /* ZipArchive in Resources */ = {isa = PBXBuildFile; fileRef = 569E6AE614FD16330027B7D6 /* ZipArchive */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		5674C0E514FD07FC0063488C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5674C0E714FD07FC0063488C /* UnZipTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnZipTests.h; sourceTree = "<group>"; };
 		5674C0E814FD07FC0063488C /* UnZipTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnZipTests.m; sourceTree = "<group>"; };
+		569E6AE614FD16330027B7D6 /* ZipArchive */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ZipArchive; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 			children = (
 				5674C0D014FD07FC0063488C /* AppDelegate.h */,
 				5674C0D114FD07FC0063488C /* AppDelegate.m */,
+				569E6AE614FD16330027B7D6 /* ZipArchive */,
 				5674C0D314FD07FC0063488C /* MainMenu.xib */,
 				5674C0C514FD07FC0063488C /* Supporting Files */,
 			);
@@ -227,6 +230,7 @@
 				5674C0C914FD07FC0063488C /* InfoPlist.strings in Resources */,
 				5674C0CF14FD07FC0063488C /* Credits.rtf in Resources */,
 				5674C0D514FD07FC0063488C /* MainMenu.xib in Resources */,
+				569E6AE714FD16330027B7D6 /* ZipArchive in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +440,7 @@
 				5674C0EE14FD07FC0063488C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5674C0EF14FD07FC0063488C /* Build configuration list for PBXNativeTarget "UnZipTests" */ = {
 			isa = XCConfigurationList;
@@ -444,6 +449,7 @@
 				5674C0F114FD07FC0063488C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

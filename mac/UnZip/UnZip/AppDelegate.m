@@ -14,7 +14,13 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+    DBGMSG(@"%s", __func__);
+}
+
+- (BOOL)application:(NSApplication *)theApplication openFile:(NSString *)filename
+{
+    DBGMSG(@"%s, filename(%@)", __func__, filename);
+    return NO;
 }
 
 @end

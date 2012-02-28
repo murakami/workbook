@@ -5,3 +5,11 @@
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
 #endif
+
+#ifdef  DEBUG
+#define DBGMSG(...) NSLog(__VA_ARGS__)
+#else   /* DEBUG */
+#define DBGMSG(...)
+#endif  /* DEBUG */
+
+/* End Of File */
