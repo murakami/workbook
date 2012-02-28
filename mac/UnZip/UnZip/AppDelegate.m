@@ -27,7 +27,7 @@
     DBGMSG(@"path(%@)", path);
     [archiver UnzipFileTo:path overWrite:NO];
     [archiver UnzipCloseFile];
-    return NO;
+    return YES;
 }
 
 @end
