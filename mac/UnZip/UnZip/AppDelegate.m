@@ -6,6 +6,7 @@
 //  Copyright (c) 2012年 ビッツ有限会社. All rights reserved.
 //
 
+#import "ZipArchive.h"
 #import "AppDelegate.h"
 
 @implementation AppDelegate
@@ -20,6 +21,12 @@
 - (BOOL)application:(NSApplication *)theApplication openFile:(NSString *)filename
 {
     DBGMSG(@"%s, filename(%@)", __func__, filename);
+    ZipArchive  *archiver = [[ZipArchive alloc] init];
+    [archiver UnzipOpenFile:filename];
+    NSString    *path = [filename stringByDeletingPathExtension];
+    DBGMSG(@"path(%@)", path);
+    [archiver UnzipFileTo:path overWrite:NO];
+    [archiver UnzipCloseFile];
     return NO;
 }
 
