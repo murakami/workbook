@@ -26,14 +26,6 @@
 {
     DBGMSG(@"%s", __func__);
     NSOpenPanel *panel = [NSOpenPanel openPanel];
-    /*
-    [panel beginSheetForDirectory:nil
-                             file:nil
-                   modalForWindow:self.window
-                    modalDelegate:self
-                   didEndSelector:@selector(openPanelDidEnd: returnCode: contextInfo:)
-                      contextInfo:NULL];
-    */
     [panel beginSheetModalForWindow:self.window
                   completionHandler:^(NSInteger returnCode){
         NSURL       *pathToFile = nil;
