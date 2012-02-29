@@ -21,6 +21,7 @@
 		567F78A714FE5ABE00AFE0FD /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 567F78A014FE5ABE00AFE0FD /* mztools.c */; };
 		567F78A814FE5ABE00AFE0FD /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 567F78A214FE5ABE00AFE0FD /* unzip.c */; };
 		567F78A914FE5ABE00AFE0FD /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 567F78A414FE5ABE00AFE0FD /* zip.c */; };
+		567F78AF14FE5BCC00AFE0FD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 567F78AE14FE5BCC00AFE0FD /* libz.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		567F78A314FE5ABE00AFE0FD /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
 		567F78A414FE5ABE00AFE0FD /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
 		567F78A514FE5ABE00AFE0FD /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
+		567F78AE14FE5BCC00AFE0FD /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				567F785B14FE5A7300AFE0FD /* Cocoa.framework in Frameworks */,
+				567F78AF14FE5BCC00AFE0FD /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				567F785A14FE5A7300AFE0FD /* Cocoa.framework */,
+				567F78AE14FE5BCC00AFE0FD /* libz.dylib */,
 				567F787814FE5A7400AFE0FD /* SenTestingKit.framework */,
 				567F785C14FE5A7300AFE0FD /* Other Frameworks */,
 			);
