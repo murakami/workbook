@@ -55,6 +55,21 @@
         char            filename[PATH_MAX];
         unzGetCurrentFileInfo(file, &fileInfo, filename, PATH_MAX, NULL, 0, NULL, 0);
         DBGMSG(@"%s", filename);
+        unzLocateFile(file, filename, 0);
+        unzOpenCurrentFile(file);
+        NSMutableData   *data = [NSMutableData data];
+        void            *buffer = (void *)malloc(BUFSIZ);
+        int             len;
+        while ((len = unzReadCurrentFile(file, buffer, BUFSIZ)) != 0) {
+            [data appendBytes:buffer length:len];
+        }
+        free(buffer);
+        printf("----------\n");
+        for (NSUInteger i = 0U; i < [data length]; i++) {
+            printf("%c", ((char *)[data bytes])[i]);
+        }
+        printf("\n----------\n");
+        unzCloseCurrentFile(file);
         error = unzGoToNextFile(file);
     }
     unzClose(file);
