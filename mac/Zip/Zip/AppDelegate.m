@@ -11,6 +11,7 @@
 
 @interface AppDelegate ()
 - (void)unzip:(NSString *)path;
+- (void)zip:(NSString *)path;
 @end
 
 @implementation AppDelegate
@@ -27,17 +28,38 @@
     DBGMSG(@"%s", __func__);
     NSOpenPanel *panel = [NSOpenPanel openPanel];
     [panel beginSheetModalForWindow:self.window
-                  completionHandler:^(NSInteger returnCode){
+                  completionHandler:^(NSInteger result){
         NSURL       *pathToFile = nil;
         NSString    *path = nil;
         
-        if (returnCode == NSOKButton) {
+        if (result == NSOKButton) {
             pathToFile = [[panel URLs] objectAtIndex:0];
             path = [pathToFile path];
             DBGMSG(@"%@", pathToFile);
             DBGMSG(@"%@", path);
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self unzip:path];
+            });
+        }
+    }];
+}
+
+- (IBAction)saveDocument:(id)sender
+{
+    DBGMSG(@"%s", __func__);
+    NSSavePanel *panel = [NSSavePanel savePanel];
+    [panel beginSheetModalForWindow:self.window
+                  completionHandler:^(NSInteger result) {
+        NSURL       *pathToFile = nil;
+        NSString    *path = nil;
+
+        if (result == NSOKButton) {
+            pathToFile = [panel URL];
+            path = [pathToFile path];
+            DBGMSG(@"%@", pathToFile);
+            DBGMSG(@"%@", path);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self zip:path];
             });
         }
     }];
@@ -73,6 +95,54 @@
         error = unzGoToNextFile(file);
     }
     unzClose(file);
+}
+
+#define OUTBUFSIZ   1024
+
+- (void)zip:(NSString *)path
+{
+    DBGMSG(@"%s, %@", __func__, path);
+    NSMutableData   *data = [[NSMutableData alloc] init];
+    z_stream   strm;
+    strm.zalloc = Z_NULL;
+    strm.zfree = Z_NULL;
+    strm.opaque = Z_NULL;
+    deflateInit(&strm, Z_DEFAULT_COMPRESSION);
+    char    str[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    strm.next_in = (Bytef *)str;
+    strm.avail_in = strlen(str);
+    char    buffer[OUTBUFSIZ];
+    strm.next_out = (Bytef *)buffer;
+    strm.avail_out = OUTBUFSIZ;
+
+    int status;
+    for (;;) {
+        if (strm.avail_in == 0) {
+            status = deflate(&strm, Z_FINISH);
+        }
+        else {
+            status = deflate(&strm, Z_NO_FLUSH);
+        }
+        if (status == Z_STREAM_END) {
+            break;
+        }
+        if (status != Z_OK) {
+            DBGMSG(@"deflate: %s", (strm.msg) ? strm.msg : "error");
+            break;
+        }
+        if (strm.avail_out == 0) {
+            DBGMSG(@"append length:OUTBUFSIZ");
+            [data appendBytes:buffer length:OUTBUFSIZ];
+            strm.next_out = (Bytef *)buffer;
+            strm.avail_out = OUTBUFSIZ;
+        }
+    }
+    if (strm.avail_out != OUTBUFSIZ) {
+        DBGMSG(@"append length:%d", (OUTBUFSIZ - strm.avail_out));
+        [data appendBytes:buffer length:(OUTBUFSIZ - strm.avail_out)];
+    }
+    deflateEnd(&strm);
+    //[data writeToFile:path atomically:YES];
 }
 
 @end

@@ -13,5 +13,6 @@
 @property (assign) IBOutlet NSWindow *window;
 
 - (IBAction)openDocument:(id)sender;
+- (IBAction)saveDocument:(id)sender;
 
 @end
