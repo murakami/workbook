@@ -20,6 +20,7 @@
 		563487EA15063968007FF4C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 563487CB15063967007FF4C0 /* Foundation.framework */; };
 		563487F215063968007FF4C0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 563487F015063968007FF4C0 /* InfoPlist.strings */; };
 		563487F515063968007FF4C0 /* DrawStringTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 563487F415063968007FF4C0 /* DrawStringTests.m */; };
+		5634880015063D5C007FF4C0 /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 563487FF15063D5C007FF4C0 /* MyView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		563487F115063968007FF4C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		563487F315063968007FF4C0 /* DrawStringTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawStringTests.h; sourceTree = "<group>"; };
 		563487F415063968007FF4C0 /* DrawStringTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawStringTests.m; sourceTree = "<group>"; };
+		563487FE15063D5C007FF4C0 /* MyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyView.h; sourceTree = "<group>"; };
+		563487FF15063D5C007FF4C0 /* MyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +119,8 @@
 				563487DB15063967007FF4C0 /* MainStoryboard.storyboard */,
 				563487DE15063967007FF4C0 /* ViewController.h */,
 				563487DF15063967007FF4C0 /* ViewController.m */,
+				563487FE15063D5C007FF4C0 /* MyView.h */,
+				563487FF15063D5C007FF4C0 /* MyView.m */,
 				563487D015063967007FF4C0 /* Supporting Files */,
 			);
 			path = DrawString;
@@ -261,6 +266,7 @@
 				563487D615063967007FF4C0 /* main.m in Sources */,
 				563487DA15063967007FF4C0 /* AppDelegate.m in Sources */,
 				563487E015063967007FF4C0 /* ViewController.m in Sources */,
+				5634880015063D5C007FF4C0 /* MyView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
