@@ -14,14 +14,24 @@
 
 @implementation ViewController
 
+@synthesize label = _label;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.label = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 100.0, 200, 50)];
+    self.label.font = [UIFont systemFontOfSize:48.0];
+    self.label.text = @"UILabel";
+    self.label.adjustsFontSizeToFitWidth = YES;
+    [self.view addSubview:self.label];
 }
 
 - (void)viewDidUnload
 {
+    [self.label removeFromSuperview];
+    self.label = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
