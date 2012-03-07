@@ -32,7 +32,6 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"%s", __func__);
     UITouch *touch = touches.anyObject;
     [UIView beginAnimations:@"center" context:nil];
     self.atMarkImageView.center = [touch locationInView:self];
