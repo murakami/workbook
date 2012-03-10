@@ -56,7 +56,7 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [UIView beginAnimations:nil context:nil];
+    [UIView beginAnimations:@"flip view" context:nil];
     [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft
                            forView:self.imageView
                              cache:YES];
