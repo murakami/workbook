@@ -14,6 +14,7 @@
 
 - (id)initWithFrame:(CGRect)frame
 {
+    DBGMSG(@"%s", __func__);
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2177" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="JXb-4Y-NaC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="JXb-4Y-NaC">
     <dependencies>
+        <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1179"/>
     </dependencies>
     <scenes>
         <!--Table View Controller - Root View Controller-->
@@ -35,7 +36,28 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <segue destination="jfW-e2-3Mq" kind="push" id="gky-xC-ihK"/>
+                                            <segue destination="jfW-e2-3Mq" kind="push" identifier="animation block" id="vbn-AT-8FS"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="oNs-EB-E7f" style="IBUITableViewCellStyleDefault" id="9h8-6T-FLL">
+                                        <rect key="frame" x="0.0" y="44" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="flip view" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" id="oNs-EB-E7f">
+                                                    <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="Arw-lS-LQf" kind="push" identifier="flip view" id="JyF-ZN-jRg"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -46,6 +68,21 @@
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="82" y="42"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="H4n-PU-II3">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rdh-gT-b4l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Arw-lS-LQf" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cbh-gn-CRV" customClass="FlipView">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Oog-fG-oOJ"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="557" y="507"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="fz8-F1-1Pn">
@@ -69,7 +106,7 @@
                     <navigationItem key="navigationItem" id="jdK-f6-dWj"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="474" y="42"/>
+            <point key="canvasLocation" x="557" y="-61"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4hv-kG-RvT">
@@ -96,6 +133,9 @@
             <relationships>
                 <relationship kind="outlet" name="atMarkImageView" candidateClass="UIImageView"/>
             </relationships>
+        </class>
+        <class className="FlipView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FlipView.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
