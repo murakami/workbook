@@ -36,7 +36,7 @@
     self.arrowImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"arrow.png" ofType:nil]];
     self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(128.0, 176.0, 64.0, 64.0)];
     self.imageView.image = self.atmarkImage;
-    [self addSubview:self.imageView];
+    [self addSubview:self.imageView];    
 }
 
 - (void)dealloc

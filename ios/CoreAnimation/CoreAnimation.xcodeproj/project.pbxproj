@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56349D2D150CE25900C13893 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56349D2C150CE25900C13893 /* QuartzCore.framework */; };
+		56349D31150CE52F00C13893 /* AnimatingTransitionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56349D30150CE52F00C13893 /* AnimatingTransitionView.m */; };
 		563BD9FC150B790D0082F10C /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 563BD9FB150B790D0082F10C /* arrow.png */; };
 		563BDA04150B9F8A0082F10C /* FlipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 563BDA03150B9F8A0082F10C /* FlipView.m */; };
 		564265C01507A86700F49E8D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 564265BF1507A86700F49E8D /* UIKit.framework */; };
@@ -36,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		56349D2C150CE25900C13893 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		56349D2F150CE52F00C13893 /* AnimatingTransitionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatingTransitionView.h; sourceTree = "<group>"; };
+		56349D30150CE52F00C13893 /* AnimatingTransitionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatingTransitionView.m; sourceTree = "<group>"; };
 		563BD9FB150B790D0082F10C /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		563BDA02150B9F8A0082F10C /* FlipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipView.h; sourceTree = "<group>"; };
 		563BDA03150B9F8A0082F10C /* FlipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipView.m; sourceTree = "<group>"; };
@@ -69,6 +74,7 @@
 				564265C01507A86700F49E8D /* UIKit.framework in Frameworks */,
 				564265C21507A86700F49E8D /* Foundation.framework in Frameworks */,
 				564265C41507A86700F49E8D /* CoreGraphics.framework in Frameworks */,
+				56349D2D150CE25900C13893 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +116,7 @@
 				564265BF1507A86700F49E8D /* UIKit.framework */,
 				564265C11507A86700F49E8D /* Foundation.framework */,
 				564265C31507A86700F49E8D /* CoreGraphics.framework */,
+				56349D2C150CE25900C13893 /* QuartzCore.framework */,
 				564265DD1507A86700F49E8D /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
@@ -125,6 +132,8 @@
 				564265FB1507B86500F49E8D /* AnimationBlockView.m */,
 				563BDA02150B9F8A0082F10C /* FlipView.h */,
 				563BDA03150B9F8A0082F10C /* FlipView.m */,
+				56349D2F150CE52F00C13893 /* AnimatingTransitionView.h */,
+				56349D30150CE52F00C13893 /* AnimatingTransitionView.m */,
 				564265F71507B2BD00F49E8D /* Resources */,
 				564265C61507A86700F49E8D /* Supporting Files */,
 			);
@@ -283,6 +292,7 @@
 				564265D01507A86700F49E8D /* AppDelegate.m in Sources */,
 				564265FC1507B86500F49E8D /* AnimationBlockView.m in Sources */,
 				563BDA04150B9F8A0082F10C /* FlipView.m in Sources */,
+				56349D31150CE52F00C13893 /* AnimatingTransitionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
