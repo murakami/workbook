@@ -44,7 +44,29 @@
 {
     DBGMSG(@"%s", __func__);
     CGContextRef    context = UIGraphicsGetCurrentContext();
+
+#if 1
+    CGContextSaveGState(context);
     
+    CGFloat height = self.bounds.size.height;
+    CGContextTranslateCTM(context, 0.0, height);
+    CGContextScaleCTM(context, 1.0, - 1.0);
+    
+    CGColorSpaceRef cs = CGColorSpaceCreateDeviceRGB();
+    CGContextSetFillColorSpace(context, cs);
+    CGColorSpaceRelease(cs);
+    
+    CGContextSetTextDrawingMode(context, kCGTextFill);
+    CGContextSetRGBFillColor(context, 0.0, 0.0, 0.0, 1.0);
+    
+    CGContextSelectFont(context, "Helvetica", 48.0, kCGEncodingMacRoman);
+    CGContextShowTextAtPoint(context, 10.0, 10.0, "Quartz", strlen("Quartz"));
+    
+    CGContextFlush(context);
+    CGContextRestoreGState(context);
+#endif
+
+#if 0
     /* ULO(upper-left-origin) */
     UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0.0);
     CGContextRef    bitmapContext = UIGraphicsGetCurrentContext();
@@ -62,6 +84,7 @@
     UIImage*    uiimage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     [uiimage drawAtPoint:CGPointMake(0.0, 0.0)];
+#endif
 
 #if 0
     /* LLO(lower-left-origin) */
@@ -101,6 +124,7 @@
     CGColorSpaceRelease(colorSpace);
 #endif
 
+#if 0
     /* ULO(upper-left-origin) */
     [self.upperLeftOriginImage drawAtPoint:CGPointMake(20.0, 20.0)];
     
@@ -112,6 +136,7 @@
     CGContextMoveToPoint(context, 20.0, 20.0);
     CGContextAddLineToPoint(context, 40.0, 20.0);
     CGContextDrawPath(context, kCGPathStroke);
+#endif
 }
 
 @end
