@@ -52,6 +52,22 @@
     CGContextTranslateCTM(context, 0.0, height);
     CGContextScaleCTM(context, 1.0, - 1.0);
     
+    UIImage *image = [UIImage imageNamed:@"upper-left-origin.png"];
+    CGRect  imageRect;
+    imageRect.origin = CGPointMake(10.0, self.bounds.size.height - 10.0 - image.size.height);
+    imageRect.size = image.size;
+    CGContextDrawImage(context, imageRect, image.CGImage);
+
+    CGContextRestoreGState(context);
+#endif
+
+#if 0
+    CGContextSaveGState(context);
+    
+    CGFloat height = self.bounds.size.height;
+    CGContextTranslateCTM(context, 0.0, height);
+    CGContextScaleCTM(context, 1.0, - 1.0);
+    
     CGColorSpaceRef cs = CGColorSpaceCreateDeviceRGB();
     CGContextSetFillColorSpace(context, cs);
     CGColorSpaceRelease(cs);
