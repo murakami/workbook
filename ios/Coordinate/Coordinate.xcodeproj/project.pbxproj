@@ -164,7 +164,7 @@
 			children = (
 				563DBD3F14EC4D0300707F8B /* upper-left-origin.png */,
 			);
-			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
