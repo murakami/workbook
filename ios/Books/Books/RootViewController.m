@@ -6,6 +6,8 @@
 //  Copyright (c) 2012年 ビッツ有限会社. All rights reserved.
 //
 
+#import "AppDelegate.h"
+
 #import "RootViewController.h"
 
 #import "ModelController.h"
@@ -20,11 +22,17 @@
 
 @synthesize pageViewController = _pageViewController;
 @synthesize modelController = _modelController;
+@synthesize document = _document;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    AppDelegate	*appl = nil;
+	appl = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+	self.document = appl.document;
+
     // Configure the page view controller and add it as a child view controller.
     self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     self.pageViewController.delegate = self;
@@ -50,6 +58,7 @@
 
 - (void)viewDidUnload
 {
+    self.document = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

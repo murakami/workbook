@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5678E09915332D9E009DF4CD /* HIDDeviceInterface.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 5678E09815332D9E009DF4CD /* HIDDeviceInterface.pdf */; };
+		5678E0AD153335E1009DF4CD /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 5678E0AC153335E1009DF4CD /* Document.m */; };
 		56D7955615307612009F3945 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56D7955515307612009F3945 /* UIKit.framework */; };
 		56D7955815307612009F3945 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56D7955715307612009F3945 /* Foundation.framework */; };
 		56D7955A15307612009F3945 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56D7955915307612009F3945 /* CoreGraphics.framework */; };
@@ -35,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5678E09815332D9E009DF4CD /* HIDDeviceInterface.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = HIDDeviceInterface.pdf; sourceTree = "<group>"; };
+		5678E0AB153335E1009DF4CD /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
+		5678E0AC153335E1009DF4CD /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
 		56D7955115307612009F3945 /* Books.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Books.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56D7955515307612009F3945 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		56D7955715307612009F3945 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -84,6 +89,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5678E09615332D58009DF4CD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5678E09815332D9E009DF4CD /* HIDDeviceInterface.pdf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		56D7954615307611009F3945 = {
 			isa = PBXGroup;
 			children = (
@@ -125,8 +138,11 @@
 				56D7956B15307612009F3945 /* DataViewController.m */,
 				56D7956D15307612009F3945 /* ModelController.h */,
 				56D7956E15307612009F3945 /* ModelController.m */,
+				5678E0AB153335E1009DF4CD /* Document.h */,
+				5678E0AC153335E1009DF4CD /* Document.m */,
 				56D7957015307612009F3945 /* MainStoryboard.storyboard */,
 				56D7955C15307612009F3945 /* Supporting Files */,
+				5678E09615332D58009DF4CD /* Resources */,
 			);
 			path = Books;
 			sourceTree = "<group>";
@@ -234,6 +250,7 @@
 			files = (
 				56D7956015307612009F3945 /* InfoPlist.strings in Resources */,
 				56D7957215307612009F3945 /* MainStoryboard.storyboard in Resources */,
+				5678E09915332D9E009DF4CD /* HIDDeviceInterface.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +290,7 @@
 				56D7956915307612009F3945 /* RootViewController.m in Sources */,
 				56D7956C15307612009F3945 /* DataViewController.m in Sources */,
 				56D7956F15307612009F3945 /* ModelController.m in Sources */,
+				5678E0AD153335E1009DF4CD /* Document.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +460,7 @@
 				56D7958C15307612009F3945 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		56D7958D15307612009F3945 /* Build configuration list for PBXNativeTarget "BooksTests" */ = {
 			isa = XCConfigurationList;
@@ -450,6 +469,7 @@
 				56D7958F15307612009F3945 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

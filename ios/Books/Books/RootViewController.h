@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Document.h"
 
 @interface RootViewController : UIViewController <UIPageViewControllerDelegate>
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
+@property (strong, nonatomic) Document              *document;
 
 @end
