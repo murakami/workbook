@@ -6,6 +6,8 @@
 //  Copyright (c) 2012年 ビッツ有限会社. All rights reserved.
 //
 
+#import "AppDelegate.h"
+
 #import "ModelController.h"
 
 #import "DataViewController.h"
@@ -20,34 +22,54 @@
  */
 
 @interface ModelController()
-@property (readonly, strong, nonatomic) NSArray *pageData;
+/* @property (readonly, strong, nonatomic) NSArray *pageData; */
 @end
 
 @implementation ModelController
 
-@synthesize pageData = _pageData;
+@synthesize document = _document;
+/* @synthesize pageData = _pageData; */
 
 - (id)init
 {
+    DBGMSG(@"%s", __func__);
     self = [super init];
     if (self) {
         // Create the data model.
+        /*
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         _pageData = [[dateFormatter monthSymbols] copy];
+        */
+        
+        AppDelegate	*appl = nil;
+        appl = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        self.document = appl.document;
     }
     return self;
+}
+
+- (void)dealloc
+{
+    DBGMSG(@"%s", __func__);
+    self.document = nil;
+	//[super dealloc];
 }
 
 - (DataViewController *)viewControllerAtIndex:(NSUInteger)index storyboard:(UIStoryboard *)storyboard
 {   
     // Return the data view controller for the given index.
+    /*
     if (([self.pageData count] == 0) || (index >= [self.pageData count])) {
         return nil;
     }
+    */
+    if (10 < index)
+        return nil;
     
     // Create a new view controller and pass suitable data.
     DataViewController *dataViewController = [storyboard instantiateViewControllerWithIdentifier:@"DataViewController"];
-    dataViewController.dataObject = [self.pageData objectAtIndex:index];
+    /* dataViewController.dataObject = [self.pageData objectAtIndex:index]; */
+    dataViewController.index = index;
     return dataViewController;
 }
 
@@ -55,7 +77,8 @@
 {   
      // Return the index of the given data view controller.
      // For simplicity, this implementation uses a static array of model objects and the view controller stores the model object; you can therefore use the model object to identify the index.
-    return [self.pageData indexOfObject:viewController.dataObject];
+    /* return [self.pageData indexOfObject:viewController.dataObject]; */
+    return viewController.index;
 }
 
 #pragma mark - Page View Controller Data Source
@@ -79,9 +102,13 @@
     }
     
     index++;
+    /*
     if (index == [self.pageData count]) {
         return nil;
     }
+    */
+    if (10 < index)
+        return nil;
     return [self viewControllerAtIndex:index storyboard:viewController.storyboard];
 }
 

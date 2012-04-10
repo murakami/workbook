@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		563F40EC15346D5700C67233 /* PDFScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 563F40EB15346D5700C67233 /* PDFScrollView.m */; };
+		563F40F41534712600C67233 /* TiledPDFView.m in Sources */ = {isa = PBXBuildFile; fileRef = 563F40F31534712600C67233 /* TiledPDFView.m */; };
+		563F40F6153474FE00C67233 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 563F40F5153474FD00C67233 /* QuartzCore.framework */; };
 		5678E09915332D9E009DF4CD /* HIDDeviceInterface.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 5678E09815332D9E009DF4CD /* HIDDeviceInterface.pdf */; };
 		5678E0AD153335E1009DF4CD /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 5678E0AC153335E1009DF4CD /* Document.m */; };
 		56D7955615307612009F3945 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56D7955515307612009F3945 /* UIKit.framework */; };
@@ -37,6 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		563F40EA15346D5700C67233 /* PDFScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFScrollView.h; sourceTree = "<group>"; };
+		563F40EB15346D5700C67233 /* PDFScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFScrollView.m; sourceTree = "<group>"; };
+		563F40F21534712600C67233 /* TiledPDFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TiledPDFView.h; sourceTree = "<group>"; };
+		563F40F31534712600C67233 /* TiledPDFView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TiledPDFView.m; sourceTree = "<group>"; };
+		563F40F5153474FD00C67233 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5678E09815332D9E009DF4CD /* HIDDeviceInterface.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = HIDDeviceInterface.pdf; sourceTree = "<group>"; };
 		5678E0AB153335E1009DF4CD /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
 		5678E0AC153335E1009DF4CD /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
@@ -72,6 +80,7 @@
 			files = (
 				56D7955615307612009F3945 /* UIKit.framework in Frameworks */,
 				56D7955815307612009F3945 /* Foundation.framework in Frameworks */,
+				563F40F6153474FE00C67233 /* QuartzCore.framework in Frameworks */,
 				56D7955A15307612009F3945 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -122,6 +131,7 @@
 				56D7955515307612009F3945 /* UIKit.framework */,
 				56D7955715307612009F3945 /* Foundation.framework */,
 				56D7955915307612009F3945 /* CoreGraphics.framework */,
+				563F40F5153474FD00C67233 /* QuartzCore.framework */,
 				56D7957915307612009F3945 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
@@ -140,6 +150,10 @@
 				56D7956E15307612009F3945 /* ModelController.m */,
 				5678E0AB153335E1009DF4CD /* Document.h */,
 				5678E0AC153335E1009DF4CD /* Document.m */,
+				563F40F21534712600C67233 /* TiledPDFView.h */,
+				563F40F31534712600C67233 /* TiledPDFView.m */,
+				563F40EA15346D5700C67233 /* PDFScrollView.h */,
+				563F40EB15346D5700C67233 /* PDFScrollView.m */,
 				56D7957015307612009F3945 /* MainStoryboard.storyboard */,
 				56D7955C15307612009F3945 /* Supporting Files */,
 				5678E09615332D58009DF4CD /* Resources */,
@@ -291,6 +305,8 @@
 				56D7956C15307612009F3945 /* DataViewController.m in Sources */,
 				56D7956F15307612009F3945 /* ModelController.m in Sources */,
 				5678E0AD153335E1009DF4CD /* Document.m in Sources */,
+				563F40EC15346D5700C67233 /* PDFScrollView.m in Sources */,
+				563F40F41534712600C67233 /* TiledPDFView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

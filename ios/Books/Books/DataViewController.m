@@ -15,12 +15,14 @@
 
 @implementation DataViewController
 
-@synthesize dataLabel = _dataLabel;
-@synthesize dataObject = _dataObject;
+/* @synthesize dataLabel = _dataLabel; */
+/* @synthesize dataObject = _dataObject; */
 @synthesize document = _document;
+@synthesize index = _index;
 
 - (void)viewDidLoad
 {
+    DBGMSG(@"%s", __func__);
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
@@ -31,17 +33,18 @@
 
 - (void)viewDidUnload
 {
+    DBGMSG(@"%s", __func__);
     self.document = nil;
 
     [super viewDidUnload];
     // Release any retained subviews of the main view.
-    self.dataLabel = nil;
+    /* self.dataLabel = nil; */
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.dataLabel.text = [self.dataObject description];
+    /* self.dataLabel.text = [self.dataObject description]; */
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

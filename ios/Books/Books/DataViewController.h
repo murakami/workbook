@@ -11,8 +11,9 @@
 
 @interface DataViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UILabel *dataLabel;
-@property (strong, nonatomic) id dataObject;
+/* @property (strong, nonatomic) IBOutlet UILabel *dataLabel; */
+/* @property (strong, nonatomic) id dataObject; */
 @property (strong, nonatomic) Document              *document;
+@property (nonatomic, assign) NSUInteger            index;
 
 @end

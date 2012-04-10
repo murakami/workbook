@@ -26,6 +26,7 @@
 
 - (void)viewDidLoad
 {
+    DBGMSG(@"%s", __func__);
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
@@ -58,6 +59,7 @@
 
 - (void)viewDidUnload
 {
+    DBGMSG(@"%s", __func__);
     self.document = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
