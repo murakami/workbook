@@ -13,7 +13,10 @@
 
 /* @property (strong, nonatomic) IBOutlet UILabel *dataLabel; */
 /* @property (strong, nonatomic) id dataObject; */
-@property (strong, nonatomic) Document              *document;
-@property (nonatomic, assign) NSUInteger            index;
+@property (strong, nonatomic) Document                  *document;
+@property (nonatomic, assign) NSUInteger                index;
+
+- (void)setIndexOfPDF:(NSUInteger)index;
+- (NSUInteger)getIndexOfPDF;
 
 @end

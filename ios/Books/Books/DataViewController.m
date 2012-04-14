@@ -7,10 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "PDFScrollView.h"
 #import "DataViewController.h"
 
 @interface DataViewController ()
-
 @end
 
 @implementation DataViewController
@@ -50,6 +50,20 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+- (void)setIndexOfPDF:(NSUInteger)index
+{
+    DBGMSG(@"%s%u", __func__, (unsigned int)index);
+    self.index = index;
+    PDFScrollView   *pdfScrollView = (PDFScrollView *)self.view;
+    [pdfScrollView setIndexOfPDF:index];
+}
+
+- (NSUInteger)getIndexOfPDF
+{
+    DBGMSG(@"%s%u", __func__, (unsigned int)index);
+    return self.index;
 }
 
 @end

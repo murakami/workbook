@@ -11,6 +11,7 @@
 @interface Document : NSObject
 
 @property (strong, nonatomic) NSString  *version;
+@property (nonatomic, assign) CGPDFDocumentRef  pdf;
 
 - (void)clearDefaults;
 - (void)updateDefaults;

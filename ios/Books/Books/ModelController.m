@@ -57,19 +57,20 @@
 
 - (DataViewController *)viewControllerAtIndex:(NSUInteger)index storyboard:(UIStoryboard *)storyboard
 {   
+    DBGMSG(@"%s", __func__);
     // Return the data view controller for the given index.
     /*
     if (([self.pageData count] == 0) || (index >= [self.pageData count])) {
         return nil;
     }
     */
-    if (10 < index)
+    if (CGPDFDocumentGetNumberOfPages(self.document.pdf) < index)
         return nil;
     
     // Create a new view controller and pass suitable data.
     DataViewController *dataViewController = [storyboard instantiateViewControllerWithIdentifier:@"DataViewController"];
     /* dataViewController.dataObject = [self.pageData objectAtIndex:index]; */
-    dataViewController.index = index;
+    [dataViewController setIndexOfPDF:index];
     return dataViewController;
 }
 
@@ -107,7 +108,7 @@
         return nil;
     }
     */
-    if (10 < index)
+    if (index == CGPDFDocumentGetNumberOfPages(self.document.pdf))
         return nil;
     return [self viewControllerAtIndex:index storyboard:viewController.storyboard];
 }

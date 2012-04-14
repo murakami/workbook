@@ -6,11 +6,13 @@
 //  Copyright (c) 2012年 ビッツ有限会社. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
 #import "Document.h"
 
 @implementation Document
 
 @synthesize version = _version;
+@synthesize pdf = _pdf;
 
 - (id)init
 {
@@ -26,6 +28,10 @@
         if ([aVersion compare:self.version] != NSOrderedSame) {
             [self clearDefaults];
         }
+        
+        // Open the PDF document
+        NSURL *pdfURL = [[NSBundle mainBundle] URLForResource:@"HIDDeviceInterface.pdf" withExtension:nil];
+        self.pdf = CGPDFDocumentCreateWithURL((__bridge CFURLRef)pdfURL);
 	}
 	return self;
 }
@@ -34,6 +40,7 @@
 {
     DBGMSG(@"%s", __func__);
     self.version = nil;
+    CGPDFDocumentRelease(self.pdf);
 	//[super dealloc];
 }
 

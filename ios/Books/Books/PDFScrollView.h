@@ -12,11 +12,14 @@
 
 @interface PDFScrollView : UIScrollView <UIScrollViewDelegate>
 
-@property (strong, nonatomic) TiledPDFView      *pdfView;
-@property (strong, nonatomic) TiledPDFView      *oldPDFView;
-@property (strong, nonatomic) UIImageView       *backgroundImageView;
-@property (nonatomic, assign) CGFloat           pdfScale;
-@property (nonatomic, assign) CGPDFPageRef      page;
-@property (nonatomic, assign) CGPDFDocumentRef  pdf;
+@property (strong, nonatomic) TiledPDFView  *pdfView;
+@property (strong, nonatomic) TiledPDFView  *oldPDFView;
+@property (strong, nonatomic) UIImageView   *backgroundImageView;
+@property (nonatomic, assign) CGFloat       pdfScale;
+@property (nonatomic, assign) CGPDFPageRef  page;
+@property (strong, nonatomic) Document      *document;
+
+- (void)setIndexOfPDF:(NSUInteger)index;
+- (NSUInteger)getIndexOfPDF;
 
 @end

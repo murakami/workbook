@@ -6,6 +6,7 @@
 //  Copyright (c) 2012年 ビッツ有限会社. All rights reserved.
 //
 
+#import "AppDelegate.h"
 #import "PDFScrollView.h"
 #import "TiledPDFView.h"
 #import <QuartzCore/QuartzCore.h>
@@ -17,7 +18,8 @@
 @synthesize backgroundImageView = _backgroundImageView;
 @synthesize pdfScale = _pdfScale;
 @synthesize page = _page;
-@synthesize pdf = _pdf;
+/* @synthesize pdf = _pdf; */
+@synthesize document = _document;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -25,69 +27,6 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        
-        // Set up the UIScrollView
-        self.showsVerticalScrollIndicator = NO;
-        self.showsHorizontalScrollIndicator = NO;
-        self.bouncesZoom = YES;
-        self.decelerationRate = UIScrollViewDecelerationRateFast;
-        self.delegate = self;
-		[self setBackgroundColor:[UIColor grayColor]];
-		self.maximumZoomScale = 5.0;
-		self.minimumZoomScale = .25;
-		
-		// Open the PDF document
-		NSURL *pdfURL = [[NSBundle mainBundle] URLForResource:@"HIDDeviceInterface.pdf" withExtension:nil];
-		self.pdf = CGPDFDocumentCreateWithURL((__bridge CFURLRef)pdfURL);
-		
-		// Get the PDF Page that we will be drawing
-		self.page = CGPDFDocumentGetPage(self.pdf, 1);
-		CGPDFPageRetain(self.page);
-		
-		// determine the size of the PDF page
-		CGRect pageRect = CGPDFPageGetBoxRect(self.page, kCGPDFMediaBox);
-		self.pdfScale = self.frame.size.width/pageRect.size.width;
-		pageRect.size = CGSizeMake(pageRect.size.width * self.pdfScale, pageRect.size.height * self.pdfScale);
-		
-		
-		// Create a low res image representation of the PDF page to display before the TiledPDFView
-		// renders its content.
-		UIGraphicsBeginImageContext(pageRect.size);
-		
-		CGContextRef context = UIGraphicsGetCurrentContext();
-		
-		// First fill the background with white.
-		CGContextSetRGBFillColor(context, 1.0,1.0,1.0,1.0);
-		CGContextFillRect(context,pageRect);
-		
-		CGContextSaveGState(context);
-		// Flip the context so that the PDF page is rendered
-		// right side up.
-		CGContextTranslateCTM(context, 0.0, pageRect.size.height);
-		CGContextScaleCTM(context, 1.0, -1.0);
-		
-		// Scale the context so that the PDF page is rendered 
-		// at the correct size for the zoom level.
-		CGContextScaleCTM(context, self.pdfScale, self.pdfScale);	
-		CGContextDrawPDFPage(context, self.page);
-		CGContextRestoreGState(context);
-		
-		UIImage *backgroundImage = UIGraphicsGetImageFromCurrentImageContext();
-		
-		UIGraphicsEndImageContext();
-		
-		self.backgroundImageView = [[UIImageView alloc] initWithImage:backgroundImage];
-		self.backgroundImageView.frame = pageRect;
-		self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFit;
-		[self addSubview:self.backgroundImageView];
-		[self sendSubviewToBack:self.backgroundImageView];
-		
-		
-		// Create the TiledPDFView based on the size of the PDF page and scale it to fit the view.
-		self.pdfView = [[TiledPDFView alloc] initWithFrame:pageRect andScale:self.pdfScale];
-		[self.pdfView setPage:self.page];
-		
-		[self addSubview:self.pdfView];
     }
     return self;
 }
@@ -96,22 +35,40 @@
 {
     DBGMSG(@"%s", __func__);
     
-    // Set up the UIScrollView
-    self.showsVerticalScrollIndicator = NO;
-    self.showsHorizontalScrollIndicator = NO;
-    self.bouncesZoom = YES;
     self.decelerationRate = UIScrollViewDecelerationRateFast;
     self.delegate = self;
-    [self setBackgroundColor:[UIColor grayColor]];
-    self.maximumZoomScale = 5.0;
-    self.minimumZoomScale = .25;
-    
-    // Open the PDF document
-    NSURL *pdfURL = [[NSBundle mainBundle] URLForResource:@"HIDDeviceInterface.pdf" withExtension:nil];
-    self.pdf = CGPDFDocumentCreateWithURL((__bridge CFURLRef)pdfURL);
-    
+
+    AppDelegate	*appl = nil;
+    appl = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    self.document = appl.document;
+}
+
+- (void)dealloc
+{
+    DBGMSG(@"%s", __func__);
+    [self.pdfView removeFromSuperview];
+    [self.backgroundImageView removeFromSuperview];
+    [self.oldPDFView removeFromSuperview];
+    self.pdfView = nil;
+    self.oldPDFView = nil;
+    self.backgroundImageView = nil;
+	CGPDFPageRelease(self.page);
+	//[super dealloc];
+}
+
+/*
+// Only override drawRect: if you perform custom drawing.
+// An empty implementation adversely affects performance during animation.
+- (void)drawRect:(CGRect)rect
+{
+    // Drawing code
+}
+*/
+
+- (void)setIndexOfPDF:(NSUInteger)index
+{
     // Get the PDF Page that we will be drawing
-    self.page = CGPDFDocumentGetPage(self.pdf, 1);
+    self.page = CGPDFDocumentGetPage(self.document.pdf, index + 1);
     CGPDFPageRetain(self.page);
     
     // determine the size of the PDF page
@@ -160,25 +117,10 @@
     [self addSubview:self.pdfView];
 }
 
-- (void)dealloc
+- (NSUInteger)getIndexOfPDF
 {
-    DBGMSG(@"%s", __func__);
-    self.pdfView = nil;
-    self.oldPDFView = nil;
-    self.backgroundImageView = nil;
-	CGPDFPageRelease(self.page);
-	CGPDFDocumentRelease(self.pdf);
-	//[super dealloc];
+    return (NSUInteger)CGPDFPageGetPageNumber(self.page);
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 #pragma mark -
 #pragma mark Override layoutSubviews to center content
