@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Document.h"
 
 @class DataViewController;
 

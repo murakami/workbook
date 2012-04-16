@@ -6,7 +6,6 @@
 //  Copyright (c) 2012年 ビッツ有限会社. All rights reserved.
 //
 
-#import <QuartzCore/QuartzCore.h>
 #import "Document.h"
 
 @implementation Document
@@ -70,7 +69,7 @@
             DBGMSG(@"save version:%@", self.version);
         }
     }
-        
+    
     if (fUpdate) {
         [[NSUserDefaults standardUserDefaults] synchronize];
     }

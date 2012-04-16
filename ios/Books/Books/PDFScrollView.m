@@ -7,9 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "PDFScrollView.h"
 #import "TiledPDFView.h"
-#import <QuartzCore/QuartzCore.h>
+#import "PDFScrollView.h"
 
 @implementation PDFScrollView
 
@@ -37,7 +36,7 @@
     
     self.decelerationRate = UIScrollViewDecelerationRateFast;
     self.delegate = self;
-
+    
     AppDelegate	*appl = nil;
     appl = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     self.document = appl.document;
@@ -57,13 +56,13 @@
 }
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect
+ {
+ // Drawing code
+ }
+ */
 
 - (void)setIndexOfPDF:(NSUInteger)index
 {

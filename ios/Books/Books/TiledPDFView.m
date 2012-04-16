@@ -7,7 +7,6 @@
 //
 
 #import "TiledPDFView.h"
-#import <QuartzCore/QuartzCore.h>
 
 @implementation TiledPDFView
 

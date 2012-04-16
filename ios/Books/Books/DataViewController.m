@@ -25,10 +25,10 @@
     DBGMSG(@"%s", __func__);
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
+
     AppDelegate	*appl = nil;
-	appl = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-	self.document = appl.document;
+    appl = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    self.document = appl.document;
 }
 
 - (void)viewDidUnload
@@ -45,19 +45,27 @@
 {
     [super viewWillAppear:animated];
     /* self.dataLabel.text = [self.dataObject description]; */
+    PDFScrollView   *pdfScrollView = (PDFScrollView *)self.view;
+    [pdfScrollView setIndexOfPDF:self.index];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    } else {
+        return YES;
+    }
 }
 
 - (void)setIndexOfPDF:(NSUInteger)index
 {
     DBGMSG(@"%s%u", __func__, (unsigned int)index);
     self.index = index;
+    /*
     PDFScrollView   *pdfScrollView = (PDFScrollView *)self.view;
     [pdfScrollView setIndexOfPDF:index];
+    */
 }
 
 - (NSUInteger)getIndexOfPDF

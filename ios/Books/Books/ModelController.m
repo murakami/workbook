@@ -7,9 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
 #import "ModelController.h"
-
 #import "DataViewController.h"
 
 /*
@@ -27,8 +25,8 @@
 
 @implementation ModelController
 
-@synthesize document = _document;
 /* @synthesize pageData = _pageData; */
+@synthesize document = _document;
 
 - (id)init
 {
@@ -64,8 +62,10 @@
         return nil;
     }
     */
-    if (CGPDFDocumentGetNumberOfPages(self.document.pdf) < index)
+    if ((CGPDFDocumentGetNumberOfPages(self.document.pdf) == 0)
+        || (index >= CGPDFDocumentGetNumberOfPages(self.document.pdf))) {
         return nil;
+    }
     
     // Create a new view controller and pass suitable data.
     DataViewController *dataViewController = [storyboard instantiateViewControllerWithIdentifier:@"DataViewController"];
@@ -108,8 +108,9 @@
         return nil;
     }
     */
-    if (index == CGPDFDocumentGetNumberOfPages(self.document.pdf))
+    if (index == CGPDFDocumentGetNumberOfPages(self.document.pdf)) {
         return nil;
+    }
     return [self viewControllerAtIndex:index storyboard:viewController.storyboard];
 }
 

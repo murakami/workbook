@@ -6,7 +6,8 @@
 //  Copyright (c) 2012年 ビッツ有限会社. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface Document : NSObject
 

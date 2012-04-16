@@ -7,200 +7,203 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		563F40EC15346D5700C67233 /* PDFScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 563F40EB15346D5700C67233 /* PDFScrollView.m */; };
-		563F40F41534712600C67233 /* TiledPDFView.m in Sources */ = {isa = PBXBuildFile; fileRef = 563F40F31534712600C67233 /* TiledPDFView.m */; };
-		563F40F6153474FE00C67233 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 563F40F5153474FD00C67233 /* QuartzCore.framework */; };
-		5678E09915332D9E009DF4CD /* HIDDeviceInterface.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 5678E09815332D9E009DF4CD /* HIDDeviceInterface.pdf */; };
-		5678E0AD153335E1009DF4CD /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 5678E0AC153335E1009DF4CD /* Document.m */; };
-		56D7955615307612009F3945 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56D7955515307612009F3945 /* UIKit.framework */; };
-		56D7955815307612009F3945 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56D7955715307612009F3945 /* Foundation.framework */; };
-		56D7955A15307612009F3945 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56D7955915307612009F3945 /* CoreGraphics.framework */; };
-		56D7956015307612009F3945 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 56D7955E15307612009F3945 /* InfoPlist.strings */; };
-		56D7956215307612009F3945 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D7956115307612009F3945 /* main.m */; };
-		56D7956615307612009F3945 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D7956515307612009F3945 /* AppDelegate.m */; };
-		56D7956915307612009F3945 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D7956815307612009F3945 /* RootViewController.m */; };
-		56D7956C15307612009F3945 /* DataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D7956B15307612009F3945 /* DataViewController.m */; };
-		56D7956F15307612009F3945 /* ModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D7956E15307612009F3945 /* ModelController.m */; };
-		56D7957215307612009F3945 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56D7957015307612009F3945 /* MainStoryboard.storyboard */; };
-		56D7957A15307612009F3945 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56D7957915307612009F3945 /* SenTestingKit.framework */; };
-		56D7957B15307612009F3945 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56D7955515307612009F3945 /* UIKit.framework */; };
-		56D7957C15307612009F3945 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56D7955715307612009F3945 /* Foundation.framework */; };
-		56D7958415307612009F3945 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 56D7958215307612009F3945 /* InfoPlist.strings */; };
-		56D7958715307612009F3945 /* BooksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D7958615307612009F3945 /* BooksTests.m */; };
+		56F228C4153C58E000FD9EC2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F228C3153C58E000FD9EC2 /* UIKit.framework */; };
+		56F228C6153C58E000FD9EC2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F228C5153C58E000FD9EC2 /* Foundation.framework */; };
+		56F228C8153C58E000FD9EC2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F228C7153C58E000FD9EC2 /* CoreGraphics.framework */; };
+		56F228CE153C58E000FD9EC2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 56F228CC153C58E000FD9EC2 /* InfoPlist.strings */; };
+		56F228D0153C58E000FD9EC2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F228CF153C58E000FD9EC2 /* main.m */; };
+		56F228D4153C58E000FD9EC2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F228D3153C58E000FD9EC2 /* AppDelegate.m */; };
+		56F228D7153C58E000FD9EC2 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F228D6153C58E000FD9EC2 /* RootViewController.m */; };
+		56F228DA153C58E000FD9EC2 /* DataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F228D9153C58E000FD9EC2 /* DataViewController.m */; };
+		56F228DD153C58E000FD9EC2 /* ModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F228DC153C58E000FD9EC2 /* ModelController.m */; };
+		56F228E0153C58E000FD9EC2 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56F228DE153C58E000FD9EC2 /* MainStoryboard_iPhone.storyboard */; };
+		56F228E3153C58E000FD9EC2 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56F228E1153C58E000FD9EC2 /* MainStoryboard_iPad.storyboard */; };
+		56F228EB153C58E000FD9EC2 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F228EA153C58E000FD9EC2 /* SenTestingKit.framework */; };
+		56F228EC153C58E000FD9EC2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F228C3153C58E000FD9EC2 /* UIKit.framework */; };
+		56F228ED153C58E000FD9EC2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F228C5153C58E000FD9EC2 /* Foundation.framework */; };
+		56F228F5153C58E000FD9EC2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 56F228F3153C58E000FD9EC2 /* InfoPlist.strings */; };
+		56F228F8153C58E000FD9EC2 /* BooksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F228F7153C58E000FD9EC2 /* BooksTests.m */; };
+		56F2290B153C5B6200FD9EC2 /* HIDDeviceInterface.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 56F2290A153C5B6200FD9EC2 /* HIDDeviceInterface.pdf */; };
+		56F2290E153C5B9500FD9EC2 /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F2290D153C5B9500FD9EC2 /* Document.m */; };
+		56F22911153C5BB800FD9EC2 /* TiledPDFView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F22910153C5BB800FD9EC2 /* TiledPDFView.m */; };
+		56F22914153C5BF400FD9EC2 /* PDFScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F22913153C5BF400FD9EC2 /* PDFScrollView.m */; };
+		56F22916153C5CB300FD9EC2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F22915153C5CB300FD9EC2 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		56D7957D15307612009F3945 /* PBXContainerItemProxy */ = {
+		56F228EE153C58E000FD9EC2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 56D7954815307611009F3945 /* Project object */;
+			containerPortal = 56F228B6153C58E000FD9EC2 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 56D7955015307612009F3945;
+			remoteGlobalIDString = 56F228BE153C58E000FD9EC2;
 			remoteInfo = Books;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		563F40EA15346D5700C67233 /* PDFScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFScrollView.h; sourceTree = "<group>"; };
-		563F40EB15346D5700C67233 /* PDFScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFScrollView.m; sourceTree = "<group>"; };
-		563F40F21534712600C67233 /* TiledPDFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TiledPDFView.h; sourceTree = "<group>"; };
-		563F40F31534712600C67233 /* TiledPDFView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TiledPDFView.m; sourceTree = "<group>"; };
-		563F40F5153474FD00C67233 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		5678E09815332D9E009DF4CD /* HIDDeviceInterface.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = HIDDeviceInterface.pdf; sourceTree = "<group>"; };
-		5678E0AB153335E1009DF4CD /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
-		5678E0AC153335E1009DF4CD /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
-		56D7955115307612009F3945 /* Books.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Books.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		56D7955515307612009F3945 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		56D7955715307612009F3945 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		56D7955915307612009F3945 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		56D7955D15307612009F3945 /* Books-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Books-Info.plist"; sourceTree = "<group>"; };
-		56D7955F15307612009F3945 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		56D7956115307612009F3945 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		56D7956315307612009F3945 /* Books-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Books-Prefix.pch"; sourceTree = "<group>"; };
-		56D7956415307612009F3945 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		56D7956515307612009F3945 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		56D7956715307612009F3945 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		56D7956815307612009F3945 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		56D7956A15307612009F3945 /* DataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataViewController.h; sourceTree = "<group>"; };
-		56D7956B15307612009F3945 /* DataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataViewController.m; sourceTree = "<group>"; };
-		56D7956D15307612009F3945 /* ModelController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelController.h; sourceTree = "<group>"; };
-		56D7956E15307612009F3945 /* ModelController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelController.m; sourceTree = "<group>"; };
-		56D7957115307612009F3945 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		56D7957815307612009F3945 /* BooksTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BooksTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		56D7957915307612009F3945 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		56D7958115307612009F3945 /* BooksTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BooksTests-Info.plist"; sourceTree = "<group>"; };
-		56D7958315307612009F3945 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		56D7958515307612009F3945 /* BooksTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BooksTests.h; sourceTree = "<group>"; };
-		56D7958615307612009F3945 /* BooksTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BooksTests.m; sourceTree = "<group>"; };
+		56F228BF153C58E000FD9EC2 /* Books.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Books.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		56F228C3153C58E000FD9EC2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		56F228C5153C58E000FD9EC2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		56F228C7153C58E000FD9EC2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		56F228CB153C58E000FD9EC2 /* Books-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Books-Info.plist"; sourceTree = "<group>"; };
+		56F228CD153C58E000FD9EC2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		56F228CF153C58E000FD9EC2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		56F228D1153C58E000FD9EC2 /* Books-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Books-Prefix.pch"; sourceTree = "<group>"; };
+		56F228D2153C58E000FD9EC2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		56F228D3153C58E000FD9EC2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		56F228D5153C58E000FD9EC2 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		56F228D6153C58E000FD9EC2 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		56F228D8153C58E000FD9EC2 /* DataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataViewController.h; sourceTree = "<group>"; };
+		56F228D9153C58E000FD9EC2 /* DataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataViewController.m; sourceTree = "<group>"; };
+		56F228DB153C58E000FD9EC2 /* ModelController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelController.h; sourceTree = "<group>"; };
+		56F228DC153C58E000FD9EC2 /* ModelController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelController.m; sourceTree = "<group>"; };
+		56F228DF153C58E000FD9EC2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		56F228E2153C58E000FD9EC2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		56F228E9153C58E000FD9EC2 /* BooksTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BooksTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		56F228EA153C58E000FD9EC2 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		56F228F2153C58E000FD9EC2 /* BooksTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BooksTests-Info.plist"; sourceTree = "<group>"; };
+		56F228F4153C58E000FD9EC2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		56F228F6153C58E000FD9EC2 /* BooksTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BooksTests.h; sourceTree = "<group>"; };
+		56F228F7153C58E000FD9EC2 /* BooksTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BooksTests.m; sourceTree = "<group>"; };
+		56F2290A153C5B6200FD9EC2 /* HIDDeviceInterface.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = HIDDeviceInterface.pdf; sourceTree = "<group>"; };
+		56F2290C153C5B9400FD9EC2 /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
+		56F2290D153C5B9500FD9EC2 /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
+		56F2290F153C5BB800FD9EC2 /* TiledPDFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TiledPDFView.h; sourceTree = "<group>"; };
+		56F22910153C5BB800FD9EC2 /* TiledPDFView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TiledPDFView.m; sourceTree = "<group>"; };
+		56F22912153C5BF400FD9EC2 /* PDFScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFScrollView.h; sourceTree = "<group>"; };
+		56F22913153C5BF400FD9EC2 /* PDFScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFScrollView.m; sourceTree = "<group>"; };
+		56F22915153C5CB300FD9EC2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		56D7954E15307612009F3945 /* Frameworks */ = {
+		56F228BC153C58E000FD9EC2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56D7955615307612009F3945 /* UIKit.framework in Frameworks */,
-				56D7955815307612009F3945 /* Foundation.framework in Frameworks */,
-				563F40F6153474FE00C67233 /* QuartzCore.framework in Frameworks */,
-				56D7955A15307612009F3945 /* CoreGraphics.framework in Frameworks */,
+				56F228C4153C58E000FD9EC2 /* UIKit.framework in Frameworks */,
+				56F228C6153C58E000FD9EC2 /* Foundation.framework in Frameworks */,
+				56F228C8153C58E000FD9EC2 /* CoreGraphics.framework in Frameworks */,
+				56F22916153C5CB300FD9EC2 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		56D7957415307612009F3945 /* Frameworks */ = {
+		56F228E5153C58E000FD9EC2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56D7957A15307612009F3945 /* SenTestingKit.framework in Frameworks */,
-				56D7957B15307612009F3945 /* UIKit.framework in Frameworks */,
-				56D7957C15307612009F3945 /* Foundation.framework in Frameworks */,
+				56F228EB153C58E000FD9EC2 /* SenTestingKit.framework in Frameworks */,
+				56F228EC153C58E000FD9EC2 /* UIKit.framework in Frameworks */,
+				56F228ED153C58E000FD9EC2 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5678E09615332D58009DF4CD /* Resources */ = {
+		56F228B4153C58E000FD9EC2 = {
 			isa = PBXGroup;
 			children = (
-				5678E09815332D9E009DF4CD /* HIDDeviceInterface.pdf */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		56D7954615307611009F3945 = {
-			isa = PBXGroup;
-			children = (
-				56D7955B15307612009F3945 /* Books */,
-				56D7957F15307612009F3945 /* BooksTests */,
-				56D7955415307612009F3945 /* Frameworks */,
-				56D7955215307612009F3945 /* Products */,
+				56F228C9153C58E000FD9EC2 /* Books */,
+				56F228F0153C58E000FD9EC2 /* BooksTests */,
+				56F228C2153C58E000FD9EC2 /* Frameworks */,
+				56F228C0153C58E000FD9EC2 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		56D7955215307612009F3945 /* Products */ = {
+		56F228C0153C58E000FD9EC2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				56D7955115307612009F3945 /* Books.app */,
-				56D7957815307612009F3945 /* BooksTests.octest */,
+				56F228BF153C58E000FD9EC2 /* Books.app */,
+				56F228E9153C58E000FD9EC2 /* BooksTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		56D7955415307612009F3945 /* Frameworks */ = {
+		56F228C2153C58E000FD9EC2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				56D7955515307612009F3945 /* UIKit.framework */,
-				56D7955715307612009F3945 /* Foundation.framework */,
-				56D7955915307612009F3945 /* CoreGraphics.framework */,
-				563F40F5153474FD00C67233 /* QuartzCore.framework */,
-				56D7957915307612009F3945 /* SenTestingKit.framework */,
+				56F228C3153C58E000FD9EC2 /* UIKit.framework */,
+				56F228C5153C58E000FD9EC2 /* Foundation.framework */,
+				56F228C7153C58E000FD9EC2 /* CoreGraphics.framework */,
+				56F22915153C5CB300FD9EC2 /* QuartzCore.framework */,
+				56F228EA153C58E000FD9EC2 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		56D7955B15307612009F3945 /* Books */ = {
+		56F228C9153C58E000FD9EC2 /* Books */ = {
 			isa = PBXGroup;
 			children = (
-				56D7956415307612009F3945 /* AppDelegate.h */,
-				56D7956515307612009F3945 /* AppDelegate.m */,
-				56D7956715307612009F3945 /* RootViewController.h */,
-				56D7956815307612009F3945 /* RootViewController.m */,
-				56D7956A15307612009F3945 /* DataViewController.h */,
-				56D7956B15307612009F3945 /* DataViewController.m */,
-				56D7956D15307612009F3945 /* ModelController.h */,
-				56D7956E15307612009F3945 /* ModelController.m */,
-				5678E0AB153335E1009DF4CD /* Document.h */,
-				5678E0AC153335E1009DF4CD /* Document.m */,
-				563F40F21534712600C67233 /* TiledPDFView.h */,
-				563F40F31534712600C67233 /* TiledPDFView.m */,
-				563F40EA15346D5700C67233 /* PDFScrollView.h */,
-				563F40EB15346D5700C67233 /* PDFScrollView.m */,
-				56D7957015307612009F3945 /* MainStoryboard.storyboard */,
-				56D7955C15307612009F3945 /* Supporting Files */,
-				5678E09615332D58009DF4CD /* Resources */,
+				56F228D2153C58E000FD9EC2 /* AppDelegate.h */,
+				56F228D3153C58E000FD9EC2 /* AppDelegate.m */,
+				56F228D5153C58E000FD9EC2 /* RootViewController.h */,
+				56F228D6153C58E000FD9EC2 /* RootViewController.m */,
+				56F228D8153C58E000FD9EC2 /* DataViewController.h */,
+				56F228D9153C58E000FD9EC2 /* DataViewController.m */,
+				56F228DB153C58E000FD9EC2 /* ModelController.h */,
+				56F228DC153C58E000FD9EC2 /* ModelController.m */,
+				56F2290C153C5B9400FD9EC2 /* Document.h */,
+				56F2290D153C5B9500FD9EC2 /* Document.m */,
+				56F2290F153C5BB800FD9EC2 /* TiledPDFView.h */,
+				56F22910153C5BB800FD9EC2 /* TiledPDFView.m */,
+				56F22912153C5BF400FD9EC2 /* PDFScrollView.h */,
+				56F22913153C5BF400FD9EC2 /* PDFScrollView.m */,
+				56F228DE153C58E000FD9EC2 /* MainStoryboard_iPhone.storyboard */,
+				56F228E1153C58E000FD9EC2 /* MainStoryboard_iPad.storyboard */,
+				56F228CA153C58E000FD9EC2 /* Supporting Files */,
+				56F22909153C5B4B00FD9EC2 /* Resources */,
 			);
 			path = Books;
 			sourceTree = "<group>";
 		};
-		56D7955C15307612009F3945 /* Supporting Files */ = {
+		56F228CA153C58E000FD9EC2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				56D7955D15307612009F3945 /* Books-Info.plist */,
-				56D7955E15307612009F3945 /* InfoPlist.strings */,
-				56D7956115307612009F3945 /* main.m */,
-				56D7956315307612009F3945 /* Books-Prefix.pch */,
+				56F228CB153C58E000FD9EC2 /* Books-Info.plist */,
+				56F228CC153C58E000FD9EC2 /* InfoPlist.strings */,
+				56F228CF153C58E000FD9EC2 /* main.m */,
+				56F228D1153C58E000FD9EC2 /* Books-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		56D7957F15307612009F3945 /* BooksTests */ = {
+		56F228F0153C58E000FD9EC2 /* BooksTests */ = {
 			isa = PBXGroup;
 			children = (
-				56D7958515307612009F3945 /* BooksTests.h */,
-				56D7958615307612009F3945 /* BooksTests.m */,
-				56D7958015307612009F3945 /* Supporting Files */,
+				56F228F6153C58E000FD9EC2 /* BooksTests.h */,
+				56F228F7153C58E000FD9EC2 /* BooksTests.m */,
+				56F228F1153C58E000FD9EC2 /* Supporting Files */,
 			);
 			path = BooksTests;
 			sourceTree = "<group>";
 		};
-		56D7958015307612009F3945 /* Supporting Files */ = {
+		56F228F1153C58E000FD9EC2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				56D7958115307612009F3945 /* BooksTests-Info.plist */,
-				56D7958215307612009F3945 /* InfoPlist.strings */,
+				56F228F2153C58E000FD9EC2 /* BooksTests-Info.plist */,
+				56F228F3153C58E000FD9EC2 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		56F22909153C5B4B00FD9EC2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				56F2290A153C5B6200FD9EC2 /* HIDDeviceInterface.pdf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		56D7955015307612009F3945 /* Books */ = {
+		56F228BE153C58E000FD9EC2 /* Books */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 56D7958A15307612009F3945 /* Build configuration list for PBXNativeTarget "Books" */;
+			buildConfigurationList = 56F228FB153C58E000FD9EC2 /* Build configuration list for PBXNativeTarget "Books" */;
 			buildPhases = (
-				56D7954D15307612009F3945 /* Sources */,
-				56D7954E15307612009F3945 /* Frameworks */,
-				56D7954F15307612009F3945 /* Resources */,
+				56F228BB153C58E000FD9EC2 /* Sources */,
+				56F228BC153C58E000FD9EC2 /* Frameworks */,
+				56F228BD153C58E000FD9EC2 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -208,78 +211,79 @@
 			);
 			name = Books;
 			productName = Books;
-			productReference = 56D7955115307612009F3945 /* Books.app */;
+			productReference = 56F228BF153C58E000FD9EC2 /* Books.app */;
 			productType = "com.apple.product-type.application";
 		};
-		56D7957715307612009F3945 /* BooksTests */ = {
+		56F228E8153C58E000FD9EC2 /* BooksTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 56D7958D15307612009F3945 /* Build configuration list for PBXNativeTarget "BooksTests" */;
+			buildConfigurationList = 56F228FE153C58E000FD9EC2 /* Build configuration list for PBXNativeTarget "BooksTests" */;
 			buildPhases = (
-				56D7957315307612009F3945 /* Sources */,
-				56D7957415307612009F3945 /* Frameworks */,
-				56D7957515307612009F3945 /* Resources */,
-				56D7957615307612009F3945 /* ShellScript */,
+				56F228E4153C58E000FD9EC2 /* Sources */,
+				56F228E5153C58E000FD9EC2 /* Frameworks */,
+				56F228E6153C58E000FD9EC2 /* Resources */,
+				56F228E7153C58E000FD9EC2 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				56D7957E15307612009F3945 /* PBXTargetDependency */,
+				56F228EF153C58E000FD9EC2 /* PBXTargetDependency */,
 			);
 			name = BooksTests;
 			productName = BooksTests;
-			productReference = 56D7957815307612009F3945 /* BooksTests.octest */;
+			productReference = 56F228E9153C58E000FD9EC2 /* BooksTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		56D7954815307611009F3945 /* Project object */ = {
+		56F228B6153C58E000FD9EC2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = "ビッツ有限会社";
 			};
-			buildConfigurationList = 56D7954B15307611009F3945 /* Build configuration list for PBXProject "Books" */;
+			buildConfigurationList = 56F228B9153C58E000FD9EC2 /* Build configuration list for PBXProject "Books" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 56D7954615307611009F3945;
-			productRefGroup = 56D7955215307612009F3945 /* Products */;
+			mainGroup = 56F228B4153C58E000FD9EC2;
+			productRefGroup = 56F228C0153C58E000FD9EC2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				56D7955015307612009F3945 /* Books */,
-				56D7957715307612009F3945 /* BooksTests */,
+				56F228BE153C58E000FD9EC2 /* Books */,
+				56F228E8153C58E000FD9EC2 /* BooksTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		56D7954F15307612009F3945 /* Resources */ = {
+		56F228BD153C58E000FD9EC2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56D7956015307612009F3945 /* InfoPlist.strings in Resources */,
-				56D7957215307612009F3945 /* MainStoryboard.storyboard in Resources */,
-				5678E09915332D9E009DF4CD /* HIDDeviceInterface.pdf in Resources */,
+				56F228CE153C58E000FD9EC2 /* InfoPlist.strings in Resources */,
+				56F228E0153C58E000FD9EC2 /* MainStoryboard_iPhone.storyboard in Resources */,
+				56F228E3153C58E000FD9EC2 /* MainStoryboard_iPad.storyboard in Resources */,
+				56F2290B153C5B6200FD9EC2 /* HIDDeviceInterface.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		56D7957515307612009F3945 /* Resources */ = {
+		56F228E6153C58E000FD9EC2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56D7958415307612009F3945 /* InfoPlist.strings in Resources */,
+				56F228F5153C58E000FD9EC2 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		56D7957615307612009F3945 /* ShellScript */ = {
+		56F228E7153C58E000FD9EC2 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -295,60 +299,68 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		56D7954D15307612009F3945 /* Sources */ = {
+		56F228BB153C58E000FD9EC2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56D7956215307612009F3945 /* main.m in Sources */,
-				56D7956615307612009F3945 /* AppDelegate.m in Sources */,
-				56D7956915307612009F3945 /* RootViewController.m in Sources */,
-				56D7956C15307612009F3945 /* DataViewController.m in Sources */,
-				56D7956F15307612009F3945 /* ModelController.m in Sources */,
-				5678E0AD153335E1009DF4CD /* Document.m in Sources */,
-				563F40EC15346D5700C67233 /* PDFScrollView.m in Sources */,
-				563F40F41534712600C67233 /* TiledPDFView.m in Sources */,
+				56F228D0153C58E000FD9EC2 /* main.m in Sources */,
+				56F228D4153C58E000FD9EC2 /* AppDelegate.m in Sources */,
+				56F228D7153C58E000FD9EC2 /* RootViewController.m in Sources */,
+				56F228DA153C58E000FD9EC2 /* DataViewController.m in Sources */,
+				56F228DD153C58E000FD9EC2 /* ModelController.m in Sources */,
+				56F2290E153C5B9500FD9EC2 /* Document.m in Sources */,
+				56F22911153C5BB800FD9EC2 /* TiledPDFView.m in Sources */,
+				56F22914153C5BF400FD9EC2 /* PDFScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		56D7957315307612009F3945 /* Sources */ = {
+		56F228E4153C58E000FD9EC2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56D7958715307612009F3945 /* BooksTests.m in Sources */,
+				56F228F8153C58E000FD9EC2 /* BooksTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		56D7957E15307612009F3945 /* PBXTargetDependency */ = {
+		56F228EF153C58E000FD9EC2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 56D7955015307612009F3945 /* Books */;
-			targetProxy = 56D7957D15307612009F3945 /* PBXContainerItemProxy */;
+			target = 56F228BE153C58E000FD9EC2 /* Books */;
+			targetProxy = 56F228EE153C58E000FD9EC2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		56D7955E15307612009F3945 /* InfoPlist.strings */ = {
+		56F228CC153C58E000FD9EC2 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				56D7955F15307612009F3945 /* en */,
+				56F228CD153C58E000FD9EC2 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		56D7957015307612009F3945 /* MainStoryboard.storyboard */ = {
+		56F228DE153C58E000FD9EC2 /* MainStoryboard_iPhone.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				56D7957115307612009F3945 /* en */,
+				56F228DF153C58E000FD9EC2 /* en */,
 			);
-			name = MainStoryboard.storyboard;
+			name = MainStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
 		};
-		56D7958215307612009F3945 /* InfoPlist.strings */ = {
+		56F228E1153C58E000FD9EC2 /* MainStoryboard_iPad.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				56D7958315307612009F3945 /* en */,
+				56F228E2153C58E000FD9EC2 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		56F228F3153C58E000FD9EC2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				56F228F4153C58E000FD9EC2 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -356,7 +368,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		56D7958815307612009F3945 /* Debug */ = {
+		56F228F9153C58E000FD9EC2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -378,10 +390,11 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		56D7958915307612009F3945 /* Release */ = {
+		56F228FA153C58E000FD9EC2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -397,11 +410,12 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		56D7958B15307612009F3945 /* Debug */ = {
+		56F228FC153C58E000FD9EC2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -412,7 +426,7 @@
 			};
 			name = Debug;
 		};
-		56D7958C15307612009F3945 /* Release */ = {
+		56F228FD153C58E000FD9EC2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -423,7 +437,7 @@
 			};
 			name = Release;
 		};
-		56D7958E15307612009F3945 /* Debug */ = {
+		56F228FF153C58E000FD9EC2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Books.app/Books";
@@ -440,7 +454,7 @@
 			};
 			name = Debug;
 		};
-		56D7958F15307612009F3945 /* Release */ = {
+		56F22900153C58E000FD9EC2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Books.app/Books";
@@ -460,34 +474,32 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		56D7954B15307611009F3945 /* Build configuration list for PBXProject "Books" */ = {
+		56F228B9153C58E000FD9EC2 /* Build configuration list for PBXProject "Books" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				56D7958815307612009F3945 /* Debug */,
-				56D7958915307612009F3945 /* Release */,
+				56F228F9153C58E000FD9EC2 /* Debug */,
+				56F228FA153C58E000FD9EC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		56D7958A15307612009F3945 /* Build configuration list for PBXNativeTarget "Books" */ = {
+		56F228FB153C58E000FD9EC2 /* Build configuration list for PBXNativeTarget "Books" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				56D7958B15307612009F3945 /* Debug */,
-				56D7958C15307612009F3945 /* Release */,
+				56F228FC153C58E000FD9EC2 /* Debug */,
+				56F228FD153C58E000FD9EC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
-		56D7958D15307612009F3945 /* Build configuration list for PBXNativeTarget "BooksTests" */ = {
+		56F228FE153C58E000FD9EC2 /* Build configuration list for PBXNativeTarget "BooksTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				56D7958E15307612009F3945 /* Debug */,
-				56D7958F15307612009F3945 /* Release */,
+				56F228FF153C58E000FD9EC2 /* Debug */,
+				56F22900153C58E000FD9EC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 56D7954815307611009F3945 /* Project object */;
+	rootObject = 56F228B6153C58E000FD9EC2 /* Project object */;
 }
