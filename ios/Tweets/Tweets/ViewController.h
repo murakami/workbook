@@ -12,4 +12,8 @@
 
 @interface ViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UILabel  *tweetStatusLabel;
+
+- (IBAction)tweet:(id)sender;
+
 @end
