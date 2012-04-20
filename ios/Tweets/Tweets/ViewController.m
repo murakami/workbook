@@ -75,6 +75,34 @@
     [self presentModalViewController:tweetViewController animated:YES];
 }
 
+- (IBAction)tweet2:(id)sender
+{
+    ACAccountStore *accountStore = [[ACAccountStore alloc] init];
+	
+    ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+	
+    [accountStore requestAccessToAccountsWithType:accountType withCompletionHandler:^(BOOL granted, NSError *error) {
+        if(granted) {
+            NSArray *accountsArray = [accountStore accountsWithAccountType:accountType];
+			
+            for (NSUInteger i = 0; i < [accountsArray count]; i++) {
+				ACAccount *twitterAccount = [accountsArray objectAtIndex:i];
+                NSLog(@"account: %@", twitterAccount);
+				
+				TWRequest *postRequest = [[TWRequest alloc] initWithURL:[NSURL URLWithString:@"http://api.twitter.com/1/statuses/update.json"] parameters:[NSDictionary dictionaryWithObject:@"hello, world" forKey:@"status"] requestMethod:TWRequestMethodPOST];
+				
+				[postRequest setAccount:twitterAccount];
+				
+				[postRequest performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
+					NSString *output = [NSString stringWithFormat:@"HTTP response status: %i", [urlResponse statusCode]];
+                    NSLog(@"%@", output);
+					[self performSelectorOnMainThread:@selector(displayText:) withObject:output waitUntilDone:NO];
+				}];
+			}
+        }
+	}];
+}
+
 - (void)displayText:(NSString *)text
 {
     self.tweetStatusLabel.text = text;

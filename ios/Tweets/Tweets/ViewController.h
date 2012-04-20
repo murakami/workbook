@@ -15,5 +15,6 @@
 @property (strong, nonatomic) IBOutlet UILabel  *tweetStatusLabel;
 
 - (IBAction)tweet:(id)sender;
+- (IBAction)tweet2:(id)sender;
 
 @end
