@@ -52,10 +52,33 @@
                                     <action selector="tweet2:" destination="2" eventType="touchDown" id="HgX-Nb-X2g"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ahn-hs-6zd">
+                                <rect key="frame" x="20" y="139" width="81" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="timeline">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="timeline:" destination="2" eventType="touchDown" id="apK-z1-mq7"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="message box" id="qDR-Ev-MWe">
+                                <rect key="frame" x="20" y="184" width="280" height="256"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="msgBoxTextView" destination="qDR-Ev-MWe" id="G12-ga-XNU"/>
                         <outlet property="tweetStatusLabel" destination="kYf-CS-i8E" id="8mc-Uu-o82"/>
                     </connections>
                 </viewController>
@@ -66,8 +89,10 @@
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
+                <relationship kind="action" name="timeline:"/>
                 <relationship kind="action" name="tweet2:"/>
                 <relationship kind="action" name="tweet:"/>
+                <relationship kind="outlet" name="msgBoxTextView" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="tweetStatusLabel" candidateClass="UILabel"/>
             </relationships>
         </class>

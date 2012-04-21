@@ -10,12 +10,14 @@
 
 @interface ViewController ()
 - (void)displayText:(NSString *)text;
+- (void)msgBox:(NSString *)text;
 - (void)canTweetStatus;
 @end
 
 @implementation ViewController
 
 @synthesize tweetStatusLabel = _tweetStatusLabel;
+@synthesize msgBoxTextView = _msgBoxTextView;
 
 - (void)viewDidLoad
 {
@@ -103,9 +105,34 @@
 	}];
 }
 
+- (IBAction)timeline:(id)sender
+{
+    TWRequest *postRequest = [[TWRequest alloc] initWithURL:[NSURL URLWithString:@"http://api.twitter.com/1/statuses/public_timeline.json"] parameters:nil requestMethod:TWRequestMethodGET];
+	
+	[postRequest performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
+		NSString *output;
+		
+		if ([urlResponse statusCode] == 200) {
+			NSError *jsonParsingError = nil;
+			NSDictionary *publicTimeline = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:&jsonParsingError];
+			output = [NSString stringWithFormat:@"HTTP response status: %i\nPublic timeline:\n%@", [urlResponse statusCode], publicTimeline];
+		}
+		else {
+			output = [NSString stringWithFormat:@"HTTP response status: %i\n", [urlResponse statusCode]];
+		}
+		
+		[self performSelectorOnMainThread:@selector(msgBox:) withObject:output waitUntilDone:NO];
+	}];
+}
+
 - (void)displayText:(NSString *)text
 {
     self.tweetStatusLabel.text = text;
+}
+
+- (void)msgBox:(NSString *)text
+{
+    self.msgBoxTextView.text = text;
 }
 
 - (void)canTweetStatus {

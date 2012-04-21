@@ -12,9 +12,11 @@
 
 @interface ViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UILabel  *tweetStatusLabel;
+@property (strong, nonatomic) IBOutlet UILabel      *tweetStatusLabel;
+@property (strong, nonatomic) IBOutlet UITextView   *msgBoxTextView;
 
 - (IBAction)tweet:(id)sender;
 - (IBAction)tweet2:(id)sender;
+- (IBAction)timeline:(id)sender;
 
 @end
