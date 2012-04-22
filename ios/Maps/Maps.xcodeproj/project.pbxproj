@@ -20,6 +20,7 @@
 		564D6B8315442A7E00977252 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 564D6B6415442A7E00977252 /* Foundation.framework */; };
 		564D6B8B15442A7E00977252 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 564D6B8915442A7E00977252 /* InfoPlist.strings */; };
 		564D6B8E15442A7E00977252 /* MapsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 564D6B8D15442A7E00977252 /* MapsTests.m */; };
+		564D6B9815442D7700977252 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 564D6B9715442D7700977252 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		564D6B8A15442A7E00977252 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		564D6B8C15442A7E00977252 /* MapsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapsTests.h; sourceTree = "<group>"; };
 		564D6B8D15442A7E00977252 /* MapsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapsTests.m; sourceTree = "<group>"; };
+		564D6B9715442D7700977252 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				564D6B6315442A7E00977252 /* UIKit.framework in Frameworks */,
 				564D6B6515442A7E00977252 /* Foundation.framework in Frameworks */,
 				564D6B6715442A7E00977252 /* CoreGraphics.framework in Frameworks */,
+				564D6B9815442D7700977252 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +106,7 @@
 				564D6B6215442A7E00977252 /* UIKit.framework */,
 				564D6B6415442A7E00977252 /* Foundation.framework */,
 				564D6B6615442A7E00977252 /* CoreGraphics.framework */,
+				564D6B9715442D7700977252 /* MapKit.framework */,
 				564D6B8015442A7E00977252 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
