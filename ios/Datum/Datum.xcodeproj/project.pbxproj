@@ -21,7 +21,7 @@
 		564D6BE915458DF900977252 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 564D6BE715458DF900977252 /* InfoPlist.strings */; };
 		564D6BEC15458DF900977252 /* DatumTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 564D6BEB15458DF900977252 /* DatumTests.m */; };
 		564D6C4315459B1F00977252 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 564D6C4215459B1F00977252 /* CoreData.framework */; };
-		564D6C4615459E6D00977252 /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 564D6C4415459E6D00977252 /* Data.xcdatamodeld */; };
+		564D6C4615459E6D00977252 /* Datum.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 564D6C4415459E6D00977252 /* Datum.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +55,7 @@
 		564D6BEA15458DF900977252 /* DatumTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DatumTests.h; sourceTree = "<group>"; };
 		564D6BEB15458DF900977252 /* DatumTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DatumTests.m; sourceTree = "<group>"; };
 		564D6C4215459B1F00977252 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		564D6C4515459E6D00977252 /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
+		564D6C4515459E6D00977252 /* Datum.xcdatamodel */ = {isa = PBXFileReference; path = Datum.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +122,7 @@
 				564D6BD215458DF900977252 /* MainStoryboard.storyboard */,
 				564D6BD515458DF900977252 /* ViewController.h */,
 				564D6BD615458DF900977252 /* ViewController.m */,
-				564D6C4415459E6D00977252 /* Data.xcdatamodeld */,
+				564D6C4415459E6D00977252 /* Datum.xcdatamodeld */,
 				564D6BC715458DF900977252 /* Supporting Files */,
 			);
 			path = Datum;
@@ -268,7 +268,7 @@
 				564D6BCD15458DF900977252 /* main.m in Sources */,
 				564D6BD115458DF900977252 /* AppDelegate.m in Sources */,
 				564D6BD715458DF900977252 /* ViewController.m in Sources */,
-				564D6C4615459E6D00977252 /* Data.xcdatamodeld in Sources */,
+				564D6C4615459E6D00977252 /* Datum.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,13 +450,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		564D6C4415459E6D00977252 /* Data.xcdatamodeld */ = {
+		564D6C4415459E6D00977252 /* Datum.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				564D6C4515459E6D00977252 /* Data.xcdatamodel */,
+				564D6C4515459E6D00977252 /* Datum.xcdatamodel */,
 			);
-			currentVersion = 564D6C4515459E6D00977252 /* Data.xcdatamodel */;
-			path = Data.xcdatamodeld;
+			currentVersion = 564D6C4515459E6D00977252 /* Datum.xcdatamodel */;
+			path = Datum.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
