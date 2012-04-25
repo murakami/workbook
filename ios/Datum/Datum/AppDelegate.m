@@ -6,6 +6,7 @@
 //  Copyright (c) 2012年 ビッツ有限会社. All rights reserved.
 //
 
+#import "ViewController.h"
 #import "AppDelegate.h"
 
 @implementation AppDelegate
@@ -18,6 +19,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+    ViewController *controller = (ViewController *)navigationController.topViewController;
+    controller.managedObjectContext = self.managedObjectContext;
     return YES;
 }
 							
