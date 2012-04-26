@@ -6,6 +6,7 @@
 //  Copyright (c) 2012年 ビッツ有限会社. All rights reserved.
 //
 
+#import <GPX/GPX.h>
 #import "ViewController.h"
 
 @interface ViewController ()
@@ -18,6 +19,21 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    GPXRoot *root = [GPXRoot rootWithCreator:@"Sample Application"];
+    
+    GPXWaypoint *waypoint = [root newWaypointWithLatitude:35.658609f longitude:139.745447f];
+    waypoint.name = @"Tokyo Tower";
+    waypoint.comment = @"The old TV tower in Tokyo.";
+    
+    GPXTrack *track = [root newTrack];
+    track.name = @"My New Track";
+    
+    [track newTrackpointWithLatitude:35.658609f longitude:139.745447f];
+    [track newTrackpointWithLatitude:35.758609f longitude:139.745447f];
+    [track newTrackpointWithLatitude:35.828609f longitude:139.745447f];
+    
+    NSLog(@"%@", root);
 }
 
 - (void)viewDidUnload
