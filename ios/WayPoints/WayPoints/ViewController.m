@@ -33,7 +33,7 @@
     [track newTrackpointWithLatitude:35.758609f longitude:139.745447f];
     [track newTrackpointWithLatitude:35.828609f longitude:139.745447f];
     
-    NSLog(@"%@", root);
+    NSLog(@"%@", root.gpx);
 }
 
 - (void)viewDidUnload
