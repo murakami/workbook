@@ -29,9 +29,16 @@
     GPXTrack *track = [root newTrack];
     track.name = @"My New Track";
     
-    [track newTrackpointWithLatitude:35.658609f longitude:139.745447f];
-    [track newTrackpointWithLatitude:35.758609f longitude:139.745447f];
-    [track newTrackpointWithLatitude:35.828609f longitude:139.745447f];
+    GPXTrackPoint   *trkpt = nil;
+    trkpt = [track newTrackpointWithLatitude:35.658609f longitude:139.745447f];
+    trkpt.elevation = 0.0;
+    trkpt.time = [NSDate date];
+    trkpt = [track newTrackpointWithLatitude:35.758609f longitude:139.745447f];
+    trkpt.elevation = 0.0;
+    trkpt.time = [NSDate date];
+    trkpt = [track newTrackpointWithLatitude:35.828609f longitude:139.745447f];
+    trkpt.elevation = 0.0;
+    trkpt.time = [NSDate date];
     
     NSLog(@"%@", root.gpx);
 }
