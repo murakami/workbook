@@ -10,4 +10,12 @@
 
 @interface ViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UITextView   *textView;
+
+- (IBAction)sendPost:(id)sender;
+- (IBAction)sendGet:(id)sender;
+- (IBAction)sendGetList:(id)sender;
+- (IBAction)sendPut:(id)sender;
+- (IBAction)sendDelete:(id)sender;
+
 @end
