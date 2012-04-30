@@ -94,6 +94,9 @@
 				TWRequest *postRequest = [[TWRequest alloc] initWithURL:[NSURL URLWithString:@"http://api.twitter.com/1/statuses/update.json"] parameters:[NSDictionary dictionaryWithObject:@"hello, world" forKey:@"status"] requestMethod:TWRequestMethodPOST];
 				
 				[postRequest setAccount:twitterAccount];
+                
+                NSLog(@"credential: %@", twitterAccount.credential);
+                NSLog(@"identifier: %@", twitterAccount.identifier);
 				
 				[postRequest performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
 					NSString *output = [NSString stringWithFormat:@"HTTP response status: %i", [urlResponse statusCode]];
