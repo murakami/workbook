@@ -9,7 +9,6 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-
 @end
 
 @implementation ViewController
@@ -21,6 +20,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    self.textView.editable = NO;
     self.textView.dataDetectorTypes = UIDataDetectorTypeLink;
     self.textView.text = @"This is a demonstration.\nhttp://www.bitz.co.jp/\nThank you.";
 }

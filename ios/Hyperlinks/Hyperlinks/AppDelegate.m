@@ -8,13 +8,23 @@
 
 #import "AppDelegate.h"
 
+@interface AppDelegate ()
+- (BOOL)myOpenURL:(NSURL *)url;
+@end
+
 @implementation AppDelegate
 
 @synthesize window = _window;
+/* @synthesize openURLMethod = _openURLMethod; */
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    /*
+    self.openURLMethod = class_getInstanceMethod([UIApplication class], @selector(openURL:));
+    Method  myOpenURLMethod = class_getInstanceMethod([AppDelegate class], @selector(myOpenURL:));
+    method_exchangeImplementations(self.openURLMethod,  myOpenURLMethod);
+    */
     return YES;
 }
 							
@@ -43,6 +53,29 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    NSLog(@"%s", __func__);
+    NSLog(@"url: %@", url);
+    return NO;
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation
+{
+    NSLog(@"%s", __func__);
+    NSLog(@"url: %@", url);
+    return NO;
+}
+
+- (BOOL)myOpenURL:(NSURL *)url
+{
+    NSLog(@"%s, url(%@)", __func__, url);
+    return YES;
 }
 
 @end

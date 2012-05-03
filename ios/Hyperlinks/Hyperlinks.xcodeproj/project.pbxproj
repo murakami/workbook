@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5673625D155220350099AC74 /* MyApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 5673625C155220350099AC74 /* MyApplication.m */; };
 		56B563CE155201DB007EE614 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B563CD155201DB007EE614 /* UIKit.framework */; };
 		56B563D0155201DB007EE614 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B563CF155201DB007EE614 /* Foundation.framework */; };
 		56B563D2155201DB007EE614 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B563D1155201DB007EE614 /* CoreGraphics.framework */; };
@@ -33,6 +34,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5673625815521B280099AC74 /* libobjc.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libobjc.dylib; path = usr/lib/libobjc.dylib; sourceTree = SDKROOT; };
+		5673625B155220350099AC74 /* MyApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyApplication.h; sourceTree = "<group>"; };
+		5673625C155220350099AC74 /* MyApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyApplication.m; sourceTree = "<group>"; };
 		56B563C9155201DB007EE614 /* Hyperlinks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hyperlinks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56B563CD155201DB007EE614 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		56B563CF155201DB007EE614 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -100,6 +104,7 @@
 		56B563CC155201DB007EE614 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5673625815521B280099AC74 /* libobjc.dylib */,
 				56B563CD155201DB007EE614 /* UIKit.framework */,
 				56B563CF155201DB007EE614 /* Foundation.framework */,
 				56B563D1155201DB007EE614 /* CoreGraphics.framework */,
@@ -111,6 +116,8 @@
 		56B563D3155201DB007EE614 /* Hyperlinks */ = {
 			isa = PBXGroup;
 			children = (
+				5673625B155220350099AC74 /* MyApplication.h */,
+				5673625C155220350099AC74 /* MyApplication.m */,
 				56B563DC155201DB007EE614 /* AppDelegate.h */,
 				56B563DD155201DB007EE614 /* AppDelegate.m */,
 				56B563DF155201DB007EE614 /* MainStoryboard.storyboard */,
@@ -261,6 +268,7 @@
 				56B563DA155201DB007EE614 /* main.m in Sources */,
 				56B563DE155201DB007EE614 /* AppDelegate.m in Sources */,
 				56B563E4155201DB007EE614 /* ViewController.m in Sources */,
+				5673625D155220350099AC74 /* MyApplication.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +438,7 @@
 				56B563FE155201DB007EE614 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		56B563FF155201DB007EE614 /* Build configuration list for PBXNativeTarget "HyperlinksTests" */ = {
 			isa = XCConfigurationList;
@@ -438,6 +447,7 @@
 				56B56401155201DB007EE614 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

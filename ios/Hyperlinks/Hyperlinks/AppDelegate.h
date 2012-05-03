@@ -6,10 +6,12 @@
 //  Copyright (c) 2012年 ビッツ有限会社. All rights reserved.
 //
 
+/* #import <objc/message.h> */
 #import <UIKit/UIKit.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) UIWindow  *window;
+/* @property (assign, nonatomic) Method    openURLMethod; */
 
 @end
