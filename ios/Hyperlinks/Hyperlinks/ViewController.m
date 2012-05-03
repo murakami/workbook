@@ -14,14 +14,20 @@
 
 @implementation ViewController
 
+@synthesize textView = _textView;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.textView.dataDetectorTypes = UIDataDetectorTypeLink;
+    self.textView.text = @"This is a demonstration.\nhttp://www.bitz.co.jp/\nThank you.";
 }
 
 - (void)viewDidUnload
 {
+    self.textView = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
