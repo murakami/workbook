@@ -10,7 +10,7 @@
 #import "ViewController.h"
 
 static NSString *kReceiveNotification = @"receiveNotification";
-static NSString *kURL = @"http://mbc2d.local/PushNotification/register.php";
+static NSString *kURL = @"http://bitz.local/PushNotification/register.php";
 
 @interface ViewController ()
 
@@ -93,7 +93,7 @@ static NSString *kURL = @"http://mbc2d.local/PushNotification/register.php";
     
     ConnectionViewController    *viewController = [self.storyboard
                                                    instantiateViewControllerWithIdentifier:@"ConnectionViewController"];
-    [viewController setUrlRequest:request];
+    viewController.urlRequest = request;
     [self presentModalViewController:viewController animated:NO];
     
     if (viewController.view.window) {
