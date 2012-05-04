@@ -36,6 +36,9 @@
 		56CB011F15534D0E00852451 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 56CB011D15534D0E00852451 /* InfoPlist.strings */; };
 		56CB012215534D0E00852451 /* PushNotificationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CB012115534D0E00852451 /* PushNotificationTests.m */; };
 		56CB0138155369DA00852451 /* register.php in CopyFiles */ = {isa = PBXBuildFile; fileRef = 56CB01311553684500852451 /* register.php */; };
+		56D7B8201554923000140F83 /* index.html in CopyFiles */ = {isa = PBXBuildFile; fileRef = 56D7B81C155491BA00140F83 /* index.html */; };
+		56D7B8211554924000140F83 /* push.php in CopyFiles */ = {isa = PBXBuildFile; fileRef = 56D7B81E155491F200140F83 /* push.php */; };
+		56D7B8221554925100140F83 /* push.html in CopyFiles */ = {isa = PBXBuildFile; fileRef = 56D7B81F1554921600140F83 /* push.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +65,9 @@
 			dstPath = /Library/WebServer/Documents/PushNotification/;
 			dstSubfolderSpec = 0;
 			files = (
+				56D7B8221554925100140F83 /* push.html in CopyFiles */,
+				56D7B8211554924000140F83 /* push.php in CopyFiles */,
+				56D7B8201554923000140F83 /* index.html in CopyFiles */,
 				56CB0138155369DA00852451 /* register.php in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,6 +98,9 @@
 		56CB012115534D0E00852451 /* PushNotificationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushNotificationTests.m; sourceTree = "<group>"; };
 		56CB01311553684500852451 /* register.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = register.php; sourceTree = "<group>"; };
 		56CB01321553687100852451 /* PushNotificationDB.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = PushNotificationDB.php; sourceTree = "<group>"; };
+		56D7B81C155491BA00140F83 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		56D7B81E155491F200140F83 /* push.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = push.php; sourceTree = "<group>"; };
+		56D7B81F1554921600140F83 /* push.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = push.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +209,9 @@
 			children = (
 				56CB01311553684500852451 /* register.php */,
 				56CB01321553687100852451 /* PushNotificationDB.php */,
+				56D7B81C155491BA00140F83 /* index.html */,
+				56D7B81E155491F200140F83 /* push.php */,
+				56D7B81F1554921600140F83 /* push.html */,
 			);
 			name = "Site Files";
 			sourceTree = "<group>";
