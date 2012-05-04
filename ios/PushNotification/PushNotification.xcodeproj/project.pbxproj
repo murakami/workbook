@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		56CB01331553695900852451 /* CopySiteFiles */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 56CB01341553695900852451 /* Build configuration list for PBXAggregateTarget "CopySiteFiles" */;
+			buildPhases = (
+				56CB01371553698F00852451 /* CopyFiles */,
+			);
+			dependencies = (
+			);
+			name = CopySiteFiles;
+			productName = CopySiteFiles;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		56CB00F715534D0D00852451 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56CB00F615534D0D00852451 /* UIKit.framework */; };
 		56CB00F915534D0D00852451 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56CB00F815534D0D00852451 /* Foundation.framework */; };
@@ -20,6 +34,7 @@
 		56CB011715534D0E00852451 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56CB00F815534D0D00852451 /* Foundation.framework */; };
 		56CB011F15534D0E00852451 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 56CB011D15534D0E00852451 /* InfoPlist.strings */; };
 		56CB012215534D0E00852451 /* PushNotificationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CB012115534D0E00852451 /* PushNotificationTests.m */; };
+		56CB0138155369DA00852451 /* register.php in CopyFiles */ = {isa = PBXBuildFile; fileRef = 56CB01311553684500852451 /* register.php */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +45,27 @@
 			remoteGlobalIDString = 56CB00F115534D0D00852451;
 			remoteInfo = PushNotification;
 		};
+		56CB013A15536A3B00852451 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56CB00E915534D0D00852451 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56CB01331553695900852451;
+			remoteInfo = CopySiteFiles;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		56CB01371553698F00852451 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /Library/WebServer/Documents/PushNotification/;
+			dstSubfolderSpec = 0;
+			files = (
+				56CB0138155369DA00852451 /* register.php in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		56CB00F215534D0D00852451 /* PushNotification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushNotification.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +87,8 @@
 		56CB011E15534D0E00852451 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		56CB012015534D0E00852451 /* PushNotificationTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushNotificationTests.h; sourceTree = "<group>"; };
 		56CB012115534D0E00852451 /* PushNotificationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushNotificationTests.m; sourceTree = "<group>"; };
+		56CB01311553684500852451 /* register.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = register.php; sourceTree = "<group>"; };
+		56CB01321553687100852451 /* PushNotificationDB.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = PushNotificationDB.php; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +154,8 @@
 				56CB010B15534D0E00852451 /* ViewController.h */,
 				56CB010C15534D0E00852451 /* ViewController.m */,
 				56CB00FD15534D0D00852451 /* Supporting Files */,
+				56CB0130155367C100852451 /* Resources */,
+				56CB012B1553678000852451 /* Site Files */,
 			);
 			path = PushNotification;
 			sourceTree = "<group>";
@@ -151,6 +190,22 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		56CB012B1553678000852451 /* Site Files */ = {
+			isa = PBXGroup;
+			children = (
+				56CB01311553684500852451 /* register.php */,
+				56CB01321553687100852451 /* PushNotificationDB.php */,
+			);
+			name = "Site Files";
+			sourceTree = "<group>";
+		};
+		56CB0130155367C100852451 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -165,6 +220,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				56CB013B15536A3B00852451 /* PBXTargetDependency */,
 			);
 			name = PushNotification;
 			productName = PushNotification;
@@ -213,6 +269,7 @@
 			targets = (
 				56CB00F115534D0D00852451 /* PushNotification */,
 				56CB011215534D0E00852451 /* PushNotificationTests */,
+				56CB01331553695900852451 /* CopySiteFiles */,
 			);
 		};
 /* End PBXProject section */
@@ -279,6 +336,11 @@
 			isa = PBXTargetDependency;
 			target = 56CB00F115534D0D00852451 /* PushNotification */;
 			targetProxy = 56CB011815534D0E00852451 /* PBXContainerItemProxy */;
+		};
+		56CB013B15536A3B00852451 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 56CB01331553695900852451 /* CopySiteFiles */;
+			targetProxy = 56CB013A15536A3B00852451 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -411,6 +473,20 @@
 			};
 			name = Release;
 		};
+		56CB01351553695900852451 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		56CB01361553695900852451 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -430,6 +506,7 @@
 				56CB012715534D0E00852451 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		56CB012815534D0E00852451 /* Build configuration list for PBXNativeTarget "PushNotificationTests" */ = {
 			isa = XCConfigurationList;
@@ -438,6 +515,16 @@
 				56CB012A15534D0E00852451 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		56CB01341553695900852451 /* Build configuration list for PBXAggregateTarget "CopySiteFiles" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56CB01351553695900852451 /* Debug */,
+				56CB01361553695900852451 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
