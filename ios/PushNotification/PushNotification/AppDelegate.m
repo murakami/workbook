@@ -64,4 +64,9 @@
     [self.viewController didFailToRegisterForRemoteNotificationsWithError:error];
 }
 
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    [self.viewController didReceiveRemoteNotification:userInfo];
+}
+
 @end

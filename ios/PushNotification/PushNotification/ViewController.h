@@ -13,6 +13,7 @@
 @interface ViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UISwitch         *receiveNotificationSwitch;
+@property (strong, nonatomic) IBOutlet UILabel          *messageLabel;
 @property (strong, nonatomic) ConnectionViewController  *connectionViewController;
 
 - (IBAction)toggleReceiveNotification:(id)sender;
@@ -20,5 +21,6 @@
 - (NSString *)hexDumpString:(NSData *)data;
 - (NSData *)formEncodedDataFromDictionary:(NSDictionary *)dict;
 - (void)didFailToRegisterForRemoteNotificationsWithError:(NSError *)error;
+- (void)didReceiveRemoteNotification:(NSDictionary *)userInfo;
 
 @end

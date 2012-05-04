@@ -19,6 +19,7 @@ static NSString *kURL = @"http://bitz.local/PushNotification/register.php";
 @implementation ViewController
 
 @synthesize receiveNotificationSwitch = _receiveNotificationSwitch;
+@synthesize messageLabel = _messageLabel;
 @synthesize connectionViewController = _connectionViewController;
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -33,6 +34,7 @@ static NSString *kURL = @"http://bitz.local/PushNotification/register.php";
 - (void)dealloc
 {
     self.connectionViewController = nil;
+    self.messageLabel = nil;
     self.receiveNotificationSwitch = nil;
     /* [super dealloc]; */
 }
@@ -149,6 +151,26 @@ static NSString *kURL = @"http://bitz.local/PushNotification/register.php";
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
     [alert show];
+}
+
+- (void)didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    NSString    *message = [[userInfo objectForKey:@"aps"] objectForKey:@"alert"];
+    self.messageLabel.text = message;
+    
+    NSString    *colorStr = [userInfo objectForKey:@"color"];
+    if (colorStr) {
+        NSScanner   *scanner = [NSScanner scannerWithString:colorStr];
+        unsigned int    u;
+        if ([scanner scanHexInt:&u]) {
+            double  b = (u & 0xFF);
+            double  g = ((u >> 8) & 0xFF);
+            double  r = ((u >> 16) & 0xFF);
+            UIColor *color = [UIColor colorWithRed:(r / 255.0) green:(g / 255.0) blue:(b / 255.0) alpha:1.0];
+            [self.view setBackgroundColor:color];
+            [self.view setNeedsDisplay];
+        }
+    }
 }
 
 @end
