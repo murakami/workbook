@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class ConnectionViewController;
+
 @interface ViewController : UIViewController
+
+@property (strong, nonatomic) IBOutlet UISwitch         *receiveNotificationSwitch;
+@property (strong, nonatomic) ConnectionViewController  *connectionViewController;
 
 @end

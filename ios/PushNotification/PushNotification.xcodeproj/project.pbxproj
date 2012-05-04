@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		56B1FA2C155374A200375977 /* ConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B1FA2B155374A200375977 /* ConnectionViewController.m */; };
 		56CB00F715534D0D00852451 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56CB00F615534D0D00852451 /* UIKit.framework */; };
 		56CB00F915534D0D00852451 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56CB00F815534D0D00852451 /* Foundation.framework */; };
 		56CB00FB15534D0D00852451 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56CB00FA15534D0D00852451 /* CoreGraphics.framework */; };
@@ -68,6 +69,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		56B1FA2A155374A200375977 /* ConnectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionViewController.h; sourceTree = "<group>"; };
+		56B1FA2B155374A200375977 /* ConnectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionViewController.m; sourceTree = "<group>"; };
 		56CB00F215534D0D00852451 /* PushNotification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushNotification.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56CB00F615534D0D00852451 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		56CB00F815534D0D00852451 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -153,6 +156,8 @@
 				56CB010815534D0E00852451 /* MainStoryboard.storyboard */,
 				56CB010B15534D0E00852451 /* ViewController.h */,
 				56CB010C15534D0E00852451 /* ViewController.m */,
+				56B1FA2A155374A200375977 /* ConnectionViewController.h */,
+				56B1FA2B155374A200375977 /* ConnectionViewController.m */,
 				56CB00FD15534D0D00852451 /* Supporting Files */,
 				56CB0130155367C100852451 /* Resources */,
 				56CB012B1553678000852451 /* Site Files */,
@@ -318,6 +323,7 @@
 				56CB010315534D0D00852451 /* main.m in Sources */,
 				56CB010715534D0D00852451 /* AppDelegate.m in Sources */,
 				56CB010D15534D0E00852451 /* ViewController.m in Sources */,
+				56B1FA2C155374A200375977 /* ConnectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

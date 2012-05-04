@@ -6,6 +6,7 @@
 //  Copyright (c) 2012年 ビッツ有限会社. All rights reserved.
 //
 
+#import "ConnectionViewController.h"
 #import "ViewController.h"
 
 @interface ViewController ()
@@ -13,6 +14,9 @@
 @end
 
 @implementation ViewController
+
+@synthesize receiveNotificationSwitch = _receiveNotificationSwitch;
+@synthesize connectionViewController = _connectionViewController;
 
 - (void)viewDidLoad
 {
