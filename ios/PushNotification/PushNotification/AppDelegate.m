@@ -6,15 +6,24 @@
 //  Copyright (c) 2012年 ビッツ有限会社. All rights reserved.
 //
 
+#import "ViewController.h"
 #import "AppDelegate.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
+@synthesize viewController = _viewController;
+
+- (void)dealloc
+{
+    self.viewController = nil;
+    /* [super dealloc]; */
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    self.viewController = (ViewController *)self.window.rootViewController;
     return YES;
 }
 							
@@ -43,6 +52,16 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    [self.viewController didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    [self.viewController didFailToRegisterForRemoteNotificationsWithError:error];
 }
 
 @end

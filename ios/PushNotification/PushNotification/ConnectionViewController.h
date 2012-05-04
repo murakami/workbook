@@ -13,7 +13,7 @@
 @property (strong, nonatomic) NSURLRequest      *urlRequest;
 @property (strong, nonatomic) NSURLConnection   *urlConnection;
 @property (strong, nonatomic) NSMutableData     *downloadedData;
-@property (strong, nonatomic) NSURLResponse     *rulResponse;
+@property (strong, nonatomic) NSURLResponse     *urlResponse;
 
 - (IBAction)cancel:(id)sender;
 
