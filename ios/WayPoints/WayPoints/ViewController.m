@@ -18,6 +18,7 @@
 @implementation ViewController
 
 @synthesize messageLabel = _messageLabel;
+@synthesize gpxTextView = _gpxTextView;
 @synthesize document = _document;
 @synthesize locationManager = _locationManager;
 
@@ -61,6 +62,7 @@
 - (void)viewDidUnload
 {
     self.messageLabel = nil;
+    self.gpxTextView = nil;
     self.document = nil;
     self.locationManager = nil;
 
@@ -82,6 +84,7 @@
 - (IBAction)dump:(id)sender
 {
     NSLog(@"%@", self.document.gpxRoot.gpx);
+    self.gpxTextView.text = self.document.gpxRoot.gpx;
 }
 
 - (void)locationManager:(CLLocationManager *)manager
