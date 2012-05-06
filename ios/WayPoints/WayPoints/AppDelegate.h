@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class Document;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) UIWindow  *window;
+@property (strong, nonatomic) Document  *document;
 
 @end

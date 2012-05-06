@@ -43,6 +43,8 @@
 		5667DC331549ECB100E81A0D /* GPXWaypoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 5667DC1C1549ECB100E81A0D /* GPXWaypoint.m */; };
 		5667DC341549ECB100E81A0D /* GPXXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 5667DC1E1549ECB100E81A0D /* GPXXML.m */; };
 		5667DC461549F4AF00E81A0D /* mystic_basin_trail.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 5667DC451549F4AF00E81A0D /* mystic_basin_trail.gpx */; };
+		56A184911555FF250065D873 /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A184901555FF250065D873 /* Document.m */; };
+		56A18498155603DA0065D873 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56A18497155603DA0065D873 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +124,9 @@
 		5667DC1D1549ECB100E81A0D /* GPXXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPXXML.h; sourceTree = "<group>"; };
 		5667DC1E1549ECB100E81A0D /* GPXXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPXXML.m; sourceTree = "<group>"; };
 		5667DC451549F4AF00E81A0D /* mystic_basin_trail.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = mystic_basin_trail.gpx; sourceTree = "<group>"; };
+		56A1848F1555FF250065D873 /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
+		56A184901555FF250065D873 /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
+		56A18497155603DA0065D873 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +137,7 @@
 				5667DB681549881800E81A0D /* UIKit.framework in Frameworks */,
 				5667DB6A1549881800E81A0D /* Foundation.framework in Frameworks */,
 				5667DB6C1549881800E81A0D /* CoreGraphics.framework in Frameworks */,
+				56A18498155603DA0065D873 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +179,7 @@
 				5667DB671549881800E81A0D /* UIKit.framework */,
 				5667DB691549881800E81A0D /* Foundation.framework */,
 				5667DB6B1549881800E81A0D /* CoreGraphics.framework */,
+				56A18497155603DA0065D873 /* CoreLocation.framework */,
 				5667DB851549881800E81A0D /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
@@ -186,6 +193,8 @@
 				5667DB791549881800E81A0D /* MainStoryboard.storyboard */,
 				5667DB7C1549881800E81A0D /* ViewController.h */,
 				5667DB7D1549881800E81A0D /* ViewController.m */,
+				56A1848F1555FF250065D873 /* Document.h */,
+				56A184901555FF250065D873 /* Document.m */,
 				5667DBF01549ECB100E81A0D /* GPX */,
 				5667DC421549F42200E81A0D /* Resources */,
 				5667DB6E1549881800E81A0D /* Supporting Files */,
@@ -425,6 +434,7 @@
 				5667DC321549ECB100E81A0D /* GPXType.m in Sources */,
 				5667DC331549ECB100E81A0D /* GPXWaypoint.m in Sources */,
 				5667DC341549ECB100E81A0D /* GPXXML.m in Sources */,
+				56A184911555FF250065D873 /* Document.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
