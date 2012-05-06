@@ -99,7 +99,7 @@
     GPXTrackPoint   *trkpt = nil;
     trkpt = [self.document.gpxTrack newTrackpointWithLatitude:newLocation.coordinate.latitude
                                                     longitude:newLocation.coordinate.longitude];
-    trkpt.time = [NSDate date];
+    trkpt.time = newLocation.timestamp;
     
     NSString    *s = [[NSString alloc] initWithFormat:@"(%f, %f)",
                       newLocation.coordinate.latitude,
