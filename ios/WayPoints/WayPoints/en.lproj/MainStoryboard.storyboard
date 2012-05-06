@@ -63,6 +63,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="gpxTextView" destination="7Bc-c5-hsV" id="2kf-zE-a1W"/>
                         <outlet property="messageLabel" destination="aHZ-qm-Ea9" id="jm7-f0-epH"/>
                     </connections>
                 </viewController>
@@ -75,6 +76,7 @@
             <relationships>
                 <relationship kind="action" name="dump:"/>
                 <relationship kind="action" name="trackPoint:"/>
+                <relationship kind="outlet" name="gpxTextView" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="messageLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
