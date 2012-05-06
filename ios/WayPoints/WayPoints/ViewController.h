@@ -19,5 +19,6 @@
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
 - (IBAction)trackPoint:(id)sender;
+- (IBAction)dump:(id)sender;
 
 @end

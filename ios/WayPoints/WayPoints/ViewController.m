@@ -79,6 +79,11 @@
     [self.locationManager startUpdatingLocation];
 }
 
+- (IBAction)dump:(id)sender
+{
+    NSLog(@"%@", self.document.gpxRoot.gpx);
+}
+
 - (void)locationManager:(CLLocationManager *)manager
     didUpdateToLocation:(CLLocation *)newLocation
            fromLocation:(CLLocation *)oldLocation
@@ -93,7 +98,10 @@
                                                     longitude:newLocation.coordinate.longitude];
     trkpt.time = [NSDate date];
     
-    self.messageLabel.text = @"success";
+    NSString    *s = [[NSString alloc] initWithFormat:@"(%f, %f)",
+                      newLocation.coordinate.latitude,
+                      newLocation.coordinate.longitude];
+    self.messageLabel.text = s;
 }
 
 - (void)locationManager:(CLLocationManager *)manager
