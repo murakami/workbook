@@ -10,7 +10,6 @@
 #import <CoreLocation/CoreLocation.h>
 
 @class Document;
-@class CLLocationManager;
 
 @interface ViewController : UIViewController <CLLocationManagerDelegate>
 
@@ -18,6 +17,7 @@
 @property (strong, nonatomic) IBOutlet UITextView   *gpxTextView;
 @property (strong, nonatomic) Document              *document;
 @property (strong, nonatomic) CLLocationManager     *locationManager;
+@property (strong, nonatomic) CLGeocoder            *geocoder;
 
 - (IBAction)trackPoint:(id)sender;
 - (IBAction)dump:(id)sender;

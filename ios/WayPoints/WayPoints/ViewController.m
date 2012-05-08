@@ -21,6 +21,7 @@
 @synthesize gpxTextView = _gpxTextView;
 @synthesize document = _document;
 @synthesize locationManager = _locationManager;
+@synthesize geocoder = _geocoder;
 
 - (void)viewDidLoad
 {
@@ -33,6 +34,8 @@
     
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
+    
+    self.geocoder = [[CLGeocoder alloc] init];
     
     /*
     GPXRoot *root = [GPXRoot rootWithCreator:@"Sample Application"];
@@ -65,6 +68,7 @@
     self.gpxTextView = nil;
     self.document = nil;
     self.locationManager = nil;
+    self.geocoder = nil;
 
     [super viewDidUnload];
     // Release any retained subviews of the main view.
@@ -105,6 +109,29 @@
                       newLocation.coordinate.latitude,
                       newLocation.coordinate.longitude];
     self.messageLabel.text = s;
+    
+    [self.geocoder reverseGeocodeLocation:newLocation completionHandler:
+        ^(NSArray* placemarks, NSError* error) {
+            NSMutableString *str = [NSMutableString stringWithString:@""];
+            if (!error) {
+                for (CLPlacemark *placemark in placemarks) {
+                    for (NSString *key in placemark.addressDictionary.allKeys) {
+                        NSLog(@"Key: %@", key);
+                    }
+                    NSArray *array = [placemark.addressDictionary objectForKey:@"FormattedAddressLines"];
+                    for (NSString *line in array) {
+                        [str appendString:line];
+                        [str appendString:@", "];
+                    }
+                    [str appendString:@"\n"];
+                }
+            }
+            else {
+                str = [NSString stringWithFormat:@"error: %@", error];
+            }
+            NSLog(@"%@", str);
+            self.gpxTextView.text = str;
+        }];
 }
 
 - (void)locationManager:(CLLocationManager *)manager
