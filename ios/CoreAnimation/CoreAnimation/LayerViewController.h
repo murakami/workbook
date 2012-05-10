@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface LayerViewController : UIViewController
+
+@property (strong, nonatomic) UIImage   *backgroundImage;
+@property (strong, nonatomic) UIImage   *frontImage;
+@property (strong, nonatomic) UIImage   *rearImage;
+@property (strong, nonatomic) CALayer   *cardLayer;
 
 @end
