@@ -15,5 +15,7 @@
 @property (strong, nonatomic) UIImage   *frontImage;
 @property (strong, nonatomic) UIImage   *rearImage;
 @property (strong, nonatomic) CALayer   *cardLayer;
+@property (strong, nonatomic) CALayer   *frontLayer;
+@property (strong, nonatomic) CALayer   *rearLayer;
 
 @end
