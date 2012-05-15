@@ -12,5 +12,6 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate, FBSessionDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) Facebook *facebook;
 
 @end
