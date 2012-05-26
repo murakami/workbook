@@ -78,9 +78,9 @@
 			children = (
 				565D9E7E156C3C16002BB8D5 /* main.m */,
 				565D9E82156C3C16002BB8D5 /* base64.1 */,
-				565D9E80156C3C16002BB8D5 /* Supporting Files */,
 				565D9E89156C3C51002BB8D5 /* Base64.h */,
 				565D9E8A156C3C51002BB8D5 /* Base64.m */,
+				565D9E80156C3C16002BB8D5 /* Supporting Files */,
 			);
 			path = base64;
 			sourceTree = "<group>";

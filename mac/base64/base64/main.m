@@ -7,15 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Base64.h"
 
 int main(int argc, const char * argv[])
 {
 
     @autoreleasepool {
-        
-        // insert code here...
-        NSLog(@"Hello, World!");
-        
+        DBGMSG(@"GIF89");
+        NSData  *data = [[NSData alloc] initWithBytes:"GIF89" length:5];
+        NSString    *str = [Base64 encodeBase64:data];
+        DBGMSG(@"%@", str);
     }
     return 0;
 }
