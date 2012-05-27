@@ -31,4 +31,42 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+- (IBAction)alertImage:(id)sender
+{
+    UIImage *image = [UIImage imageNamed:@"likeness.png"];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    imageView.frame = CGRectMake(10.0, 80.0, 100.0, 100.0);
+    
+    UIAlertView *alertView = [[UIAlertView alloc] init];
+    alertView.delegate = self;
+    alertView.title = @"Alert Image";
+    alertView.message = @"a likeness";
+    [alertView addSubview:imageView];
+    [alertView addButtonWithTitle:@"NO"];
+    [alertView addButtonWithTitle:@"YES"];
+    alertView.cancelButtonIndex = 0;
+    [alertView show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    DBGMSG(@"%s, buttonIndex(%d)", __func__, (int)buttonIndex);
+}
+
+- (void)willPresentAlertView:(UIAlertView *)alertView
+{
+    CGRect  frame = alertView.frame;
+    frame.origin.y -= 50.0;
+    frame.size.height += 100.0;
+    alertView.frame = frame;
+    
+    for (UIView* view in alertView.subviews) {
+        frame = view.frame;
+        if (frame.origin.y > 80) {
+            frame.origin.y += 100;
+            view.frame = frame;
+        }
+    }
+}
+
 @end
