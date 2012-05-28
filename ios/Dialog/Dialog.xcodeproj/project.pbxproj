@@ -21,6 +21,7 @@
 		563C601F1572CC3400D83F4C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 563C601D1572CC3400D83F4C /* InfoPlist.strings */; };
 		563C60221572CC3400D83F4C /* DialogTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 563C60211572CC3400D83F4C /* DialogTests.m */; };
 		563C60311572CE6B00D83F4C /* likeness.png in Resources */ = {isa = PBXBuildFile; fileRef = 563C60301572CE6B00D83F4C /* likeness.png */; };
+		56FF1AFD1573A982008EF555 /* ModalPaneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56FF1AFC1573A982008EF555 /* ModalPaneViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		563C60201572CC3400D83F4C /* DialogTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DialogTests.h; sourceTree = "<group>"; };
 		563C60211572CC3400D83F4C /* DialogTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DialogTests.m; sourceTree = "<group>"; };
 		563C60301572CE6B00D83F4C /* likeness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = likeness.png; sourceTree = "<group>"; };
+		56FF1AFB1573A982008EF555 /* ModalPaneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalPaneViewController.h; sourceTree = "<group>"; };
+		56FF1AFC1573A982008EF555 /* ModalPaneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalPaneViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,8 @@
 				563C60081572CC3400D83F4C /* MainStoryboard.storyboard */,
 				563C600B1572CC3400D83F4C /* ViewController.h */,
 				563C600C1572CC3400D83F4C /* ViewController.m */,
+				56FF1AFB1573A982008EF555 /* ModalPaneViewController.h */,
+				56FF1AFC1573A982008EF555 /* ModalPaneViewController.m */,
 				563C602F1572CE2300D83F4C /* Resources */,
 				563C5FFD1572CC3400D83F4C /* Supporting Files */,
 			);
@@ -273,6 +278,7 @@
 				563C60031572CC3400D83F4C /* main.m in Sources */,
 				563C60071572CC3400D83F4C /* AppDelegate.m in Sources */,
 				563C600D1572CC3400D83F4C /* ViewController.m in Sources */,
+				56FF1AFD1573A982008EF555 /* ModalPaneViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +448,7 @@
 				563C60271572CC3400D83F4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		563C60281572CC3400D83F4C /* Build configuration list for PBXNativeTarget "DialogTests" */ = {
 			isa = XCConfigurationList;
@@ -450,6 +457,7 @@
 				563C602A1572CC3400D83F4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

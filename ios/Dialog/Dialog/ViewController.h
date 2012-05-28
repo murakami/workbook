@@ -11,5 +11,6 @@
 @interface ViewController : UIViewController <UIAlertViewDelegate>
 
 - (IBAction)alertImage:(id)sender;
+- (IBAction)modalPane:(id)sender;
 
 @end

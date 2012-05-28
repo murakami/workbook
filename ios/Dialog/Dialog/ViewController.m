@@ -6,10 +6,12 @@
 //  Copyright (c) 2012年 ビッツ有限会社. All rights reserved.
 //
 
+#import "ModalPaneViewController.h"
 #import "ViewController.h"
 
 @interface ViewController ()
-
+- (void)didDone:(id)arg;
+- (void)didCancel:(id)arg;
 @end
 
 @implementation ViewController
@@ -48,6 +50,26 @@
     [alertView show];
 }
 
+- (IBAction)modalPane:(id)sender
+{
+    ModalPaneViewController *modalPaneViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ModalPaneViewController"];
+    [modalPaneViewController setCompletionHandler:^(ModalPaneViewControllerResult result) {
+        switch (result) {
+            case ModalPaneViewControllerResultCancelled:
+                [self performSelectorOnMainThread:@selector(didCancel:) withObject:nil waitUntilDone:NO];
+                break;
+            case ModalPaneViewControllerResultDone:
+                [self performSelectorOnMainThread:@selector(didDone:) withObject:nil waitUntilDone:NO];
+                break;
+            default:
+                break;
+        }
+        
+        [self dismissModalViewControllerAnimated:YES];
+    }];
+    [self presentModalViewController:modalPaneViewController animated:YES];
+}
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     DBGMSG(@"%s, buttonIndex(%d)", __func__, (int)buttonIndex);
@@ -67,6 +89,32 @@
             view.frame = frame;
         }
     }
+}
+
+#pragma mark - private
+
+- (void)didDone:(id)arg
+{
+    DBGMSG(@"%s", __func__);
+}
+
+- (void)didCancel:(id)arg
+{
+    DBGMSG(@"%s", __func__);
+}
+
+#pragma mark - ModalPaneViewControllerDelegate
+
+- (void)modalPaneViewControllerDidDone:(ModalPaneViewController *)modalPaneViewController
+{
+    DBGMSG(@"%s", __func__);
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+- (void)modalPaneViewControllerDidCancel:(ModalPaneViewController *)modalPaneViewController
+{
+    DBGMSG(@"%s", __func__);
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 @end
