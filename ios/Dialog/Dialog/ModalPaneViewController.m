@@ -59,9 +59,21 @@
     }
 }
 
+- (void)dumpView:(id)aView level:(int)level
+{
+    for (int i = 0; i < level; i++) printf("\t");
+    printf("%s\n", [[NSString stringWithFormat:@"%@", [[aView class] description]] UTF8String]);
+    for (int i = 0; i < level; i++) printf("\t");
+    printf("%s\n", [[NSString stringWithFormat:@"%@", NSStringFromCGRect([aView frame])] UTF8String]);
+    for (UIView *subview in [aView subviews]) {
+        [self dumpView:subview level:(level + 1)];
+    }
+}
+
 - (IBAction)cancel:(id)sender
 {
     DBGMSG(@"%s", __func__);
+    [self dumpView:self.view level:0];
     if ((self.delegate)
         && ([self.delegate respondsToSelector:@selector(modalPaneViewControllerDidCancel:)])) {
         [self.delegate modalPaneViewControllerDidCancel:self];
