@@ -31,3 +31,5 @@ typedef void (^ModalPaneViewControllerCompletionHandler)(ModalPaneViewController
 - (IBAction)cancel:(id)sender;
 
 @end
+
+/* End Of File */

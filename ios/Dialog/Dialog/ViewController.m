@@ -52,7 +52,11 @@
 
 - (IBAction)modalPane:(id)sender
 {
-    ModalPaneViewController *modalPaneViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ModalPaneViewController"];
+    ModalPaneViewController *modalPaneViewController
+        //= [self.storyboard instantiateViewControllerWithIdentifier:@"ModalPaneViewController"];
+        = [[ModalPaneViewController alloc] 
+           initWithNibName:@"ModalPaneViewController"
+           bundle:nil];
     [modalPaneViewController setCompletionHandler:^(ModalPaneViewControllerResult result) {
         switch (result) {
             case ModalPaneViewControllerResultCancelled:

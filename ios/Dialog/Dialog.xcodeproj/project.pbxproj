@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5615DFB015765C5000D4A476 /* ModalPaneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5615DFAE15765C5000D4A476 /* ModalPaneViewController.m */; };
+		5615DFB115765C5000D4A476 /* ModalPaneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5615DFAF15765C5000D4A476 /* ModalPaneViewController.xib */; };
 		563C5FF71572CC3400D83F4C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 563C5FF61572CC3400D83F4C /* UIKit.framework */; };
 		563C5FF91572CC3400D83F4C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 563C5FF81572CC3400D83F4C /* Foundation.framework */; };
 		563C5FFB1572CC3400D83F4C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 563C5FFA1572CC3400D83F4C /* CoreGraphics.framework */; };
@@ -21,7 +23,6 @@
 		563C601F1572CC3400D83F4C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 563C601D1572CC3400D83F4C /* InfoPlist.strings */; };
 		563C60221572CC3400D83F4C /* DialogTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 563C60211572CC3400D83F4C /* DialogTests.m */; };
 		563C60311572CE6B00D83F4C /* likeness.png in Resources */ = {isa = PBXBuildFile; fileRef = 563C60301572CE6B00D83F4C /* likeness.png */; };
-		56FF1AFD1573A982008EF555 /* ModalPaneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56FF1AFC1573A982008EF555 /* ModalPaneViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5615DFAD15765C5000D4A476 /* ModalPaneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalPaneViewController.h; sourceTree = "<group>"; };
+		5615DFAE15765C5000D4A476 /* ModalPaneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalPaneViewController.m; sourceTree = "<group>"; };
+		5615DFAF15765C5000D4A476 /* ModalPaneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModalPaneViewController.xib; sourceTree = "<group>"; };
 		563C5FF21572CC3300D83F4C /* Dialog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dialog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		563C5FF61572CC3400D83F4C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		563C5FF81572CC3400D83F4C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -55,8 +59,6 @@
 		563C60201572CC3400D83F4C /* DialogTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DialogTests.h; sourceTree = "<group>"; };
 		563C60211572CC3400D83F4C /* DialogTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DialogTests.m; sourceTree = "<group>"; };
 		563C60301572CE6B00D83F4C /* likeness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = likeness.png; sourceTree = "<group>"; };
-		56FF1AFB1573A982008EF555 /* ModalPaneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalPaneViewController.h; sourceTree = "<group>"; };
-		56FF1AFC1573A982008EF555 /* ModalPaneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalPaneViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,8 +123,9 @@
 				563C60081572CC3400D83F4C /* MainStoryboard.storyboard */,
 				563C600B1572CC3400D83F4C /* ViewController.h */,
 				563C600C1572CC3400D83F4C /* ViewController.m */,
-				56FF1AFB1573A982008EF555 /* ModalPaneViewController.h */,
-				56FF1AFC1573A982008EF555 /* ModalPaneViewController.m */,
+				5615DFAD15765C5000D4A476 /* ModalPaneViewController.h */,
+				5615DFAE15765C5000D4A476 /* ModalPaneViewController.m */,
+				5615DFAF15765C5000D4A476 /* ModalPaneViewController.xib */,
 				563C602F1572CE2300D83F4C /* Resources */,
 				563C5FFD1572CC3400D83F4C /* Supporting Files */,
 			);
@@ -241,6 +244,7 @@
 				563C60011572CC3400D83F4C /* InfoPlist.strings in Resources */,
 				563C600A1572CC3400D83F4C /* MainStoryboard.storyboard in Resources */,
 				563C60311572CE6B00D83F4C /* likeness.png in Resources */,
+				5615DFB115765C5000D4A476 /* ModalPaneViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,7 +282,7 @@
 				563C60031572CC3400D83F4C /* main.m in Sources */,
 				563C60071572CC3400D83F4C /* AppDelegate.m in Sources */,
 				563C600D1572CC3400D83F4C /* ViewController.m in Sources */,
-				56FF1AFD1573A982008EF555 /* ModalPaneViewController.m in Sources */,
+				5615DFB015765C5000D4A476 /* ModalPaneViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
