@@ -10,7 +10,11 @@
 
 @interface ViewController : UIViewController <UIAlertViewDelegate>
 
+@property (strong, nonatomic) IBOutlet UIView   *modalPaneView;
+
 - (IBAction)alertImage:(id)sender;
 - (IBAction)modalPane:(id)sender;
+- (IBAction)done:(id)sender;
+- (IBAction)cancel:(id)sender;
 
 @end

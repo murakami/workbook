@@ -16,14 +16,19 @@
 
 @implementation ViewController
 
+@synthesize modalPaneView = _modalPaneView;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.modalPaneView.hidden = YES;
 }
 
 - (void)viewDidUnload
 {
+    self.modalPaneView = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -52,11 +57,12 @@
 
 - (IBAction)modalPane:(id)sender
 {
+#if 0
     ModalPaneViewController *modalPaneViewController
-        //= [self.storyboard instantiateViewControllerWithIdentifier:@"ModalPaneViewController"];
-        = [[ModalPaneViewController alloc] 
-           initWithNibName:@"ModalPaneViewController"
-           bundle:nil];
+        = [self.storyboard instantiateViewControllerWithIdentifier:@"ModalPaneViewController"];
+        /*
+        = [[ModalPaneViewController alloc] initWithNibName:@"ModalPaneViewController" bundle:nil];
+        */
     [modalPaneViewController setCompletionHandler:^(ModalPaneViewControllerResult result) {
         switch (result) {
             case ModalPaneViewControllerResultCancelled:
@@ -72,6 +78,8 @@
         [self dismissModalViewControllerAnimated:YES];
     }];
     [self presentModalViewController:modalPaneViewController animated:YES];
+#endif  /* 0 */
+    self.modalPaneView.hidden = NO;
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -93,6 +101,18 @@
             view.frame = frame;
         }
     }
+}
+
+- (IBAction)done:(id)sender
+{
+    DBGMSG(@"%s", __func__);
+    self.modalPaneView.hidden = YES;
+}
+
+- (IBAction)cancel:(id)sender
+{
+    DBGMSG(@"%s", __func__);
+    self.modalPaneView.hidden = YES;
 }
 
 #pragma mark - private
