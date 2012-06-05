@@ -201,7 +201,7 @@
 		56E7D78014D6BA1E00CD614E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = "ビッツ有限会社";
 			};
 			buildConfigurationList = 56E7D78314D6BA1E00CD614E /* Build configuration list for PBXProject "Defaults" */;
