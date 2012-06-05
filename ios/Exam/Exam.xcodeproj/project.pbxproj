@@ -20,6 +20,7 @@
 		56127D20157E4BAB00D3DD59 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56127D01157E4BAB00D3DD59 /* Foundation.framework */; };
 		56127D28157E4BAB00D3DD59 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 56127D26157E4BAB00D3DD59 /* InfoPlist.strings */; };
 		56127D2B157E4BAB00D3DD59 /* ExamTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56127D2A157E4BAB00D3DD59 /* ExamTests.m */; };
+		56127D3B157E4C6700D3DD59 /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 56127D3A157E4C6700D3DD59 /* Document.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		56127D27157E4BAB00D3DD59 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		56127D29157E4BAB00D3DD59 /* ExamTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExamTests.h; sourceTree = "<group>"; };
 		56127D2A157E4BAB00D3DD59 /* ExamTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExamTests.m; sourceTree = "<group>"; };
+		56127D39157E4C6700D3DD59 /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
+		56127D3A157E4C6700D3DD59 /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +119,8 @@
 				56127D11157E4BAB00D3DD59 /* MainStoryboard.storyboard */,
 				56127D14157E4BAB00D3DD59 /* ViewController.h */,
 				56127D15157E4BAB00D3DD59 /* ViewController.m */,
+				56127D39157E4C6700D3DD59 /* Document.h */,
+				56127D3A157E4C6700D3DD59 /* Document.m */,
 				56127D06157E4BAB00D3DD59 /* Supporting Files */,
 			);
 			path = Exam;
@@ -261,6 +266,7 @@
 				56127D0C157E4BAB00D3DD59 /* main.m in Sources */,
 				56127D10157E4BAB00D3DD59 /* AppDelegate.m in Sources */,
 				56127D16157E4BAB00D3DD59 /* ViewController.m in Sources */,
+				56127D3B157E4C6700D3DD59 /* Document.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
