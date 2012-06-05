@@ -21,6 +21,7 @@
 		56127D28157E4BAB00D3DD59 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 56127D26157E4BAB00D3DD59 /* InfoPlist.strings */; };
 		56127D2B157E4BAB00D3DD59 /* ExamTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56127D2A157E4BAB00D3DD59 /* ExamTests.m */; };
 		56127D3B157E4C6700D3DD59 /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 56127D3A157E4C6700D3DD59 /* Document.m */; };
+		56127D3E157E4FA100D3DD59 /* DocumentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56127D3D157E4FA100D3DD59 /* DocumentTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		56127D2A157E4BAB00D3DD59 /* ExamTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExamTests.m; sourceTree = "<group>"; };
 		56127D39157E4C6700D3DD59 /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
 		56127D3A157E4C6700D3DD59 /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
+		56127D3C157E4FA100D3DD59 /* DocumentTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DocumentTests.h; path = ../Exam/DocumentTests.h; sourceTree = "<group>"; };
+		56127D3D157E4FA100D3DD59 /* DocumentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DocumentTests.m; path = ../Exam/DocumentTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +145,8 @@
 			children = (
 				56127D29157E4BAB00D3DD59 /* ExamTests.h */,
 				56127D2A157E4BAB00D3DD59 /* ExamTests.m */,
+				56127D3C157E4FA100D3DD59 /* DocumentTests.h */,
+				56127D3D157E4FA100D3DD59 /* DocumentTests.m */,
 				56127D24157E4BAB00D3DD59 /* Supporting Files */,
 			);
 			path = ExamTests;
@@ -275,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56127D2B157E4BAB00D3DD59 /* ExamTests.m in Sources */,
+				56127D3E157E4FA100D3DD59 /* DocumentTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

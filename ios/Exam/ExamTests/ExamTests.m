@@ -12,6 +12,7 @@
 
 - (void)setUp
 {
+    DBGMSG(@"%s", __func__);
     [super setUp];
     
     // Set-up code here.
@@ -19,6 +20,7 @@
 
 - (void)tearDown
 {
+    DBGMSG(@"%s", __func__);
     // Tear-down code here.
     
     [super tearDown];
@@ -26,7 +28,8 @@
 
 - (void)testExample
 {
-    STFail(@"Unit tests are not implemented yet in ExamTests");
+    DBGMSG(@"%s", __func__);
+    //STFail(@"Unit tests are not implemented yet in ExamTests");
 }
 
 @end
