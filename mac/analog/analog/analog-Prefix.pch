@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'analog' target in the 'analog' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
