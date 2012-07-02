@@ -12,6 +12,7 @@
 @interface ViewController ()
 - (void)didDone:(id)arg;
 - (void)didCancel:(id)arg;
+- (void)performDismiss:(NSTimer *)theTimer;
 @end
 
 @implementation ViewController
@@ -40,6 +41,7 @@
 
 - (IBAction)alertImage:(id)sender
 {
+    DBGMSG(@"%s", __func__);
     UIImage *image = [UIImage imageNamed:@"likeness.png"];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     imageView.frame = CGRectMake(10.0, 80.0, 100.0, 100.0);
@@ -57,6 +59,7 @@
 
 - (IBAction)modalPane:(id)sender
 {
+    DBGMSG(@"%s", __func__);
 #if 0
     ModalPaneViewController *modalPaneViewController
         = [self.storyboard instantiateViewControllerWithIdentifier:@"ModalPaneViewController"];
@@ -80,6 +83,20 @@
     [self presentModalViewController:modalPaneViewController animated:YES];
 #endif  /* 0 */
     self.modalPaneView.hidden = NO;
+}
+
+- (IBAction)alertDismiss:(id)sender
+{
+    DBGMSG(@"%s", __func__);
+    UIAlertView *alertView = [[UIAlertView alloc] init];
+    alertView.delegate = self;
+    alertView.title = @"Alert Dismiss";
+    alertView.message = @"\n\ndismiss alert";
+    [NSTimer scheduledTimerWithTimeInterval:3.0f
+                                     target:self
+                                   selector:@selector(performDismiss:)
+                                   userInfo:alertView repeats:NO];
+    [alertView show];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -125,6 +142,13 @@
 - (void)didCancel:(id)arg
 {
     DBGMSG(@"%s", __func__);
+}
+
+- (void)performDismiss:(NSTimer *)theTimer
+{
+    DBGMSG(@"%s", __func__);
+    UIAlertView *alertView = [theTimer userInfo];
+    [alertView dismissWithClickedButtonIndex:0 animated:NO];
 }
 
 #pragma mark - ModalPaneViewControllerDelegate

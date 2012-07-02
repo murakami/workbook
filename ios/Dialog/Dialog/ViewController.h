@@ -14,6 +14,7 @@
 
 - (IBAction)alertImage:(id)sender;
 - (IBAction)modalPane:(id)sender;
+- (IBAction)alertDismiss:(id)sender;
 - (IBAction)done:(id)sender;
 - (IBAction)cancel:(id)sender;
 
