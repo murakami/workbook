@@ -12,3 +12,11 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
+
+#ifdef	DEBUG
+#define	DBGMSG(...)	NSLog(__VA_ARGS__)
+#else	/* DEBUG */
+#define	DBGMSG(...)
+#endif	/* DEBUG */
+
+/* End Of File */
