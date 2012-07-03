@@ -6,6 +6,7 @@
 //  Copyright (c) 2012年 ビッツ有限会社. All rights reserved.
 //
 
+#import "AppDelegate.h"
 #import "ViewController.h"
 
 @interface ViewController ()
@@ -29,6 +30,14 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+- (IBAction)demo:(id)sender
+{
+    AppDelegate	*appl = nil;
+	appl = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+	Database    *database = appl.database;
+    [database demo];
 }
 
 @end

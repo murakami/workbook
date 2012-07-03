@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <sqlite3.h>
 
 @interface Database : NSObject
+
+@property (nonatomic, assign) sqlite3   *database;
+
+- (void)demo;
 
 @end

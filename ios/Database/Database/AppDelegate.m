@@ -8,13 +8,18 @@
 
 #import "AppDelegate.h"
 
+@interface AppDelegate ()
+@end
+
 @implementation AppDelegate
 
 @synthesize window = _window;
+@synthesize database = _database;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    self.database = [[Database alloc] init];
     return YES;
 }
 							
@@ -43,6 +48,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    self.database = nil;
 }
 
 @end

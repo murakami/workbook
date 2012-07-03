@@ -21,6 +21,7 @@
 		5634B19F15A2E6EE0075090A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5634B19D15A2E6EE0075090A /* InfoPlist.strings */; };
 		5634B1A215A2E6EE0075090A /* DatabaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5634B1A115A2E6EE0075090A /* DatabaseTests.m */; };
 		5634B1AD15A2E71C0075090A /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 5634B1AC15A2E71C0075090A /* Database.m */; };
+		5634B1B715A30A6F0075090A /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5634B1B615A30A6F0075090A /* libsqlite3.0.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		5634B1A115A2E6EE0075090A /* DatabaseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DatabaseTests.m; sourceTree = "<group>"; };
 		5634B1AB15A2E71C0075090A /* Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Database.h; sourceTree = "<group>"; };
 		5634B1AC15A2E71C0075090A /* Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Database.m; sourceTree = "<group>"; };
+		5634B1B615A30A6F0075090A /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				5634B17715A2E6ED0075090A /* UIKit.framework in Frameworks */,
 				5634B17915A2E6ED0075090A /* Foundation.framework in Frameworks */,
 				5634B17B15A2E6ED0075090A /* CoreGraphics.framework in Frameworks */,
+				5634B1B715A30A6F0075090A /* libsqlite3.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +109,7 @@
 				5634B17615A2E6ED0075090A /* UIKit.framework */,
 				5634B17815A2E6ED0075090A /* Foundation.framework */,
 				5634B17A15A2E6ED0075090A /* CoreGraphics.framework */,
+				5634B1B615A30A6F0075090A /* libsqlite3.0.dylib */,
 				5634B19415A2E6EE0075090A /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
