@@ -19,7 +19,6 @@
 		565A89AA15A3CDFB009993FD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 565A89A815A3CDFB009993FD /* InfoPlist.strings */; };
 		565A89AD15A3CDFB009993FD /* IRISTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 565A89AC15A3CDFB009993FD /* IRISTests.m */; };
 		565A89FE15A3CE4F009993FD /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 565A89FD15A3CE4F009993FD /* MainStoryboard.storyboard */; };
-		565A8A0115A3CE91009993FD /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 565A8A0015A3CE91009993FD /* RootViewController.m */; };
 		565A8A0815A3D2FF009993FD /* SampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 565A8A0715A3D2FF009993FD /* SampleViewController.m */; };
 		565A8A0C15A3D3B1009993FD /* Shader.fsh in Sources */ = {isa = PBXBuildFile; fileRef = 565A8A0A15A3D3B1009993FD /* Shader.fsh */; };
 		565A8A0D15A3D3B1009993FD /* Shader.vsh in Sources */ = {isa = PBXBuildFile; fileRef = 565A8A0B15A3D3B1009993FD /* Shader.vsh */; };
@@ -55,8 +54,6 @@
 		565A89AB15A3CDFB009993FD /* IRISTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IRISTests.h; sourceTree = "<group>"; };
 		565A89AC15A3CDFB009993FD /* IRISTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IRISTests.m; sourceTree = "<group>"; };
 		565A89FD15A3CE4F009993FD /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
-		565A89FF15A3CE91009993FD /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		565A8A0015A3CE91009993FD /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		565A8A0615A3D2FF009993FD /* SampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleViewController.h; sourceTree = "<group>"; };
 		565A8A0715A3D2FF009993FD /* SampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleViewController.m; sourceTree = "<group>"; };
 		565A8A0A15A3D3B1009993FD /* Shader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = Shader.fsh; path = Shaders/Shader.fsh; sourceTree = "<group>"; };
@@ -129,8 +126,6 @@
 				565A899615A3CDFB009993FD /* AppDelegate.h */,
 				565A899715A3CDFB009993FD /* AppDelegate.m */,
 				565A89FD15A3CE4F009993FD /* MainStoryboard.storyboard */,
-				565A89FF15A3CE91009993FD /* RootViewController.h */,
-				565A8A0015A3CE91009993FD /* RootViewController.m */,
 				565A8A0A15A3D3B1009993FD /* Shader.fsh */,
 				565A8A0B15A3D3B1009993FD /* Shader.vsh */,
 				565A8A0615A3D2FF009993FD /* SampleViewController.h */,
@@ -279,7 +274,6 @@
 			files = (
 				565A899415A3CDFB009993FD /* main.m in Sources */,
 				565A899815A3CDFB009993FD /* AppDelegate.m in Sources */,
-				565A8A0115A3CE91009993FD /* RootViewController.m in Sources */,
 				565A8A0815A3D2FF009993FD /* SampleViewController.m in Sources */,
 				565A8A0C15A3D3B1009993FD /* Shader.fsh in Sources */,
 				565A8A0D15A3D3B1009993FD /* Shader.vsh in Sources */,

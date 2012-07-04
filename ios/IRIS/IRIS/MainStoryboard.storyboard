@@ -6,11 +6,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller - Root View Controller-->
+        <!--Table View Controller - Root View Controller-->
         <scene sceneID="aQd-yY-qzZ">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7eH-MK-Ilm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="uAA-MA-Pg9" customClass="RootViewController" sceneMemberID="viewController">
+                <tableViewController id="uAA-MA-Pg9" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hTB-nj-DrL">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,10 +80,7 @@
         </scene>
     </scenes>
     <classes>
-        <class className="RootViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RootViewController.h"/>
-        </class>
-        <class className="SampleViewController" superclassName="UIViewController">
+        <class className="SampleViewController" superclassName="GLKViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SampleViewController.h"/>
         </class>
     </classes>
