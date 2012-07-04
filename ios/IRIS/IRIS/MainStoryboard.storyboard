@@ -53,7 +53,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PQ1-jn-v9M" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="85Y-3J-ajZ" customClass="SampleViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8mS-Uh-uye">
+                    <view key="view" contentMode="scaleToFill" id="8mS-Uh-uye" customClass="GLKView">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
