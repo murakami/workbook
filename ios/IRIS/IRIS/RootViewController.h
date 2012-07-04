@@ -1,5 +1,5 @@
 //
-//  MasterViewController.h
+//  RootViewController.h
 //  IRIS
 //
 //  Created by 村上 幸雄 on 12/07/04.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MasterViewController : UITableViewController
+@interface RootViewController : UITableViewController
 
 @end
