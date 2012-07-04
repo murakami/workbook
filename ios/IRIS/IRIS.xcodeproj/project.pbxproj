@@ -20,10 +20,10 @@
 		565A89AD15A3CDFB009993FD /* IRISTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 565A89AC15A3CDFB009993FD /* IRISTests.m */; };
 		565A89FE15A3CE4F009993FD /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 565A89FD15A3CE4F009993FD /* MainStoryboard.storyboard */; };
 		565A8A0815A3D2FF009993FD /* SampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 565A8A0715A3D2FF009993FD /* SampleViewController.m */; };
-		565A8A0C15A3D3B1009993FD /* Shader.fsh in Sources */ = {isa = PBXBuildFile; fileRef = 565A8A0A15A3D3B1009993FD /* Shader.fsh */; };
-		565A8A0D15A3D3B1009993FD /* Shader.vsh in Sources */ = {isa = PBXBuildFile; fileRef = 565A8A0B15A3D3B1009993FD /* Shader.vsh */; };
 		565A8A1315A3D4D8009993FD /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565A8A1215A3D4D8009993FD /* GLKit.framework */; };
 		565A8A1515A3D4EB009993FD /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565A8A1415A3D4EB009993FD /* OpenGLES.framework */; };
+		565A8A2215A43A03009993FD /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 565A8A0A15A3D3B1009993FD /* Shader.fsh */; };
+		565A8A2315A43A0B009993FD /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 565A8A0B15A3D3B1009993FD /* Shader.vsh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -238,6 +238,8 @@
 			files = (
 				565A899215A3CDFB009993FD /* InfoPlist.strings in Resources */,
 				565A89FE15A3CE4F009993FD /* MainStoryboard.storyboard in Resources */,
+				565A8A2215A43A03009993FD /* Shader.fsh in Resources */,
+				565A8A2315A43A0B009993FD /* Shader.vsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,8 +277,6 @@
 				565A899415A3CDFB009993FD /* main.m in Sources */,
 				565A899815A3CDFB009993FD /* AppDelegate.m in Sources */,
 				565A8A0815A3D2FF009993FD /* SampleViewController.m in Sources */,
-				565A8A0C15A3D3B1009993FD /* Shader.fsh in Sources */,
-				565A8A0D15A3D3B1009993FD /* Shader.vsh in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
