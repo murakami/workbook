@@ -20,6 +20,11 @@
 		565A89AD15A3CDFB009993FD /* IRISTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 565A89AC15A3CDFB009993FD /* IRISTests.m */; };
 		565A89FE15A3CE4F009993FD /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 565A89FD15A3CE4F009993FD /* MainStoryboard.storyboard */; };
 		565A8A0115A3CE91009993FD /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 565A8A0015A3CE91009993FD /* RootViewController.m */; };
+		565A8A0815A3D2FF009993FD /* SampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 565A8A0715A3D2FF009993FD /* SampleViewController.m */; };
+		565A8A0C15A3D3B1009993FD /* Shader.fsh in Sources */ = {isa = PBXBuildFile; fileRef = 565A8A0A15A3D3B1009993FD /* Shader.fsh */; };
+		565A8A0D15A3D3B1009993FD /* Shader.vsh in Sources */ = {isa = PBXBuildFile; fileRef = 565A8A0B15A3D3B1009993FD /* Shader.vsh */; };
+		565A8A1315A3D4D8009993FD /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565A8A1215A3D4D8009993FD /* GLKit.framework */; };
+		565A8A1515A3D4EB009993FD /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565A8A1415A3D4EB009993FD /* OpenGLES.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +57,12 @@
 		565A89FD15A3CE4F009993FD /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		565A89FF15A3CE91009993FD /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		565A8A0015A3CE91009993FD /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		565A8A0615A3D2FF009993FD /* SampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleViewController.h; sourceTree = "<group>"; };
+		565A8A0715A3D2FF009993FD /* SampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleViewController.m; sourceTree = "<group>"; };
+		565A8A0A15A3D3B1009993FD /* Shader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = Shader.fsh; path = Shaders/Shader.fsh; sourceTree = "<group>"; };
+		565A8A0B15A3D3B1009993FD /* Shader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = Shader.vsh; path = Shaders/Shader.vsh; sourceTree = "<group>"; };
+		565A8A1215A3D4D8009993FD /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		565A8A1415A3D4EB009993FD /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +73,8 @@
 				565A898815A3CDFB009993FD /* UIKit.framework in Frameworks */,
 				565A898A15A3CDFB009993FD /* Foundation.framework in Frameworks */,
 				565A898C15A3CDFB009993FD /* CoreGraphics.framework in Frameworks */,
+				565A8A1315A3D4D8009993FD /* GLKit.framework in Frameworks */,
+				565A8A1515A3D4EB009993FD /* OpenGLES.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +116,8 @@
 				565A898715A3CDFB009993FD /* UIKit.framework */,
 				565A898915A3CDFB009993FD /* Foundation.framework */,
 				565A898B15A3CDFB009993FD /* CoreGraphics.framework */,
+				565A8A1215A3D4D8009993FD /* GLKit.framework */,
+				565A8A1415A3D4EB009993FD /* OpenGLES.framework */,
 				565A899F15A3CDFB009993FD /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
@@ -116,6 +131,10 @@
 				565A89FD15A3CE4F009993FD /* MainStoryboard.storyboard */,
 				565A89FF15A3CE91009993FD /* RootViewController.h */,
 				565A8A0015A3CE91009993FD /* RootViewController.m */,
+				565A8A0A15A3D3B1009993FD /* Shader.fsh */,
+				565A8A0B15A3D3B1009993FD /* Shader.vsh */,
+				565A8A0615A3D2FF009993FD /* SampleViewController.h */,
+				565A8A0715A3D2FF009993FD /* SampleViewController.m */,
 				565A898E15A3CDFB009993FD /* Supporting Files */,
 			);
 			path = IRIS;
@@ -261,6 +280,9 @@
 				565A899415A3CDFB009993FD /* main.m in Sources */,
 				565A899815A3CDFB009993FD /* AppDelegate.m in Sources */,
 				565A8A0115A3CE91009993FD /* RootViewController.m in Sources */,
+				565A8A0815A3D2FF009993FD /* SampleViewController.m in Sources */,
+				565A8A0C15A3D3B1009993FD /* Shader.fsh in Sources */,
+				565A8A0D15A3D3B1009993FD /* Shader.vsh in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
