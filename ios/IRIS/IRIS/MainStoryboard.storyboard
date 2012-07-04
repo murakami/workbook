@@ -39,6 +39,27 @@
                                             <segue destination="85Y-3J-ajZ" kind="push" id="p40-na-RPM"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="s3O-aA-R5S" style="IBUITableViewCellStyleDefault" id="prn-XR-HLk">
+                                        <rect key="frame" x="0.0" y="44" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Primitive" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="s3O-aA-R5S">
+                                                    <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="44r-oU-ksu" kind="push" id="3qO-Mt-wZt"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -63,6 +84,21 @@
             </objects>
             <point key="canvasLocation" x="956" y="30"/>
         </scene>
+        <!--Primitive View Controller-->
+        <scene sceneID="SHB-5H-KYl">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tdD-DY-dc9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="44r-oU-ksu" customClass="PrimitiveViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2yN-y0-hjD" customClass="GLKView">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3BV-IL-Nw0"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="956" y="597"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="PQu-lT-CYZ">
             <objects>
@@ -80,6 +116,9 @@
         </scene>
     </scenes>
     <classes>
+        <class className="PrimitiveViewController" superclassName="GLKViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PrimitiveViewController.h"/>
+        </class>
         <class className="SampleViewController" superclassName="GLKViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SampleViewController.h"/>
         </class>

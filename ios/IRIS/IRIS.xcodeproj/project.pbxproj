@@ -24,6 +24,7 @@
 		565A8A1515A3D4EB009993FD /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565A8A1415A3D4EB009993FD /* OpenGLES.framework */; };
 		565A8A2215A43A03009993FD /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 565A8A0A15A3D3B1009993FD /* Shader.fsh */; };
 		565A8A2315A43A0B009993FD /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 565A8A0B15A3D3B1009993FD /* Shader.vsh */; };
+		565A8A2A15A443F0009993FD /* PrimitiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 565A8A2915A443F0009993FD /* PrimitiveViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		565A8A0B15A3D3B1009993FD /* Shader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = Shader.vsh; path = Shaders/Shader.vsh; sourceTree = "<group>"; };
 		565A8A1215A3D4D8009993FD /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		565A8A1415A3D4EB009993FD /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		565A8A2815A443F0009993FD /* PrimitiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrimitiveViewController.h; sourceTree = "<group>"; };
+		565A8A2915A443F0009993FD /* PrimitiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrimitiveViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +133,8 @@
 				565A8A0B15A3D3B1009993FD /* Shader.vsh */,
 				565A8A0615A3D2FF009993FD /* SampleViewController.h */,
 				565A8A0715A3D2FF009993FD /* SampleViewController.m */,
+				565A8A2815A443F0009993FD /* PrimitiveViewController.h */,
+				565A8A2915A443F0009993FD /* PrimitiveViewController.m */,
 				565A898E15A3CDFB009993FD /* Supporting Files */,
 			);
 			path = IRIS;
@@ -277,6 +282,7 @@
 				565A899415A3CDFB009993FD /* main.m in Sources */,
 				565A899815A3CDFB009993FD /* AppDelegate.m in Sources */,
 				565A8A0815A3D2FF009993FD /* SampleViewController.m in Sources */,
+				565A8A2A15A443F0009993FD /* PrimitiveViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
