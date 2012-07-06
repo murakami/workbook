@@ -13,7 +13,7 @@
 @property (strong, nonatomic) EAGLContext   *context;
 @property (assign, nonatomic) GLuint        defaultFramebuffer;
 @property (assign, nonatomic) GLuint        colorRenderbuffer;
-@property (assign, nonatomic) GLuint        depthRenderbuffer;
+/* @property (assign, nonatomic) GLuint        depthRenderbuffer; */
 
 - (void)setupGL;
 - (void)tearDownGL;
@@ -25,7 +25,7 @@
 @synthesize context = _context;
 @synthesize defaultFramebuffer = _defaultFramebuffer;
 @synthesize colorRenderbuffer = _colorRenderbuffer;
-@synthesize depthRenderbuffer = _depthRenderbuffer;
+/* @synthesize depthRenderbuffer = _depthRenderbuffer; */
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,7 +34,7 @@
         // Custom initialization
         self.defaultFramebuffer = 0;
         self.colorRenderbuffer = 0;
-        self.depthRenderbuffer = 0;
+        /* self.depthRenderbuffer = 0; */
     }
     return self;
 }
@@ -52,7 +52,7 @@
     
     GLKView *view = (GLKView *)self.view;
     view.context = self.context;
-    view.drawableDepthFormat = GLKViewDrawableDepthFormat24;
+    view.drawableDepthFormat = GLKViewDrawableDepthFormatNone;
     
     [self setupGL];
 }
@@ -93,6 +93,7 @@
                                  GL_RENDERBUFFER_OES,
                                  self.colorRenderbuffer);
 
+    /*
     glGenRenderbuffersOES(1, &_depthRenderbuffer);
     glBindRenderbufferOES(GL_RENDERBUFFER_OES, self.depthRenderbuffer);
     glRenderbufferStorageOES(GL_RENDERBUFFER_OES,
@@ -103,6 +104,7 @@
                                  GL_DEPTH_ATTACHMENT_OES,
                                  GL_RENDERBUFFER_OES,
                                  self.depthRenderbuffer);
+    */
     
     GLenum status = glCheckFramebufferStatusOES(GL_FRAMEBUFFER_OES) ;
     if (status != GL_FRAMEBUFFER_COMPLETE_OES) {
@@ -124,10 +126,12 @@
 		self.colorRenderbuffer = 0;
 	}
     
+    /*
     if (self.depthRenderbuffer) {
         glDeleteRenderbuffersOES(1, &_depthRenderbuffer);
 		self.depthRenderbuffer = 0;
     }
+    */
 }
 
 #pragma mark - GLKView and GLKViewController delegate methods
