@@ -19,6 +19,7 @@
 
 - (void)viewDidLoad
 {
+    DBGMSG(@"%s", __func__);
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
@@ -30,8 +31,33 @@
 
 - (void)viewDidUnload
 {
+    DBGMSG(@"%s", __func__);
     [super viewDidUnload];
     // Release any retained subviews of the main view.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    DBGMSG(@"%s", __func__);
+    [super viewWillAppear:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    DBGMSG(@"%s", __func__);
+    [super viewDidAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    DBGMSG(@"%s", __func__);
+    [super viewWillDisappear:animated];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    DBGMSG(@"%s", __func__);
+    [super viewDidDisappear:animated];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
