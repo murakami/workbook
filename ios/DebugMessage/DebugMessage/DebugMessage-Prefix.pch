@@ -1,0 +1,25 @@
+//
+// Prefix header for all source files of the 'DebugMessage' target in the 'DebugMessage' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import "DebugMessage.h"
+#endif
+
+#ifdef	DEBUG
+#define	DBGMSG(...)	NSLog(__VA_ARGS__)
+#define	TRC(aString)    DebugMessage *dbgmsg = [[DebugMessage alloc] initWithString:aString]
+#else	/* DEBUG */
+#define	DBGMSG(...)
+#define	TRC(aString)
+#endif	/* DEBUG */
+
+/* End Of File */
