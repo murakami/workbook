@@ -1,0 +1,445 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		561BC86715B6B6C0006FB32D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 561BC86615B6B6C0006FB32D /* UIKit.framework */; };
+		561BC86915B6B6C0006FB32D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 561BC86815B6B6C0006FB32D /* Foundation.framework */; };
+		561BC86B15B6B6C0006FB32D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 561BC86A15B6B6C0006FB32D /* CoreGraphics.framework */; };
+		561BC87115B6B6C0006FB32D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 561BC86F15B6B6C0006FB32D /* InfoPlist.strings */; };
+		561BC87315B6B6C0006FB32D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 561BC87215B6B6C0006FB32D /* main.m */; };
+		561BC87715B6B6C0006FB32D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 561BC87615B6B6C0006FB32D /* AppDelegate.m */; };
+		561BC87A15B6B6C0006FB32D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561BC87815B6B6C0006FB32D /* MainStoryboard.storyboard */; };
+		561BC87D15B6B6C0006FB32D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 561BC87C15B6B6C0006FB32D /* ViewController.m */; };
+		561BC88515B6B6C0006FB32D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 561BC88415B6B6C0006FB32D /* SenTestingKit.framework */; };
+		561BC88615B6B6C0006FB32D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 561BC86615B6B6C0006FB32D /* UIKit.framework */; };
+		561BC88715B6B6C0006FB32D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 561BC86815B6B6C0006FB32D /* Foundation.framework */; };
+		561BC88F15B6B6C0006FB32D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 561BC88D15B6B6C0006FB32D /* InfoPlist.strings */; };
+		561BC89215B6B6C0006FB32D /* FifteenPuzzleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 561BC89115B6B6C0006FB32D /* FifteenPuzzleTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		561BC88815B6B6C0006FB32D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 561BC85915B6B6BF006FB32D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 561BC86115B6B6C0006FB32D;
+			remoteInfo = FifteenPuzzle;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		561BC86215B6B6C0006FB32D /* FifteenPuzzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FifteenPuzzle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		561BC86615B6B6C0006FB32D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		561BC86815B6B6C0006FB32D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		561BC86A15B6B6C0006FB32D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		561BC86E15B6B6C0006FB32D /* FifteenPuzzle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FifteenPuzzle-Info.plist"; sourceTree = "<group>"; };
+		561BC87015B6B6C0006FB32D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		561BC87215B6B6C0006FB32D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		561BC87415B6B6C0006FB32D /* FifteenPuzzle-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FifteenPuzzle-Prefix.pch"; sourceTree = "<group>"; };
+		561BC87515B6B6C0006FB32D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		561BC87615B6B6C0006FB32D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		561BC87915B6B6C0006FB32D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		561BC87B15B6B6C0006FB32D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		561BC87C15B6B6C0006FB32D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		561BC88315B6B6C0006FB32D /* FifteenPuzzleTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FifteenPuzzleTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		561BC88415B6B6C0006FB32D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		561BC88C15B6B6C0006FB32D /* FifteenPuzzleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FifteenPuzzleTests-Info.plist"; sourceTree = "<group>"; };
+		561BC88E15B6B6C0006FB32D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		561BC89015B6B6C0006FB32D /* FifteenPuzzleTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FifteenPuzzleTests.h; sourceTree = "<group>"; };
+		561BC89115B6B6C0006FB32D /* FifteenPuzzleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FifteenPuzzleTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		561BC85F15B6B6C0006FB32D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				561BC86715B6B6C0006FB32D /* UIKit.framework in Frameworks */,
+				561BC86915B6B6C0006FB32D /* Foundation.framework in Frameworks */,
+				561BC86B15B6B6C0006FB32D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		561BC87F15B6B6C0006FB32D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				561BC88515B6B6C0006FB32D /* SenTestingKit.framework in Frameworks */,
+				561BC88615B6B6C0006FB32D /* UIKit.framework in Frameworks */,
+				561BC88715B6B6C0006FB32D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		561BC85715B6B6BF006FB32D = {
+			isa = PBXGroup;
+			children = (
+				561BC86C15B6B6C0006FB32D /* FifteenPuzzle */,
+				561BC88A15B6B6C0006FB32D /* FifteenPuzzleTests */,
+				561BC86515B6B6C0006FB32D /* Frameworks */,
+				561BC86315B6B6C0006FB32D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		561BC86315B6B6C0006FB32D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				561BC86215B6B6C0006FB32D /* FifteenPuzzle.app */,
+				561BC88315B6B6C0006FB32D /* FifteenPuzzleTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		561BC86515B6B6C0006FB32D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				561BC86615B6B6C0006FB32D /* UIKit.framework */,
+				561BC86815B6B6C0006FB32D /* Foundation.framework */,
+				561BC86A15B6B6C0006FB32D /* CoreGraphics.framework */,
+				561BC88415B6B6C0006FB32D /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		561BC86C15B6B6C0006FB32D /* FifteenPuzzle */ = {
+			isa = PBXGroup;
+			children = (
+				561BC87515B6B6C0006FB32D /* AppDelegate.h */,
+				561BC87615B6B6C0006FB32D /* AppDelegate.m */,
+				561BC87815B6B6C0006FB32D /* MainStoryboard.storyboard */,
+				561BC87B15B6B6C0006FB32D /* ViewController.h */,
+				561BC87C15B6B6C0006FB32D /* ViewController.m */,
+				561BC86D15B6B6C0006FB32D /* Supporting Files */,
+			);
+			path = FifteenPuzzle;
+			sourceTree = "<group>";
+		};
+		561BC86D15B6B6C0006FB32D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				561BC86E15B6B6C0006FB32D /* FifteenPuzzle-Info.plist */,
+				561BC86F15B6B6C0006FB32D /* InfoPlist.strings */,
+				561BC87215B6B6C0006FB32D /* main.m */,
+				561BC87415B6B6C0006FB32D /* FifteenPuzzle-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		561BC88A15B6B6C0006FB32D /* FifteenPuzzleTests */ = {
+			isa = PBXGroup;
+			children = (
+				561BC89015B6B6C0006FB32D /* FifteenPuzzleTests.h */,
+				561BC89115B6B6C0006FB32D /* FifteenPuzzleTests.m */,
+				561BC88B15B6B6C0006FB32D /* Supporting Files */,
+			);
+			path = FifteenPuzzleTests;
+			sourceTree = "<group>";
+		};
+		561BC88B15B6B6C0006FB32D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				561BC88C15B6B6C0006FB32D /* FifteenPuzzleTests-Info.plist */,
+				561BC88D15B6B6C0006FB32D /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		561BC86115B6B6C0006FB32D /* FifteenPuzzle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 561BC89515B6B6C0006FB32D /* Build configuration list for PBXNativeTarget "FifteenPuzzle" */;
+			buildPhases = (
+				561BC85E15B6B6C0006FB32D /* Sources */,
+				561BC85F15B6B6C0006FB32D /* Frameworks */,
+				561BC86015B6B6C0006FB32D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FifteenPuzzle;
+			productName = FifteenPuzzle;
+			productReference = 561BC86215B6B6C0006FB32D /* FifteenPuzzle.app */;
+			productType = "com.apple.product-type.application";
+		};
+		561BC88215B6B6C0006FB32D /* FifteenPuzzleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 561BC89815B6B6C0006FB32D /* Build configuration list for PBXNativeTarget "FifteenPuzzleTests" */;
+			buildPhases = (
+				561BC87E15B6B6C0006FB32D /* Sources */,
+				561BC87F15B6B6C0006FB32D /* Frameworks */,
+				561BC88015B6B6C0006FB32D /* Resources */,
+				561BC88115B6B6C0006FB32D /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				561BC88915B6B6C0006FB32D /* PBXTargetDependency */,
+			);
+			name = FifteenPuzzleTests;
+			productName = FifteenPuzzleTests;
+			productReference = 561BC88315B6B6C0006FB32D /* FifteenPuzzleTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		561BC85915B6B6BF006FB32D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "ビッツ有限会社";
+			};
+			buildConfigurationList = 561BC85C15B6B6BF006FB32D /* Build configuration list for PBXProject "FifteenPuzzle" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 561BC85715B6B6BF006FB32D;
+			productRefGroup = 561BC86315B6B6C0006FB32D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				561BC86115B6B6C0006FB32D /* FifteenPuzzle */,
+				561BC88215B6B6C0006FB32D /* FifteenPuzzleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		561BC86015B6B6C0006FB32D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				561BC87115B6B6C0006FB32D /* InfoPlist.strings in Resources */,
+				561BC87A15B6B6C0006FB32D /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		561BC88015B6B6C0006FB32D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				561BC88F15B6B6C0006FB32D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		561BC88115B6B6C0006FB32D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		561BC85E15B6B6C0006FB32D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				561BC87315B6B6C0006FB32D /* main.m in Sources */,
+				561BC87715B6B6C0006FB32D /* AppDelegate.m in Sources */,
+				561BC87D15B6B6C0006FB32D /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		561BC87E15B6B6C0006FB32D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				561BC89215B6B6C0006FB32D /* FifteenPuzzleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		561BC88915B6B6C0006FB32D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 561BC86115B6B6C0006FB32D /* FifteenPuzzle */;
+			targetProxy = 561BC88815B6B6C0006FB32D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		561BC86F15B6B6C0006FB32D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				561BC87015B6B6C0006FB32D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		561BC87815B6B6C0006FB32D /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				561BC87915B6B6C0006FB32D /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		561BC88D15B6B6C0006FB32D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				561BC88E15B6B6C0006FB32D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		561BC89315B6B6C0006FB32D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		561BC89415B6B6C0006FB32D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		561BC89615B6B6C0006FB32D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FifteenPuzzle/FifteenPuzzle-Prefix.pch";
+				INFOPLIST_FILE = "FifteenPuzzle/FifteenPuzzle-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		561BC89715B6B6C0006FB32D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FifteenPuzzle/FifteenPuzzle-Prefix.pch";
+				INFOPLIST_FILE = "FifteenPuzzle/FifteenPuzzle-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		561BC89915B6B6C0006FB32D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FifteenPuzzle.app/FifteenPuzzle";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FifteenPuzzle/FifteenPuzzle-Prefix.pch";
+				INFOPLIST_FILE = "FifteenPuzzleTests/FifteenPuzzleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		561BC89A15B6B6C0006FB32D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FifteenPuzzle.app/FifteenPuzzle";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FifteenPuzzle/FifteenPuzzle-Prefix.pch";
+				INFOPLIST_FILE = "FifteenPuzzleTests/FifteenPuzzleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		561BC85C15B6B6BF006FB32D /* Build configuration list for PBXProject "FifteenPuzzle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				561BC89315B6B6C0006FB32D /* Debug */,
+				561BC89415B6B6C0006FB32D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		561BC89515B6B6C0006FB32D /* Build configuration list for PBXNativeTarget "FifteenPuzzle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				561BC89615B6B6C0006FB32D /* Debug */,
+				561BC89715B6B6C0006FB32D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		561BC89815B6B6C0006FB32D /* Build configuration list for PBXNativeTarget "FifteenPuzzleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				561BC89915B6B6C0006FB32D /* Debug */,
+				561BC89A15B6B6C0006FB32D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 561BC85915B6B6BF006FB32D /* Project object */;
+}
