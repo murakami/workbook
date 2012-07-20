@@ -23,7 +23,7 @@
 		561BC89D15B6D0F8006FB32D /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 561BC89C15B6D0F8006FB32D /* GameController.m */; };
 		561BC8A015B6D752006FB32D /* GameBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 561BC89F15B6D752006FB32D /* GameBoardView.m */; };
 		569BE15815B8D49F00A09C1E /* GameSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = 569BE15715B8D49F00A09C1E /* GameSquare.m */; };
-		569BE15C15B8D4C600A09C1E /* GamePiece.m in Sources */ = {isa = PBXBuildFile; fileRef = 569BE15B15B8D4C600A09C1E /* GamePiece.m */; };
+		569BE15C15B8D4C600A09C1E /* GamePieceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 569BE15B15B8D4C600A09C1E /* GamePieceView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,8 +62,8 @@
 		561BC89F15B6D752006FB32D /* GameBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameBoardView.m; sourceTree = "<group>"; };
 		569BE15615B8D49F00A09C1E /* GameSquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSquare.h; sourceTree = "<group>"; };
 		569BE15715B8D49F00A09C1E /* GameSquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameSquare.m; sourceTree = "<group>"; };
-		569BE15A15B8D4C600A09C1E /* GamePiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamePiece.h; sourceTree = "<group>"; };
-		569BE15B15B8D4C600A09C1E /* GamePiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamePiece.m; sourceTree = "<group>"; };
+		569BE15A15B8D4C600A09C1E /* GamePieceView.h */ = {isa = PBXFileReference; fileEncoding = 4; path = GamePieceView.h; sourceTree = "<group>"; };
+		569BE15B15B8D4C600A09C1E /* GamePieceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamePieceView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,8 +134,8 @@
 				561BC89F15B6D752006FB32D /* GameBoardView.m */,
 				569BE15615B8D49F00A09C1E /* GameSquare.h */,
 				569BE15715B8D49F00A09C1E /* GameSquare.m */,
-				569BE15A15B8D4C600A09C1E /* GamePiece.h */,
-				569BE15B15B8D4C600A09C1E /* GamePiece.m */,
+				569BE15A15B8D4C600A09C1E /* GamePieceView.h */,
+				569BE15B15B8D4C600A09C1E /* GamePieceView.m */,
 				561BC86D15B6B6C0006FB32D /* Supporting Files */,
 			);
 			path = FifteenPuzzle;
@@ -284,7 +284,7 @@
 				561BC89D15B6D0F8006FB32D /* GameController.m in Sources */,
 				561BC8A015B6D752006FB32D /* GameBoardView.m in Sources */,
 				569BE15815B8D49F00A09C1E /* GameSquare.m in Sources */,
-				569BE15C15B8D4C600A09C1E /* GamePiece.m in Sources */,
+				569BE15C15B8D4C600A09C1E /* GamePieceView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,7 +8,7 @@
 
 #import "GameBoardView.h"
 #import "GameSquare.h"
-#import "GamePiece.h"
+#import "GamePieceView.h"
 
 @implementation GameBoardView
 
@@ -16,7 +16,18 @@
 
 - (id)initWithFrame:(CGRect)frame
 {
+    DBGMSG(@"%s", __func__);
     self = [super initWithFrame:frame];
+    if (self) {
+        // Initialization code
+    }
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    DBGMSG(@"%s", __func__);
+    self = [super initWithCoder:aDecoder];
     if (self) {
         // Initialization code
     }
@@ -33,6 +44,34 @@
 - (void)drawRect:(CGRect)rect
 {
     // Drawing code
+}
+
+- (void)setup
+{
+    CGRect  frame = self.frame;
+    CGFloat width = frame.size.width / 4.0;
+    CGFloat height = frame.size.height / 4.0;
+    CGRect	rect[16] = {
+        {frame.origin.x,                  frame.origin.y,                  width, height},
+        {frame.origin.x + width,          frame.origin.y,                  width, height},
+        {frame.origin.x + (width * 2.0),  frame.origin.y,                  width, height},
+        {frame.origin.x + (width * 3.0),  frame.origin.y,                  width, height},
+
+        {frame.origin.x,                  frame.origin.y + height,         width, height},
+        {frame.origin.x + width,          frame.origin.y + height,         width, height},
+        {frame.origin.x + (width * 2.0),  frame.origin.y + height,         width, height},
+        {frame.origin.x + (width * 3.0),  frame.origin.y + height,         width, height},
+
+        {frame.origin.x,                  frame.origin.y + (height * 2.0), width, height},
+        {frame.origin.x + width,          frame.origin.y + (height * 2.0), width, height},
+        {frame.origin.x + (width * 2.0),  frame.origin.y + (height * 2.0), width, height},
+        {frame.origin.x + (width * 3.0),  frame.origin.y + (height * 2.0), width, height},
+        
+        {frame.origin.x,                  frame.origin.y + (height * 3.0), width, height},
+        {frame.origin.x + width,          frame.origin.y + (height * 3.0), width, height},
+        {frame.origin.x + (width * 2.0),  frame.origin.y + (height * 3.0), width, height},
+        {frame.origin.x + (width * 3.0),  frame.origin.y + (height * 3.0), width, height}
+    };
 }
 
 - (void) touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
@@ -81,12 +120,12 @@
 return nil;
 }
 
--(GamePiece*)pieceAtPoint:(CGPoint)pt
+-(GamePieceView*)pieceViewAtPoint:(CGPoint)pt
 {
     return nil;
 }
 
--(GamePiece*)pieceAtIndex:(int)index
+-(GamePieceView*)pieceViewAtIndex:(int)index
 {
     return nil;
 }

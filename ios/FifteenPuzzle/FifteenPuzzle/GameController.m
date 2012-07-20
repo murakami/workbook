@@ -17,6 +17,7 @@
     self = [super init];
     if (self) {
         self.gameBoardView = view;
+        [self.gameBoardView setup];
     }
     return self;
 }

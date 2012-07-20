@@ -10,20 +10,21 @@
 
 @class GameBoardView;
 @class GameSquare;
-@class GamePiece;
+@class GamePieceView;
 
-@protocol GameBoardViewDelegate <NSObject>
+@protocol GameBoardViewDelegate
 - (void)gameBoardViewTouchDown:(GameBoardView *)gameBoardView location:(CGPoint)touchPt taps:(int)taps event:(UIEvent*)event;
 - (void)gameBoardViewTouchMove:(GameBoardView *)gameBoardView location:(CGPoint)touchPt taps:(int)taps event:(UIEvent*)event;
 - (void)gameBoardViewTouchUp:(GameBoardView *)gameBoardView location:(CGPoint)touchPt taps:(int)taps event:(UIEvent*)event;
 @end
 
 @interface GameBoardView : UIView
-@property (nonatomic, weak) id<GameBoardViewDelegate>   delegate;
+@property (nonatomic, weak) id<GameBoardViewDelegate, NSObject>   delegate;
 
--(GameSquare*)squareAtPoint:(CGPoint)pt;
--(GameSquare*)squareAtIndex:(int)index;
--(GamePiece*)pieceAtPoint:(CGPoint)pt;
--(GamePiece*)pieceAtIndex:(int)index;
+- (void)setup;
+- (GameSquare*)squareAtPoint:(CGPoint)pt;
+- (GameSquare*)squareAtIndex:(int)index;
+- (GamePieceView*)pieceViewAtPoint:(CGPoint)pt;
+- (GamePieceView*)pieceViewAtIndex:(int)index;
 
 @end
