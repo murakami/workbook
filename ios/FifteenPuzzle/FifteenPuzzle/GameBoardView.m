@@ -13,6 +13,7 @@
 @implementation GameBoardView
 
 @synthesize delegate = _delegate;
+@synthesize squaresArray = _squaresArray;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -36,6 +37,7 @@
 
 - (void)dealloc
 {
+    self.squaresArray = nil;
     /* [super dealloc]; */
 }
 
@@ -43,7 +45,12 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
+    DBGMSG(@"%s", __func__);
     // Drawing code
+    CGContextRef    context = UIGraphicsGetCurrentContext();
+    for (GameSquare *square in self.squaresArray) {
+        [square drawContext:context];
+    }
 }
 
 - (void)setup
@@ -52,26 +59,32 @@
     CGFloat width = frame.size.width / 4.0;
     CGFloat height = frame.size.height / 4.0;
     CGRect	rect[16] = {
-        {frame.origin.x,                  frame.origin.y,                  width, height},
-        {frame.origin.x + width,          frame.origin.y,                  width, height},
-        {frame.origin.x + (width * 2.0),  frame.origin.y,                  width, height},
-        {frame.origin.x + (width * 3.0),  frame.origin.y,                  width, height},
+        {0.0,                  0.0,                  width, height},
+        {0.0 + width,          0.0,                  width, height},
+        {0.0 + (width * 2.0),  0.0,                  width, height},
+        {0.0 + (width * 3.0),  0.0,                  width, height},
 
-        {frame.origin.x,                  frame.origin.y + height,         width, height},
-        {frame.origin.x + width,          frame.origin.y + height,         width, height},
-        {frame.origin.x + (width * 2.0),  frame.origin.y + height,         width, height},
-        {frame.origin.x + (width * 3.0),  frame.origin.y + height,         width, height},
+        {0.0,                  0.0 + height,         width, height},
+        {0.0 + width,          0.0 + height,         width, height},
+        {0.0 + (width * 2.0),  0.0 + height,         width, height},
+        {0.0 + (width * 3.0),  0.0 + height,         width, height},
 
-        {frame.origin.x,                  frame.origin.y + (height * 2.0), width, height},
-        {frame.origin.x + width,          frame.origin.y + (height * 2.0), width, height},
-        {frame.origin.x + (width * 2.0),  frame.origin.y + (height * 2.0), width, height},
-        {frame.origin.x + (width * 3.0),  frame.origin.y + (height * 2.0), width, height},
+        {0.0,                  0.0 + (height * 2.0), width, height},
+        {0.0 + width,          0.0 + (height * 2.0), width, height},
+        {0.0 + (width * 2.0),  0.0 + (height * 2.0), width, height},
+        {0.0 + (width * 3.0),  0.0 + (height * 2.0), width, height},
         
-        {frame.origin.x,                  frame.origin.y + (height * 3.0), width, height},
-        {frame.origin.x + width,          frame.origin.y + (height * 3.0), width, height},
-        {frame.origin.x + (width * 2.0),  frame.origin.y + (height * 3.0), width, height},
-        {frame.origin.x + (width * 3.0),  frame.origin.y + (height * 3.0), width, height}
+        {0.0,                  0.0 + (height * 3.0), width, height},
+        {0.0 + width,          0.0 + (height * 3.0), width, height},
+        {0.0 + (width * 2.0),  0.0 + (height * 3.0), width, height},
+        {0.0 + (width * 3.0),  0.0 + (height * 3.0), width, height}
     };
+    self.squaresArray = [[NSMutableArray alloc] init];
+    for (int i=0; i < 16; i++) {
+        GameSquare* square = [[GameSquare alloc] initWithFrame:rect[i]];
+        square.index = i;
+        [self.squaresArray addObject:square];
+    }
 }
 
 - (void) touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event

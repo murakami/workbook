@@ -9,7 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface GameSquare : NSObject
+@property (nonatomic, assign) CGRect    frame;
+@property (nonatomic, assign) int       index;
 
--(BOOL)squareCheck:(CGPoint)point;
-
+- (id)initWithFrame:(CGRect)frame;
+- (void)drawContext:(CGContextRef)context;
+- (BOOL)squareCheck:(CGPoint)point;
 @end

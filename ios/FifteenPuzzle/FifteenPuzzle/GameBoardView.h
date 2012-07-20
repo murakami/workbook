@@ -19,7 +19,8 @@
 @end
 
 @interface GameBoardView : UIView
-@property (nonatomic, weak) id<GameBoardViewDelegate, NSObject>   delegate;
+@property (nonatomic, weak) id<GameBoardViewDelegate, NSObject> delegate;
+@property (nonatomic, strong) NSMutableArray                    *squaresArray;
 
 - (void)setup;
 - (GameSquare*)squareAtPoint:(CGPoint)pt;
