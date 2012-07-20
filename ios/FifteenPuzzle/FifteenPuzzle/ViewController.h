@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class GameController;
+
 @interface ViewController : UIViewController
+
+@property (nonatomic, strong) GameController    *gameController; 
 
 @end

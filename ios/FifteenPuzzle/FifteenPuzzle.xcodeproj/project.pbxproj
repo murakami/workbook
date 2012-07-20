@@ -20,6 +20,10 @@
 		561BC88715B6B6C0006FB32D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 561BC86815B6B6C0006FB32D /* Foundation.framework */; };
 		561BC88F15B6B6C0006FB32D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 561BC88D15B6B6C0006FB32D /* InfoPlist.strings */; };
 		561BC89215B6B6C0006FB32D /* FifteenPuzzleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 561BC89115B6B6C0006FB32D /* FifteenPuzzleTests.m */; };
+		561BC89D15B6D0F8006FB32D /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 561BC89C15B6D0F8006FB32D /* GameController.m */; };
+		561BC8A015B6D752006FB32D /* GameBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 561BC89F15B6D752006FB32D /* GameBoardView.m */; };
+		569BE15815B8D49F00A09C1E /* GameSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = 569BE15715B8D49F00A09C1E /* GameSquare.m */; };
+		569BE15C15B8D4C600A09C1E /* GamePiece.m in Sources */ = {isa = PBXBuildFile; fileRef = 569BE15B15B8D4C600A09C1E /* GamePiece.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +56,14 @@
 		561BC88E15B6B6C0006FB32D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		561BC89015B6B6C0006FB32D /* FifteenPuzzleTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FifteenPuzzleTests.h; sourceTree = "<group>"; };
 		561BC89115B6B6C0006FB32D /* FifteenPuzzleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FifteenPuzzleTests.m; sourceTree = "<group>"; };
+		561BC89B15B6D0F8006FB32D /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
+		561BC89C15B6D0F8006FB32D /* GameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameController.m; sourceTree = "<group>"; };
+		561BC89E15B6D752006FB32D /* GameBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameBoardView.h; sourceTree = "<group>"; };
+		561BC89F15B6D752006FB32D /* GameBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameBoardView.m; sourceTree = "<group>"; };
+		569BE15615B8D49F00A09C1E /* GameSquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSquare.h; sourceTree = "<group>"; };
+		569BE15715B8D49F00A09C1E /* GameSquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameSquare.m; sourceTree = "<group>"; };
+		569BE15A15B8D4C600A09C1E /* GamePiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamePiece.h; sourceTree = "<group>"; };
+		569BE15B15B8D4C600A09C1E /* GamePiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamePiece.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +128,14 @@
 				561BC87815B6B6C0006FB32D /* MainStoryboard.storyboard */,
 				561BC87B15B6B6C0006FB32D /* ViewController.h */,
 				561BC87C15B6B6C0006FB32D /* ViewController.m */,
+				561BC89B15B6D0F8006FB32D /* GameController.h */,
+				561BC89C15B6D0F8006FB32D /* GameController.m */,
+				561BC89E15B6D752006FB32D /* GameBoardView.h */,
+				561BC89F15B6D752006FB32D /* GameBoardView.m */,
+				569BE15615B8D49F00A09C1E /* GameSquare.h */,
+				569BE15715B8D49F00A09C1E /* GameSquare.m */,
+				569BE15A15B8D4C600A09C1E /* GamePiece.h */,
+				569BE15B15B8D4C600A09C1E /* GamePiece.m */,
 				561BC86D15B6B6C0006FB32D /* Supporting Files */,
 			);
 			path = FifteenPuzzle;
@@ -261,6 +281,10 @@
 				561BC87315B6B6C0006FB32D /* main.m in Sources */,
 				561BC87715B6B6C0006FB32D /* AppDelegate.m in Sources */,
 				561BC87D15B6B6C0006FB32D /* ViewController.m in Sources */,
+				561BC89D15B6D0F8006FB32D /* GameController.m in Sources */,
+				561BC8A015B6D752006FB32D /* GameBoardView.m in Sources */,
+				569BE15815B8D49F00A09C1E /* GameSquare.m in Sources */,
+				569BE15C15B8D4C600A09C1E /* GamePiece.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +454,7 @@
 				561BC89715B6B6C0006FB32D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		561BC89815B6B6C0006FB32D /* Build configuration list for PBXNativeTarget "FifteenPuzzleTests" */ = {
 			isa = XCConfigurationList;
@@ -438,6 +463,7 @@
 				561BC89A15B6B6C0006FB32D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
