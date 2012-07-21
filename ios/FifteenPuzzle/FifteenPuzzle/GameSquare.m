@@ -27,18 +27,27 @@
 {
     DBGMSG(@"%s", __func__);
     UIGraphicsPushContext(context);
-    //CGContextSetRGBFillColor(context, 0.5, 0.5, 0.5, 1.0);
+    CGContextSetTextDrawingMode(context, kCGTextFill);
+    CGContextSetRGBFillColor(context, 0.7, 0.7, 0.7, 1.0);
     CGContextSetRGBStrokeColor(context, 0.5, 0.5, 0.5, 1.0);
     CGContextSetLineWidth(context, 1.0);
     CGContextAddRect(context, self.frame);
     //CGContextFillPath(context);
     CGContextStrokePath(context);
+    CGContextSelectFont(context, "Helvetica", 12.0, kCGEncodingMacRoman);
+    char    s[32];
+    sprintf(s, "%d", self.index);
+    CGContextShowTextAtPoint(context, self.frame.origin.x + 5.0, self.frame.origin.y + 5.0, s, strlen(s));
     UIGraphicsPopContext();
 }
 
 -(BOOL)squareCheck:(CGPoint)point
 {
-    return NO;
+	BOOL    ret = NO;
+	if (CGRectContainsPoint(self.frame, point)) {
+		ret = YES;
+	}
+	return ret;
 }
 
 @end

@@ -33,7 +33,7 @@
 }
 */
 
--(BOOL)pieceCheck:(CGPoint)point
+-(BOOL)pieceViewCheck:(CGPoint)point
 {
     BOOL    result = NO;
     if (CGRectContainsPoint(self.frame, point)) {

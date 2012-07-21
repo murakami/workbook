@@ -18,6 +18,7 @@
     if (self) {
         self.gameBoardView = view;
         [self.gameBoardView setup];
+        self.gameBoardView.delegate = self;
     }
     return self;
 }
@@ -29,6 +30,10 @@
 
 - (void)gameBoardViewTouchDown:(GameBoardView *)gameBoardView location:(CGPoint)touchPt taps:(int)taps event:(UIEvent*)event
 {
+    GameSquare      *square = [self.gameBoardView squareAtPoint:touchPt];
+    GamePieceView   *pieceView = [self.gameBoardView pieceViewAtPoint:touchPt];
+    NSLog(@"square(%d)", square.index);
+    NSLog(@"pieceView: %@", pieceView);
 }
 
 - (void)gameBoardViewTouchMove:(GameBoardView *)gameBoardView location:(CGPoint)touchPt taps:(int)taps event:(UIEvent*)event

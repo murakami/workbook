@@ -125,12 +125,20 @@
 
 -(GameSquare*)squareAtPoint:(CGPoint)pt
 {
+    for (GameSquare *square in self.squaresArray) {
+        if ([square squareCheck:pt]) {
+            return square;
+        }
+    }
     return nil;
 }
 
 -(GameSquare*)squareAtIndex:(int)index
 {
-return nil;
+	if (([self.squaresArray count] > index) && (index >= 0)) {
+		return [self.squaresArray objectAtIndex:index];
+    }
+    return nil;
 }
 
 -(GamePieceView*)pieceViewAtPoint:(CGPoint)pt

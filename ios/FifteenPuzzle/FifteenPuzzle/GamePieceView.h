@@ -10,6 +10,6 @@
 
 @interface GamePieceView : UIView
 
--(BOOL)pieceCheck:(CGPoint)point;
+-(BOOL)pieceViewCheck:(CGPoint)point;
 
 @end

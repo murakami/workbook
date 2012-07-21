@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "GameBoardView.h"
+#import "GameSquare.h"
+#import "GamePieceView.h"
 
 @interface GameController : NSObject <GameBoardViewDelegate>
 @property(nonatomic, strong) GameBoardView  *gameBoardView;
