@@ -28,6 +28,7 @@
     }
     return self;
 }
+
 - (void)dealloc
 {
     self.gameBoardView = nil;
