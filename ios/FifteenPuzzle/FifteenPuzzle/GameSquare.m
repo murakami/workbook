@@ -8,6 +8,9 @@
 
 #import "GameSquare.h"
 
+@interface GameSquare ()
+@end
+
 @implementation GameSquare
 
 @synthesize frame = _frame;

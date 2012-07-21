@@ -21,11 +21,11 @@
 @interface GameBoardView : UIView
 @property (nonatomic, weak) id<GameBoardViewDelegate, NSObject> delegate;
 @property (nonatomic, strong) NSMutableArray                    *squaresArray;
+@property (nonatomic, strong) NSMutableArray                    *pieceViewArray;
 
-- (void)setup;
+- (void)setupWithDelegate:(id)gameController;
 - (GameSquare*)squareAtPoint:(CGPoint)pt;
 - (GameSquare*)squareAtIndex:(int)index;
 - (GamePieceView*)pieceViewAtPoint:(CGPoint)pt;
 - (GamePieceView*)pieceViewAtIndex:(int)index;
-
 @end

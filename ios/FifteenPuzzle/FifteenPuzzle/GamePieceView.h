@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class GamePieceView;
+
+@protocol GamePieceViewDelegate
+@end
+
 @interface GamePieceView : UIView
+@property (nonatomic, weak) id<GamePieceViewDelegate, NSObject> delegate;
 
--(BOOL)pieceViewCheck:(CGPoint)point;
-
+- (id)initWithFrame:(CGRect)frame;
+- (BOOL)pieceViewCheck:(CGPoint)point;
 @end

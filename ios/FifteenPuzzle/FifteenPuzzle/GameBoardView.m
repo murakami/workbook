@@ -10,10 +10,14 @@
 #import "GameSquare.h"
 #import "GamePieceView.h"
 
+@interface GameBoardView ()
+@end
+
 @implementation GameBoardView
 
 @synthesize delegate = _delegate;
 @synthesize squaresArray = _squaresArray;
+@synthesize pieceViewArray = _pieceViewArray;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -53,8 +57,10 @@
     }
 }
 
-- (void)setup
+- (void)setupWithDelegate:(id)delegate
 {
+    self.delegate = delegate;
+
     CGRect  frame = self.frame;
     CGFloat width = frame.size.width / 4.0;
     CGFloat height = frame.size.height / 4.0;
@@ -81,10 +87,16 @@
     };
     self.squaresArray = [[NSMutableArray alloc] init];
     for (int i=0; i < 16; i++) {
-        GameSquare* square = [[GameSquare alloc] initWithFrame:rect[i]];
+        GameSquare  *square = [[GameSquare alloc] initWithFrame:rect[i]];
         square.index = i;
         [self.squaresArray addObject:square];
     }
+    
+    self.pieceViewArray = [[NSMutableArray alloc] init];
+    GamePieceView   *pieceView = [[GamePieceView alloc] initWithFrame:rect[0]];
+    pieceView.delegate = delegate;
+    [self addSubview:pieceView];
+    [self.pieceViewArray addObject:pieceView];
 }
 
 - (void) touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
@@ -94,7 +106,8 @@
 	NSUInteger	taps = [touch tapCount];
 	CGPoint		location = [touch locationInView:self];
 	
-	if( [self.delegate respondsToSelector:@selector(gameBoardViewTouchDown:location:taps:event:)]){
+	if ([self.delegate respondsToSelector:@selector(gameBoardViewTouchDown:location:taps:event:)]){
+        //DBGMSG(@"%s", __func__);
 		[self.delegate gameBoardViewTouchDown:self location:location taps:taps event:event];
 	}
 }
@@ -106,7 +119,8 @@
 	NSUInteger	taps = [touch tapCount];
 	CGPoint		location = [touch locationInView:self];
 	
-	if( [self.delegate respondsToSelector:@selector(gameBoardViewTouchMove:location:raps:event:)]){
+	if ([self.delegate respondsToSelector:@selector(gameBoardViewTouchMove:location:taps:event:)]){
+        //DBGMSG(@"%s", __func__);
 		[self.delegate gameBoardViewTouchMove:self location:location taps:taps event:event];
 	}
 }
@@ -118,7 +132,8 @@
 	NSUInteger	taps = [touch tapCount];
 	CGPoint		location = [touch locationInView:self];
 	
-	if( [self.delegate respondsToSelector:@selector(gameBoardViewTouchUp:location:taps:event:)]){
+	if ([self.delegate respondsToSelector:@selector(gameBoardViewTouchUp:location:taps:event:)]){
+        //DBGMSG(@"%s", __func__);
 		[self.delegate gameBoardViewTouchUp:self location:location taps:taps event:event];
 	}
 }
@@ -143,11 +158,19 @@
 
 -(GamePieceView*)pieceViewAtPoint:(CGPoint)pt
 {
+    for (GamePieceView *pieceView in self.pieceViewArray) {
+        if ([pieceView pieceViewCheck:pt]) {
+            return pieceView;
+        }
+    }
     return nil;
 }
 
 -(GamePieceView*)pieceViewAtIndex:(int)index
 {
+	if (([self.pieceViewArray count] > index) && (index >= 0)) {
+		return [self.pieceViewArray objectAtIndex:index];
+    }
     return nil;
 }
 
