@@ -6,9 +6,12 @@
 //  Copyright (c) 2012年 ビッツ有限会社. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
+#import "GameSquare.h"
 #import "GamePieceView.h"
 
 @interface GamePieceView ()
+- (void)moveFrame:(CGRect)frame;
 @end
 
 @implementation GamePieceView
@@ -54,6 +57,28 @@
         result = YES;
     }
     return result;
+}
+
+- (void)moveWithSquare:(GameSquare *)square
+{
+    CGRect  frame = [square frame];
+    [self moveFrame:frame];
+}
+
+- (void)moveFrame:(CGRect)frame
+{
+    CABasicAnimation    *theAnimation = [CABasicAnimation animationWithKeyPath:@"position"];
+    CGPoint fromPt = self.layer.position;
+    CGPoint toPt = CGPointMake(frame.origin.x + (frame.size.width / 2.0),
+                               frame.origin.y + (frame.size.height / 2.0));
+    theAnimation.fromValue = [NSValue valueWithCGPoint:fromPt];
+    theAnimation.toValue = [NSValue valueWithCGPoint:toPt];
+    //theAnimation.duration = 10.0f;
+    theAnimation.delegate = self;
+    [self.layer addAnimation:theAnimation forKey:@"animatePosition"];
+    self.layer.frame = frame;
+    
+    //[self setFrame:frame];
 }
 
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		561639E915BCA0E40048917A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 561639E815BCA0E30048917A /* QuartzCore.framework */; };
 		561BC86715B6B6C0006FB32D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 561BC86615B6B6C0006FB32D /* UIKit.framework */; };
 		561BC86915B6B6C0006FB32D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 561BC86815B6B6C0006FB32D /* Foundation.framework */; };
 		561BC86B15B6B6C0006FB32D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 561BC86A15B6B6C0006FB32D /* CoreGraphics.framework */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		561639E815BCA0E30048917A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		561BC86215B6B6C0006FB32D /* FifteenPuzzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FifteenPuzzle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		561BC86615B6B6C0006FB32D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		561BC86815B6B6C0006FB32D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -62,7 +64,7 @@
 		561BC89F15B6D752006FB32D /* GameBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameBoardView.m; sourceTree = "<group>"; };
 		569BE15615B8D49F00A09C1E /* GameSquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSquare.h; sourceTree = "<group>"; };
 		569BE15715B8D49F00A09C1E /* GameSquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameSquare.m; sourceTree = "<group>"; };
-		569BE15A15B8D4C600A09C1E /* GamePieceView.h */ = {isa = PBXFileReference; fileEncoding = 4; path = GamePieceView.h; sourceTree = "<group>"; };
+		569BE15A15B8D4C600A09C1E /* GamePieceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamePieceView.h; sourceTree = "<group>"; };
 		569BE15B15B8D4C600A09C1E /* GamePieceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamePieceView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +76,7 @@
 				561BC86715B6B6C0006FB32D /* UIKit.framework in Frameworks */,
 				561BC86915B6B6C0006FB32D /* Foundation.framework in Frameworks */,
 				561BC86B15B6B6C0006FB32D /* CoreGraphics.framework in Frameworks */,
+				561639E915BCA0E40048917A /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +118,7 @@
 				561BC86615B6B6C0006FB32D /* UIKit.framework */,
 				561BC86815B6B6C0006FB32D /* Foundation.framework */,
 				561BC86A15B6B6C0006FB32D /* CoreGraphics.framework */,
+				561639E815BCA0E30048917A /* QuartzCore.framework */,
 				561BC88415B6B6C0006FB32D /* SenTestingKit.framework */,
 			);
 			name = Frameworks;

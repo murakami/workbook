@@ -64,8 +64,7 @@
 {
     if (self.pieceView) {
         GameSquare      *square = [self.gameBoardView squareAtPoint:touchPt];
-        CGRect  frame = [square frame];
-        [self.pieceView setFrame:frame];
+        [self.pieceView moveWithSquare:square];
     }
     self.pieceView = nil;
 }

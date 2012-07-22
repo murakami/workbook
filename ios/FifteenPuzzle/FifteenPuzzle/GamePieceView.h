@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+@class GameSquare;
 @class GamePieceView;
 
 @protocol GamePieceViewDelegate
@@ -18,4 +19,5 @@
 
 - (id)initWithFrame:(CGRect)frame;
 - (BOOL)pieceViewCheck:(CGPoint)point;
+- (void)moveWithSquare:(GameSquare *)square;
 @end
