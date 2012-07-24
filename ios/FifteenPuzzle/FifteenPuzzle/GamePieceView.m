@@ -11,6 +11,7 @@
 #import "GamePieceView.h"
 
 @interface GamePieceView ()
+- (void)_init;
 - (void)moveFrame:(CGRect)frame;
 @end
 
@@ -20,12 +21,40 @@
 
 - (id)initWithFrame:(CGRect)frame
 {
+    DBGMSG(@"%s", __func__);
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        self.delegate = nil;
+        [self _init];
     }
     return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    DBGMSG(@"%s", __func__);
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        // Initialization code
+        [self _init];
+    }
+    return self;
+}
+
+- (void)_init
+{
+    static NSInteger    count = 0;
+    self.delegate = nil;
+    UILabel *label = [[UILabel alloc]
+                      initWithFrame:CGRectMake(self.bounds.origin.x + 2.0,
+                                               self.bounds.origin.y + 2.0,
+                                               self.bounds.size.width - 4.0,
+                                               self.bounds.size.height - 4.0)];
+    label.text = [[NSString alloc] initWithFormat:@"%d", count++];
+    label.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    label.textAlignment = UITextAlignmentCenter;
+    label.backgroundColor = [UIColor orangeColor];
+    [self addSubview:label];
 }
 
 - (void)dealloc
@@ -34,6 +63,7 @@
     /* [super dealloc]; */
 }
 
+/*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
@@ -49,6 +79,7 @@
     CGContextStrokePath(context);
     UIGraphicsPopContext();
 }
+*/
 
 -(BOOL)pieceViewCheck:(CGPoint)point
 {
@@ -76,9 +107,9 @@
     //theAnimation.duration = 10.0f;
     theAnimation.delegate = self;
     [self.layer addAnimation:theAnimation forKey:@"animatePosition"];
-    self.layer.frame = frame;
     
-    //[self setFrame:frame];
+    //self.layer.frame = frame;
+    [self setFrame:frame];
 }
 
 @end

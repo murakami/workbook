@@ -11,6 +11,7 @@
 @interface GameSquare : NSObject
 @property (nonatomic, assign) CGRect    frame;
 @property (nonatomic, assign) int       index;
+@property (nonatomic, assign) BOOL      isEmpty;
 
 - (id)initWithFrame:(CGRect)frame;
 - (void)drawContext:(CGContextRef)context;

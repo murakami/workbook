@@ -9,6 +9,7 @@
 #import "GameController.h"
 
 @interface GameController ()
+@property(nonatomic, weak) GameSquare       *square;
 @property(nonatomic, weak) GamePieceView    *pieceView;
 @property(nonatomic, assign) CGPoint        startLocation;
 @end
@@ -16,6 +17,7 @@
 @implementation GameController
 
 @synthesize gameBoardView = _gameBoardView;
+@synthesize square = _square;
 @synthesize pieceView = _pieceView;
 @synthesize startLocation = _startLocation;
 
@@ -41,6 +43,9 @@
     GamePieceView   *pieceView = [self.gameBoardView pieceViewAtPoint:touchPt];
     NSLog(@"square(%d)", square.index);
     NSLog(@"pieceView: %@", pieceView);
+    if (square) {
+        self.square = square;
+    }
     if (pieceView) {
         //DBGMSG(@"%s", __func__);
         self.pieceView = pieceView;
@@ -64,7 +69,14 @@
 {
     if (self.pieceView) {
         GameSquare      *square = [self.gameBoardView squareAtPoint:touchPt];
-        [self.pieceView moveWithSquare:square];
+        if (square.isEmpty) {
+            [self.pieceView moveWithSquare:square];
+            self.square.isEmpty = YES;
+            square.isEmpty = NO;
+        }
+        else {
+            [self.pieceView moveWithSquare:self.square];
+        }
     }
     self.pieceView = nil;
 }

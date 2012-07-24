@@ -15,6 +15,7 @@
 
 @synthesize frame = _frame;
 @synthesize index = _index;
+@synthesize isEmpty = _isEmpty;
 
 - (id)initWithFrame:(CGRect)frame
 {

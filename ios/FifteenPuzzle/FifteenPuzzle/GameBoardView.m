@@ -89,14 +89,22 @@
     for (int i=0; i < 16; i++) {
         GameSquare  *square = [[GameSquare alloc] initWithFrame:rect[i]];
         square.index = i;
+        if (i != 15) {
+            square.isEmpty = NO;
+        }
+        else {
+            square.isEmpty = YES;
+        }
         [self.squaresArray addObject:square];
     }
     
     self.pieceViewArray = [[NSMutableArray alloc] init];
-    GamePieceView   *pieceView = [[GamePieceView alloc] initWithFrame:rect[0]];
-    pieceView.delegate = delegate;
-    [self addSubview:pieceView];
-    [self.pieceViewArray addObject:pieceView];
+    for (int i=0; i < 15; i++) {
+        GamePieceView   *pieceView = [[GamePieceView alloc] initWithFrame:rect[i]];
+        pieceView.delegate = delegate;
+        [self addSubview:pieceView];
+        [self.pieceViewArray addObject:pieceView];
+    }
 }
 
 - (void) touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
