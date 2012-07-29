@@ -14,6 +14,8 @@
 
 @implementation ViewController
 
+@synthesize label = _label;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -22,6 +24,7 @@
 
 - (void)viewDidUnload
 {
+    self.label = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -29,6 +32,11 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+- (void)setMessage:(NSString *)msg
+{
+    self.label.text = msg;
 }
 
 @end

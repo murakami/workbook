@@ -10,4 +10,8 @@
 
 @interface ViewController : UIViewController
 
+@property (nonatomic, weak) IBOutlet UILabel    *label;
+
+- (void)setMessage:(NSString *)msg;
+
 @end

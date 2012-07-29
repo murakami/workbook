@@ -6,6 +6,7 @@
 //  Copyright (c) 2012年 Bitz Co., Ltd. All rights reserved.
 //
 
+#import "ViewController.h"
 #import "AppDelegate.h"
 
 @implementation AppDelegate
@@ -41,6 +42,23 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation
+{
+    NSLog(@"%s, %@", __func__, url);
+    if ([[url scheme] compare:@"IPCServer.demo"] == NSOrderedSame) {
+        UIPasteboard    *pastedboard = [UIPasteboard pasteboardWithName:@"demo.IPCClient" create:NO];
+        ViewController  *viewController = (ViewController *)self.window.rootViewController;
+        [viewController setMessage:pastedboard.string];
+        NSLog(@"pastedboard: %@", pastedboard.string);
+        //[UIPasteboard removePasteboardWithName:@"demo.IPCClient"];
+        return YES;
+    }
+    return NO;
 }
 
 @end
