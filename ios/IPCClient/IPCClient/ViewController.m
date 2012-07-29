@@ -14,6 +14,9 @@
 
 @implementation ViewController
 
+@synthesize textField = _textField;
+@synthesize button = _button;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -29,6 +32,17 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+- (IBAction)send:(id)sender
+{
+    NSURL   *url = [NSURL URLWithString:@"IPCServer.demo://IPCServer.demo?key=value"];
+    if ([[UIApplication sharedApplication] canOpenURL:url]) {
+        UIPasteboard    *pastedboard = [UIPasteboard pasteboardWithName:@"demo.IPCClient" create:YES];
+        pastedboard.persistent = YES;
+        [pastedboard setString:self.textField.text];
+        [[UIApplication sharedApplication] openURL:url];
+    }
 }
 
 @end
