@@ -41,7 +41,8 @@
     CGContextSelectFont(context, "Helvetica", 12.0, kCGEncodingMacRoman);
     char    s[32];
     sprintf(s, "%d", self.index);
-    CGContextShowTextAtPoint(context, self.frame.origin.x + 5.0, self.frame.origin.y + 5.0, s, strlen(s));
+    CGContextSetTextMatrix(context, CGAffineTransformMakeScale(1.0, -1.0));
+    CGContextShowTextAtPoint(context, self.frame.origin.x + 5.0, self.frame.origin.y + 17.0, s, strlen(s));
     UIGraphicsPopContext();
 }
 
