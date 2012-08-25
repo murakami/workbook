@@ -12,6 +12,7 @@
 @property(nonatomic, weak) GameSquare       *square;
 @property(nonatomic, weak) GamePieceView    *pieceView;
 @property(nonatomic, assign) CGPoint        startLocation;
+- (void)checkGameClear;
 @end
 
 @implementation GameController
@@ -34,7 +35,6 @@
 - (void)dealloc
 {
     self.gameBoardView = nil;
-    /* [super dealloc]; */
 }
 
 - (void)gameBoardViewTouchDown:(GameBoardView *)gameBoardView location:(CGPoint)touchPt taps:(int)taps event:(UIEvent*)event
@@ -47,7 +47,6 @@
         self.square = square;
     }
     if (pieceView) {
-        //DBGMSG(@"%s", __func__);
         self.pieceView = pieceView;
         self.startLocation = touchPt;
     }
@@ -56,7 +55,6 @@
 - (void)gameBoardViewTouchMove:(GameBoardView *)gameBoardView location:(CGPoint)touchPt taps:(int)taps event:(UIEvent*)event
 {
     if (self.pieceView) {
-        //DBGMSG(@"%s", __func__);
         CGRect  frame = [self.pieceView frame];
         frame.origin.x += touchPt.x - self.startLocation.x;
         frame.origin.y += touchPt.y - self.startLocation.y;
@@ -67,18 +65,47 @@
 
 - (void)gameBoardViewTouchUp:(GameBoardView *)gameBoardView location:(CGPoint)touchPt taps:(int)taps event:(UIEvent*)event
 {
+    BOOL    isMove = NO;
     if (self.pieceView) {
         GameSquare      *square = [self.gameBoardView squareAtPoint:touchPt];
-        if (square.isEmpty) {
+        if ((square.isEmpty) && ([square isNeighborhood:self.square])) {
             [self.pieceView moveWithSquare:square];
             self.square.isEmpty = YES;
             square.isEmpty = NO;
+            isMove = YES;
         }
         else {
             [self.pieceView moveWithSquare:self.square];
         }
     }
     self.pieceView = nil;
+    
+    /* ゲームクリアの判定 */
+    if (isMove) {
+        [self checkGameClear];
+    }
+}
+
+- (void)checkGameClear
+{
+    BOOL    isClear = YES;
+    for (int i=0; i < 15; i++) {
+        GameSquare  *square = [self.gameBoardView squareAtIndex:i];
+        GamePieceView   *pieceView = [self.gameBoardView pieceViewAtIndex:i];
+        if (! CGRectEqualToRect(square.frame, pieceView.frame)) {
+            isClear = NO;
+            break;
+        }
+    }
+    if (isClear) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"ゲームクリア" message:@"おめでとう！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Close", nil];
+        [alertView show];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    DBGMSG(@"%s, buttonIndex(%d)", __func__, (int)buttonIndex);
 }
 
 @end

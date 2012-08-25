@@ -107,41 +107,38 @@
     }
 }
 
-- (void) touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
+- (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
 {
-	NSSet*		allTouchs = [event allTouches];
-	UITouch*	touch = [allTouchs anyObject];
+	NSSet       *allTouchs = [event allTouches];
+	UITouch     *touch = [allTouchs anyObject];
 	NSUInteger	taps = [touch tapCount];
 	CGPoint		location = [touch locationInView:self];
 	
 	if ([self.delegate respondsToSelector:@selector(gameBoardViewTouchDown:location:taps:event:)]){
-        //DBGMSG(@"%s", __func__);
 		[self.delegate gameBoardViewTouchDown:self location:location taps:taps event:event];
 	}
 }
 
-- (void) touchesMoved:(NSSet*)touches withEvent:(UIEvent*)event
+- (void)touchesMoved:(NSSet*)touches withEvent:(UIEvent*)event
 {
-	NSSet*		allTouchs = [event allTouches];
-	UITouch*	touch = [allTouchs anyObject];
+	NSSet       *allTouchs = [event allTouches];
+	UITouch     *touch = [allTouchs anyObject];
 	NSUInteger	taps = [touch tapCount];
 	CGPoint		location = [touch locationInView:self];
 	
 	if ([self.delegate respondsToSelector:@selector(gameBoardViewTouchMove:location:taps:event:)]){
-        //DBGMSG(@"%s", __func__);
 		[self.delegate gameBoardViewTouchMove:self location:location taps:taps event:event];
 	}
 }
 
-- (void) touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event
+- (void)touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event
 {
-	NSSet*		allTouchs = [event allTouches];
-	UITouch*	touch = [allTouchs anyObject];
+	NSSet       *allTouchs = [event allTouches];
+	UITouch     *touch = [allTouchs anyObject];
 	NSUInteger	taps = [touch tapCount];
 	CGPoint		location = [touch locationInView:self];
 	
 	if ([self.delegate respondsToSelector:@selector(gameBoardViewTouchUp:location:taps:event:)]){
-        //DBGMSG(@"%s", __func__);
 		[self.delegate gameBoardViewTouchUp:self location:location taps:taps event:event];
 	}
 }

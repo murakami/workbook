@@ -11,7 +11,7 @@
 #import "GameSquare.h"
 #import "GamePieceView.h"
 
-@interface GameController : NSObject <GameBoardViewDelegate, GamePieceViewDelegate>
+@interface GameController : NSObject <GameBoardViewDelegate, GamePieceViewDelegate, UIAlertViewDelegate>
 @property(nonatomic, strong) GameBoardView  *gameBoardView;
 
 - (id)initWithView:(GameBoardView *)view;

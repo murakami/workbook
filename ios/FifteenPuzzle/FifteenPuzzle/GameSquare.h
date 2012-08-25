@@ -16,4 +16,5 @@
 - (id)initWithFrame:(CGRect)frame;
 - (void)drawContext:(CGContextRef)context;
 - (BOOL)squareCheck:(CGPoint)point;
+- (BOOL)isNeighborhood:(GameSquare *)square;
 @end
