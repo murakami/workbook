@@ -17,6 +17,7 @@
 - (void)startTimer;
 - (void)gameStart;
 - (void)gameOver:(NSTimer*)theTimer;
+- (void)shuffle;
 @end
 
 @implementation GameController
@@ -35,7 +36,9 @@
         [self.gameBoardView setupWithDelegate:self];
         self.gameTimer = nil;
         
-        /* 仮 */
+        /* 乱数 */
+        srand((unsigned int)time(NULL));
+        
         [self gameStart];
     }
     return self;
@@ -128,7 +131,7 @@
 
 - (void)startTimer
 {
-    self.gameTimer = [NSTimer scheduledTimerWithTimeInterval:10.0
+    self.gameTimer = [NSTimer scheduledTimerWithTimeInterval:60.0
                                                       target:self
                                                     selector:@selector(gameOver:)
                                                     userInfo:nil repeats:NO];
@@ -136,7 +139,7 @@
 
 - (void)gameStart
 {
-    /* 駒の配置も */
+    [self shuffle];
     [self startTimer];
 }
 
@@ -144,6 +147,35 @@
 {
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"ゲームオーバー" message:@"残念！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Close", nil];
     [alertView show];
+}
+
+- (void)shuffle
+{
+    NSMutableArray  *indexArray = [[NSMutableArray alloc] init];
+    for (NSInteger i = 0; i < 16; i++) {
+        NSNumber    *num = [[NSNumber alloc] initWithInteger:i];
+        [indexArray addObject:num];
+    }
+    for (NSInteger i = 0; i < 10; i++) {
+        NSInteger  index = rand() % 16;
+        NSNumber    *num = [indexArray objectAtIndex:index];
+        [indexArray removeObjectAtIndex:index];
+        [indexArray addObject:num];
+    }
+    for (NSInteger i = 0; i < 16; i++) {
+        NSNumber    *num = [indexArray objectAtIndex:i];
+        NSInteger   index = [num integerValue];
+        if (index != 15) {
+            GameSquare  *square = [self.gameBoardView squareAtIndex:i];
+            GamePieceView   *pieceView = [self.gameBoardView pieceViewAtIndex:index];
+            [pieceView moveWithSquare:square];
+            square.isEmpty = NO;
+        }
+        else {
+            GameSquare  *square = [self.gameBoardView squareAtIndex:i];
+            square.isEmpty = YES;
+        }
+    }
 }
 
 @end
