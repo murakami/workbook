@@ -6,6 +6,7 @@
 //  Copyright (c) 2012年 ビッツ有限会社. All rights reserved.
 //
 
+#import <AudioToolbox/AudioToolbox.h>
 #import "GameController.h"
 
 @interface GameController ()
@@ -113,6 +114,7 @@
     if (isClear) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"ゲームクリア" message:@"おめでとう！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Close", nil];
         [alertView show];
+        AudioServicesPlaySystemSound(1304);
     }
 }
 
@@ -156,7 +158,7 @@
         NSNumber    *num = [[NSNumber alloc] initWithInteger:i];
         [indexArray addObject:num];
     }
-    for (NSInteger i = 0; i < 10; i++) {
+    for (NSInteger i = 0; i < 0; i++) {
         NSInteger  index = rand() % 16;
         NSNumber    *num = [indexArray objectAtIndex:index];
         [indexArray removeObjectAtIndex:index];

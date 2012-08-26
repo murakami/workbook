@@ -12,7 +12,7 @@
 #import "GamePieceView.h"
 
 @interface GameController : NSObject <GameBoardViewDelegate, GamePieceViewDelegate, UIAlertViewDelegate>
-@property(nonatomic, strong) GameBoardView  *gameBoardView;
+@property (nonatomic, strong) GameBoardView *gameBoardView;
 
 - (id)initWithView:(GameBoardView *)view;
 - (void)doShake;

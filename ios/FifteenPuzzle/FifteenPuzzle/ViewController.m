@@ -40,7 +40,8 @@
     return YES;
 }
 
-- (void)viewDidAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated
+{
     [self becomeFirstResponder];
 }
 
