@@ -24,7 +24,6 @@
     DBGMSG(@"%s", __func__);
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
     }
     return self;
 }
@@ -34,7 +33,6 @@
     DBGMSG(@"%s", __func__);
     self = [super initWithCoder:aDecoder];
     if (self) {
-        // Initialization code
     }
     return self;
 }
@@ -42,15 +40,11 @@
 - (void)dealloc
 {
     self.squaresArray = nil;
-    /* [super dealloc]; */
 }
 
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
     DBGMSG(@"%s", __func__);
-    // Drawing code
     CGContextRef    context = UIGraphicsGetCurrentContext();
     for (GameSquare *square in self.squaresArray) {
         [square drawContext:context];

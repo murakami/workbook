@@ -12,7 +12,11 @@
 @property(nonatomic, weak) GameSquare       *square;
 @property(nonatomic, weak) GamePieceView    *pieceView;
 @property(nonatomic, assign) CGPoint        startLocation;
+@property(nonatomic, strong) NSTimer        *gameTimer;
 - (void)checkGameClear;
+- (void)startTimer;
+- (void)gameStart;
+- (void)gameOver:(NSTimer*)theTimer;
 @end
 
 @implementation GameController
@@ -21,6 +25,7 @@
 @synthesize square = _square;
 @synthesize pieceView = _pieceView;
 @synthesize startLocation = _startLocation;
+@synthesize gameTimer = _gameTimer;
 
 - (id)initWithView:(GameBoardView *)view
 {
@@ -28,6 +33,10 @@
     if (self) {
         self.gameBoardView = view;
         [self.gameBoardView setupWithDelegate:self];
+        self.gameTimer = nil;
+        
+        /* 仮 */
+        [self gameStart];
     }
     return self;
 }
@@ -35,6 +44,7 @@
 - (void)dealloc
 {
     self.gameBoardView = nil;
+    self.gameTimer = nil;
 }
 
 - (void)gameBoardViewTouchDown:(GameBoardView *)gameBoardView location:(CGPoint)touchPt taps:(int)taps event:(UIEvent*)event
@@ -106,6 +116,34 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     DBGMSG(@"%s, buttonIndex(%d)", __func__, (int)buttonIndex);
+    [self gameStart];
+}
+
+- (void)doShake
+{
+    DBGMSG(@"%s", __func__);
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"ゲームスタート" message:@"ゲームを開始します！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Close", nil];
+    [alertView show];
+}
+
+- (void)startTimer
+{
+    self.gameTimer = [NSTimer scheduledTimerWithTimeInterval:10.0
+                                                      target:self
+                                                    selector:@selector(gameOver:)
+                                                    userInfo:nil repeats:NO];
+}
+
+- (void)gameStart
+{
+    /* 駒の配置も */
+    [self startTimer];
+}
+
+- (void)gameOver:(NSTimer*)theTimer
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"ゲームオーバー" message:@"残念！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Close", nil];
+    [alertView show];
 }
 
 @end

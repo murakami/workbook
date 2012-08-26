@@ -15,4 +15,5 @@
 @property(nonatomic, strong) GameBoardView  *gameBoardView;
 
 - (id)initWithView:(GameBoardView *)view;
+- (void)doShake;
 @end
