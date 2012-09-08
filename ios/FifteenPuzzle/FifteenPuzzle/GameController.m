@@ -158,7 +158,7 @@
         NSNumber    *num = [[NSNumber alloc] initWithInteger:i];
         [indexArray addObject:num];
     }
-    for (NSInteger i = 0; i < 0; i++) {
+    for (NSInteger i = 0; i < 10; i++) {
         NSInteger  index = rand() % 16;
         NSNumber    *num = [indexArray objectAtIndex:index];
         [indexArray removeObjectAtIndex:index];

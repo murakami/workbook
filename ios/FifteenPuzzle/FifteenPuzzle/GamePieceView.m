@@ -112,4 +112,14 @@
     [self setFrame:frame];
 }
 
+- (void)animationDidStart:(CAAnimation *)theAnimation
+{
+    DBGMSG(@"%s, theAnimation:%@", __func__, theAnimation);
+}
+
+- (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag
+{
+    DBGMSG(@"%s, theAnimation:%@, flag:%d", __func__, theAnimation, (int)flag);
+}
+
 @end
