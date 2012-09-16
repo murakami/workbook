@@ -98,6 +98,15 @@
 
 - (void)moveFrame:(CGRect)frame
 {
+#if 0
+    CALayer *layer = self.layer;
+    layer.delegate = self.delegate;
+    self.frame = frame;
+#elif 0
+    [UIView animateWithDuration:0.5 animations:^{
+        self.frame = frame;
+    }];
+#else
     CABasicAnimation    *theAnimation = [CABasicAnimation animationWithKeyPath:@"position"];
     CGPoint fromPt = self.layer.position;
     CGPoint toPt = CGPointMake(frame.origin.x + (frame.size.width / 2.0),
@@ -110,6 +119,7 @@
     
     //self.layer.frame = frame;
     [self setFrame:frame];
+#endif
 }
 
 - (void)animationDidStart:(CAAnimation *)theAnimation
