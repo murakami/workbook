@@ -10,4 +10,6 @@
 
 @interface CVCViewController : UIViewController
 
+- (void)toggleVC;
+
 @end
