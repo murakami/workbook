@@ -24,7 +24,6 @@
 {
     DBGMSG(@"%s", __func__);
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     
     self.view1 = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
@@ -32,9 +31,10 @@
     self.view2 = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
     self.view2.backgroundColor = [UIColor blueColor];
     
+    [self.window addSubview:self.view2];
+
     self.isView1 = YES;
     [self.window addSubview:self.view1];
-    //[self.window addSubview:self.view2];
     
     [self.window makeKeyAndVisible];
     return YES;
@@ -45,48 +45,43 @@
     DBGMSG(@"%s", __func__);
     if (self.isView1) {
         self.isView1 = NO;
-        //[self.window sendSubviewToBack:self.view1];
-        [self.window addSubview:self.view2];
-        [self.view1 removeFromSuperview];
+        [self.window sendSubviewToBack:self.view1];
+        //[self.window addSubview:self.view2];
+        //[self.view1 removeFromSuperview];
     }
     else {
         self.isView1 = YES;
-        //[self.window bringSubviewToFront:self.view1];
-        [self.window addSubview:self.view1];
-        [self.view2 removeFromSuperview];
+        [self.window bringSubviewToFront:self.view1];
+        //[self.window addSubview:self.view1];
+        //[self.view2 removeFromSuperview];
     }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     DBGMSG(@"%s", __func__);
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
     DBGMSG(@"%s", __func__);
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     DBGMSG(@"%s", __func__);
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     DBGMSG(@"%s", __func__);
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     DBGMSG(@"%s", __func__);
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    self.view1 = nil;
+    self.view2 = nil;
 }
 
 @end
