@@ -23,6 +23,20 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     DBGMSG(@"%s", __func__);
+    
+    CGRect  screenBounds = [[UIScreen mainScreen] applicationFrame];
+    DBGMSG(@"screenBounds:(%f, %f, %f, %f)",
+           screenBounds.origin.x,
+           screenBounds.origin.y,
+           screenBounds.size.width,
+           screenBounds.size.height);
+    CGRect  windowBounds = [[UIScreen mainScreen] bounds];
+    DBGMSG(@"windowBounds:(%f, %f, %f, %f)",
+           windowBounds.origin.x,
+           windowBounds.origin.y,
+           windowBounds.size.width,
+           windowBounds.size.height);
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
