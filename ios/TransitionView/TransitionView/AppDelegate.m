@@ -6,6 +6,7 @@
 //  Copyright (c) 2012年 Bitz Co., Ltd. All rights reserved.
 //
 
+#include "MyViewController.h"
 #import "AppDelegate.h"
 
 @interface AppDelegate ()
@@ -16,6 +17,7 @@
 
 @implementation AppDelegate
 
+@synthesize myViewController = _myViewController;
 @synthesize isView1 = _isView1;
 @synthesize view1 = _view1;
 @synthesize view2 = _view2;
@@ -40,6 +42,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
+    self.myViewController = [[MyViewController alloc] init];
+    
     self.view1 = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
     self.view1.backgroundColor = [UIColor redColor];
     self.view2 = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
@@ -49,6 +53,8 @@
 
     self.isView1 = YES;
     [self.window addSubview:self.view1];
+    
+    
     
     [self.window makeKeyAndVisible];
     return YES;
@@ -94,6 +100,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     DBGMSG(@"%s", __func__);
+    self.myViewController = nil;
     self.view1 = nil;
     self.view2 = nil;
 }

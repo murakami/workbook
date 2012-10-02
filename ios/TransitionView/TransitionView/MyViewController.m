@@ -14,6 +14,7 @@
 
 @implementation MyViewController
 
+/*
 - (id)init
 {
     DBGMSG(@"%s", __func__);
@@ -23,6 +24,7 @@
     }
     return self;
 }
+*/
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
