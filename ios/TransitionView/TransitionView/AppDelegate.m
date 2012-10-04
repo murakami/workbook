@@ -43,7 +43,10 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     self.myViewController = [[MyViewController alloc] init];
-    
+    self.myViewController.view.backgroundColor = [UIColor yellowColor];
+    self.window.rootViewController = self.myViewController;
+
+    /*
     self.view1 = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
     self.view1.backgroundColor = [UIColor redColor];
     self.view2 = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
@@ -53,13 +56,13 @@
 
     self.isView1 = YES;
     [self.window addSubview:self.view1];
-    
-    
+    */
     
     [self.window makeKeyAndVisible];
     return YES;
 }
 
+/*
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     DBGMSG(@"%s", __func__);
@@ -76,6 +79,7 @@
         //[self.view2 removeFromSuperview];
     }
 }
+*/
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
