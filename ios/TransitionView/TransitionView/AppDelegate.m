@@ -71,7 +71,6 @@
     return YES;
 }
 
-/*
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     DBGMSG(@"%s", __func__);
@@ -94,7 +93,6 @@
         self.window.rootViewController = self.myViewController1;
     }
 }
-*/
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
