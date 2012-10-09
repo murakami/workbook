@@ -43,6 +43,9 @@
     
     /* 最初の画面を設定 */
     self.selectedViewController = [self.childViewControllers objectAtIndex:0];
+    CGRect  frame = self.selectedViewController.view.frame;
+    frame.origin = CGPointMake(0.0, 0.0);
+    self.selectedViewController.view.frame = frame;
     [self.view addSubview:self.selectedViewController.view];
 }
 
