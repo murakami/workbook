@@ -99,6 +99,18 @@
     [super viewDidDisappear:animated];
 }
 
+- (void)willMoveToParentViewController:(UIViewController *)parent
+{
+    DBGMSG(@"%s", __func__);
+    [super willMoveToParentViewController:parent];
+}
+
+- (void)didMoveToParentViewController:(UIViewController *)parent
+{
+    DBGMSG(@"%s", __func__);
+    [super didMoveToParentViewController:parent];
+}
+
 - (void)didReceiveMemoryWarning
 {
     DBGMSG(@"%s, title:%@", __func__, self.title);

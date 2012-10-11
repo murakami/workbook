@@ -19,4 +19,8 @@
 #define	DBGMSG(...)
 #endif	/* DEBUG */
 
+//#define DEMO_SUBVIEW
+//#define DEMO_VIEWCONTROLLER
+#define DEMO_CONTAINER
+
 /* End Of File */
