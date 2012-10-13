@@ -10,6 +10,8 @@
 #import "OneViewController.h"
 #import "TwoViewController.h"
 #import "CVCViewController.h"
+#import "MasterViewController.h"
+#import "DetailViewController.h"
 
 @interface CVCViewController ()
 @property (nonatomic, weak) UIViewController    *selectedViewController;
@@ -30,6 +32,11 @@
     UIStoryboard    *twoStoryboard = [UIStoryboard storyboardWithName:@"TwoStoryboard" bundle:nil];
     OneViewController   *oneViewController = [oneStoryboard instantiateInitialViewController];
     TwoViewController   *twoViewController = [twoStoryboard instantiateInitialViewController];
+    
+    UIStoryboard    *ncOneStoryboard = [UIStoryboard storyboardWithName:@"NCOneStoryboard" bundle:nil];
+    UIStoryboard    *ncTwoStoryboard = [UIStoryboard storyboardWithName:@"NCOneStoryboard" bundle:nil];
+    UINavigationController  *ncOneViewController = [ncOneStoryboard instantiateInitialViewController];
+    UINavigationController  *ncTwoViewController = [ncTwoStoryboard instantiateInitialViewController];
 
     /* コンテナViewControllerの子ViewControllerに登録 */
     [self addChildViewController:oneViewController];
@@ -37,12 +44,27 @@
     oneViewController.cvcViewController = self;
     twoViewController.cvcViewController = self;
 
+    [self addChildViewController:ncOneViewController];
+    [self addChildViewController:ncTwoViewController];
+    ncOneViewController.title = @"NCOne";
+    ncTwoViewController.title = @"NCTwo";
+    ((MasterViewController *)ncOneViewController.topViewController).cvcViewController = self;
+    ((MasterViewController *)ncTwoViewController.topViewController).cvcViewController = self;
+
     /* 強制的に呼ぶ */
     [oneViewController didMoveToParentViewController:self];
     [twoViewController didMoveToParentViewController:self];
     
     /* 最初の画面を設定 */
+    /*
     self.selectedViewController = [self.childViewControllers objectAtIndex:0];
+    CGRect  frame = self.selectedViewController.view.frame;
+    frame.origin = CGPointMake(0.0, 0.0);
+    self.selectedViewController.view.frame = frame;
+    [self.view addSubview:self.selectedViewController.view];
+    */
+    
+    self.selectedViewController = ncOneViewController;
     CGRect  frame = self.selectedViewController.view.frame;
     frame.origin = CGPointMake(0.0, 0.0);
     self.selectedViewController.view.frame = frame;
@@ -101,8 +123,13 @@
 - (void)toggleVC
 {
     DBGMSG(@"%s", __func__);
+#if 0
     UIViewController    *oneViewController = [self.childViewControllers objectAtIndex:0];
     UIViewController    *twoViewController = [self.childViewControllers objectAtIndex:1];
+#endif
+    UINavigationController  *ncOneViewController = [self.childViewControllers objectAtIndex:2];
+    UINavigationController  *ncTwoViewController = [self.childViewControllers objectAtIndex:3];
+#if 0
     if (self.selectedViewController == oneViewController) {
         [self transitionFromViewController:oneViewController
                           toViewController:twoViewController
@@ -134,6 +161,27 @@
                                                      completion:NULL];
                          }];
         self.selectedViewController = oneViewController;
+    }
+#endif
+    if ([self.selectedViewController.title compare:@"NCOne"] == NSOrderedSame) {
+        [self transitionFromViewController:ncOneViewController
+                          toViewController:ncTwoViewController
+                                  duration:1.0
+                                   options:UIViewAnimationOptionTransitionCrossDissolve
+                                animations:NULL
+                                completion:NULL];
+        [ncOneViewController popToRootViewControllerAnimated:NO];
+        self.selectedViewController = ncTwoViewController;
+    }
+    else {
+        [self transitionFromViewController:ncTwoViewController
+                          toViewController:ncOneViewController
+                                  duration:1.0
+                                   options:UIViewAnimationOptionTransitionCrossDissolve
+                                animations:NULL
+                                completion:NULL];
+        [ncTwoViewController popToRootViewControllerAnimated:NO];
+        self.selectedViewController = ncOneViewController;
     }
 }
 

@@ -28,6 +28,10 @@
 		560A7337160EE7AD00DCC021 /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 560A7336160EE7AD00DCC021 /* OneViewController.m */; };
 		560A733A160EE7BD00DCC021 /* TwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 560A7339160EE7BD00DCC021 /* TwoViewController.m */; };
 		560A733C160EEC2300DCC021 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 560A733B160EEC2300DCC021 /* QuartzCore.framework */; };
+		56353989162903EF004971EC /* NCOneStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56353988162903EF004971EC /* NCOneStoryboard.storyboard */; };
+		5635398C162903FE004971EC /* NCTwoStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5635398B162903FE004971EC /* NCTwoStoryboard.storyboard */; };
+		563539DC1629049B004971EC /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 563539DB1629049B004971EC /* MasterViewController.m */; };
+		563539DF162904B4004971EC /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 563539DE162904B4004971EC /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +74,12 @@
 		560A7338160EE7BD00DCC021 /* TwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoViewController.h; sourceTree = "<group>"; };
 		560A7339160EE7BD00DCC021 /* TwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoViewController.m; sourceTree = "<group>"; };
 		560A733B160EEC2300DCC021 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		56353988162903EF004971EC /* NCOneStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NCOneStoryboard.storyboard; sourceTree = "<group>"; };
+		5635398B162903FE004971EC /* NCTwoStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NCTwoStoryboard.storyboard; sourceTree = "<group>"; };
+		563539DA1629049A004971EC /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		563539DB1629049B004971EC /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		563539DD162904B3004971EC /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		563539DE162904B4004971EC /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,12 +146,18 @@
 				560A730E160EE3FA00DCC021 /* MainStoryboard.storyboard */,
 				560A7331160EE62B00DCC021 /* OneStoryboard.storyboard */,
 				560A7333160EE64A00DCC021 /* TwoStoryboard.storyboard */,
+				56353988162903EF004971EC /* NCOneStoryboard.storyboard */,
+				5635398B162903FE004971EC /* NCTwoStoryboard.storyboard */,
 				560A7311160EE3FA00DCC021 /* CVCViewController.h */,
 				560A7312160EE3FA00DCC021 /* CVCViewController.m */,
 				560A7335160EE7AD00DCC021 /* OneViewController.h */,
 				560A7336160EE7AD00DCC021 /* OneViewController.m */,
 				560A7338160EE7BD00DCC021 /* TwoViewController.h */,
 				560A7339160EE7BD00DCC021 /* TwoViewController.m */,
+				563539DA1629049A004971EC /* MasterViewController.h */,
+				563539DB1629049B004971EC /* MasterViewController.m */,
+				563539DD162904B3004971EC /* DetailViewController.h */,
+				563539DE162904B4004971EC /* DetailViewController.m */,
 				560A72FD160EE3FA00DCC021 /* Supporting Files */,
 			);
 			path = ContainerVC;
@@ -259,6 +275,8 @@
 				560A7310160EE3FA00DCC021 /* MainStoryboard.storyboard in Resources */,
 				560A7332160EE62B00DCC021 /* OneStoryboard.storyboard in Resources */,
 				560A7334160EE64A00DCC021 /* TwoStoryboard.storyboard in Resources */,
+				56353989162903EF004971EC /* NCOneStoryboard.storyboard in Resources */,
+				5635398C162903FE004971EC /* NCTwoStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +316,8 @@
 				560A7313160EE3FA00DCC021 /* CVCViewController.m in Sources */,
 				560A7337160EE7AD00DCC021 /* OneViewController.m in Sources */,
 				560A733A160EE7BD00DCC021 /* TwoViewController.m in Sources */,
+				563539DC1629049B004971EC /* MasterViewController.m in Sources */,
+				563539DF162904B4004971EC /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,6 +491,7 @@
 				560A732D160EE3FA00DCC021 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		560A732E160EE3FA00DCC021 /* Build configuration list for PBXNativeTarget "ContainerVCTests" */ = {
 			isa = XCConfigurationList;
@@ -479,6 +500,7 @@
 				560A7330160EE3FA00DCC021 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
