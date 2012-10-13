@@ -13,7 +13,7 @@
 @property (nonatomic, assign) BOOL      isView1;
 @property (nonatomic, strong) UIView    *view1;
 @property (nonatomic, strong) UIView    *view2;
-@property (strong, nonatomic) UIViewController  *containerViewController;
+@property (strong, nonatomic) MyViewController  *containerViewController;
 @property (strong, nonatomic) MyViewController  *myViewController1;
 @property (strong, nonatomic) MyViewController  *myViewController2;
 @end
@@ -72,8 +72,9 @@
 #endif  /* DEMO_VIEWCONTROLLER */
 
 #ifdef DEMO_CONTAINER
-    self.containerViewController = [[UIViewController alloc] init];
+    self.containerViewController = [[MyViewController alloc] init];
     self.containerViewController.view.backgroundColor = [UIColor yellowColor];
+    self.containerViewController.title = @"zero";
     self.myViewController1 = [[MyViewController alloc] init];
     self.myViewController1.view.backgroundColor = [UIColor redColor];
     self.myViewController1.title = @"one";
