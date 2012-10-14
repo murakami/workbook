@@ -1,0 +1,463 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		56AA981E162AA9F50005B0DF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AA981D162AA9F50005B0DF /* UIKit.framework */; };
+		56AA9820162AA9F50005B0DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AA981F162AA9F50005B0DF /* Foundation.framework */; };
+		56AA9822162AA9F50005B0DF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AA9821162AA9F50005B0DF /* CoreGraphics.framework */; };
+		56AA9828162AA9F50005B0DF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 56AA9826162AA9F50005B0DF /* InfoPlist.strings */; };
+		56AA982A162AA9F50005B0DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AA9829162AA9F50005B0DF /* main.m */; };
+		56AA982E162AA9F50005B0DF /* VirtualEarthAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AA982D162AA9F50005B0DF /* VirtualEarthAppDelegate.m */; };
+		56AA9830162AA9F50005B0DF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 56AA982F162AA9F50005B0DF /* Default.png */; };
+		56AA9832162AA9F50005B0DF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56AA9831162AA9F50005B0DF /* Default@2x.png */; };
+		56AA9834162AA9F50005B0DF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56AA9833162AA9F50005B0DF /* Default-568h@2x.png */; };
+		56AA9837162AA9F50005B0DF /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56AA9835162AA9F50005B0DF /* MainStoryboard.storyboard */; };
+		56AA983A162AA9F50005B0DF /* VirtualEarthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AA9839162AA9F50005B0DF /* VirtualEarthViewController.m */; };
+		56AA9842162AA9F60005B0DF /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AA9841162AA9F60005B0DF /* SenTestingKit.framework */; };
+		56AA9843162AA9F60005B0DF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AA981D162AA9F50005B0DF /* UIKit.framework */; };
+		56AA9844162AA9F60005B0DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AA981F162AA9F50005B0DF /* Foundation.framework */; };
+		56AA984C162AA9F60005B0DF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 56AA984A162AA9F60005B0DF /* InfoPlist.strings */; };
+		56AA984F162AA9F60005B0DF /* VirtualEarthTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AA984E162AA9F60005B0DF /* VirtualEarthTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		56AA9845162AA9F60005B0DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56AA9810162AA9F50005B0DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56AA9818162AA9F50005B0DF;
+			remoteInfo = VirtualEarth;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		56AA9819162AA9F50005B0DF /* VirtualEarth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualEarth.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		56AA981D162AA9F50005B0DF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		56AA981F162AA9F50005B0DF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		56AA9821162AA9F50005B0DF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		56AA9825162AA9F50005B0DF /* VirtualEarth-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VirtualEarth-Info.plist"; sourceTree = "<group>"; };
+		56AA9827162AA9F50005B0DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		56AA9829162AA9F50005B0DF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		56AA982B162AA9F50005B0DF /* VirtualEarth-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VirtualEarth-Prefix.pch"; sourceTree = "<group>"; };
+		56AA982C162AA9F50005B0DF /* VirtualEarthAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VirtualEarthAppDelegate.h; sourceTree = "<group>"; };
+		56AA982D162AA9F50005B0DF /* VirtualEarthAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VirtualEarthAppDelegate.m; sourceTree = "<group>"; };
+		56AA982F162AA9F50005B0DF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		56AA9831162AA9F50005B0DF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		56AA9833162AA9F50005B0DF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		56AA9836162AA9F50005B0DF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		56AA9838162AA9F50005B0DF /* VirtualEarthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VirtualEarthViewController.h; sourceTree = "<group>"; };
+		56AA9839162AA9F50005B0DF /* VirtualEarthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VirtualEarthViewController.m; sourceTree = "<group>"; };
+		56AA9840162AA9F60005B0DF /* VirtualEarthTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VirtualEarthTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		56AA9841162AA9F60005B0DF /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		56AA9849162AA9F60005B0DF /* VirtualEarthTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VirtualEarthTests-Info.plist"; sourceTree = "<group>"; };
+		56AA984B162AA9F60005B0DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		56AA984D162AA9F60005B0DF /* VirtualEarthTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VirtualEarthTests.h; sourceTree = "<group>"; };
+		56AA984E162AA9F60005B0DF /* VirtualEarthTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VirtualEarthTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		56AA9816162AA9F50005B0DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56AA981E162AA9F50005B0DF /* UIKit.framework in Frameworks */,
+				56AA9820162AA9F50005B0DF /* Foundation.framework in Frameworks */,
+				56AA9822162AA9F50005B0DF /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56AA983C162AA9F60005B0DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56AA9842162AA9F60005B0DF /* SenTestingKit.framework in Frameworks */,
+				56AA9843162AA9F60005B0DF /* UIKit.framework in Frameworks */,
+				56AA9844162AA9F60005B0DF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		56AA980E162AA9F50005B0DF = {
+			isa = PBXGroup;
+			children = (
+				56AA9823162AA9F50005B0DF /* VirtualEarth */,
+				56AA9847162AA9F60005B0DF /* VirtualEarthTests */,
+				56AA981C162AA9F50005B0DF /* Frameworks */,
+				56AA981A162AA9F50005B0DF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		56AA981A162AA9F50005B0DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				56AA9819162AA9F50005B0DF /* VirtualEarth.app */,
+				56AA9840162AA9F60005B0DF /* VirtualEarthTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		56AA981C162AA9F50005B0DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				56AA981D162AA9F50005B0DF /* UIKit.framework */,
+				56AA981F162AA9F50005B0DF /* Foundation.framework */,
+				56AA9821162AA9F50005B0DF /* CoreGraphics.framework */,
+				56AA9841162AA9F60005B0DF /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		56AA9823162AA9F50005B0DF /* VirtualEarth */ = {
+			isa = PBXGroup;
+			children = (
+				56AA982C162AA9F50005B0DF /* VirtualEarthAppDelegate.h */,
+				56AA982D162AA9F50005B0DF /* VirtualEarthAppDelegate.m */,
+				56AA9835162AA9F50005B0DF /* MainStoryboard.storyboard */,
+				56AA9838162AA9F50005B0DF /* VirtualEarthViewController.h */,
+				56AA9839162AA9F50005B0DF /* VirtualEarthViewController.m */,
+				56AA9824162AA9F50005B0DF /* Supporting Files */,
+			);
+			path = VirtualEarth;
+			sourceTree = "<group>";
+		};
+		56AA9824162AA9F50005B0DF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				56AA9825162AA9F50005B0DF /* VirtualEarth-Info.plist */,
+				56AA9826162AA9F50005B0DF /* InfoPlist.strings */,
+				56AA9829162AA9F50005B0DF /* main.m */,
+				56AA982B162AA9F50005B0DF /* VirtualEarth-Prefix.pch */,
+				56AA982F162AA9F50005B0DF /* Default.png */,
+				56AA9831162AA9F50005B0DF /* Default@2x.png */,
+				56AA9833162AA9F50005B0DF /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		56AA9847162AA9F60005B0DF /* VirtualEarthTests */ = {
+			isa = PBXGroup;
+			children = (
+				56AA984D162AA9F60005B0DF /* VirtualEarthTests.h */,
+				56AA984E162AA9F60005B0DF /* VirtualEarthTests.m */,
+				56AA9848162AA9F60005B0DF /* Supporting Files */,
+			);
+			path = VirtualEarthTests;
+			sourceTree = "<group>";
+		};
+		56AA9848162AA9F60005B0DF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				56AA9849162AA9F60005B0DF /* VirtualEarthTests-Info.plist */,
+				56AA984A162AA9F60005B0DF /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		56AA9818162AA9F50005B0DF /* VirtualEarth */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56AA9852162AA9F60005B0DF /* Build configuration list for PBXNativeTarget "VirtualEarth" */;
+			buildPhases = (
+				56AA9815162AA9F50005B0DF /* Sources */,
+				56AA9816162AA9F50005B0DF /* Frameworks */,
+				56AA9817162AA9F50005B0DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VirtualEarth;
+			productName = VirtualEarth;
+			productReference = 56AA9819162AA9F50005B0DF /* VirtualEarth.app */;
+			productType = "com.apple.product-type.application";
+		};
+		56AA983F162AA9F60005B0DF /* VirtualEarthTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56AA9855162AA9F60005B0DF /* Build configuration list for PBXNativeTarget "VirtualEarthTests" */;
+			buildPhases = (
+				56AA983B162AA9F60005B0DF /* Sources */,
+				56AA983C162AA9F60005B0DF /* Frameworks */,
+				56AA983D162AA9F60005B0DF /* Resources */,
+				56AA983E162AA9F60005B0DF /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				56AA9846162AA9F60005B0DF /* PBXTargetDependency */,
+			);
+			name = VirtualEarthTests;
+			productName = VirtualEarthTests;
+			productReference = 56AA9840162AA9F60005B0DF /* VirtualEarthTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		56AA9810162AA9F50005B0DF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = VirtualEarth;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Bitz Co., Ltd.";
+			};
+			buildConfigurationList = 56AA9813162AA9F50005B0DF /* Build configuration list for PBXProject "VirtualEarth" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 56AA980E162AA9F50005B0DF;
+			productRefGroup = 56AA981A162AA9F50005B0DF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				56AA9818162AA9F50005B0DF /* VirtualEarth */,
+				56AA983F162AA9F60005B0DF /* VirtualEarthTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		56AA9817162AA9F50005B0DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56AA9828162AA9F50005B0DF /* InfoPlist.strings in Resources */,
+				56AA9830162AA9F50005B0DF /* Default.png in Resources */,
+				56AA9832162AA9F50005B0DF /* Default@2x.png in Resources */,
+				56AA9834162AA9F50005B0DF /* Default-568h@2x.png in Resources */,
+				56AA9837162AA9F50005B0DF /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56AA983D162AA9F60005B0DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56AA984C162AA9F60005B0DF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		56AA983E162AA9F60005B0DF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		56AA9815162AA9F50005B0DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56AA982A162AA9F50005B0DF /* main.m in Sources */,
+				56AA982E162AA9F50005B0DF /* VirtualEarthAppDelegate.m in Sources */,
+				56AA983A162AA9F50005B0DF /* VirtualEarthViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56AA983B162AA9F60005B0DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56AA984F162AA9F60005B0DF /* VirtualEarthTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		56AA9846162AA9F60005B0DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 56AA9818162AA9F50005B0DF /* VirtualEarth */;
+			targetProxy = 56AA9845162AA9F60005B0DF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		56AA9826162AA9F50005B0DF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				56AA9827162AA9F50005B0DF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		56AA9835162AA9F50005B0DF /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				56AA9836162AA9F50005B0DF /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		56AA984A162AA9F60005B0DF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				56AA984B162AA9F60005B0DF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		56AA9850162AA9F60005B0DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		56AA9851162AA9F60005B0DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		56AA9853162AA9F60005B0DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VirtualEarth/VirtualEarth-Prefix.pch";
+				INFOPLIST_FILE = "VirtualEarth/VirtualEarth-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		56AA9854162AA9F60005B0DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VirtualEarth/VirtualEarth-Prefix.pch";
+				INFOPLIST_FILE = "VirtualEarth/VirtualEarth-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		56AA9856162AA9F60005B0DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/VirtualEarth.app/VirtualEarth";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VirtualEarth/VirtualEarth-Prefix.pch";
+				INFOPLIST_FILE = "VirtualEarthTests/VirtualEarthTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		56AA9857162AA9F60005B0DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/VirtualEarth.app/VirtualEarth";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VirtualEarth/VirtualEarth-Prefix.pch";
+				INFOPLIST_FILE = "VirtualEarthTests/VirtualEarthTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		56AA9813162AA9F50005B0DF /* Build configuration list for PBXProject "VirtualEarth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56AA9850162AA9F60005B0DF /* Debug */,
+				56AA9851162AA9F60005B0DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		56AA9852162AA9F60005B0DF /* Build configuration list for PBXNativeTarget "VirtualEarth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56AA9853162AA9F60005B0DF /* Debug */,
+				56AA9854162AA9F60005B0DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		56AA9855162AA9F60005B0DF /* Build configuration list for PBXNativeTarget "VirtualEarthTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56AA9856162AA9F60005B0DF /* Debug */,
+				56AA9857162AA9F60005B0DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 56AA9810162AA9F50005B0DF /* Project object */;
+}
