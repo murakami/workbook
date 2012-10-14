@@ -23,6 +23,15 @@
 		56AA9844162AA9F60005B0DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AA981F162AA9F50005B0DF /* Foundation.framework */; };
 		56AA984C162AA9F60005B0DF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 56AA984A162AA9F60005B0DF /* InfoPlist.strings */; };
 		56AA984F162AA9F60005B0DF /* VirtualEarthTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AA984E162AA9F60005B0DF /* VirtualEarthTests.m */; };
+		56AA9866162AAC390005B0DF /* BingMaps.Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 56AA9864162AAC390005B0DF /* BingMaps.Resources.bundle */; };
+		56AA9867162AAC390005B0DF /* libBingMaps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AA9865162AAC390005B0DF /* libBingMaps.a */; };
+		56AA9869162AB10E0005B0DF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AA9868162AB10E0005B0DF /* CoreData.framework */; };
+		56AA986B162AB11C0005B0DF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AA986A162AB11C0005B0DF /* CoreLocation.framework */; };
+		56AA986D162AB12F0005B0DF /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AA986C162AB12F0005B0DF /* OpenGLES.framework */; };
+		56AA986F162AB13D0005B0DF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AA986E162AB13D0005B0DF /* QuartzCore.framework */; };
+		56AA9871162AB14A0005B0DF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AA9870162AB14A0005B0DF /* SystemConfiguration.framework */; };
+		56AA9873162AB1600005B0DF /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AA9872162AB1600005B0DF /* libxml2.dylib */; };
+		56AA9875162AB16D0005B0DF /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AA9874162AB16D0005B0DF /* libz.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +67,25 @@
 		56AA984B162AA9F60005B0DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		56AA984D162AA9F60005B0DF /* VirtualEarthTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VirtualEarthTests.h; sourceTree = "<group>"; };
 		56AA984E162AA9F60005B0DF /* VirtualEarthTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VirtualEarthTests.m; sourceTree = "<group>"; };
+		56AA985A162AAC390005B0DF /* BingMaps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BingMaps.h; sourceTree = "<group>"; };
+		56AA985B162AAC390005B0DF /* BMEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEntity.h; sourceTree = "<group>"; };
+		56AA985C162AAC390005B0DF /* BMGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMGeometry.h; sourceTree = "<group>"; };
+		56AA985D162AAC390005B0DF /* BMMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMMapView.h; sourceTree = "<group>"; };
+		56AA985E162AAC390005B0DF /* BMMarker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMMarker.h; sourceTree = "<group>"; };
+		56AA985F162AAC390005B0DF /* BMMarkerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMMarkerView.h; sourceTree = "<group>"; };
+		56AA9860162AAC390005B0DF /* BMPushpinView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMPushpinView.h; sourceTree = "<group>"; };
+		56AA9861162AAC390005B0DF /* BMReverseGeocoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMReverseGeocoder.h; sourceTree = "<group>"; };
+		56AA9862162AAC390005B0DF /* BMTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMTypes.h; sourceTree = "<group>"; };
+		56AA9863162AAC390005B0DF /* BMUserLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMUserLocation.h; sourceTree = "<group>"; };
+		56AA9864162AAC390005B0DF /* BingMaps.Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BingMaps.Resources.bundle; sourceTree = "<group>"; };
+		56AA9865162AAC390005B0DF /* libBingMaps.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBingMaps.a; sourceTree = "<group>"; };
+		56AA9868162AB10E0005B0DF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		56AA986A162AB11C0005B0DF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		56AA986C162AB12F0005B0DF /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		56AA986E162AB13D0005B0DF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		56AA9870162AB14A0005B0DF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		56AA9872162AB1600005B0DF /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		56AA9874162AB16D0005B0DF /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +96,14 @@
 				56AA981E162AA9F50005B0DF /* UIKit.framework in Frameworks */,
 				56AA9820162AA9F50005B0DF /* Foundation.framework in Frameworks */,
 				56AA9822162AA9F50005B0DF /* CoreGraphics.framework in Frameworks */,
+				56AA9867162AAC390005B0DF /* libBingMaps.a in Frameworks */,
+				56AA9869162AB10E0005B0DF /* CoreData.framework in Frameworks */,
+				56AA986B162AB11C0005B0DF /* CoreLocation.framework in Frameworks */,
+				56AA986D162AB12F0005B0DF /* OpenGLES.framework in Frameworks */,
+				56AA986F162AB13D0005B0DF /* QuartzCore.framework in Frameworks */,
+				56AA9871162AB14A0005B0DF /* SystemConfiguration.framework in Frameworks */,
+				56AA9873162AB1600005B0DF /* libxml2.dylib in Frameworks */,
+				56AA9875162AB16D0005B0DF /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +145,13 @@
 				56AA981D162AA9F50005B0DF /* UIKit.framework */,
 				56AA981F162AA9F50005B0DF /* Foundation.framework */,
 				56AA9821162AA9F50005B0DF /* CoreGraphics.framework */,
+				56AA9868162AB10E0005B0DF /* CoreData.framework */,
+				56AA986A162AB11C0005B0DF /* CoreLocation.framework */,
+				56AA986C162AB12F0005B0DF /* OpenGLES.framework */,
+				56AA986E162AB13D0005B0DF /* QuartzCore.framework */,
+				56AA9870162AB14A0005B0DF /* SystemConfiguration.framework */,
+				56AA9872162AB1600005B0DF /* libxml2.dylib */,
+				56AA9874162AB16D0005B0DF /* libz.dylib */,
 				56AA9841162AA9F60005B0DF /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
@@ -122,6 +165,7 @@
 				56AA9835162AA9F50005B0DF /* MainStoryboard.storyboard */,
 				56AA9838162AA9F50005B0DF /* VirtualEarthViewController.h */,
 				56AA9839162AA9F50005B0DF /* VirtualEarthViewController.m */,
+				56AA9858162AAC390005B0DF /* MapControl */,
 				56AA9824162AA9F50005B0DF /* Supporting Files */,
 			);
 			path = VirtualEarth;
@@ -158,6 +202,33 @@
 				56AA984A162AA9F60005B0DF /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		56AA9858162AAC390005B0DF /* MapControl */ = {
+			isa = PBXGroup;
+			children = (
+				56AA9859162AAC390005B0DF /* BingMaps */,
+				56AA9864162AAC390005B0DF /* BingMaps.Resources.bundle */,
+				56AA9865162AAC390005B0DF /* libBingMaps.a */,
+			);
+			path = MapControl;
+			sourceTree = "<group>";
+		};
+		56AA9859162AAC390005B0DF /* BingMaps */ = {
+			isa = PBXGroup;
+			children = (
+				56AA985A162AAC390005B0DF /* BingMaps.h */,
+				56AA985B162AAC390005B0DF /* BMEntity.h */,
+				56AA985C162AAC390005B0DF /* BMGeometry.h */,
+				56AA985D162AAC390005B0DF /* BMMapView.h */,
+				56AA985E162AAC390005B0DF /* BMMarker.h */,
+				56AA985F162AAC390005B0DF /* BMMarkerView.h */,
+				56AA9860162AAC390005B0DF /* BMPushpinView.h */,
+				56AA9861162AAC390005B0DF /* BMReverseGeocoder.h */,
+				56AA9862162AAC390005B0DF /* BMTypes.h */,
+				56AA9863162AAC390005B0DF /* BMUserLocation.h */,
+			);
+			path = BingMaps;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +308,7 @@
 				56AA9832162AA9F50005B0DF /* Default@2x.png in Resources */,
 				56AA9834162AA9F50005B0DF /* Default-568h@2x.png in Resources */,
 				56AA9837162AA9F50005B0DF /* MainStoryboard.storyboard in Resources */,
+				56AA9866162AAC390005B0DF /* BingMaps.Resources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,8 +417,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/VirtualEarth/MapControl\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -366,8 +440,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/VirtualEarth/MapControl\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -379,6 +455,14 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VirtualEarth/VirtualEarth-Prefix.pch";
 				INFOPLIST_FILE = "VirtualEarth/VirtualEarth-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/VirtualEarth/MapControl\"",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -390,6 +474,14 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VirtualEarth/VirtualEarth-Prefix.pch";
 				INFOPLIST_FILE = "VirtualEarth/VirtualEarth-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/VirtualEarth/MapControl\"",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

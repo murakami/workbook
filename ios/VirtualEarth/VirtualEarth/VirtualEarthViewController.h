@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BingMaps/BingMaps.h"
 
-@interface VirtualEarthViewController : UIViewController
-
+@interface VirtualEarthViewController : UIViewController <BMMapViewDelegate>
+@property (nonatomic, weak) IBOutlet BMMapView  *mapView;
 @end
