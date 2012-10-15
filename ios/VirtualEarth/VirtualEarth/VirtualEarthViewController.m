@@ -14,6 +14,7 @@
 @implementation VirtualEarthViewController
 
 @synthesize mapView = _mapView;
+@synthesize locationManager = _locationManager;
 
 - (void)viewDidLoad
 {
@@ -22,9 +23,31 @@
     [self.mapView setShowsUserLocation:YES];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    [self.locationManager startUpdatingLocation];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    CLLocation  *location = [locations objectAtIndex:0];
+    BMCoordinateRegion  newRegion;
+    newRegion.center = location.coordinate;
+    newRegion.span.latitudeDelta = 0.0;
+    newRegion.span.longitudeDelta = 0.0;
+	
+    [self.mapView setRegion:newRegion animated:YES];
+
+    [self.locationManager stopUpdatingLocation];
 }
 
 @end

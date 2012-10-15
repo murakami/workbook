@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import <CoreLocation/CLLocationManagerDelegate.h>
 #import "BingMaps/BingMaps.h"
 
-@interface VirtualEarthViewController : UIViewController <BMMapViewDelegate>
+@interface VirtualEarthViewController : UIViewController <BMMapViewDelegate, CLLocationManagerDelegate>
 @property (nonatomic, weak) IBOutlet BMMapView  *mapView;
+@property (nonatomic, strong) CLLocationManager *locationManager;
 @end
