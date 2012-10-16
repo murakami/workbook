@@ -39,11 +39,11 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-    CLLocation  *location = [locations objectAtIndex:0];
+    CLLocation  *location = [locations lastObject];
     BMCoordinateRegion  newRegion;
     newRegion.center = location.coordinate;
-    newRegion.span.latitudeDelta = 0.0;
-    newRegion.span.longitudeDelta = 0.0;
+    newRegion.span.latitudeDelta = 0.005;
+    newRegion.span.longitudeDelta = 0.005;
 	
     [self.mapView setRegion:newRegion animated:YES];
 
