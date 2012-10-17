@@ -13,20 +13,47 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view multipleTouchEnabled="YES" contentMode="scaleToFill" id="SiP-EU-4UA" customClass="BMMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="460"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="XLD-hi-TmB">
+                                <rect key="frame" x="0.0" y="504" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem image="location-arrow.png" id="byE-on-Dsw">
+                                        <connections>
+                                            <action selector="location:" destination="2" id="YjP-Pd-wfR"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Bao-vX-Tix"/>
+                                    <barButtonItem systemItem="pageCurl" id="oXX-hk-qdo"/>
+                                </items>
+                            </toolbar>
+                            <searchBar contentMode="redraw" text="" id="07c-T7-XK1">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2" id="M0c-rH-PpI"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="locationBarButtonItem" destination="byE-on-Dsw" id="QsH-TU-4am"/>
                         <outlet property="mapView" destination="SiP-EU-4UA" id="gP3-3e-QUG"/>
+                        <outlet property="searchBar" destination="07c-T7-XK1" id="lh8-Mv-FIs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="location-arrow.png" width="24" height="24"/>
+    </resources>
     <classes>
         <class className="BMMapView" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BMMapView.h"/>
@@ -34,7 +61,10 @@
         <class className="VirtualEarthViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/VirtualEarthViewController.h"/>
             <relationships>
+                <relationship kind="action" name="location:"/>
+                <relationship kind="outlet" name="locationBarButtonItem" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="mapView" candidateClass="BMMapView"/>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
             </relationships>
         </class>
     </classes>

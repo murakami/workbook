@@ -11,7 +11,12 @@
 #import <CoreLocation/CLLocationManagerDelegate.h>
 #import "BingMaps/BingMaps.h"
 
-@interface VirtualEarthViewController : UIViewController <BMMapViewDelegate, CLLocationManagerDelegate>
-@property (nonatomic, weak) IBOutlet BMMapView  *mapView;
-@property (nonatomic, strong) CLLocationManager *locationManager;
+@interface VirtualEarthViewController : UIViewController
+    <BMMapViewDelegate, CLLocationManagerDelegate, UISearchBarDelegate>
+@property (nonatomic, weak) IBOutlet UISearchBar        *searchBar;
+@property (nonatomic, weak) IBOutlet BMMapView          *mapView;
+@property (nonatomic, weak) IBOutlet UIBarButtonItem    *locationBarButtonItem;
+@property (nonatomic, strong) CLLocationManager         *locationManager;
+
+- (IBAction)location:(id)sender;
 @end
