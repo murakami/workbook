@@ -90,12 +90,20 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-    NSLog(@"%s, searchBar.text:%@", __func__, searchBar.text);
+    if ((searchBar.text == nil) || (searchBar.text.length <= 0))    return;
     self.data = [[NSMutableData alloc] init];
     NSString    *bingMapsKey = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"BingMapsKey"];
-    NSString    *url = [[NSString alloc] initWithFormat:@"http://dev.virtualearth.net/REST/v1/Locations?query=%@&key=%@",
-                        searchBar.text,
-                        bingMapsKey];
+    NSString    *query = (__bridge NSString *)CFURLCreateStringByAddingPercentEscapes(NULL,
+                                                                                     (CFStringRef)searchBar.text,
+                                                                                     NULL,
+                                                                                     (CFStringRef)@"!*%'();:@&=+-$,/?%#[]~",
+                                                                                     kCFStringEncodingUTF8);
+    NSString    *url = [[NSString alloc] initWithFormat:@"https://dev.virtualearth.net/REST/v1/Locations?query=%@&key=%@&c=%@-%@",
+                        query,
+                        bingMapsKey,
+                        [[NSLocale currentLocale] objectForKey:NSLocaleLanguageCode],
+                        [[NSLocale currentLocale] objectForKey:NSLocaleCountryCode]];
+    NSLog(@"url: %@", url);
     NSURLRequest    *urlRequest = nil;
     urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     [NSURLConnection connectionWithRequest:urlRequest delegate:self];
@@ -125,34 +133,52 @@
     NSDictionary    *content = [NSJSONSerialization JSONObjectWithData:self.data options:NSJSONReadingAllowFragments error:&error];
     NSLog(@"content:%@", content);
     
-    NSArray *resourceSets = [content objectForKey:@"resourceSets"];
-    NSLog(@"resourceSets:%@", resourceSets);
-    
-    NSDictionary    *resource = [resourceSets objectAtIndex:0];
-    NSLog(@"resource:%@", resource);
-    
-    NSArray    *resources = [resource objectForKey:@"resources"];
-    NSLog(@"resources:%@", resources);
-    
-    resource = [resources objectAtIndex:0];
-    NSLog(@"resource:%@", resource);
-    
-    NSDictionary    *point = [resource objectForKey:@"point"];
-    NSLog(@"point:%@", point);
-    
-    NSArray *coordinates = [point objectForKey:@"coordinates"];
-    NSLog(@"coordinates:%@", coordinates);
-    
-    NSString    *latitude = [coordinates objectAtIndex:0];
-    NSString    *longitude = [coordinates objectAtIndex:1];
-    
-    BMCoordinateRegion  newRegion;
-    newRegion.center.latitude = [latitude floatValue];
-    newRegion.center.longitude = [longitude floatValue];
-    newRegion.span.latitudeDelta = 0.005;
-    newRegion.span.longitudeDelta = 0.005;
-	
-    [self.mapView setRegion:newRegion animated:YES];
+    if (content) {
+        NSArray *resourceSets = [content objectForKey:@"resourceSets"];
+        NSLog(@"resourceSets:%@", resourceSets);
+        
+        if (resourceSets) {
+            NSDictionary    *resource = [resourceSets objectAtIndex:0];
+            NSLog(@"resource:%@", resource);
+            
+            if (resource) {
+                NSArray    *resources = [resource objectForKey:@"resources"];
+                NSLog(@"resources:%@", resources);
+                
+                if ((resources) && (0 < [resources count])) {
+                    resource = [resources objectAtIndex:0];
+                    NSLog(@"resource:%@", resource);
+                    
+                    if (resource) {
+                        NSDictionary    *point = [resource objectForKey:@"point"];
+                        NSLog(@"point:%@", point);
+                        
+                        if (point) {
+                            NSArray *coordinates = [point objectForKey:@"coordinates"];
+                            NSLog(@"coordinates:%@", coordinates);
+                            
+                            if ((coordinates) && (0 < [coordinates count])) {
+                                NSString    *latitude = [coordinates objectAtIndex:0];
+                                NSString    *longitude = [coordinates objectAtIndex:1];
+                                NSLog(@"latitude:%@", latitude);
+                                NSLog(@"longitude:%@", longitude);
+                                
+                                if ((latitude) && (longitude)) {
+                                    BMCoordinateRegion  newRegion;
+                                    newRegion.center.latitude = [latitude floatValue];
+                                    newRegion.center.longitude = [longitude floatValue];
+                                    newRegion.span.latitudeDelta = 0.005;
+                                    newRegion.span.longitudeDelta = 0.005;
+                                    
+                                    [self.mapView setRegion:newRegion animated:YES];
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
     
     if ([self.searchBar canResignFirstResponder])
         [self.searchBar resignFirstResponder];
