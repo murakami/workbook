@@ -6,6 +6,7 @@
 //  Copyright (c) 2012年 Bitz Co., Ltd. All rights reserved.
 //
 
+#import "SettingsViewController.h"
 #import "VirtualEarthViewController.h"
 
 @interface VirtualEarthViewController ()
@@ -60,6 +61,14 @@
     else {
         [self.locationManager stopUpdatingLocation];
         self.locationBarButtonItem.style = UIBarButtonItemStyleBordered;
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"settingsSegue"]) {
+        SettingsViewController  *viewController = (SettingsViewController *)[segue destinationViewController];
+        viewController.mapView = self.mapView;
     }
 }
 

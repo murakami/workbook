@@ -4,6 +4,38 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
     <scenes>
+        <!--Settings View Controller-->
+        <scene sceneID="ZLA-Hi-WAf">
+            <objects>
+                <viewController id="uJM-wS-qkP" customClass="SettingsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="siC-Ip-37b">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="Sca-za-Hj3">
+                                <rect key="frame" x="20" y="485" width="280" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <segments>
+                                    <segment title="Road"/>
+                                    <segment title="Aerial"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="mapMode:" destination="uJM-wS-qkP" eventType="valueChanged" id="4Ui-Ht-LgY"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ruy-l5-XnL"/>
+                    <connections>
+                        <outlet property="mapModeSegmentedControl" destination="Sca-za-Hj3" id="l70-2f-h6G"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ccu-fc-Egr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="556" y="135"/>
+        </scene>
         <!--Virtual Earth View Controller-->
         <scene sceneID="5">
             <objects>
@@ -27,7 +59,11 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Bao-vX-Tix"/>
-                                    <barButtonItem systemItem="pageCurl" id="oXX-hk-qdo"/>
+                                    <barButtonItem systemItem="pageCurl" id="oXX-hk-qdo">
+                                        <connections>
+                                            <segue destination="uJM-wS-qkP" kind="modal" identifier="settingsSegue" id="SPV-XD-Q5c"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <searchBar contentMode="redraw" text="" id="07c-T7-XK1">
@@ -57,6 +93,13 @@
     <classes>
         <class className="BMMapView" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BMMapView.h"/>
+        </class>
+        <class className="SettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="mapMode:"/>
+                <relationship kind="outlet" name="mapModeSegmentedControl" candidateClass="UISegmentedControl"/>
+            </relationships>
         </class>
         <class className="VirtualEarthViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/VirtualEarthViewController.h"/>
