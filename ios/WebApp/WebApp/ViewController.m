@@ -22,8 +22,11 @@
     UIWebView   *webView = (UIWebView *)self.view;
     webView.delegate = self;
     NSString    *path = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
-    NSURL   *fileURL = [[NSURL alloc] initFileURLWithPath:path];
+    DBGMSG(@"path:%@", path);
+    NSURL   *fileURL = [[NSURL alloc] initFileURLWithPath:path];    /* URIにlocalhostが足されている */
+    DBGMSG(@"fileURL:%@", fileURL);
     NSURLRequest    *req = [NSURLRequest requestWithURL:fileURL];
+    DBGMSG(@"req:%@", req);
     [webView loadRequest:req];
 }
 

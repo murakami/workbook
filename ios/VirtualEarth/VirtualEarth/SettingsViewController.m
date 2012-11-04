@@ -69,6 +69,15 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    /*
+    [UIView transitionWithView:self.view
+                      duration:0.5
+                       options:UIViewAnimationOptionTransitionCurlDown
+                    animations:^{
+                        [[self presentingViewController] dismissViewControllerAnimated:YES completion:NULL];
+                    }
+                    completion:nil];
+    */
     [[self presentingViewController] dismissViewControllerAnimated:YES completion:NULL];
 }
 

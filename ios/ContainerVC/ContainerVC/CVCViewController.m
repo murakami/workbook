@@ -120,6 +120,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (UIImage *)imageScreenShot:(UIViewController *)viewController
+{
+    UIGraphicsBeginImageContextWithOptions(viewController.view.frame.size, 1.0, 0.0);
+    [viewController.view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
 - (void)toggleVC
 {
     DBGMSG(@"%s", __func__);
@@ -168,20 +177,59 @@
                           toViewController:ncTwoViewController
                                   duration:1.0
                                    options:UIViewAnimationOptionTransitionCrossDissolve
-                                animations:NULL
-                                completion:NULL];
-        [ncOneViewController popToRootViewControllerAnimated:NO];
-        self.selectedViewController = ncTwoViewController;
+                                animations:^ {
+                                    /*
+                                    UIImage *oneImage = [self imageScreenShot:ncOneViewController.visibleViewController];
+                                    UIImage *twoImage = [self imageScreenShot:ncTwoViewController.visibleViewController];
+                                    ncOneViewController.visibleViewController.view.layer.contents = twoImage;
+                                    CALayer *layer = [CALayer layer];
+                                    layer.contents = oneImage;
+                                    [ncOneViewController.visibleViewController.view.layer addSublayer:layer];
+                                    CATransition    *theAnimation = [CATransition animation];
+                                    theAnimation.type = kCATransitionFade;
+                                    theAnimation.subtype = kCATransitionFromBottom;
+                                    theAnimation.delegate = self;
+                                    [ncOneViewController.visibleViewController.view.layer addAnimation:theAnimation forKey:nil];
+                                    */
+           
+                                    /*
+                                    [UIView beginAnimations:@"flip view" context:nil];
+                                    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft
+                                                           forView:ncTwoViewController.visibleViewController.view
+                                                             cache:YES];
+                                    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+                                    [UIView setAnimationDuration:1.0];
+                                    [UIView commitAnimations];
+                                    */
+                                }
+                                completion:^(BOOL finished) {
+                                    /*
+                                    for (CALayer *layer in ncOneViewController.visibleViewController.view.layer.sublayers) {
+                                        layer.contents = nil;
+                                        [layer removeFromSuperlayer];
+                                    }
+                                    ncOneViewController.visibleViewController.view.layer.contents = nil;
+                                    */
+                                    //[ncOneViewController popToRootViewControllerAnimated:NO];
+                                    self.selectedViewController = ncTwoViewController;
+                                }];
+        //[ncOneViewController popToRootViewControllerAnimated:NO];
+        //self.selectedViewController = ncTwoViewController;
     }
     else {
         [self transitionFromViewController:ncTwoViewController
                           toViewController:ncOneViewController
                                   duration:1.0
                                    options:UIViewAnimationOptionTransitionCrossDissolve
-                                animations:NULL
-                                completion:NULL];
-        [ncTwoViewController popToRootViewControllerAnimated:NO];
-        self.selectedViewController = ncOneViewController;
+                                animations:^ {
+                                    
+                                }
+                                completion:^(BOOL finished) {
+                                    //[ncTwoViewController popToRootViewControllerAnimated:NO];
+                                    self.selectedViewController = ncOneViewController;
+                                }];
+        //[ncTwoViewController popToRootViewControllerAnimated:NO];
+        //self.selectedViewController = ncOneViewController;
     }
 }
 

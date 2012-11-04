@@ -34,7 +34,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ccu-fc-Egr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="556" y="135"/>
+            <point key="canvasLocation" x="718" y="135"/>
         </scene>
         <!--Virtual Earth View Controller-->
         <scene sceneID="5">
@@ -61,7 +61,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Bao-vX-Tix"/>
                                     <barButtonItem systemItem="pageCurl" id="oXX-hk-qdo">
                                         <connections>
-                                            <segue destination="uJM-wS-qkP" kind="modal" identifier="settingsSegue" id="SPV-XD-Q5c"/>
+                                            <segue destination="uJM-wS-qkP" kind="custom" identifier="settingsSegue" customClass="MapCurlStoryboardSegue" id="SPV-XD-Q5c"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
