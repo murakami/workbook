@@ -83,11 +83,13 @@ void init(void)
     
     glEnable(GL_LIGHTING);
     glEnable(GL_LIGHT0);
-    //GLfloat paleYellow[4] = {1.0, 1.0, 0.75, 1.0};
-    //glLightfv(GL_LIGHT0, GL_DIFFUSE, paleYellow);
-    //GLfloat white[4] = {1.0, 1.0, 1.0, 1.0};
-    //glLightfv(GL_LIGHT0, GL_SPECULAR, white);
-    GLfloat position[4] = {0.5, 0.0, -1.0, 1.0};
+    GLfloat ambient[4] = {0.5, 0.5, 0.5, 1.0};
+    glMaterialfv(GL_FRONT, GL_AMBIENT, ambient);
+    GLfloat blue[4] = {0.3, 0.3, 1.0, 1.0};
+    glMaterialfv(GL_FRONT, GL_DIFFUSE, blue);
+    GLfloat white[4] = {0.1, 0.1, 0.1, 1.0};
+    glMaterialfv(GL_FRONT, GL_SPECULAR, white);
+    GLfloat position[4] = {0.5, 0.5, -1.0, 1.0};
     glLightfv(GL_LIGHT0, GL_POSITION, position);
     
     assert(glGetError() == GL_NO_ERROR);
