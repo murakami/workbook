@@ -41,17 +41,20 @@ void display(void)
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
+    /* ティーポット描画 */
     if (! isWireframe)
         glutSolidTeapot(0.5);
     else
         glutWireTeapot(0.5);
     
+    /* バッファの入れ替え */
     glutSwapBuffers();
     assert(glGetError() == GL_NO_ERROR);
 }
 
 void keyboard(unsigned char key, int x, int y)
 {
+    DBGMSG(@"%s", __func__);
     switch((unsigned char)key) {
         case 'w':
             isWireframe = !isWireframe;
@@ -61,23 +64,29 @@ void keyboard(unsigned char key, int x, int y)
 
 void special(int key, int x, int y)
 {
+    DBGMSG(@"%s", __func__);
 }
 
 void mouse(int button, int state, int x, int y)
 {
+    DBGMSG(@"%s", __func__);
 }
 
 void motion(int x, int y)
 {
+    DBGMSG(@"%s", __func__);
 }
 
 void idle(void)
 {
+    DBGMSG(@"%s", __func__);
     glutPostRedisplay();
 }
 
 void init(void)
 {
+    DBGMSG(@"%s", __func__);
+
     /* ディザ処理を無効にする */
     glDisable(GL_DITHER);
     
@@ -94,12 +103,25 @@ void init(void)
     
     assert(glGetError() == GL_NO_ERROR);
     
+    /* リサイズ処理 */
     glutReshapeFunc(resize);
+    
+    /* 描画 */
     glutDisplayFunc(display);
+    
+    /* キーボード */
     glutKeyboardFunc(keyboard);
+    
+    /* 特殊キー */
     glutSpecialFunc(special);
+    
+    /* マウス */
     glutMouseFunc(mouse);
+    
+    /* ドラッグ */
     glutMotionFunc(motion);
+    
+    /* バックグランド処理 */
     glutIdleFunc(idle);
 }
 
@@ -110,13 +132,22 @@ int main(int argc, const char * argv[])
         
         glutInit(&argc, (char **)argv);
         
-        /* ダブルバッファ処理で作成する */
+        /* RGBAカラーモード ダブルバッファ デプスバッファ */
         glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE | GLUT_DEPTH);
+        
+        /* 初期ウィンドウ・サイズ */
         glutInitWindowSize(width, height);
+        
+        /* 初期ウィンドウ位置 */
         glutInitWindowPosition(500, 100);
+        
+        /* タイトルバー */
         glutCreateWindow("IRIS GL");
+        
+        /* 初期化 */
         init();
         
+        /* 主ループ（イベント駆動） */
         glutMainLoop();
         
     }
