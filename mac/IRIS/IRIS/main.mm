@@ -19,13 +19,17 @@ GLuint  listID; /* ディスプレイリストID */
 
 void resize(int w, int h)
 {
-    /* ウィンドウ全部を描画するようにビューポートを更新する */
+    /* 視体積を設定 */
+    //gluPerspective(40.0, (GLdouble)w / (GLdouble)h, 1.0, 200.0);
+    
+    /* ウィンドウ・サイズとOpenGLの座標を対応づける */
     glViewport(0, 0, w, h);
+    //glViewport(0, 0, (w < h ? w : h), (w < h ? w : h));
     
     /* 投影行列とアスペクト比を更新する */
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    //gluPerspective(40.0, (double)w / (double)h, 1.0, 200.0);
+    //gluPerspective(40.0, (GLdouble)w / (GLdouble)h, 1.0, 200.0);
     
     /* 表示ルーチン用にモデルビューモードに設定する */
     glMatrixMode(GL_MODELVIEW);
