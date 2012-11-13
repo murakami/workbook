@@ -10,7 +10,10 @@
 #import "VirtualEarthViewController.h"
 
 @interface VirtualEarthViewController ()
-@property (nonatomic, strong) NSMutableData *data;
+@property (nonatomic, assign) BOOL                      isUpdatingLocation;
+@property (nonatomic, strong) NSDate                    *prevEventDate;
+@property (nonatomic, assign) CLLocationCoordinate2D    prevCoordinate;
+@property (nonatomic, strong) NSMutableData             *data;
 @end
 
 @implementation VirtualEarthViewController
@@ -19,6 +22,9 @@
 @synthesize mapView = _mapView;
 @synthesize locationBarButtonItem = _locationBarButtonItem;
 @synthesize locationManager = _locationManager;
+@synthesize isUpdatingLocation = _isUpdatingLocation;
+@synthesize prevEventDate = _prevEventDate;
+@synthesize prevCoordinate = _prevCoordinate;
 @synthesize data = _data;
 
 - (void)viewDidLoad
@@ -29,6 +35,43 @@
     
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
+    
+    self.isUpdatingLocation = NO;
+    
+    self.prevEventDate = nil;
+    
+    CLLocationCoordinate2D  coordinate;
+    coordinate.latitude = 0.0;
+    coordinate.longitude = 0.0;
+    self.prevCoordinate = coordinate;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    if (self.isUpdatingLocation) {
+        [self.locationManager stopUpdatingLocation];
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    if (self.isUpdatingLocation) {
+        [self.locationManager startUpdatingLocation];
+    }
+    
+    [super viewWillDisappear:animated];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
 }
 
 - (void)viewDidUnload
@@ -42,10 +85,6 @@
     [super viewDidUnload];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -55,10 +94,12 @@
 - (IBAction)location:(id)sender
 {
     if (self.locationBarButtonItem.style == UIBarButtonItemStyleBordered) {
+        self.isUpdatingLocation = YES;
         [self.locationManager startUpdatingLocation];
         self.locationBarButtonItem.style = UIBarButtonItemStyleDone;
     }
     else {
+        self.isUpdatingLocation = NO;
         [self.locationManager stopUpdatingLocation];
         self.locationBarButtonItem.style = UIBarButtonItemStyleBordered;
     }
@@ -75,6 +116,34 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     CLLocation  *location = [locations lastObject];
+    
+    NSDate  *eventDate = location.timestamp;
+    NSTimeInterval  howRecent = [eventDate timeIntervalSinceNow];
+    if (15.0 <= abs(howRecent)) {
+        /* 省電力の為、15秒経過したイベントは破棄 */
+        return;
+    }
+    
+    if (self.prevEventDate) {
+        howRecent = [eventDate timeIntervalSinceDate:self.prevEventDate];
+        if (abs(howRecent) <= 10.0) {
+            /* 省電力の為、10秒経過していない場合はイベントを破棄 */
+            return;
+        }
+    }
+    self.prevEventDate = eventDate;
+    
+    if (
+        ((location.coordinate.latitude - 0.00001) <= self.prevCoordinate.latitude)
+        && (self.prevCoordinate.latitude <= (location.coordinate.latitude + 0.00001))
+        && ((location.coordinate.longitude - 0.00001) <= self.prevCoordinate.longitude)
+        && (self.prevCoordinate.longitude <= (location.coordinate.longitude + 0.00001))
+        ) {
+        /* 省電力の為、移動していない場合は、イベントを破棄 */
+        return;
+    }
+    self.prevCoordinate = location.coordinate;
+    
     BMCoordinateRegion  newRegion;
     newRegion.center = location.coordinate;
     newRegion.span.latitudeDelta = 0.005;

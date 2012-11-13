@@ -29,13 +29,6 @@
     [super viewDidLoad];
 }
 
-- (void)viewDidUnload
-{
-    self.mapModeSegmentedControl = nil;
-    self.mapView = nil;
-    [super viewDidUnload];
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -45,6 +38,28 @@
         self.mapModeSegmentedControl.selectedSegmentIndex = 1;
     else if (self.mapView.mapMode == BMMapModeAerialWithLabels)
         self.mapModeSegmentedControl.selectedSegmentIndex = 2;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+}
+
+- (void)viewDidUnload
+{
+    self.mapModeSegmentedControl = nil;
+    self.mapView = nil;
+    [super viewDidUnload];
 }
 
 - (void)didReceiveMemoryWarning
