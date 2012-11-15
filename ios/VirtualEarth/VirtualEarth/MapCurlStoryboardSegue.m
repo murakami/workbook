@@ -16,6 +16,7 @@
 
 - (void)perform
 {
+    DBGMSG(@"%s", __func__);
     /*
     UIViewController *sourceViewController = (UIViewController *)self.sourceViewController;
     [UIView transitionWithView:sourceViewController.view
@@ -28,7 +29,13 @@
                         [[self sourceViewController] presentModalViewController:[self destinationViewController] animated:NO];
                     }];
     */
-    [[self sourceViewController] presentModalViewController:[self destinationViewController] animated:YES];
+    //[[self sourceViewController] presentModalViewController:[self destinationViewController] animated:YES];
+    UIViewController    *sourceViewController = [self sourceViewController];
+    UIViewController    *destinationViewController = [self destinationViewController];
+    destinationViewController.modalTransitionStyle = UIModalTransitionStylePartialCurl;
+    [sourceViewController presentViewController:destinationViewController
+                                       animated:YES
+                                     completion:^ {}];
 }
 
 @end
