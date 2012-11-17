@@ -31,6 +31,9 @@ void resize(int w, int h)
     glLoadIdentity();
     //gluPerspective(40.0, (GLdouble)w / (GLdouble)h, 1.0, 200.0);
     
+    /* 透視投影 left right bottm top near far */
+    glFrustum(-1.0, 1.0, -1.0, 1.0, 1.5, 20.0);
+    
     /* 表示ルーチン用にモデルビューモードに設定する */
     glMatrixMode(GL_MODELVIEW);
     
@@ -44,6 +47,18 @@ void resize(int w, int h)
 void display(void)
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    
+    /* 白 */
+    glColor3f(1.0, 1.0, 1.0);
+    
+    /* 単位行列 */
+    glLoadIdentity();
+    
+    /* 視野変換 eyex eyey eyez centerx centery centerz upx upy upz */
+    gluLookAt(0.0, 0.0, 5.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
+    
+    /* モデリング変換 */
+    glScalef(2.0, 2.0, 2.0);    /* 拡大縮小 x y z */
     
     /* ティーポット描画 */
     if (! isWireframe)
@@ -83,7 +98,6 @@ void motion(int x, int y)
 
 void idle(void)
 {
-    DBGMSG(@"%s", __func__);
     glutPostRedisplay();
 }
 
@@ -94,6 +108,7 @@ void init(void)
     /* ディザ処理を無効にする */
     glDisable(GL_DITHER);
     
+    /*
     glEnable(GL_LIGHTING);
     glEnable(GL_LIGHT0);
     GLfloat ambient[4] = {0.5, 0.5, 0.5, 1.0};
@@ -104,6 +119,7 @@ void init(void)
     glMaterialfv(GL_FRONT, GL_SPECULAR, white);
     GLfloat position[4] = {0.5, 0.5, -1.0, 1.0};
     glLightfv(GL_LIGHT0, GL_POSITION, position);
+    */
     
     assert(glGetError() == GL_NO_ERROR);
     
