@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56254604166B4F78001FA397 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56254602166B4F78001FA397 /* MainStoryboard_iPad.storyboard */; };
 		562BFBFA1635F8EC004B2D2E /* MapCurlStoryboardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 562BFBF91635F8EC004B2D2E /* MapCurlStoryboardSegue.m */; };
 		5654440A1634A2CA00BE78AC /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 565444091634A2CA00BE78AC /* SettingsViewController.m */; };
 		5691E5E0162EFC3A00BFCD53 /* location-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 5691E5DE162EFC3A00BFCD53 /* location-arrow.png */; };
@@ -20,7 +21,7 @@
 		56AA9830162AA9F50005B0DF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 56AA982F162AA9F50005B0DF /* Default.png */; };
 		56AA9832162AA9F50005B0DF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56AA9831162AA9F50005B0DF /* Default@2x.png */; };
 		56AA9834162AA9F50005B0DF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56AA9833162AA9F50005B0DF /* Default-568h@2x.png */; };
-		56AA9837162AA9F50005B0DF /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56AA9835162AA9F50005B0DF /* MainStoryboard.storyboard */; };
+		56AA9837162AA9F50005B0DF /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56AA9835162AA9F50005B0DF /* MainStoryboard_iPhone.storyboard */; };
 		56AA983A162AA9F50005B0DF /* VirtualEarthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AA9839162AA9F50005B0DF /* VirtualEarthViewController.m */; };
 		56AA9842162AA9F60005B0DF /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AA9841162AA9F60005B0DF /* SenTestingKit.framework */; };
 		56AA9843162AA9F60005B0DF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AA981D162AA9F50005B0DF /* UIKit.framework */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		56254603166B4F78001FA397 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		562BFBF81635F8EC004B2D2E /* MapCurlStoryboardSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapCurlStoryboardSegue.h; sourceTree = "<group>"; };
 		562BFBF91635F8EC004B2D2E /* MapCurlStoryboardSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapCurlStoryboardSegue.m; sourceTree = "<group>"; };
 		565444081634A2C900BE78AC /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
@@ -68,7 +70,7 @@
 		56AA982F162AA9F50005B0DF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		56AA9831162AA9F50005B0DF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		56AA9833162AA9F50005B0DF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		56AA9836162AA9F50005B0DF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		56AA9836162AA9F50005B0DF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		56AA9838162AA9F50005B0DF /* VirtualEarthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VirtualEarthViewController.h; sourceTree = "<group>"; };
 		56AA9839162AA9F50005B0DF /* VirtualEarthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VirtualEarthViewController.m; sourceTree = "<group>"; };
 		56AA9840162AA9F60005B0DF /* VirtualEarthTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VirtualEarthTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,7 +184,8 @@
 			children = (
 				56AA982C162AA9F50005B0DF /* VirtualEarthAppDelegate.h */,
 				56AA982D162AA9F50005B0DF /* VirtualEarthAppDelegate.m */,
-				56AA9835162AA9F50005B0DF /* MainStoryboard.storyboard */,
+				56AA9835162AA9F50005B0DF /* MainStoryboard_iPhone.storyboard */,
+				56254602166B4F78001FA397 /* MainStoryboard_iPad.storyboard */,
 				56AA9838162AA9F50005B0DF /* VirtualEarthViewController.h */,
 				56AA9839162AA9F50005B0DF /* VirtualEarthViewController.m */,
 				565444081634A2C900BE78AC /* SettingsViewController.h */,
@@ -332,10 +335,11 @@
 				56AA9830162AA9F50005B0DF /* Default.png in Resources */,
 				56AA9832162AA9F50005B0DF /* Default@2x.png in Resources */,
 				56AA9834162AA9F50005B0DF /* Default-568h@2x.png in Resources */,
-				56AA9837162AA9F50005B0DF /* MainStoryboard.storyboard in Resources */,
+				56AA9837162AA9F50005B0DF /* MainStoryboard_iPhone.storyboard in Resources */,
 				56AA9866162AAC390005B0DF /* BingMaps.Resources.bundle in Resources */,
 				5691E5E0162EFC3A00BFCD53 /* location-arrow.png in Resources */,
 				5691E5E1162EFC3A00BFCD53 /* location-arrow@2x.png in Resources */,
+				56254604166B4F78001FA397 /* MainStoryboard_iPad.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +401,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		56254602166B4F78001FA397 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				56254603166B4F78001FA397 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
 		56AA9826162AA9F50005B0DF /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -405,12 +417,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		56AA9835162AA9F50005B0DF /* MainStoryboard.storyboard */ = {
+		56AA9835162AA9F50005B0DF /* MainStoryboard_iPhone.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				56AA9836162AA9F50005B0DF /* en */,
 			);
-			name = MainStoryboard.storyboard;
+			name = MainStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
 		};
 		56AA984A162AA9F60005B0DF /* InfoPlist.strings */ = {
@@ -448,7 +460,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/VirtualEarth/MapControl\"";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
@@ -472,7 +483,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/VirtualEarth/MapControl\"";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
@@ -495,6 +505,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -514,6 +525,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

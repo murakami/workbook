@@ -34,7 +34,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ccu-fc-Egr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="718" y="135"/>
+            <point key="canvasLocation" x="1001" y="278"/>
         </scene>
         <!--Virtual Earth View Controller-->
         <scene sceneID="5">
