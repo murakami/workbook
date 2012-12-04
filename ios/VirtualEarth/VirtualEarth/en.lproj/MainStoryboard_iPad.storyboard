@@ -30,7 +30,7 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="hA6-Bg-tdk"/>
-                                    <barButtonItem systemItem="pageCurl" id="lnL-0y-uSM">
+                                    <barButtonItem image="gear.png" id="lnL-0y-uSM">
                                         <connections>
                                             <segue destination="NKF-41-VB8" kind="custom" identifier="settingsSegue" customClass="MapCurlStoryboardSegue" id="sYW-Q7-N1W"/>
                                         </connections>
@@ -88,6 +88,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gear.png" width="26" height="26"/>
         <image name="location-arrow.png" width="24" height="24"/>
     </resources>
     <classes>

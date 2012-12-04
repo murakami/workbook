@@ -12,6 +12,8 @@
 		5654440A1634A2CA00BE78AC /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 565444091634A2CA00BE78AC /* SettingsViewController.m */; };
 		5691E5E0162EFC3A00BFCD53 /* location-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 5691E5DE162EFC3A00BFCD53 /* location-arrow.png */; };
 		5691E5E1162EFC3A00BFCD53 /* location-arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5691E5DF162EFC3A00BFCD53 /* location-arrow@2x.png */; };
+		569D6874166E385000D35626 /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 569D6872166E385000D35626 /* gear.png */; };
+		569D6875166E385000D35626 /* gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 569D6873166E385000D35626 /* gear@2x.png */; };
 		56AA981E162AA9F50005B0DF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AA981D162AA9F50005B0DF /* UIKit.framework */; };
 		56AA9820162AA9F50005B0DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AA981F162AA9F50005B0DF /* Foundation.framework */; };
 		56AA9822162AA9F50005B0DF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AA9821162AA9F50005B0DF /* CoreGraphics.framework */; };
@@ -57,6 +59,8 @@
 		565444091634A2CA00BE78AC /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		5691E5DE162EFC3A00BFCD53 /* location-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location-arrow.png"; sourceTree = "<group>"; };
 		5691E5DF162EFC3A00BFCD53 /* location-arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location-arrow@2x.png"; sourceTree = "<group>"; };
+		569D6872166E385000D35626 /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
+		569D6873166E385000D35626 /* gear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gear@2x.png"; sourceTree = "<group>"; };
 		56AA9819162AA9F50005B0DF /* VirtualEarth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualEarth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56AA981D162AA9F50005B0DF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		56AA981F162AA9F50005B0DF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -137,6 +141,8 @@
 			children = (
 				5691E5DE162EFC3A00BFCD53 /* location-arrow.png */,
 				5691E5DF162EFC3A00BFCD53 /* location-arrow@2x.png */,
+				569D6872166E385000D35626 /* gear.png */,
+				569D6873166E385000D35626 /* gear@2x.png */,
 			);
 			name = Resources;
 			path = VirtualEarth/Resources;
@@ -340,6 +346,8 @@
 				5691E5E0162EFC3A00BFCD53 /* location-arrow.png in Resources */,
 				5691E5E1162EFC3A00BFCD53 /* location-arrow@2x.png in Resources */,
 				56254604166B4F78001FA397 /* MainStoryboard_iPad.storyboard in Resources */,
+				569D6874166E385000D35626 /* gear.png in Resources */,
+				569D6875166E385000D35626 /* gear@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
