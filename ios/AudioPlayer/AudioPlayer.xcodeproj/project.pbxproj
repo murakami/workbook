@@ -29,6 +29,10 @@
 		56AE32D31723F92B0074D5B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AE32A01723F92A0074D5B9 /* Foundation.framework */; };
 		56AE32DB1723F92B0074D5B9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 56AE32D91723F92B0074D5B9 /* InfoPlist.strings */; };
 		56AE32DE1723F92B0074D5B9 /* AudioPlayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AE32DD1723F92B0074D5B9 /* AudioPlayerTests.m */; };
+		56AE32E91723FE670074D5B9 /* PlaylistsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AE32E81723FE670074D5B9 /* PlaylistsViewController.m */; };
+		56AE32EC1723FE810074D5B9 /* ArtistsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AE32EB1723FE810074D5B9 /* ArtistsViewController.m */; };
+		56AE32EF1723FE8F0074D5B9 /* SongsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AE32EE1723FE8F0074D5B9 /* SongsViewController.m */; };
+		56AE32F21723FEA30074D5B9 /* AlbumsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AE32F11723FEA30074D5B9 /* AlbumsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +75,14 @@
 		56AE32DA1723F92B0074D5B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		56AE32DC1723F92B0074D5B9 /* AudioPlayerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioPlayerTests.h; sourceTree = "<group>"; };
 		56AE32DD1723F92B0074D5B9 /* AudioPlayerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioPlayerTests.m; sourceTree = "<group>"; };
+		56AE32E71723FE670074D5B9 /* PlaylistsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistsViewController.h; sourceTree = "<group>"; };
+		56AE32E81723FE670074D5B9 /* PlaylistsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistsViewController.m; sourceTree = "<group>"; };
+		56AE32EA1723FE810074D5B9 /* ArtistsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtistsViewController.h; sourceTree = "<group>"; };
+		56AE32EB1723FE810074D5B9 /* ArtistsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtistsViewController.m; sourceTree = "<group>"; };
+		56AE32ED1723FE8F0074D5B9 /* SongsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongsViewController.h; sourceTree = "<group>"; };
+		56AE32EE1723FE8F0074D5B9 /* SongsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongsViewController.m; sourceTree = "<group>"; };
+		56AE32F01723FEA30074D5B9 /* AlbumsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumsViewController.h; sourceTree = "<group>"; };
+		56AE32F11723FEA30074D5B9 /* AlbumsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +154,14 @@
 				56AE32C41723F92B0074D5B9 /* SecondViewController.m */,
 				56AE32C61723F92B0074D5B9 /* second.png */,
 				56AE32C81723F92B0074D5B9 /* second@2x.png */,
+				56AE32E71723FE670074D5B9 /* PlaylistsViewController.h */,
+				56AE32E81723FE670074D5B9 /* PlaylistsViewController.m */,
+				56AE32EA1723FE810074D5B9 /* ArtistsViewController.h */,
+				56AE32EB1723FE810074D5B9 /* ArtistsViewController.m */,
+				56AE32ED1723FE8F0074D5B9 /* SongsViewController.h */,
+				56AE32EE1723FE8F0074D5B9 /* SongsViewController.m */,
+				56AE32F01723FEA30074D5B9 /* AlbumsViewController.h */,
+				56AE32F11723FEA30074D5B9 /* AlbumsViewController.m */,
 				56AE32A51723F92A0074D5B9 /* Supporting Files */,
 			);
 			path = AudioPlayer;
@@ -299,6 +319,10 @@
 				56AE32AF1723F92A0074D5B9 /* AppDelegate.m in Sources */,
 				56AE32BE1723F92B0074D5B9 /* FirstViewController.m in Sources */,
 				56AE32C51723F92B0074D5B9 /* SecondViewController.m in Sources */,
+				56AE32E91723FE670074D5B9 /* PlaylistsViewController.m in Sources */,
+				56AE32EC1723FE810074D5B9 /* ArtistsViewController.m in Sources */,
+				56AE32EF1723FE8F0074D5B9 /* SongsViewController.m in Sources */,
+				56AE32F21723FEA30074D5B9 /* AlbumsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +513,7 @@
 				56AE32E31723F92B0074D5B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		56AE32E41723F92B0074D5B9 /* Build configuration list for PBXNativeTarget "AudioPlayerTests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +522,7 @@
 				56AE32E61723F92B0074D5B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

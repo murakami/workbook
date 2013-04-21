@@ -434,6 +434,7 @@
 				564D6B9315442A7E00977252 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		564D6B9415442A7E00977252 /* Build configuration list for PBXNativeTarget "MapsTests" */ = {
 			isa = XCConfigurationList;
@@ -442,6 +443,7 @@
 				564D6B9615442A7E00977252 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
