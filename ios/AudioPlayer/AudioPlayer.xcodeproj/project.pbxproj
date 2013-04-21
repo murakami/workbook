@@ -33,6 +33,9 @@
 		56AE32EC1723FE810074D5B9 /* ArtistsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AE32EB1723FE810074D5B9 /* ArtistsViewController.m */; };
 		56AE32EF1723FE8F0074D5B9 /* SongsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AE32EE1723FE8F0074D5B9 /* SongsViewController.m */; };
 		56AE32F21723FEA30074D5B9 /* AlbumsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AE32F11723FEA30074D5B9 /* AlbumsViewController.m */; };
+		56B31778172422660053B63B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B31777172422660053B63B /* AVFoundation.framework */; };
+		56B3177A172422770053B63B /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B31779172422770053B63B /* CoreMedia.framework */; };
+		56B3177C172422940053B63B /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B3177B172422940053B63B /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +86,9 @@
 		56AE32EE1723FE8F0074D5B9 /* SongsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongsViewController.m; sourceTree = "<group>"; };
 		56AE32F01723FEA30074D5B9 /* AlbumsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumsViewController.h; sourceTree = "<group>"; };
 		56AE32F11723FEA30074D5B9 /* AlbumsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumsViewController.m; sourceTree = "<group>"; };
+		56B31777172422660053B63B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		56B31779172422770053B63B /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		56B3177B172422940053B63B /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,9 +96,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56B3177A172422770053B63B /* CoreMedia.framework in Frameworks */,
 				56AE329F1723F92A0074D5B9 /* UIKit.framework in Frameworks */,
 				56AE32A11723F92A0074D5B9 /* Foundation.framework in Frameworks */,
+				56B31778172422660053B63B /* AVFoundation.framework in Frameworks */,
 				56AE32A31723F92A0074D5B9 /* CoreGraphics.framework in Frameworks */,
+				56B3177C172422940053B63B /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +143,9 @@
 				56AE329E1723F92A0074D5B9 /* UIKit.framework */,
 				56AE32A01723F92A0074D5B9 /* Foundation.framework */,
 				56AE32A21723F92A0074D5B9 /* CoreGraphics.framework */,
+				56B31777172422660053B63B /* AVFoundation.framework */,
+				56B31779172422770053B63B /* CoreMedia.framework */,
+				56B3177B172422940053B63B /* MediaPlayer.framework */,
 				56AE32D01723F92B0074D5B9 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;

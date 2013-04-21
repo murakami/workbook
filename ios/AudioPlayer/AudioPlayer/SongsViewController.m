@@ -6,19 +6,23 @@
 //  Copyright (c) 2013年 Bitz Co., Ltd. All rights reserved.
 //
 
+#import <MediaPlayer/MediaPlayer.h>
 #import "SongsViewController.h"
 
 @interface SongsViewController ()
-
+@property (nonatomic, strong) NSMutableArray            *songsList;
+@property (nonatomic, strong) MPMusicPlayerController   *musicPlayerController;
 @end
 
 @implementation SongsViewController
+
+@synthesize songsList = _songsList;
+@synthesize musicPlayerController = _musicPlayerController;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -26,12 +30,55 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.songsList = [[NSMutableArray alloc] init];
+    self.musicPlayerController = [MPMusicPlayerController iPodMusicPlayer];
+    
+    MPMediaQuery    *songsQuery = [MPMediaQuery songsQuery];
+    NSArray         *collections = [songsQuery collections];
+    for (MPMediaPlaylist *mediaPlaylist in collections) {
+        for (MPMediaItem *mediaItem in [mediaPlaylist items]) {
+            NSArray* songArray = nil;
+            songArray = [NSArray arrayWithObjects:
+                             [mediaItem valueForProperty:
+                              MPMediaItemPropertyPersistentID],
+                             [mediaItem valueForProperty:
+                              MPMediaItemPropertyTitle],
+                             [mediaItem valueForProperty:
+                              MPMediaItemPropertyArtist],
+                             [mediaItem valueForProperty:
+                              MPMediaItemPropertyAlbumTitle],
+                             nil];
+            [self.songsList addObject:songArray];
+        }
+    }
+}
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+}
+
+- (void)viewDidUnload
+{
+    self.songsList = nil;
+    self.musicPlayerController = nil;
+    [super viewDidUnload];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,16 +91,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return self.songsList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -61,7 +104,7 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
+    cell.textLabel.text = [[self.songsList objectAtIndex:indexPath.row] objectAtIndex:1];
     
     return cell;
 }
