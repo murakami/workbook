@@ -6,6 +6,8 @@
 //  Copyright (c) 2013年 Bitz Co., Ltd. All rights reserved.
 //
 
+//#import <AVFoundation/AVFoundation.h>
+//#import <CoreMedia/CoreMedia.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import "SongsViewController.h"
 
@@ -35,8 +37,17 @@
     self.musicPlayerController = [MPMusicPlayerController iPodMusicPlayer];
     
     MPMediaQuery    *songsQuery = [MPMediaQuery songsQuery];
-    NSArray         *collections = [songsQuery collections];
-    for (MPMediaPlaylist *mediaPlaylist in collections) {
+    NSArray         *mediaItems = [songsQuery items];
+    for (MPMediaItem *mediaItem in mediaItems) {
+        NSURL   *URL = (NSURL*)[mediaItem valueForProperty:MPMediaItemPropertyAssetURL];
+        if (URL) {
+            NSString    *title = (NSString*)[mediaItem valueForProperty:MPMediaItemPropertyTitle];
+            [self.songsList addObject:title];
+        }
+    }
+    
+    /*
+    for (MPMediaItem *mediaPlaylist in collections) {
         for (MPMediaItem *mediaItem in [mediaPlaylist items]) {
             NSArray* songArray = nil;
             songArray = [NSArray arrayWithObjects:
@@ -52,6 +63,7 @@
             [self.songsList addObject:songArray];
         }
     }
+     */
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -101,10 +113,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"SongsCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.textLabel.text = [[self.songsList objectAtIndex:indexPath.row] objectAtIndex:1];
+    NSString    *title = [self.songsList objectAtIndex:indexPath.row];
+    cell.textLabel.text = title;
     
     return cell;
 }
