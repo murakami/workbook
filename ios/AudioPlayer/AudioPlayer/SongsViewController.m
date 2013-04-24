@@ -9,17 +9,20 @@
 //#import <AVFoundation/AVFoundation.h>
 //#import <CoreMedia/CoreMedia.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import "DetailViewController.h"
 #import "SongsViewController.h"
 
 @interface SongsViewController ()
 @property (nonatomic, strong) NSMutableArray            *songsList;
 @property (nonatomic, strong) MPMusicPlayerController   *musicPlayerController;
+@property (strong, nonatomic) NSMutableDictionary       *dict;
 @end
 
 @implementation SongsViewController
 
 @synthesize songsList = _songsList;
 @synthesize musicPlayerController = _musicPlayerController;
+@synthesize dict = _dict;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -39,10 +42,13 @@
     MPMediaQuery    *songsQuery = [MPMediaQuery songsQuery];
     NSArray         *mediaItems = [songsQuery items];
     for (MPMediaItem *mediaItem in mediaItems) {
-        NSURL   *URL = (NSURL*)[mediaItem valueForProperty:MPMediaItemPropertyAssetURL];
-        if (URL) {
+        NSURL   *url = (NSURL*)[mediaItem valueForProperty:MPMediaItemPropertyAssetURL];
+        if (url) {
             NSString    *title = (NSString*)[mediaItem valueForProperty:MPMediaItemPropertyTitle];
-            [self.songsList addObject:title];
+            NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+            [dict setObject:url forKey:@"URL"];
+            [dict setObject:title forKey:@"title"];
+            [self.songsList addObject:dict];
         }
     }
     
@@ -90,6 +96,7 @@
 {
     self.songsList = nil;
     self.musicPlayerController = nil;
+    self.dict = nil;
     [super viewDidUnload];
 }
 
@@ -97,6 +104,14 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"toDetail"]) {
+        DetailViewController    *detailViewController = [segue destinationViewController];
+        detailViewController.dict = self.dict;
+    }
 }
 
 #pragma mark - Table view data source
@@ -116,7 +131,7 @@
     static NSString *CellIdentifier = @"SongsCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    NSString    *title = [self.songsList objectAtIndex:indexPath.row];
+    NSString    *title = [[self.songsList objectAtIndex:indexPath.row] objectForKey:@"title"];
     cell.textLabel.text = title;
     
     return cell;
@@ -165,13 +180,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    self.dict = [self.songsList objectAtIndex:indexPath.row];
+    //[self performSegueWithIdentifier:@"toDetail" sender:self];
 }
 
 @end
