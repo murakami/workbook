@@ -32,7 +32,7 @@
     NSArray         *playlistsArray = [playlistsQuery collections];
     for (MPMediaItemCollection *mediaItemCollection in playlistsArray) {
         MPMediaItem *mediaItem = [mediaItemCollection representativeItem];
-        NSURL   *title = (NSURL*)[mediaItem valueForProperty:MPMediaItemPropertyTitle];
+        NSURL   *title = (NSURL*)[mediaItem valueForProperty:MPMediaPlaylistPropertyName];
         NSLog(@"mediaItem:%@", title);
     }
 }
