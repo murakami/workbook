@@ -6,6 +6,7 @@
 //  Copyright (c) 2013年 Bitz Co., Ltd. All rights reserved.
 //
 
+#import <MediaPlayer/MediaPlayer.h>
 #import "ArtistsViewController.h"
 
 @interface ArtistsViewController ()
@@ -27,11 +28,38 @@
 {
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    MPMediaQuery    *artistsQuery = [MPMediaQuery artistsQuery];
+    NSArray         *artistsArray = [artistsQuery collections];
+    for (MPMediaItemCollection *mediaItemCollection in artistsArray) {
+        MPMediaItem *mediaItem = [mediaItemCollection representativeItem];
+        NSURL   *title = (NSURL*)[mediaItem valueForProperty:MPMediaItemPropertyArtist];
+        NSLog(@"mediaItem:%@", title);
+    }
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+}
+
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
 }
 
 - (void)didReceiveMemoryWarning
