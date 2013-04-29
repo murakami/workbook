@@ -29,6 +29,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+    [[AVAudioSession sharedInstance] setActive:YES error:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -57,6 +60,7 @@
 
 - (void)viewDidUnload
 {
+    [[AVAudioSession sharedInstance] setActive:NO error:nil];
     self.dict = nil;
     self.player = nil;
     [super viewDidUnload];
@@ -70,7 +74,10 @@
 - (IBAction)play:(id)sender
 {
     //[self.player play];
-    self.player.rate = 0.5;
+    if (0.0 == self.player.rate)    self.player.rate = 1.0;
+    else if (1.0 == self.player.rate)    self.player.rate = 0.75;
+    else if (0.75 == self.player.rate)    self.player.rate = 0.5;
+    else if (0.5 == self.player.rate)    self.player.rate = 0.0;
 }
 
 @end

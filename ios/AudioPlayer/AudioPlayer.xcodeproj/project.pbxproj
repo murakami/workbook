@@ -50,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		564AA2FE172DFA5D007178F3 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		5689A93917282CDB00D0915F /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		5689A93A17282CDB00D0915F /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		56AE329B1723F92A0074D5B9 /* AudioPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +147,7 @@
 				56AE329E1723F92A0074D5B9 /* UIKit.framework */,
 				56AE32A01723F92A0074D5B9 /* Foundation.framework */,
 				56AE32A21723F92A0074D5B9 /* CoreGraphics.framework */,
+				564AA2FE172DFA5D007178F3 /* AudioToolbox.framework */,
 				56B31777172422660053B63B /* AVFoundation.framework */,
 				56B31779172422770053B63B /* CoreMedia.framework */,
 				56B3177B172422940053B63B /* MediaPlayer.framework */,
