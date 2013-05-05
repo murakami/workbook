@@ -36,6 +36,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    DBGMSG(@"%s, dict:%@", __func__, self.dict);
     [super viewWillAppear:animated];
     
     NSURL       *url = [self.dict objectForKey:@"URL"];

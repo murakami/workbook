@@ -13,23 +13,59 @@
 #import "SongsViewController.h"
 
 @interface SongsViewController ()
-@property (nonatomic, strong) NSMutableArray            *songsList;
-@property (nonatomic, strong) MPMusicPlayerController   *musicPlayerController;
+@property (strong, nonatomic) dispatch_queue_t          enumerationQueue;
+@property (strong, nonatomic) NSMutableArray            *songsList;
+@property (strong, nonatomic) MPMusicPlayerController   *musicPlayerController;
 @property (strong, nonatomic) NSMutableDictionary       *dict;
+- (void)_init;
+- (void)_updateIPodLibrary;
+- (void)_updateBrowserItems:(NSMutableArray *)newItems;
 @end
 
 @implementation SongsViewController
 
+@synthesize enumerationQueue = _enumerationQueue;
 @synthesize songsList = _songsList;
 @synthesize musicPlayerController = _musicPlayerController;
 @synthesize dict = _dict;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        [self _init];
+    }
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self _init];
+    }
+    return self;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
+        [self _init];
     }
     return self;
+}
+
+- (void)_init
+{
+    self.enumerationQueue = dispatch_queue_create("Browser Enumeration Queue", DISPATCH_QUEUE_SERIAL);
+    dispatch_set_target_queue(self.enumerationQueue, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0));
+}
+
+- (void)dealloc
+{
+    //dispatch_release(self.enumerationQueue);
+    self.enumerationQueue = NULL;
 }
 
 - (void)viewDidLoad
@@ -39,6 +75,7 @@
     self.songsList = [[NSMutableArray alloc] init];
     self.musicPlayerController = [MPMusicPlayerController iPodMusicPlayer];
     
+    /*
     MPMediaQuery    *songsQuery = [MPMediaQuery songsQuery];
     NSArray         *mediaItems = [songsQuery items];
     for (MPMediaItem *mediaItem in mediaItems) {
@@ -51,6 +88,9 @@
             [self.songsList addObject:dict];
         }
     }
+    */
+    
+    [self _updateIPodLibrary];
     
     /*
     for (MPMediaItem *mediaPlaylist in collections) {
@@ -109,9 +149,18 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"toDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        self.dict = [self.songsList objectAtIndex:indexPath.row];
         DetailViewController    *detailViewController = [segue destinationViewController];
         detailViewController.dict = self.dict;
+        DBGMSG(@"%s, dict:%@", __func__, self.dict);
     }
+}
+
+- (void)_updateBrowserItems:(NSMutableArray*)newItems
+{
+    self.songsList = newItems;
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
@@ -178,10 +227,39 @@
 
 #pragma mark - Table view delegate
 
+/*
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     self.dict = [self.songsList objectAtIndex:indexPath.row];
-    //[self performSegueWithIdentifier:@"toDetail" sender:self];
+    DBGMSG(@"%s, dict:%@", __func__, self.dict);
+    [self performSegueWithIdentifier:@"toDetail" sender:self];
+}
+*/
+
+#pragma mark -
+#pragma mark iPod Library
+
+- (void)_updateIPodLibrary
+{
+    dispatch_async(self.enumerationQueue, ^(void) {
+        NSMutableArray  *songsList = [[NSMutableArray alloc] init];
+		MPMediaQuery    *songsQuery = [MPMediaQuery songsQuery];
+        NSArray         *mediaItems = [songsQuery items];
+        for (MPMediaItem *mediaItem in mediaItems) {
+            NSURL   *url = (NSURL*)[mediaItem valueForProperty:MPMediaItemPropertyAssetURL];
+            if (url) {
+                NSString    *title = (NSString*)[mediaItem valueForProperty:MPMediaItemPropertyTitle];
+                NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+                [dict setObject:url forKey:@"URL"];
+                [dict setObject:title forKey:@"title"];
+                [songsList addObject:dict];
+            }
+        }
+		
+		dispatch_async(dispatch_get_main_queue(), ^(void) {
+			[self _updateBrowserItems:songsList];
+		});
+	});
 }
 
 @end
