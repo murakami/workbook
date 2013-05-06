@@ -34,6 +34,19 @@
         MPMediaItem *mediaItem = [mediaItemCollection representativeItem];
         NSURL   *title = (NSURL*)[mediaItem valueForProperty:MPMediaItemPropertyArtist];
         NSLog(@"mediaItem:%@", title);
+        
+        NSArray         *songs = [mediaItemCollection items];
+        for (MPMediaItem *song in songs) {
+            NSURL   *url = (NSURL *)[song valueForProperty:MPMediaItemPropertyAssetURL];
+            if (url) {
+                NSString *songTitle = (NSString *)[song valueForProperty:MPMediaItemPropertyTitle];
+                NSLog(@"song:%@", songTitle);
+                //NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+                //[dict setObject:url forKey:@"URL"];
+                //[dict setObject:title forKey:@"title"];
+                //[songsList addObject:dict];
+            }
+        }
     }
 }
 
