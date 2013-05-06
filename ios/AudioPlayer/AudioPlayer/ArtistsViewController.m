@@ -28,23 +28,30 @@
 {
     [super viewDidLoad];
 
+    /* 芸術家一覧の取得 */
     MPMediaQuery    *artistsQuery = [MPMediaQuery artistsQuery];
     NSArray         *artistsArray = [artistsQuery collections];
     for (MPMediaItemCollection *mediaItemCollection in artistsArray) {
         MPMediaItem *mediaItem = [mediaItemCollection representativeItem];
-        NSURL   *title = (NSURL*)[mediaItem valueForProperty:MPMediaItemPropertyArtist];
-        NSLog(@"mediaItem:%@", title);
+        NSURL   *artistName = (NSURL*)[mediaItem valueForProperty:MPMediaItemPropertyArtist];
+        NSLog(@"artist:%@", artistName);
         
-        NSArray         *songs = [mediaItemCollection items];
-        for (MPMediaItem *song in songs) {
-            NSURL   *url = (NSURL *)[song valueForProperty:MPMediaItemPropertyAssetURL];
-            if (url) {
-                NSString *songTitle = (NSString *)[song valueForProperty:MPMediaItemPropertyTitle];
-                NSLog(@"song:%@", songTitle);
-                //NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
-                //[dict setObject:url forKey:@"URL"];
-                //[dict setObject:title forKey:@"title"];
-                //[songsList addObject:dict];
+        /* アルバム一覧の取得 */
+        MPMediaQuery    *albumsQuery = [[MPMediaQuery alloc] init];
+        [albumsQuery addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:artistName
+                                                                        forProperty:MPMediaItemPropertyArtist]];
+        [albumsQuery setGroupingType:MPMediaGroupingAlbum];
+        NSArray *albums = [albumsQuery collections];
+        for (MPMediaItemCollection *album in albums) {
+            MPMediaItem *representativeItem = [album representativeItem];
+            NSString *albumTitle = [representativeItem valueForProperty:MPMediaItemPropertyAlbumTitle];
+            NSLog(@" album:%@", albumTitle);
+            
+            /* 曲一覧の取得 */
+            NSArray *songs = [album items];
+            for (MPMediaItem *song in songs) {
+                NSString *songTitle = [song valueForProperty: MPMediaItemPropertyTitle];
+                NSLog(@"  song:%@", songTitle);
             }
         }
     }
