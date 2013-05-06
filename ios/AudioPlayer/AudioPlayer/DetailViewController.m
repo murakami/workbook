@@ -64,10 +64,13 @@
     const double interval = (0.5f * self.currentTimeSlider.maximumValue)
                             / self.currentTimeSlider.bounds.size.width;
     const CMTime time     = CMTimeMakeWithSeconds(interval, NSEC_PER_SEC);
+    __block DetailViewController * __weak blockWeakSelf = self;
     self.playerTimeObserver = [self.player addPeriodicTimeObserverForInterval:time
                                                                         queue:NULL
                                                                    usingBlock:^( CMTime time ) {
-                                                                       [self _updateCurrentTimeSlider];
+                                                                       DetailViewController *tempSelf = blockWeakSelf;
+                                                                       if (! tempSelf) return;
+                                                                       [tempSelf _updateCurrentTimeSlider];
                                                                    }];
 }
 
@@ -89,6 +92,11 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+    if (self.playerTimeObserver) {
+        [self.player removeTimeObserver:self.playerTimeObserver];
+        self.playerTimeObserver = nil;
+    }
     
     [super viewWillDisappear:animated];
 }
