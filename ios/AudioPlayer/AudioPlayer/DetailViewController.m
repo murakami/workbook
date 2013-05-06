@@ -49,18 +49,22 @@
     DBGMSG(@"%s, dict:%@", __func__, self.dict);
     [super viewWillAppear:animated];
     
+    /* 選択された曲 */
     NSURL       *url = [self.dict objectForKey:@"URL"];
     self.playerItem = [AVPlayerItem playerItemWithURL:url];
     self.player = [AVPlayer playerWithPlayerItem:self.playerItem];
     
+    /* 再生位置（先頭） */
     self.currentTimeSlider.minimumValue = 0.0;
     self.currentTimeSlider.maximumValue = CMTimeGetSeconds(self.playerItem.duration);
     self.currentTimeSlider.value = 0.0;
     
+    /* 生成速度（停止） */
     self.rateSlider.minimumValue = 0.0;
     self.rateSlider.maximumValue = 2.0;
     self.rateSlider.value = 0.0;
     
+    /* 再生位置の更新 */
     const double interval = (0.5f * self.currentTimeSlider.maximumValue)
                             / self.currentTimeSlider.bounds.size.width;
     const CMTime time     = CMTimeMakeWithSeconds(interval, NSEC_PER_SEC);
