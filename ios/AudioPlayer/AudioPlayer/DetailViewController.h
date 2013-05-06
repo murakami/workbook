@@ -10,8 +10,13 @@
 
 @interface DetailViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UISlider       *currentTimeSlider;
+@property (weak, nonatomic) IBOutlet UISlider       *rateSlider;
 @property (strong, nonatomic) NSMutableDictionary   *dict;
 
 - (IBAction)play:(id)sender;
+- (IBAction)stop:(id)sender;
+- (IBAction)currentTimeSliderDidChanged:(id)sender;
+- (IBAction)rateSliderDidChanged:(id)sender;
 
 @end
