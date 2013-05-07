@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		56080F371737A38300C2793F /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 56080F361737A38300C2793F /* Document.m */; };
+		56080F3A1739533800C2793F /* Connector.m in Sources */ = {isa = PBXBuildFile; fileRef = 56080F391739533700C2793F /* Connector.m */; };
+		56080F3D173956AB00C2793F /* AssetBrowserParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 56080F3C173956AB00C2793F /* AssetBrowserParser.m */; };
 		5689A93B17282CDB00D0915F /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5689A93A17282CDB00D0915F /* DetailViewController.m */; };
 		56AE329F1723F92A0074D5B9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AE329E1723F92A0074D5B9 /* UIKit.framework */; };
 		56AE32A11723F92A0074D5B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AE32A01723F92A0074D5B9 /* Foundation.framework */; };
@@ -53,6 +55,10 @@
 /* Begin PBXFileReference section */
 		56080F351737A38300C2793F /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
 		56080F361737A38300C2793F /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
+		56080F381739533700C2793F /* Connector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connector.h; sourceTree = "<group>"; };
+		56080F391739533700C2793F /* Connector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Connector.m; sourceTree = "<group>"; };
+		56080F3B173956AB00C2793F /* AssetBrowserParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetBrowserParser.h; sourceTree = "<group>"; };
+		56080F3C173956AB00C2793F /* AssetBrowserParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssetBrowserParser.m; sourceTree = "<group>"; };
 		564AA2FE172DFA5D007178F3 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		5689A93917282CDB00D0915F /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		5689A93A17282CDB00D0915F /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
@@ -186,6 +192,10 @@
 				5689A93A17282CDB00D0915F /* DetailViewController.m */,
 				56080F351737A38300C2793F /* Document.h */,
 				56080F361737A38300C2793F /* Document.m */,
+				56080F381739533700C2793F /* Connector.h */,
+				56080F391739533700C2793F /* Connector.m */,
+				56080F3B173956AB00C2793F /* AssetBrowserParser.h */,
+				56080F3C173956AB00C2793F /* AssetBrowserParser.m */,
 				56AE32A51723F92A0074D5B9 /* Supporting Files */,
 			);
 			path = AudioPlayer;
@@ -349,6 +359,8 @@
 				56AE32F21723FEA30074D5B9 /* AlbumsViewController.m in Sources */,
 				5689A93B17282CDB00D0915F /* DetailViewController.m in Sources */,
 				56080F371737A38300C2793F /* Document.m in Sources */,
+				56080F3A1739533800C2793F /* Connector.m in Sources */,
+				56080F3D173956AB00C2793F /* AssetBrowserParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
