@@ -50,7 +50,7 @@ NSString    *ConnectorDidFinishUpdateIPodLibrary = @"ConnectorDidFinishUpdateIPo
     return (self.parsers > 0);
 }
 
-- (void)updateIPodLibrary
+- (void)updateIPodLibrary:(AssetBrowserSourceType)sourceType
 {
     BOOL    networkAccessing;
     networkAccessing = self.networkAccessing;

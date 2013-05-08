@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AssetBrowserParser.h"
 
 extern NSString *ConnectorDidBeginUpdateIPodLibrary;
 extern NSString *ConnectorDidFinishUpdateIPodLibrary;
@@ -17,7 +18,7 @@ extern NSString *ConnectorDidFinishUpdateIPodLibrary;
 @property (strong, nonatomic) NSMutableArray                    *parsers;
 
 + (Connector *)sharedConnector;
-- (void)updateIPodLibrary;
+- (void)updateIPodLibrary:(AssetBrowserSourceType)sourceType;
 - (void)cancelUpdateIPodLibrary;
 
 @end

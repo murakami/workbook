@@ -8,11 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum {
+	AssetBrowserSourceTypePlaylists,
+	AssetBrowserSourceTypeArtists,
+	AssetBrowserSourceTypeSongs,
+	AssetBrowserSourceTypeAlbums
+} AssetBrowserSourceType;
+
 @protocol AssetBrowserParserDelegate <NSObject>
 @end
 
 @interface AssetBrowserParser : NSObject
 
+@property (assign, nonatomic) AssetBrowserSourceType        sourceType;
+@property (strong, nonatomic) NSArray                       *assetBrowserItems;
 @property (weak, nonatomic) id<AssetBrowserParserDelegate>  delegate;
 
 - (void)parse;
