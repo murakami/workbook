@@ -12,9 +12,13 @@
 NSString    *ConnectorDidBeginUpdateIPodLibrary = @"ConnectorDidBeginUpdateIPodLibrary";
 NSString    *ConnectorDidFinishUpdateIPodLibrary = @"ConnectorDidFinishUpdateIPodLibrary";
 
+@interface Connector ()
+- (void)_notifyAssetBrowserStatusWithParser:(AssetBrowserParser*)parser;
+@end
+
 @implementation Connector
 
-@synthesize parsers = _parsers;
+@synthesize assetBrowserParsers = _assetBrowserParsers;
 
 + (Connector *)sharedConnector
 {
@@ -35,19 +39,19 @@ NSString    *ConnectorDidFinishUpdateIPodLibrary = @"ConnectorDidFinishUpdateIPo
 {
     self = [super init];
     if (self) {
-        self.parsers = [[NSMutableArray alloc] init];
+        self.assetBrowserParsers = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
 - (void)dealloc
 {
-    self.parsers = nil;
+    self.assetBrowserParsers = nil;
 }
 
 - (BOOL)isNetworkAccessig
 {
-    return (self.parsers > 0);
+    return (self.assetBrowserParsers > 0);
 }
 
 - (void)updateIPodLibrary:(AssetBrowserSourceType)sourceType
@@ -61,7 +65,7 @@ NSString    *ConnectorDidFinishUpdateIPodLibrary = @"ConnectorDidFinishUpdateIPo
     
     [parser parse];
     
-    [self.parsers addObject:parser];
+    [self.assetBrowserParsers addObject:parser];
     
     if (networkAccessing != self.networkAccessing) {
         [self willChangeValueForKey:@"networkAccessing"];
@@ -79,7 +83,7 @@ NSString    *ConnectorDidFinishUpdateIPodLibrary = @"ConnectorDidFinishUpdateIPo
 
 - (void)cancelUpdateIPodLibrary
 {
-    NSMutableArray  *parsers = [self.parsers copy];
+    NSMutableArray  *parsers = [self.assetBrowserParsers copy];
     for (AssetBrowserParser *parser in parsers) {
         [parser cancel];
         
@@ -92,8 +96,46 @@ NSString    *ConnectorDidFinishUpdateIPodLibrary = @"ConnectorDidFinishUpdateIPo
                                                           userInfo:userInfo];
         
         [self willChangeValueForKey:@"networkAccessing"];
-        [self.parsers removeObject:parser];
+        [self.assetBrowserParsers removeObject:parser];
         [self didChangeValueForKey:@"networkAccessing"];
+    }
+}
+
+#pragma mark - AssetBrowserParserDelegate
+
+- (void)_notifyAssetBrowserStatusWithParser:(AssetBrowserParser*)parser
+{
+    NSMutableDictionary*    userInfo;
+    userInfo = [NSMutableDictionary dictionary];
+    [userInfo setObject:parser forKey:@"parser"];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:ConnectorDidFinishUpdateIPodLibrary
+                                                        object:self
+                                                      userInfo:userInfo];
+    
+    [self willChangeValueForKey:@"networkAccessing"];
+    [self.assetBrowserParsers removeObject:parser];
+    [self didChangeValueForKey:@"networkAccessing"];
+}
+
+- (void)parserDidFinishLoading:(AssetBrowserParser*)parser
+{
+    if ([self.assetBrowserParsers containsObject:parser]) {
+        [self _notifyAssetBrowserStatusWithParser:parser];
+    }
+}
+
+- (void)parser:(AssetBrowserParser*)parser didFailWithError:(NSError*)error
+{
+    if ([self.assetBrowserParsers containsObject:parser]) {
+        [self _notifyAssetBrowserStatusWithParser:parser];
+    }
+}
+
+- (void)parserDidCancel:(AssetBrowserParser*)parser
+{
+    if ([self.assetBrowserParsers containsObject:parser]) {
+        [self _notifyAssetBrowserStatusWithParser:parser];
     }
 }
 

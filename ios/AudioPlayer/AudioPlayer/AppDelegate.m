@@ -10,10 +10,21 @@
 #import "AppDelegate.h"
 
 @interface AppDelegate ()
+@property (strong, nonatomic) UIAlertView               *alertView;
+@property (strong, nonatomic) UIActivityIndicatorView   *activityIndicatorView;
 - (void)_updateNetworkActivity;
+- (void)_updateActivityAlert;
+- (void)_presentActivityAlertWithText:(NSString *)alertText;
+- (void)_setActivityAlertTitle:(NSString *)title;
+- (void)_setActivityAlertMessage:(NSString *)message;
+- (void)_dismissActivityAlert;
+- (void)_setActivityIndicatorVisible:(BOOL)visible;
 @end
 
 @implementation AppDelegate
+
+@synthesize alertView = _alertView;
+@synthesize activityIndicatorView = _activityIndicatorView;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -21,6 +32,9 @@
                                   forKeyPath:@"networkAccessing"
                                      options:0
                                      context:NULL];
+    self.activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    self.activityIndicatorView.hidesWhenStopped = YES;
+    [self.window.rootViewController.view addSubview:self.activityIndicatorView];
     return YES;
 }
 							
@@ -57,6 +71,64 @@
 - (void)_updateNetworkActivity
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = [Connector sharedConnector].networkAccessing;
+}
+
+- (void)_updateActivityAlert
+{
+}
+
+- (void)_presentActivityAlertWithText:(NSString *)title
+{
+    if (self.alertView) {
+        self.alertView.title = title;
+        [self.alertView show];
+    }
+    else {
+        self.alertView = [[UIAlertView alloc] initWithTitle:title
+                                                    message:@"\n\n\n\n\n\n"
+                                                   delegate:nil
+                                          cancelButtonTitle:nil
+                                          otherButtonTitles:nil];
+        [self.alertView show];
+        
+        self.activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        self.activityIndicatorView.center = CGPointMake(CGRectGetMidX(self.alertView.bounds), CGRectGetMidY(self.alertView.bounds));
+        [self.activityIndicatorView startAnimating];
+        
+        [self.alertView addSubview:self.activityIndicatorView];
+    }
+}
+
+- (void)_setActivityAlertTitle:(NSString *)title
+{
+    self.alertView.title = title;
+}
+
+- (void)_setActivityAlertMessage:(NSString *)aMessage
+{
+    NSString    *message = aMessage;
+    while ([message componentsSeparatedByString:@"\n"].count < 7)
+        message = [message stringByAppendingString:@"\n"];
+    self.alertView.message = message;
+}
+
+- (void)_dismissActivityAlert
+{
+    if (self.alertView) {
+        [self.alertView dismissWithClickedButtonIndex:0 animated:YES];
+        
+        [self.activityIndicatorView removeFromSuperview];
+        self.activityIndicatorView = nil;
+        self.alertView = nil;
+    }
+}
+
+- (void)_setActivityIndicatorVisible:(BOOL)visible
+{
+    if (visible)
+        [self.activityIndicatorView startAnimating];
+    else
+        [self.activityIndicatorView stopAnimating];
 }
 
 @end

@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class AssetBrowserParser;
+
 typedef enum {
 	AssetBrowserSourceTypePlaylists,
 	AssetBrowserSourceTypeArtists,
@@ -16,6 +18,9 @@ typedef enum {
 } AssetBrowserSourceType;
 
 @protocol AssetBrowserParserDelegate <NSObject>
+- (void)parserDidFinishLoading:(AssetBrowserParser*)parser;
+- (void)parser:(AssetBrowserParser*)parser didFailWithError:(NSError*)error;
+- (void)parserDidCancel:(AssetBrowserParser*)parser;
 @end
 
 @interface AssetBrowserParser : NSObject

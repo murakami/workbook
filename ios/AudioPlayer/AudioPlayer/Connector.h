@@ -15,7 +15,7 @@ extern NSString *ConnectorDidFinishUpdateIPodLibrary;
 @interface Connector : NSObject <AssetBrowserParserDelegate>
 
 @property (nonatomic, readonly, getter=isNetworkAccessig) BOOL  networkAccessing;
-@property (strong, nonatomic) NSMutableArray                    *parsers;
+@property (strong, nonatomic) NSMutableArray                    *assetBrowserParsers;
 
 + (Connector *)sharedConnector;
 - (void)updateIPodLibrary:(AssetBrowserSourceType)sourceType;
