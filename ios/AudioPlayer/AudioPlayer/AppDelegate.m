@@ -32,9 +32,12 @@
                                   forKeyPath:@"networkAccessing"
                                      options:0
                                      context:NULL];
-    self.activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    self.activityIndicatorView.hidesWhenStopped = YES;
-    [self.window.rootViewController.view addSubview:self.activityIndicatorView];
+    [[Connector sharedConnector] addObserver:self
+                                  forKeyPath:@"accessing"
+                                     options:0
+                                     context:NULL];
+    self.alertView = nil;
+    self.activityIndicatorView = nil;
     return YES;
 }
 							
@@ -66,6 +69,9 @@
     if ([keyPath isEqualToString:@"networkAccessing"]) {
         [self _updateNetworkActivity];
     }
+    else if ([keyPath isEqualToString:@"accessing"]) {
+        [self _updateActivityAlert];
+    }
 }
 
 - (void)_updateNetworkActivity
@@ -75,6 +81,12 @@
 
 - (void)_updateActivityAlert
 {
+    if ([Connector sharedConnector].accessing) {
+        [self _presentActivityAlertWithText:@"Please Wait"];
+    }
+    else {
+        [self _dismissActivityAlert];
+    }
 }
 
 - (void)_presentActivityAlertWithText:(NSString *)title

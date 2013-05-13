@@ -54,6 +54,11 @@ NSString    *ConnectorDidFinishUpdateIPodLibrary = @"ConnectorDidFinishUpdateIPo
     return (self.assetBrowserParsers > 0);
 }
 
+- (BOOL)isAccessig
+{
+    return (self.assetBrowserParsers > 0);
+}
+
 - (void)updateIPodLibrary:(AssetBrowserSourceType)sourceType
 {
     BOOL    networkAccessing;
@@ -68,8 +73,8 @@ NSString    *ConnectorDidFinishUpdateIPodLibrary = @"ConnectorDidFinishUpdateIPo
     [self.assetBrowserParsers addObject:parser];
     
     if (networkAccessing != self.networkAccessing) {
-        [self willChangeValueForKey:@"networkAccessing"];
-        [self didChangeValueForKey:@"networkAccessing"];
+        [self willChangeValueForKey:@"accessing"];
+        [self didChangeValueForKey:@"accessing"];
     }
     
     NSMutableDictionary*    userInfo;
@@ -95,9 +100,9 @@ NSString    *ConnectorDidFinishUpdateIPodLibrary = @"ConnectorDidFinishUpdateIPo
                                                             object:self
                                                           userInfo:userInfo];
         
-        [self willChangeValueForKey:@"networkAccessing"];
+        [self willChangeValueForKey:@"accessing"];
         [self.assetBrowserParsers removeObject:parser];
-        [self didChangeValueForKey:@"networkAccessing"];
+        [self didChangeValueForKey:@"accessing"];
     }
 }
 
@@ -113,9 +118,9 @@ NSString    *ConnectorDidFinishUpdateIPodLibrary = @"ConnectorDidFinishUpdateIPo
                                                         object:self
                                                       userInfo:userInfo];
     
-    [self willChangeValueForKey:@"networkAccessing"];
+    [self willChangeValueForKey:@"accessing"];
     [self.assetBrowserParsers removeObject:parser];
-    [self didChangeValueForKey:@"networkAccessing"];
+    [self didChangeValueForKey:@"accessing"];
 }
 
 - (void)parserDidFinishLoading:(AssetBrowserParser*)parser
