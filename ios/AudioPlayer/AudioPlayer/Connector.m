@@ -66,6 +66,7 @@ NSString    *ConnectorDidFinishUpdateIPodLibrary = @"ConnectorDidFinishUpdateIPo
     
     AssetBrowserParser*  parser;
     parser = [[AssetBrowserParser alloc] init];
+    parser.sourceType = sourceType;
     parser.delegate = self;
     
     [parser parse];
