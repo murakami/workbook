@@ -10,6 +10,7 @@
 #import "Connector.h"
 
 NSString    *ConnectorDidBeginUpdateIPodLibrary = @"ConnectorDidBeginUpdateIPodLibrary";
+NSString    *ConnectorInProgressUpdateIPodLibrary = @"ConnectorInProgressUpdateIPodLibrary";
 NSString    *ConnectorDidFinishUpdateIPodLibrary = @"ConnectorDidFinishUpdateIPodLibrary";
 
 @interface Connector ()
@@ -51,21 +52,19 @@ NSString    *ConnectorDidFinishUpdateIPodLibrary = @"ConnectorDidFinishUpdateIPo
 
 - (BOOL)isNetworkAccessig
 {
-    return (self.assetBrowserParsers > 0);
+    return (0 < self.assetBrowserParsers);
 }
 
 - (BOOL)isAccessig
 {
-    return (self.assetBrowserParsers > 0);
+    return (0 < self.assetBrowserParsers);
 }
 
 - (void)updateIPodLibrary:(AssetBrowserSourceType)sourceType
 {
-    BOOL    networkAccessing;
-    networkAccessing = self.networkAccessing;
+    BOOL    accessing = self.accessing;
     
-    AssetBrowserParser*  parser;
-    parser = [[AssetBrowserParser alloc] init];
+    AssetBrowserParser*  parser = [[AssetBrowserParser alloc] init];
     parser.sourceType = sourceType;
     parser.delegate = self;
     
@@ -73,13 +72,12 @@ NSString    *ConnectorDidFinishUpdateIPodLibrary = @"ConnectorDidFinishUpdateIPo
     
     [self.assetBrowserParsers addObject:parser];
     
-    if (networkAccessing != self.networkAccessing) {
+    if (accessing != self.accessing) {
         [self willChangeValueForKey:@"accessing"];
         [self didChangeValueForKey:@"accessing"];
     }
     
-    NSMutableDictionary*    userInfo;
-    userInfo = [NSMutableDictionary dictionary];
+    NSMutableDictionary*    userInfo = [NSMutableDictionary dictionary];
     [userInfo setObject:parser forKey:@"parser"];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:ConnectorDidBeginUpdateIPodLibrary
@@ -89,6 +87,7 @@ NSString    *ConnectorDidFinishUpdateIPodLibrary = @"ConnectorDidFinishUpdateIPo
 
 - (void)cancelUpdateIPodLibrary
 {
+#if 0
     NSMutableArray  *parsers = [self.assetBrowserParsers copy];
     for (AssetBrowserParser *parser in parsers) {
         [parser cancel];
@@ -105,6 +104,23 @@ NSString    *ConnectorDidFinishUpdateIPodLibrary = @"ConnectorDidFinishUpdateIPo
         [self.assetBrowserParsers removeObject:parser];
         [self didChangeValueForKey:@"accessing"];
     }
+    parsers = nil;
+#endif  /* 0 */
+    for (AssetBrowserParser *parser in self.assetBrowserParsers) {
+        [parser cancel];
+    }
+    
+    NSMutableDictionary*    userInfo;
+    userInfo = [NSMutableDictionary dictionary];
+    [userInfo setObject:self.assetBrowserParsers forKey:@"parsers"];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:ConnectorDidFinishUpdateIPodLibrary
+                                                        object:self
+                                                      userInfo:userInfo];
+    
+    [self willChangeValueForKey:@"accessing"];
+    [self.assetBrowserParsers removeAllObjects];
+    [self didChangeValueForKey:@"accessing"];
 }
 
 #pragma mark - AssetBrowserParserDelegate

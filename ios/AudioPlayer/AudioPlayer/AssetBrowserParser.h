@@ -11,7 +11,7 @@
 @class AssetBrowserParser;
 
 typedef enum {
-    kAssetBrowserSourceTypeNone,
+    kAssetBrowserSourceTypeNone = 0,
 	kAssetBrowserSourceTypePlaylists,
 	kAssetBrowserSourceTypeArtists,
 	kAssetBrowserSourceTypeSongs,
@@ -19,17 +19,25 @@ typedef enum {
 } AssetBrowserSourceType;
 
 typedef enum {
-    kAssetBrowserStateNone,
+    kAssetBrowserStateNone = 0,
     kAssetBrowserStateInProgress,
     kAssetBrowserStateFinished,
     kAssetBrowserStateError,
     kAssetBrowserStateCanceled,
 } AssetBrowserState;
 
+typedef enum {
+    kAssetBrowserCodeSuccess = 0,
+    kAssetBrowserCodeCancel,
+    kAssetBrowserCodeFailure
+} AssetBrowserCode;
+
+extern NSString *AssetBrowserErrorDomain;
+
 @protocol AssetBrowserParserDelegate <NSObject>
-- (void)parserDidFinishLoading:(AssetBrowserParser*)parser;
-- (void)parser:(AssetBrowserParser*)parser didFailWithError:(NSError*)error;
-- (void)parserDidCancel:(AssetBrowserParser*)parser;
+- (void)parserDidFinishLoading:(AssetBrowserParser *)parser;
+- (void)parser:(AssetBrowserParser *)parser didFailWithError:(NSError *)error;
+- (void)parserDidCancel:(AssetBrowserParser *)parser;
 @end
 
 @interface AssetBrowserParser : NSObject

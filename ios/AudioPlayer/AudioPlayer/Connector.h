@@ -10,6 +10,7 @@
 #import "AssetBrowserParser.h"
 
 extern NSString *ConnectorDidBeginUpdateIPodLibrary;
+extern NSString *ConnectorInProgressUpdateIPodLibrary;
 extern NSString *ConnectorDidFinishUpdateIPodLibrary;
 
 @interface Connector : NSObject <AssetBrowserParserDelegate>
