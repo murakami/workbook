@@ -52,12 +52,12 @@ NSString    *ConnectorDidFinishUpdateIPodLibrary = @"ConnectorDidFinishUpdateIPo
 
 - (BOOL)isNetworkAccessig
 {
-    return (0 < self.assetBrowserParsers);
+    return NO;
 }
 
 - (BOOL)isAccessig
 {
-    return (0 < self.assetBrowserParsers);
+    return (0 < self.assetBrowserParsers.count);
 }
 
 - (void)updateIPodLibrary:(AssetBrowserSourceType)sourceType

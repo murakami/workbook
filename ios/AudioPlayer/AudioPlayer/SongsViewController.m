@@ -9,6 +9,7 @@
 //#import <AVFoundation/AVFoundation.h>
 //#import <CoreMedia/CoreMedia.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import "Connector.h"
 #import "DetailViewController.h"
 #import "SongsViewController.h"
 
@@ -20,6 +21,7 @@
 - (void)_init;
 - (void)_updateIPodLibrary;
 - (void)_updateBrowserItems:(NSMutableArray *)newItems;
+- (void)_connectorDidFinishUpdateIPodLibrary:(NSNotification*)notification;
 @end
 
 @implementation SongsViewController
@@ -60,10 +62,19 @@
 {
     self.enumerationQueue = dispatch_queue_create("Browser Enumeration Queue", DISPATCH_QUEUE_SERIAL);
     dispatch_set_target_queue(self.enumerationQueue, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0));
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(_connectorDidFinishUpdateIPodLibrary:)
+                                                 name:ConnectorDidFinishUpdateIPodLibrary
+                                               object:nil];
 }
 
 - (void)dealloc
 {
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:ConnectorDidFinishUpdateIPodLibrary
+                                                  object:nil];
+    
     //dispatch_release(self.enumerationQueue);
     self.enumerationQueue = NULL;
 }
@@ -90,7 +101,10 @@
     }
     */
     
+    /*
     [self _updateIPodLibrary];
+    */
+    [[Connector sharedConnector] updateIPodLibrary:kAssetBrowserSourceTypeSongs];
     
     /*
     for (MPMediaItem *mediaPlaylist in collections) {
@@ -260,6 +274,18 @@
 			[self _updateBrowserItems:songsList];
 		});
 	});
+}
+
+- (void)_connectorDidFinishUpdateIPodLibrary:(NSNotification*)notification
+{
+    AssetBrowserParser  *parser = [notification.userInfo objectForKey:@"parser"];
+    if (parser.state == kAssetBrowserCodeCancel) {
+        return;
+    }
+    
+    if (kAssetBrowserSourceTypeSongs == parser.sourceType) {
+        [self _updateBrowserItems:parser.assetBrowserItems];
+    }
 }
 
 @end
