@@ -31,7 +31,7 @@
     NSArray         *albumsArray = [albumsQuery collections];
     for (MPMediaItemCollection *mediaItemCollection in albumsArray) {
         MPMediaItem *mediaItem = [mediaItemCollection representativeItem];
-        NSURL   *title = (NSURL *)[mediaItem valueForProperty:MPMediaItemPropertyAlbumTitle];
+        NSString    *title = [mediaItem valueForProperty:MPMediaItemPropertyAlbumTitle];
         NSLog(@"mediaItem:%@", title);
         
         NSArray         *songs = [mediaItemCollection items];

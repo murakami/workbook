@@ -17,6 +17,7 @@
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
+    DBGMSG(@"%s", __func__);
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
@@ -26,16 +27,16 @@
 
 - (void)viewDidLoad
 {
+    DBGMSG(@"%s", __func__);
     [super viewDidLoad];
 
     MPMediaQuery    *playlistsQuery = [MPMediaQuery playlistsQuery];
     NSArray         *playlistsArray = [playlistsQuery collections];
-    for (MPMediaItemCollection *mediaItemCollection in playlistsArray) {
-        MPMediaItem *mediaItem = [mediaItemCollection representativeItem];
-        NSURL   *title = (NSURL*)[mediaItem valueForProperty:MPMediaPlaylistPropertyName];
+    for (MPMediaPlaylist *playlist in playlistsArray) {
+        NSString    *title = [playlist valueForProperty:MPMediaPlaylistPropertyName];
         NSLog(@"mediaItem:%@", title);
         
-        NSArray         *songs = [mediaItemCollection items];
+        NSArray         *songs = [playlist items];
         for (MPMediaItem *song in songs) {
             NSURL   *url = (NSURL *)[song valueForProperty:MPMediaItemPropertyAssetURL];
             if (url) {
@@ -52,26 +53,31 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    DBGMSG(@"%s", __func__);
     [super viewWillAppear:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    DBGMSG(@"%s", __func__);
     [super viewDidAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
+    DBGMSG(@"%s", __func__);
     [super viewWillDisappear:animated];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
+    DBGMSG(@"%s", __func__);
     [super viewDidDisappear:animated];
 }
 
 - (void)viewDidUnload
 {
+    DBGMSG(@"%s", __func__);
     [super viewDidUnload];
 }
 

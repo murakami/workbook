@@ -33,7 +33,7 @@
     NSArray         *artistsArray = [artistsQuery collections];
     for (MPMediaItemCollection *mediaItemCollection in artistsArray) {
         MPMediaItem *mediaItem = [mediaItemCollection representativeItem];
-        NSURL   *artistName = (NSURL*)[mediaItem valueForProperty:MPMediaItemPropertyArtist];
+        NSString    *artistName = [mediaItem valueForProperty:MPMediaItemPropertyArtist];
         NSLog(@"artist:%@", artistName);
         
         /* アルバム一覧の取得 */
