@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class AssetBrowserParser;
+@class AssetBrowserResponseParser;
 
 typedef enum {
     kAssetBrowserSourceTypeNone = 0,
@@ -35,12 +35,12 @@ typedef enum {
 extern NSString *AssetBrowserErrorDomain;
 
 @protocol AssetBrowserParserDelegate <NSObject>
-- (void)parserDidFinishLoading:(AssetBrowserParser *)parser;
-- (void)parser:(AssetBrowserParser *)parser didFailWithError:(NSError *)error;
-- (void)parserDidCancel:(AssetBrowserParser *)parser;
+- (void)parserDidFinishLoading:(AssetBrowserResponseParser *)parser;
+- (void)parser:(AssetBrowserResponseParser *)parser didFailWithError:(NSError *)error;
+- (void)parserDidCancel:(AssetBrowserResponseParser *)parser;
 @end
 
-@interface AssetBrowserParser : NSObject
+@interface AssetBrowserResponseParser : NSObject
 
 @property (assign, nonatomic) AssetBrowserSourceType        sourceType;
 @property (readonly, nonatomic) AssetBrowserState           state;

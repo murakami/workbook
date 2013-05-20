@@ -159,7 +159,7 @@
 
 - (void)_connectorDidFinishUpdateIPodLibrary:(NSNotification*)notification
 {
-    AssetBrowserParser  *parser = [notification.userInfo objectForKey:@"parser"];
+    AssetBrowserResponseParser  *parser = [notification.userInfo objectForKey:@"parser"];
     if (parser.state == kAssetBrowserCodeCancel) {
         return;
     }

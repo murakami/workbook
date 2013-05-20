@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AssetBrowserParser.h"
+#import "AssetBrowserResponseParser.h"
 
 extern NSString *ConnectorDidBeginUpdateIPodLibrary;
 extern NSString *ConnectorInProgressUpdateIPodLibrary;
