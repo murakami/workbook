@@ -97,15 +97,9 @@
     DBGMSG(@"%s", __func__);
     [super viewWillAppear:animated];
     
-    CGRect bounds = [self.augmentedRealityView bounds];
-    [self.captureVideoPreviewLayer setFrame:bounds];
-    DBGMSG(@"bounds(%f, %f, %f, %f)", bounds.origin.x, bounds.origin.y, bounds.size.width, bounds.size.height);
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    DBGMSG(@"%s", __func__);
-    [super viewDidAppear:animated];
+    //CGRect bounds = [self.augmentedRealityView bounds];
+    //[self.captureVideoPreviewLayer setFrame:bounds];
+    //DBGMSG(@"bounds(%f, %f, %f, %f)", bounds.origin.x, bounds.origin.y, bounds.size.width, bounds.size.height);
 }
 
 - (void)viewWillLayoutSubviews
@@ -113,9 +107,9 @@
     DBGMSG(@"%s", __func__);
     [super viewWillLayoutSubviews];
     
-    CGRect bounds = [self.augmentedRealityView bounds];
-    [self.captureVideoPreviewLayer setFrame:bounds];
-    DBGMSG(@"bounds(%f, %f, %f, %f)", bounds.origin.x, bounds.origin.y, bounds.size.width, bounds.size.height);
+    //CGRect bounds = [self.augmentedRealityView bounds];
+    //[self.captureVideoPreviewLayer setFrame:bounds];
+    //DBGMSG(@"bounds(%f, %f, %f, %f)", bounds.origin.x, bounds.origin.y, bounds.size.width, bounds.size.height);
 }
 
 - (void)viewDidLayoutSubviews
@@ -126,6 +120,12 @@
     CGRect bounds = [self.augmentedRealityView bounds];
     [self.captureVideoPreviewLayer setFrame:bounds];
     DBGMSG(@"bounds(%f, %f, %f, %f)", bounds.origin.x, bounds.origin.y, bounds.size.width, bounds.size.height);
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    DBGMSG(@"%s", __func__);
+    [super viewDidAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
