@@ -13,19 +13,47 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fwn-Lq-0cH">
-                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4f-eU-3lF">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="zP7-bi-nsn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Heading" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8h-IO-dJg">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="lMk-bk-WIw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                        <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="p4f-eU-3lF" firstAttribute="leading" secondItem="fwn-Lq-0cH" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="cE3-Gp-xnU"/>
+                                    <constraint firstAttribute="bottom" secondItem="U8h-IO-dJg" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="gbL-HQ-iZg"/>
+                                    <constraint firstAttribute="trailing" secondItem="p4f-eU-3lF" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="i0v-zh-GJC"/>
+                                    <constraint firstItem="U8h-IO-dJg" firstAttribute="leading" secondItem="fwn-Lq-0cH" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="lXA-b9-4Vb"/>
+                                    <constraint firstAttribute="trailing" secondItem="U8h-IO-dJg" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="sK6-iM-E15"/>
+                                    <constraint firstItem="U8h-IO-dJg" firstAttribute="top" secondItem="p4f-eU-3lF" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="zvQ-fT-CPc"/>
+                                </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="fwn-Lq-0cH" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="1RW-Jn-BfP"/>
-                            <constraint firstItem="fwn-Lq-0cH" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="BFB-Fv-t2e"/>
-                            <constraint firstAttribute="bottom" secondItem="fwn-Lq-0cH" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="IcF-SL-uAB"/>
-                            <constraint firstAttribute="trailing" secondItem="fwn-Lq-0cH" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="bXH-zC-oh4"/>
+                            <constraint firstItem="fwn-Lq-0cH" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="5Pw-Lk-D7z"/>
+                            <constraint firstItem="fwn-Lq-0cH" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="Gha-hU-9og"/>
+                            <constraint firstItem="fwn-Lq-0cH" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="JI5-wv-3QN"/>
+                            <constraint firstItem="fwn-Lq-0cH" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="nob-mj-fmY"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="augmentedRealityView" destination="fwn-Lq-0cH" id="3Yc-de-meZ"/>
+                        <outlet property="headingLabel" destination="U8h-IO-dJg" id="Kds-vV-xZ2"/>
+                        <outlet property="locationLabel" destination="p4f-eU-3lF" id="agY-kD-sVM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -40,6 +68,8 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="augmentedRealityView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="headingLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
     </classes>

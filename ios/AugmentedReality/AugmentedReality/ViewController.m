@@ -14,25 +14,33 @@
 @property (strong, nonatomic) AVCaptureDevice               *videoCaptureDevice;
 @property (strong, nonatomic) AVCaptureDeviceInput          *videoInput;
 @property (strong, nonatomic) AVCaptureVideoPreviewLayer    *captureVideoPreviewLayer;
+@property (strong, nonatomic) CLLocationManager             *locationManager;
 - (AVCaptureDevice *)_cameraWithPosition:(AVCaptureDevicePosition)position;
+- (AVCaptureDevice *)_frontFacingCamera;
 - (AVCaptureDevice *)_backFacingCamera;
 @end
 
 @implementation ViewController
 
 @synthesize augmentedRealityView = _augmentedRealityView;
+@synthesize locationLabel = _locationLabel;
+@synthesize headingLabel = _headingLabel;
 @synthesize capureSession = _capureSession;
 @synthesize videoCaptureDevice = _videoCaptureDevice;
 @synthesize videoInput = _videoInput;
 @synthesize captureVideoPreviewLayer = _captureVideoPreviewLayer;
+@synthesize locationManager = _locationManager;
 
 - (void)dealloc
 {
     self.augmentedRealityView = nil;
+    self.locationLabel = nil;
+    self.headingLabel = nil;
     self.capureSession = nil;
     self.videoCaptureDevice = nil;
     self.videoInput = nil;
     self.captureVideoPreviewLayer = nil;
+    self.locationManager = nil;
 }
 
 - (void)viewDidLoad
@@ -90,6 +98,16 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [self.capureSession startRunning];
     });
+    
+    /* 現在地の更新を開始する */
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    [self.locationManager startUpdatingLocation];
+    
+    /* 電子コンパスの測定を開始する */
+    if ([CLLocationManager headingAvailable]) {
+        [self.locationManager startUpdatingHeading];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -163,9 +181,29 @@
     return nil;
 }
 
+- (AVCaptureDevice *)_frontFacingCamera
+{
+    return [self _cameraWithPosition:AVCaptureDevicePositionFront];
+}
+
 - (AVCaptureDevice *)_backFacingCamera
 {
     return [self _cameraWithPosition:AVCaptureDevicePositionBack];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    DBGMSG(@"%s", __func__);
+    CLLocation  *newLocation = [locations lastObject];
+    CLLocationCoordinate2D  newCoordinate = newLocation.coordinate;
+    self.locationLabel.text = [[NSString alloc] initWithFormat:@"new latitude=%.2f, longitude=%.2f", newCoordinate.latitude, newCoordinate.longitude];
+    DBGMSG(@"new latitude=%f, longitude=%f", newCoordinate.latitude, newCoordinate.longitude);
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading
+{
+    self.headingLabel.text = [[NSString alloc] initWithFormat:@"trueHeading %.2f, magneticHeading %.2f", newHeading.trueHeading, newHeading.magneticHeading];
+    DBGMSG(@"trueHeading %f, magneticHeading %f", newHeading.trueHeading, newHeading.magneticHeading);
 }
 
 @end
