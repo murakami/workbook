@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		56A251DE179A90160005E421 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56A251DD179A90160005E421 /* CoreMedia.framework */; };
+		56A251E0179BD8310005E421 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56A251DF179BD8310005E421 /* CoreLocation.framework */; };
 		56FD89DB178C543D009F3606 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56FD89DA178C543D009F3606 /* UIKit.framework */; };
 		56FD89DD178C543D009F3606 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56FD89DC178C543D009F3606 /* Foundation.framework */; };
 		56FD89DF178C543D009F3606 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56FD89DE178C543D009F3606 /* CoreGraphics.framework */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		56A251DD179A90160005E421 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		56A251DF179BD8310005E421 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		56FD89D7178C543D009F3606 /* AugmentedReality.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AugmentedReality.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56FD89DA178C543D009F3606 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		56FD89DC178C543D009F3606 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -77,6 +79,7 @@
 				56FD8A16178C5F7B009F3606 /* AVFoundation.framework in Frameworks */,
 				56A251DE179A90160005E421 /* CoreMedia.framework in Frameworks */,
 				56FD8A18178C5F9D009F3606 /* CoreVideo.framework in Frameworks */,
+				56A251E0179BD8310005E421 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +124,7 @@
 				56FD8A15178C5F7B009F3606 /* AVFoundation.framework */,
 				56A251DD179A90160005E421 /* CoreMedia.framework */,
 				56FD8A17178C5F9D009F3606 /* CoreVideo.framework */,
+				56A251DF179BD8310005E421 /* CoreLocation.framework */,
 				56FD89FE178C543D009F3606 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
