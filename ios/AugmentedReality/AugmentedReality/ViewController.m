@@ -7,7 +7,12 @@
 //
 
 #import <AVFoundation/AVFoundation.h>
+#import <Social/Social.h>
+#import <Accounts/Accounts.h>
 #import "ViewController.h"
+
+#define TWEETS_UPDATE_NOTIFICATION  @"TWEETS_UPDATE_NOTIFICATION_KEY"
+#define TWITTER_API_URL             @"https://api.twitter.com/1.1/search/tweets.json?geocode=%f,%f,%fkm"
 
 @interface ViewController ()
 @property (strong, nonatomic) AVCaptureSession              *capureSession;
@@ -15,9 +20,11 @@
 @property (strong, nonatomic) AVCaptureDeviceInput          *videoInput;
 @property (strong, nonatomic) AVCaptureVideoPreviewLayer    *captureVideoPreviewLayer;
 @property (strong, nonatomic) CLLocationManager             *locationManager;
+@property (strong, nonatomic) NSMutableData                 *downloadData;
 - (AVCaptureDevice *)_cameraWithPosition:(AVCaptureDevicePosition)position;
 - (AVCaptureDevice *)_frontFacingCamera;
 - (AVCaptureDevice *)_backFacingCamera;
+- (void)_downloadTweetAroundLat:(float)lat lng:(float)lng radius:(float)r;
 @end
 
 @implementation ViewController
@@ -30,6 +37,7 @@
 @synthesize videoInput = _videoInput;
 @synthesize captureVideoPreviewLayer = _captureVideoPreviewLayer;
 @synthesize locationManager = _locationManager;
+@synthesize downloadData = _downloadData;
 
 - (void)dealloc
 {
@@ -41,6 +49,7 @@
     self.videoInput = nil;
     self.captureVideoPreviewLayer = nil;
     self.locationManager = nil;
+    self.downloadData = nil;
 }
 
 - (void)viewDidLoad
@@ -191,6 +200,76 @@
     return [self _cameraWithPosition:AVCaptureDevicePositionBack];
 }
 
+- (void)_downloadTweetAroundLat:(float)lat lng:(float)lng radius:(float)r
+{
+    self.downloadData = [[NSMutableData alloc] init];
+    
+    NSString    *queryURSStr = [NSString stringWithFormat:TWITTER_API_URL, lat, lng, r];
+    NSURL       *queryURL = [NSURL URLWithString:queryURSStr];
+    
+    /*
+    NSURLRequest    *requet = [NSMutableURLRequest requestWithURL:queryURL];
+    NSURLConnection *connection = [NSURLConnection connectionWithRequest:requet delegate:self];
+    [connection start];
+    */
+    
+    ACAccountStore  *accountStore = [[ACAccountStore alloc] init];
+    ACAccountType   *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+    [accountStore requestAccessToAccountsWithType:accountType
+                                          options:nil
+                                       completion:^(BOOL granted, NSError *error) {
+                                if(granted) {
+                                    NSArray *accountsArray = [accountStore accountsWithAccountType:accountType];
+                                    
+                                    NSURL *url = [NSURL URLWithString:@"https://api.twitter.com"
+                                                  @"/1.1/statuses/user_timeline.json"];
+                                    NSDictionary *params = @{@"screen_name" : @"m_yukio",
+                                                             @"include_rts" : @"0",
+                                                             @"trim_user" : @"1",
+                                                             @"count" : @"1"};
+                                    SLRequest *request = [SLRequest requestForServiceType:SLServiceTypeTwitter
+                                                                            requestMethod:SLRequestMethodGET
+                                                                                      URL:url
+                                                                               parameters:params];
+                                    
+                                    ACAccount   *twitterAccount = [accountsArray lastObject];
+                                    
+                                    request.account = twitterAccount;
+                                    
+                                    
+                                    [request performRequestWithHandler:^(NSData *responseData,
+                                                                         NSHTTPURLResponse *urlResponse,
+                                                                         NSError *error) {
+                                        if (responseData) {
+                                            if (urlResponse.statusCode >= 200 && urlResponse.statusCode < 300) {
+                                                NSError *jsonError;
+                                                NSDictionary *timelineData =
+                                                [NSJSONSerialization
+                                                 JSONObjectWithData:responseData
+                                                 options:NSJSONReadingAllowFragments error:&jsonError];
+                                                
+                                                if (timelineData) {
+                                                    NSLog(@"Timeline Response: %@\n", timelineData);
+                                                }
+                                                else {
+                                                    // Our JSON deserialization went awry
+                                                    NSLog(@"JSON Error: %@", [jsonError localizedDescription]);
+                                                }
+                                            }
+                                            else {
+                                                // The server did not respond successfully... were we rate-limited?
+                                                NSLog(@"The response status code is %d", urlResponse.statusCode);
+                                            }
+                                        }
+                                    }];
+                                }
+                                else {
+                                    // Access was not granted, or an error occurred
+                                    NSLog(@"%@", [error localizedDescription]);
+                                }
+                                       }];
+}
+
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     DBGMSG(@"%s", __func__);
@@ -198,12 +277,37 @@
     CLLocationCoordinate2D  newCoordinate = newLocation.coordinate;
     self.locationLabel.text = [[NSString alloc] initWithFormat:@"new latitude=%.2f, longitude=%.2f", newCoordinate.latitude, newCoordinate.longitude];
     DBGMSG(@"new latitude=%f, longitude=%f", newCoordinate.latitude, newCoordinate.longitude);
+    
+    [self _downloadTweetAroundLat:newCoordinate.latitude lng:newCoordinate.longitude radius:0.5];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading
 {
     self.headingLabel.text = [[NSString alloc] initWithFormat:@"trueHeading %.2f, magneticHeading %.2f", newHeading.trueHeading, newHeading.magneticHeading];
     DBGMSG(@"trueHeading %f, magneticHeading %f", newHeading.trueHeading, newHeading.magneticHeading);
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    [self.downloadData setLength:0];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    [self.downloadData appendData:data];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    DBGMSG(@"Network Error: %@", [error description]);
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSString    *resultStr = [[NSString alloc] initWithData:self.downloadData encoding:NSUTF8StringEncoding];
+    DBGMSG(@"result: %@", resultStr);
+    NSDictionary    *result = [NSJSONSerialization JSONObjectWithData:self.downloadData options:0 error:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:TWEETS_UPDATE_NOTIFICATION object:self userInfo:nil];
 }
 
 @end
