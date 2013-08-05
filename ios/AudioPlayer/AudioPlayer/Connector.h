@@ -13,11 +13,11 @@ extern NSString *ConnectorDidBeginUpdateIPodLibrary;
 extern NSString *ConnectorInProgressUpdateIPodLibrary;
 extern NSString *ConnectorDidFinishUpdateIPodLibrary;
 
-@interface Connector : NSObject <AssetBrowserParserDelegate>
+@interface Connector : NSObject <AssetBrowserResponseParserDelegate>
 
 @property (nonatomic, readonly, getter=isNetworkAccessig) BOOL  networkAccessing;
 @property (nonatomic, readonly, getter=isAccessig) BOOL         accessing;
-@property (strong, nonatomic) NSMutableArray                    *assetBrowserParsers;
+@property (strong, nonatomic) NSMutableArray                    *assetBrowserResponseParsers;
 
 + (Connector *)sharedConnector;
 - (void)updateIPodLibrary:(AssetBrowserSourceType)sourceType;

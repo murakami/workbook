@@ -19,7 +19,7 @@ NSString    *ConnectorDidFinishUpdateIPodLibrary = @"ConnectorDidFinishUpdateIPo
 
 @implementation Connector
 
-@synthesize assetBrowserParsers = _assetBrowserParsers;
+@synthesize assetBrowserResponseParsers = _assetBrowserResponseParsers;
 
 + (Connector *)sharedConnector
 {
@@ -40,14 +40,14 @@ NSString    *ConnectorDidFinishUpdateIPodLibrary = @"ConnectorDidFinishUpdateIPo
 {
     self = [super init];
     if (self) {
-        self.assetBrowserParsers = [[NSMutableArray alloc] init];
+        self.assetBrowserResponseParsers = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
 - (void)dealloc
 {
-    self.assetBrowserParsers = nil;
+    self.assetBrowserResponseParsers = nil;
 }
 
 - (BOOL)isNetworkAccessig
@@ -57,7 +57,7 @@ NSString    *ConnectorDidFinishUpdateIPodLibrary = @"ConnectorDidFinishUpdateIPo
 
 - (BOOL)isAccessig
 {
-    return (0 < self.assetBrowserParsers.count);
+    return (0 < self.assetBrowserResponseParsers.count);
 }
 
 - (void)updateIPodLibrary:(AssetBrowserSourceType)sourceType
@@ -70,7 +70,7 @@ NSString    *ConnectorDidFinishUpdateIPodLibrary = @"ConnectorDidFinishUpdateIPo
     
     [parser parse];
     
-    [self.assetBrowserParsers addObject:parser];
+    [self.assetBrowserResponseParsers addObject:parser];
     
     if (accessing != self.accessing) {
         [self willChangeValueForKey:@"accessing"];
@@ -88,8 +88,8 @@ NSString    *ConnectorDidFinishUpdateIPodLibrary = @"ConnectorDidFinishUpdateIPo
 - (void)cancelUpdateIPodLibrary
 {
 #if 0
-    NSMutableArray  *parsers = [self.assetBrowserParsers copy];
-    for (AssetBrowserParser *parser in parsers) {
+    NSMutableArray  *parsers = [self.assetResponseBrowserParsers copy];
+    for (AssetBrowserResponseParser *parser in parsers) {
         [parser cancel];
         
         NSMutableDictionary*    userInfo;
@@ -101,29 +101,29 @@ NSString    *ConnectorDidFinishUpdateIPodLibrary = @"ConnectorDidFinishUpdateIPo
                                                           userInfo:userInfo];
         
         [self willChangeValueForKey:@"accessing"];
-        [self.assetBrowserParsers removeObject:parser];
+        [self.assetBrowserResponseParsers removeObject:parser];
         [self didChangeValueForKey:@"accessing"];
     }
     parsers = nil;
 #endif  /* 0 */
-    for (AssetBrowserResponseParser *parser in self.assetBrowserParsers) {
+    for (AssetBrowserResponseParser *parser in self.assetBrowserResponseParsers) {
         [parser cancel];
     }
     
     NSMutableDictionary*    userInfo;
     userInfo = [NSMutableDictionary dictionary];
-    [userInfo setObject:self.assetBrowserParsers forKey:@"parsers"];
+    [userInfo setObject:self.assetBrowserResponseParsers forKey:@"parsers"];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:ConnectorDidFinishUpdateIPodLibrary
                                                         object:self
                                                       userInfo:userInfo];
     
     [self willChangeValueForKey:@"accessing"];
-    [self.assetBrowserParsers removeAllObjects];
+    [self.assetBrowserResponseParsers removeAllObjects];
     [self didChangeValueForKey:@"accessing"];
 }
 
-#pragma mark - AssetBrowserParserDelegate
+#pragma mark - AssetBrowserResponseParserDelegate
 
 - (void)_notifyAssetBrowserStatusWithParser:(AssetBrowserResponseParser*)parser
 {
@@ -136,27 +136,27 @@ NSString    *ConnectorDidFinishUpdateIPodLibrary = @"ConnectorDidFinishUpdateIPo
                                                       userInfo:userInfo];
     
     [self willChangeValueForKey:@"accessing"];
-    [self.assetBrowserParsers removeObject:parser];
+    [self.assetBrowserResponseParsers removeObject:parser];
     [self didChangeValueForKey:@"accessing"];
 }
 
 - (void)parserDidFinishLoading:(AssetBrowserResponseParser*)parser
 {
-    if ([self.assetBrowserParsers containsObject:parser]) {
+    if ([self.assetBrowserResponseParsers containsObject:parser]) {
         [self _notifyAssetBrowserStatusWithParser:parser];
     }
 }
 
 - (void)parser:(AssetBrowserResponseParser*)parser didFailWithError:(NSError*)error
 {
-    if ([self.assetBrowserParsers containsObject:parser]) {
+    if ([self.assetBrowserResponseParsers containsObject:parser]) {
         [self _notifyAssetBrowserStatusWithParser:parser];
     }
 }
 
 - (void)parserDidCancel:(AssetBrowserResponseParser*)parser
 {
-    if ([self.assetBrowserParsers containsObject:parser]) {
+    if ([self.assetBrowserResponseParsers containsObject:parser]) {
         [self _notifyAssetBrowserStatusWithParser:parser];
     }
 }

@@ -9,7 +9,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import "AssetBrowserResponseParser.h"
 
-#define ENUM_QUEUE  [AssetBrowserParser sharedQueue]
+#define ENUM_QUEUE  [AssetBrowserResponseParser sharedQueue]
 
 NSString    *AssetBrowserErrorDomain = @"AssetBrowserErrorDomain";
 
@@ -36,7 +36,7 @@ NSString    *AssetBrowserErrorDomain = @"AssetBrowserErrorDomain";
     static dispatch_queue_t enumerationQueue = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        enumerationQueue = dispatch_queue_create("AssetBrowserParser Enumeration Queue", DISPATCH_QUEUE_SERIAL);
+        enumerationQueue = dispatch_queue_create("AssetBrowserResponseParser Enumeration Queue", DISPATCH_QUEUE_SERIAL);
         dispatch_set_target_queue(enumerationQueue, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0));
     });
 	return enumerationQueue;
