@@ -4,5 +4,6 @@
     <string name="app_name">AugmentedReality</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="ble_not_supported">Bluetooth Low Energy not supported.</string>
 
 </resources>
