@@ -6,8 +6,8 @@
 //  Copyright (c) 2013年 Bitz Co., Ltd. All rights reserved.
 //
 
+#import "Document.h"
 #import "MasterViewController.h"
-
 #import "DetailViewController.h"
 
 @interface MasterViewController () {
@@ -108,6 +108,28 @@
         NSDate *object = _objects[indexPath.row];
         [[segue destinationViewController] setDetailItem:object];
     }
+}
+
+- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
+{
+    NSLog(@"MasterViewController: encodeRestorableStateWithCoder");
+    
+    [super encodeRestorableStateWithCoder:coder];
+    
+    [[Document sharedDocument] save];
+    
+    //[coder encodeBool:[self.tableView isEditing] forKey:kUnsavedEditStateKey];
+}
+
+- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
+{
+    NSLog(@"MasterViewController: decodeRestorableStateWithCoder");
+    
+    [super decodeRestorableStateWithCoder:coder];
+    
+    //self.tableView.editing = [coder decodeBoolForKey:kUnsavedEditStateKey];
+    
+    [self.tableView reloadData];
 }
 
 @end

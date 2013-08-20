@@ -24,6 +24,7 @@
 		56147F6D17C0B3FD00D786D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56147F4517C0B3FD00D786D1 /* Foundation.framework */; };
 		56147F7517C0B3FD00D786D1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 56147F7317C0B3FD00D786D1 /* InfoPlist.strings */; };
 		56147F7817C0B3FD00D786D1 /* StateRestorationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56147F7717C0B3FD00D786D1 /* StateRestorationTests.m */; };
+		56147F8317C0B51E00D786D1 /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 56147F8217C0B51E00D786D1 /* Document.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,8 @@
 		56147F7417C0B3FD00D786D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		56147F7617C0B3FD00D786D1 /* StateRestorationTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StateRestorationTests.h; sourceTree = "<group>"; };
 		56147F7717C0B3FD00D786D1 /* StateRestorationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StateRestorationTests.m; sourceTree = "<group>"; };
+		56147F8117C0B51E00D786D1 /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
+		56147F8217C0B51E00D786D1 /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +130,8 @@
 				56147F5F17C0B3FD00D786D1 /* MasterViewController.m */,
 				56147F6117C0B3FD00D786D1 /* DetailViewController.h */,
 				56147F6217C0B3FD00D786D1 /* DetailViewController.m */,
+				56147F8117C0B51E00D786D1 /* Document.h */,
+				56147F8217C0B51E00D786D1 /* Document.m */,
 				56147F4A17C0B3FD00D786D1 /* Supporting Files */,
 			);
 			path = StateRestoration;
@@ -279,6 +284,7 @@
 				56147F5417C0B3FD00D786D1 /* AppDelegate.m in Sources */,
 				56147F6017C0B3FD00D786D1 /* MasterViewController.m in Sources */,
 				56147F6317C0B3FD00D786D1 /* DetailViewController.m in Sources */,
+				56147F8317C0B51E00D786D1 /* Document.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

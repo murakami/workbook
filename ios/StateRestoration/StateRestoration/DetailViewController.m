@@ -6,6 +6,7 @@
 //  Copyright (c) 2013年 Bitz Co., Ltd. All rights reserved.
 //
 
+#import "Document.h"
 #import "DetailViewController.h"
 
 @interface DetailViewController ()
@@ -46,6 +47,27 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
+{
+    NSLog(@"MasterViewController: encodeRestorableStateWithCoder");
+    
+    [super encodeRestorableStateWithCoder:coder];
+    
+    [[Document sharedDocument] save];
+    
+    //[coder encodeBool:[self.tableView isEditing] forKey:kUnsavedEditStateKey];
+}
+
+- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
+{
+    NSLog(@"MasterViewController: decodeRestorableStateWithCoder");
+    
+    [super decodeRestorableStateWithCoder:coder];
+    
+    //self.tableView.editing = [coder decodeBoolForKey:kUnsavedEditStateKey];
+    
+    [self configureView];
 }
 
 @end
