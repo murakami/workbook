@@ -20,7 +20,7 @@
 @implementation Document
 
 @synthesize version = _version;
-@synthesize message = _message;
+@synthesize objects = _objects;
 
 + (Document *)sharedDocument;
 {
@@ -44,7 +44,6 @@
 {
     DBGMSG(@"%s", __func__);
     self.version = nil;
-    self.message = nil;
 }
 
 - (void)load
@@ -56,6 +55,14 @@
     if ((! modelPath) || (! [[NSFileManager defaultManager] fileExistsAtPath:modelPath])) {
         return;
     }
+    
+    NSMutableArray  *objects;
+    objects = [NSKeyedUnarchiver unarchiveObjectWithFile:modelPath];
+    if (!objects) {
+        return;
+    }
+    
+    [self.objects setArray:objects];
 }
 
 - (void)save
@@ -75,6 +82,7 @@
     }
     
     NSString    *modelPath = [self _modelPath];
+    [NSKeyedArchiver archiveRootObject:self.objects toFile:modelPath];
 }
 
 - (void)_init
@@ -82,16 +90,12 @@
     DBGMSG(@"%s", __func__);
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     self.version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
-    self.message = nil;
+    self.objects = [[NSMutableArray alloc] init];
 }
 
 - (void)_clearDefaults
 {
     DBGMSG(@"%s", __func__);
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"message"]) {
-        DBGMSG(@"remove message:%@", self.message);
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"message"];
-    }
 }
 
 - (void)_updateDefaults
@@ -112,19 +116,6 @@
         }
     }
     
-    NSString    *aMessage = @"";
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"message"]) {
-        aMessage = [[NSUserDefaults standardUserDefaults] objectForKey:@"message"];
-        DBGMSG(@"current aMessage:%@", aMessage);
-    }
-    if (self.message) {
-        if ([aMessage compare:self.message] != NSOrderedSame) {
-            [[NSUserDefaults standardUserDefaults] setObject:self.message forKey:@"message"];
-            fUpdate = YES;
-            DBGMSG(@"save message:%@", self.message);
-        }
-    }
-    
     if (fUpdate) {
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
@@ -141,10 +132,6 @@
         [self _clearDefaults];
     }
     else {
-        if ([[NSUserDefaults standardUserDefaults] objectForKey:@"message"]) {
-            self.message = [[NSUserDefaults standardUserDefaults] objectForKey:@"message"];
-            DBGMSG(@"read message:%@", self.message);
-        }
     }
 }
 

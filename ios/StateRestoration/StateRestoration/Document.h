@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface Document : NSObject
-@property (strong, nonatomic) NSString  *version;
-@property (strong, nonatomic) NSString  *message;
+@property (strong, nonatomic) NSString          *version;
+@property (strong, nonatomic) NSMutableArray    *objects;
 
 + (Document *)sharedDocument;
 - (void)load;
