@@ -7,6 +7,7 @@
 //
 
 #import "Document.h"
+#import "MasterViewController.h"
 #import "DetailViewController.h"
 
 static NSString *kUnsavedDetailItemIndexKey = @"unsavedDetailItemIndexKey";
@@ -24,7 +25,7 @@ static NSString *kUnsavedDetailItemIndexKey = @"unsavedDetailItemIndexKey";
 - (void)setDetailItemIndex:(NSInteger)newDetailItemIndex
 {
     if (self.detailItemIndex != newDetailItemIndex) {
-        self.detailItemIndex = newDetailItemIndex;
+        _detailItemIndex = newDetailItemIndex;
         
         [self configureView];
     }
@@ -32,10 +33,8 @@ static NSString *kUnsavedDetailItemIndexKey = @"unsavedDetailItemIndexKey";
 
 - (void)configureView
 {
-    if (self.detailItemIndex) {
-        NSDate  *object = [Document sharedDocument].objects[self.detailItemIndex];
-        self.detailDescriptionLabel.text = [object description];
-    }
+    NSDate  *object = [Document sharedDocument].objects[self.detailItemIndex];
+    self.detailDescriptionLabel.text = [object description];
 }
 
 - (void)viewDidLoad
@@ -50,7 +49,7 @@ static NSString *kUnsavedDetailItemIndexKey = @"unsavedDetailItemIndexKey";
 }
 - (void)encodeRestorableStateWithCoder:(NSCoder *)coder
 {
-    NSLog(@"MasterViewController: encodeRestorableStateWithCoder");
+    DBGMSG(@"DetailViewController: encodeRestorableStateWithCoder");
     [super encodeRestorableStateWithCoder:coder];
     [[Document sharedDocument] save];
     [coder encodeInteger:self.detailItemIndex forKey:kUnsavedDetailItemIndexKey];
@@ -58,10 +57,20 @@ static NSString *kUnsavedDetailItemIndexKey = @"unsavedDetailItemIndexKey";
 
 - (void)decodeRestorableStateWithCoder:(NSCoder *)coder
 {
-    NSLog(@"MasterViewController: decodeRestorableStateWithCoder");
+    DBGMSG(@"DetailViewController: decodeRestorableStateWithCoder");
     [super decodeRestorableStateWithCoder:coder];
-    self.detailItemIndex = [coder decodeBoolForKey:kUnsavedDetailItemIndexKey];
+    self.detailItemIndex = [coder decodeIntegerForKey:kUnsavedDetailItemIndexKey];
+    DBGMSG(@"detailItemIndex:%d", self.detailItemIndex);
     [self configureView];
+}
+
++ (UIViewController *) viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents coder:(NSCoder *)coder
+{
+    DBGMSG(@"%s", __func__);
+    for (NSString *identifier in identifierComponents) {
+        DBGMSG(@"identifier:%@", identifier);
+    }
+    return nil;
 }
 
 @end

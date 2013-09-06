@@ -88,16 +88,25 @@
 
 - (void)encodeRestorableStateWithCoder:(NSCoder *)coder
 {
-    NSLog(@"MasterViewController: encodeRestorableStateWithCoder");
+    DBGMSG(@"MasterViewController: encodeRestorableStateWithCoder");
     [super encodeRestorableStateWithCoder:coder];
     [[Document sharedDocument] save];
 }
 
 - (void)decodeRestorableStateWithCoder:(NSCoder *)coder
 {
-    NSLog(@"MasterViewController: decodeRestorableStateWithCoder");
+    DBGMSG(@"MasterViewController: decodeRestorableStateWithCoder");
     [super decodeRestorableStateWithCoder:coder];
     [self.tableView reloadData];
+}
+
++ (UIViewController *) viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents coder:(NSCoder *)coder
+{
+    DBGMSG(@"%s", __func__);
+    for (NSString *identifier in identifierComponents) {
+        DBGMSG(@"identifier:%@", identifier);
+    }
+    return nil;
 }
 
 @end
