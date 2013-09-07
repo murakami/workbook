@@ -47,6 +47,7 @@ static NSString *kUnsavedDetailItemIndexKey = @"unsavedDetailItemIndexKey";
 {
     [super didReceiveMemoryWarning];
 }
+
 - (void)encodeRestorableStateWithCoder:(NSCoder *)coder
 {
     DBGMSG(@"DetailViewController: encodeRestorableStateWithCoder");
