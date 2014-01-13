@@ -17,8 +17,9 @@
 
     // Configure the view.
     SKView * skView = (SKView *)self.view;
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
+    skView.showsFPS = YES;          /* frame rateを表示 */
+    skView.showsNodeCount = YES;    /* ノード個数を表示 */
+    skView.showsDrawCount = YES;    /* 描画個数を表示 */
     
     // Create and configure the scene.
     SKScene * scene = [MyScene sceneWithSize:skView.bounds.size];
