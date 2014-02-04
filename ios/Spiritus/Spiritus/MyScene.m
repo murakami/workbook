@@ -10,44 +10,50 @@
 
 @implementation MyScene
 
--(id)initWithSize:(CGSize)size {    
+-(id)initWithSize:(CGSize)size
+{
+    DBGMSG(@"%s", __func__);
     if (self = [super initWithSize:size]) {
-        /* Setup your scene here */
-        
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         
         SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-        
+        myLabel.name = @"myLabel";  /* ノードに名前を付ける */
         myLabel.text = @"Hello, World!";
         myLabel.fontSize = 30;
         myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
                                        CGRectGetMidY(self.frame));
-        
         [self addChild:myLabel];
     }
     return self;
 }
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    /* Called when a touch begins */
-    
-    for (UITouch *touch in touches) {
-        CGPoint location = [touch locationInNode:self];
-        
-        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
-        
-        sprite.position = location;
-        
-        SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
-        
-        [sprite runAction:[SKAction repeatActionForever:action]];
-        
-        [self addChild:sprite];
+- (void)willMoveFromView:(SKView *)view
+{
+    DBGMSG(@"%s", __func__);
+}
+
+- (void)didMoveToView:(SKView *)view
+{
+    DBGMSG(@"%s", __func__);
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    SKNode *myLabel = [self childNodeWithName:@"myLabel"];  /* ノードを取得する */
+    if (myLabel != nil) {
+        myLabel.name = nil;
+        SKAction    *moveUp = [SKAction moveByX: 0 y: 100.0 duration: 0.5]; /* 上昇 */
+        SKAction    *zoom = [SKAction scaleTo: 2.0 duration: 0.25];         /* 拡大 */
+        SKAction    *pause = [SKAction waitForDuration: 0.5];               /* 停止 */
+        SKAction    *fadeAway = [SKAction fadeOutWithDuration: 0.25];       /* フェードアウト */
+        SKAction    *remove = [SKAction removeFromParent];                  /* 消滅 */
+        SKAction    *moveSequence = [SKAction sequence:@[moveUp, zoom, pause, fadeAway, remove]];
+        [myLabel runAction:moveSequence];
     }
 }
 
--(void)update:(CFTimeInterval)currentTime {
-    /* Called before each frame is rendered */
+-(void)update:(CFTimeInterval)currentTime
+{
 }
 
 @end
