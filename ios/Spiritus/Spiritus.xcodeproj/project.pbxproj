@@ -24,6 +24,7 @@
 		5616C8141883D6E200162AC4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5616C7EF1883D6E200162AC4 /* UIKit.framework */; };
 		5616C81C1883D6E200162AC4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5616C81A1883D6E200162AC4 /* InfoPlist.strings */; };
 		5616C81E1883D6E200162AC4 /* SpiritusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5616C81D1883D6E200162AC4 /* SpiritusTests.m */; };
+		56B07F0518A279D500A02837 /* SpaceshipScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B07F0418A279D500A02837 /* SpaceshipScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		5616C8191883D6E200162AC4 /* SpiritusTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SpiritusTests-Info.plist"; sourceTree = "<group>"; };
 		5616C81B1883D6E200162AC4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5616C81D1883D6E200162AC4 /* SpiritusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpiritusTests.m; sourceTree = "<group>"; };
+		56B07F0318A279D500A02837 /* SpaceshipScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpaceshipScene.h; sourceTree = "<group>"; };
+		56B07F0418A279D500A02837 /* SpaceshipScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpaceshipScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +132,8 @@
 				5616C8051883D6E200162AC4 /* MyScene.h */,
 				5616C8061883D6E200162AC4 /* MyScene.m */,
 				5616C8081883D6E200162AC4 /* Spaceship.png */,
+				56B07F0318A279D500A02837 /* SpaceshipScene.h */,
+				56B07F0418A279D500A02837 /* SpaceshipScene.m */,
 				5616C80A1883D6E200162AC4 /* Images.xcassets */,
 				5616C7F41883D6E200162AC4 /* Supporting Files */,
 			);
@@ -264,6 +269,7 @@
 			files = (
 				5616C8071883D6E200162AC4 /* MyScene.m in Sources */,
 				5616C8041883D6E200162AC4 /* ViewController.m in Sources */,
+				56B07F0518A279D500A02837 /* SpaceshipScene.m in Sources */,
 				5616C7FE1883D6E200162AC4 /* AppDelegate.m in Sources */,
 				5616C7FA1883D6E200162AC4 /* main.m in Sources */,
 			);
@@ -476,6 +482,7 @@
 				5616C8231883D6E200162AC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5616C8241883D6E200162AC4 /* Build configuration list for PBXNativeTarget "SpiritusTests" */ = {
 			isa = XCConfigurationList;
@@ -484,6 +491,7 @@
 				5616C8261883D6E200162AC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

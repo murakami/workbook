@@ -6,6 +6,7 @@
 //  Copyright (c) 2014年 村上幸雄. All rights reserved.
 //
 
+#import "SpaceshipScene.h"
 #import "MyScene.h"
 
 @implementation MyScene
@@ -48,7 +49,12 @@
         SKAction    *fadeAway = [SKAction fadeOutWithDuration: 0.25];       /* フェードアウト */
         SKAction    *remove = [SKAction removeFromParent];                  /* 消滅 */
         SKAction    *moveSequence = [SKAction sequence:@[moveUp, zoom, pause, fadeAway, remove]];
-        [myLabel runAction:moveSequence];
+        [myLabel runAction:moveSequence completion:^{
+            /* SpaceshipSceneに遷移 */
+            SKScene *spaceshipScene  = [[SpaceshipScene alloc] initWithSize:self.size];
+            SKTransition *doors = [SKTransition doorsOpenVerticalWithDuration:0.5];
+            [self.view presentScene:spaceshipScene transition:doors];
+        }];
     }
 }
 
