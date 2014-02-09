@@ -75,6 +75,24 @@ static inline CGFloat skRand(CGFloat low, CGFloat high)
     /* 宇宙船を生成 */
     SKSpriteNode *hull = [[SKSpriteNode alloc] initWithColor:[SKColor grayColor] size:CGSizeMake(64,32)];
     
+    NSMutableArray  *textureArray = [[NSMutableArray alloc] init];
+#if 0
+    for (int i = 1; i <= 10; i++) {
+        NSString    *filename = [NSString stringWithFormat:@"spaceship%02d", i];
+        SKTexture   *texture = [SKTexture textureWithImageNamed:filename];
+        [textureArray addObject:texture];
+    }
+#else
+    SKTextureAtlas  *spaceshipTextureAtlas = [SKTextureAtlas atlasNamed:@"spaceship"];
+    for (int i = 1; i <= 10; i++) {
+        NSString    *filename = [NSString stringWithFormat:@"spaceship%02d", i];
+        SKTexture   *texture = [spaceshipTextureAtlas textureNamed:filename];
+        [textureArray addObject:texture];
+    }
+#endif
+    SKAction    *animationAction = [SKAction animateWithTextures:textureArray timePerFrame:0.1];
+    [hull runAction:[SKAction repeatActionForever:animationAction]];
+    
     /* 宇宙船にライトをつける */
     SKSpriteNode *light1 = [self newLight];
     light1.position = CGPointMake(-28.0, 6.0);

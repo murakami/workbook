@@ -25,6 +25,17 @@
 		5616C81C1883D6E200162AC4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5616C81A1883D6E200162AC4 /* InfoPlist.strings */; };
 		5616C81E1883D6E200162AC4 /* SpiritusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5616C81D1883D6E200162AC4 /* SpiritusTests.m */; };
 		56B07F0518A279D500A02837 /* SpaceshipScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B07F0418A279D500A02837 /* SpaceshipScene.m */; };
+		56D8B83018A7683500E56C6D /* spaceship01.png in Resources */ = {isa = PBXBuildFile; fileRef = 56D8B82618A7683500E56C6D /* spaceship01.png */; };
+		56D8B83118A7683500E56C6D /* spaceship02.png in Resources */ = {isa = PBXBuildFile; fileRef = 56D8B82718A7683500E56C6D /* spaceship02.png */; };
+		56D8B83218A7683500E56C6D /* spaceship03.png in Resources */ = {isa = PBXBuildFile; fileRef = 56D8B82818A7683500E56C6D /* spaceship03.png */; };
+		56D8B83318A7683500E56C6D /* spaceship04.png in Resources */ = {isa = PBXBuildFile; fileRef = 56D8B82918A7683500E56C6D /* spaceship04.png */; };
+		56D8B83418A7683500E56C6D /* spaceship05.png in Resources */ = {isa = PBXBuildFile; fileRef = 56D8B82A18A7683500E56C6D /* spaceship05.png */; };
+		56D8B83518A7683500E56C6D /* spaceship06.png in Resources */ = {isa = PBXBuildFile; fileRef = 56D8B82B18A7683500E56C6D /* spaceship06.png */; };
+		56D8B83618A7683500E56C6D /* spaceship07.png in Resources */ = {isa = PBXBuildFile; fileRef = 56D8B82C18A7683500E56C6D /* spaceship07.png */; };
+		56D8B83718A7683500E56C6D /* spaceship08.png in Resources */ = {isa = PBXBuildFile; fileRef = 56D8B82D18A7683500E56C6D /* spaceship08.png */; };
+		56D8B83818A7683500E56C6D /* spaceship09.png in Resources */ = {isa = PBXBuildFile; fileRef = 56D8B82E18A7683500E56C6D /* spaceship09.png */; };
+		56D8B83918A7683500E56C6D /* spaceship10.png in Resources */ = {isa = PBXBuildFile; fileRef = 56D8B82F18A7683500E56C6D /* spaceship10.png */; };
+		56D8B83B18A769B800E56C6D /* spaceship.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 56D8B83A18A769B800E56C6D /* spaceship.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +74,17 @@
 		5616C81D1883D6E200162AC4 /* SpiritusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpiritusTests.m; sourceTree = "<group>"; };
 		56B07F0318A279D500A02837 /* SpaceshipScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpaceshipScene.h; sourceTree = "<group>"; };
 		56B07F0418A279D500A02837 /* SpaceshipScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpaceshipScene.m; sourceTree = "<group>"; };
+		56D8B82618A7683500E56C6D /* spaceship01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spaceship01.png; sourceTree = "<group>"; };
+		56D8B82718A7683500E56C6D /* spaceship02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spaceship02.png; sourceTree = "<group>"; };
+		56D8B82818A7683500E56C6D /* spaceship03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spaceship03.png; sourceTree = "<group>"; };
+		56D8B82918A7683500E56C6D /* spaceship04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spaceship04.png; sourceTree = "<group>"; };
+		56D8B82A18A7683500E56C6D /* spaceship05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spaceship05.png; sourceTree = "<group>"; };
+		56D8B82B18A7683500E56C6D /* spaceship06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spaceship06.png; sourceTree = "<group>"; };
+		56D8B82C18A7683500E56C6D /* spaceship07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spaceship07.png; sourceTree = "<group>"; };
+		56D8B82D18A7683500E56C6D /* spaceship08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spaceship08.png; sourceTree = "<group>"; };
+		56D8B82E18A7683500E56C6D /* spaceship09.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spaceship09.png; sourceTree = "<group>"; };
+		56D8B82F18A7683500E56C6D /* spaceship10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spaceship10.png; sourceTree = "<group>"; };
+		56D8B83A18A769B800E56C6D /* spaceship.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = spaceship.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +157,7 @@
 				56B07F0318A279D500A02837 /* SpaceshipScene.h */,
 				56B07F0418A279D500A02837 /* SpaceshipScene.m */,
 				5616C80A1883D6E200162AC4 /* Images.xcassets */,
+				56D8B82518A765E100E56C6D /* Resources */,
 				5616C7F41883D6E200162AC4 /* Supporting Files */,
 			);
 			path = Spiritus;
@@ -167,6 +190,24 @@
 				5616C81A1883D6E200162AC4 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		56D8B82518A765E100E56C6D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				56D8B82618A7683500E56C6D /* spaceship01.png */,
+				56D8B82718A7683500E56C6D /* spaceship02.png */,
+				56D8B82818A7683500E56C6D /* spaceship03.png */,
+				56D8B82918A7683500E56C6D /* spaceship04.png */,
+				56D8B82A18A7683500E56C6D /* spaceship05.png */,
+				56D8B82B18A7683500E56C6D /* spaceship06.png */,
+				56D8B82C18A7683500E56C6D /* spaceship07.png */,
+				56D8B82D18A7683500E56C6D /* spaceship08.png */,
+				56D8B82E18A7683500E56C6D /* spaceship09.png */,
+				56D8B82F18A7683500E56C6D /* spaceship10.png */,
+				56D8B83A18A769B800E56C6D /* spaceship.atlas */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,9 +286,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56D8B83818A7683500E56C6D /* spaceship09.png in Resources */,
+				56D8B83918A7683500E56C6D /* spaceship10.png in Resources */,
+				56D8B83618A7683500E56C6D /* spaceship07.png in Resources */,
+				56D8B83B18A769B800E56C6D /* spaceship.atlas in Resources */,
+				56D8B83218A7683500E56C6D /* spaceship03.png in Resources */,
+				56D8B83118A7683500E56C6D /* spaceship02.png in Resources */,
+				56D8B83518A7683500E56C6D /* spaceship06.png in Resources */,
 				5616C7F81883D6E200162AC4 /* InfoPlist.strings in Resources */,
+				56D8B83418A7683500E56C6D /* spaceship05.png in Resources */,
+				56D8B83718A7683500E56C6D /* spaceship08.png in Resources */,
 				5616C80B1883D6E200162AC4 /* Images.xcassets in Resources */,
+				56D8B83018A7683500E56C6D /* spaceship01.png in Resources */,
 				5616C8091883D6E200162AC4 /* Spaceship.png in Resources */,
+				56D8B83318A7683500E56C6D /* spaceship04.png in Resources */,
 				5616C8011883D6E200162AC4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
