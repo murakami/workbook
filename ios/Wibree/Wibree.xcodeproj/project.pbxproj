@@ -21,6 +21,11 @@
 		5683C51C18A7AD0C00A764B1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5683C4FE18A7AD0C00A764B1 /* UIKit.framework */; };
 		5683C52418A7AD0C00A764B1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5683C52218A7AD0C00A764B1 /* InfoPlist.strings */; };
 		5683C52618A7AD0C00A764B1 /* WibreeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5683C52518A7AD0C00A764B1 /* WibreeTests.m */; };
+		5683C54E18A86BBC00A764B1 /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 5683C54D18A86BBC00A764B1 /* Document.m */; };
+		5683C55118A8741F00A764B1 /* Connector.m in Sources */ = {isa = PBXBuildFile; fileRef = 5683C55018A8741F00A764B1 /* Connector.m */; };
+		5683C55418A8744C00A764B1 /* WibreeCentralResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5683C55318A8744C00A764B1 /* WibreeCentralResponseParser.m */; };
+		5683C55718A8C12700A764B1 /* WibreePeripheral.m in Sources */ = {isa = PBXBuildFile; fileRef = 5683C55618A8C12700A764B1 /* WibreePeripheral.m */; };
+		5683C55A18A8C87E00A764B1 /* WibreePeripheralResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5683C55918A8C87E00A764B1 /* WibreePeripheralResponseParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,16 @@
 		5683C52118A7AD0C00A764B1 /* WibreeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WibreeTests-Info.plist"; sourceTree = "<group>"; };
 		5683C52318A7AD0C00A764B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5683C52518A7AD0C00A764B1 /* WibreeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WibreeTests.m; sourceTree = "<group>"; };
+		5683C54C18A86BBC00A764B1 /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
+		5683C54D18A86BBC00A764B1 /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
+		5683C54F18A8741F00A764B1 /* Connector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connector.h; sourceTree = "<group>"; };
+		5683C55018A8741F00A764B1 /* Connector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Connector.m; sourceTree = "<group>"; };
+		5683C55218A8744C00A764B1 /* WibreeCentralResponseParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WibreeCentralResponseParser.h; sourceTree = "<group>"; };
+		5683C55318A8744C00A764B1 /* WibreeCentralResponseParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WibreeCentralResponseParser.m; sourceTree = "<group>"; };
+		5683C55518A8C12700A764B1 /* WibreePeripheral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WibreePeripheral.h; sourceTree = "<group>"; };
+		5683C55618A8C12700A764B1 /* WibreePeripheral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WibreePeripheral.m; sourceTree = "<group>"; };
+		5683C55818A8C87E00A764B1 /* WibreePeripheralResponseParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WibreePeripheralResponseParser.h; sourceTree = "<group>"; };
+		5683C55918A8C87E00A764B1 /* WibreePeripheralResponseParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WibreePeripheralResponseParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +132,16 @@
 				5683C50C18A7AD0C00A764B1 /* Main.storyboard */,
 				5683C50F18A7AD0C00A764B1 /* ViewController.h */,
 				5683C51018A7AD0C00A764B1 /* ViewController.m */,
+				5683C54C18A86BBC00A764B1 /* Document.h */,
+				5683C54D18A86BBC00A764B1 /* Document.m */,
+				5683C55518A8C12700A764B1 /* WibreePeripheral.h */,
+				5683C55618A8C12700A764B1 /* WibreePeripheral.m */,
+				5683C54F18A8741F00A764B1 /* Connector.h */,
+				5683C55018A8741F00A764B1 /* Connector.m */,
+				5683C55218A8744C00A764B1 /* WibreeCentralResponseParser.h */,
+				5683C55318A8744C00A764B1 /* WibreeCentralResponseParser.m */,
+				5683C55818A8C87E00A764B1 /* WibreePeripheralResponseParser.h */,
+				5683C55918A8C87E00A764B1 /* WibreePeripheralResponseParser.m */,
 				5683C51218A7AD0C00A764B1 /* Images.xcassets */,
 				5683C50118A7AD0C00A764B1 /* Supporting Files */,
 			);
@@ -249,9 +274,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5683C55A18A8C87E00A764B1 /* WibreePeripheralResponseParser.m in Sources */,
 				5683C51118A7AD0C00A764B1 /* ViewController.m in Sources */,
+				5683C55118A8741F00A764B1 /* Connector.m in Sources */,
 				5683C50B18A7AD0C00A764B1 /* AppDelegate.m in Sources */,
+				5683C54E18A86BBC00A764B1 /* Document.m in Sources */,
+				5683C55418A8744C00A764B1 /* WibreeCentralResponseParser.m in Sources */,
 				5683C50718A7AD0C00A764B1 /* main.m in Sources */,
+				5683C55718A8C12700A764B1 /* WibreePeripheral.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +490,7 @@
 				5683C52B18A7AD0C00A764B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5683C52C18A7AD0C00A764B1 /* Build configuration list for PBXNativeTarget "WibreeTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +499,7 @@
 				5683C52E18A7AD0C00A764B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
