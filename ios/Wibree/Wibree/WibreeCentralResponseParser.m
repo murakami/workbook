@@ -331,7 +331,18 @@
 {
     DBGMSG( @"%s [Main=%@]", __FUNCTION__, [NSThread isMainThread] ? @"YES" : @"NO ");
     // Don't do anything if we're not connected
-    if (!self.discoveredPeripheral.isConnected) {
+    /* if (!self.discoveredPeripheral.isConnected) { */
+    /*
+    BOOL    isConnected = NO;
+    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+        isConnected = self.discoveredPeripheral.isConnected;
+    }
+    else {
+        isConnected = (self.discoveredPeripheral.state == CBPeripheralStateConnected) ? YES : NO;
+    }
+     if (! isConnected) {
+    */
+    if (self.discoveredPeripheral.state != CBPeripheralStateConnected) {
         return;
     }
     
