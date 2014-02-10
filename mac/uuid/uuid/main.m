@@ -16,7 +16,7 @@ int main(int argc, const char * argv[])
         NSUUID  *uuid = [NSUUID UUID];
         NSString    *uuidString = [uuid UUIDString];
         NSString    *str32 = [uuidString stringByReplacingOccurrencesOfString:@"-" withString:@""];
-        DBGMSG(@"%s UUID(%@)", __func__, uuidString);
+        printf("%s\n", uuidString.UTF8String);
         printf("%s\n", str32.UTF8String);
         
     }
