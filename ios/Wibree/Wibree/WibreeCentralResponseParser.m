@@ -149,14 +149,16 @@
  */
 - (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI
 {
-    DBGMSG( @"%s [Main=%@]", __FUNCTION__, [NSThread isMainThread] ? @"YES" : @"NO ");
+    //DBGMSG( @"%s [Main=%@]", __FUNCTION__, [NSThread isMainThread] ? @"YES" : @"NO ");
     // Reject any where the value is above reasonable range
     if (RSSI.integerValue > -15) {
+        DBGMSG(@"%s Reject any where the value is above reasonable range", __func__);
         return;
     }
     
     // Reject if the signal strength is too low to be close enough (Close is around -22dB)
     if (RSSI.integerValue < -35) {
+        DBGMSG(@"%s Reject if the signal strength is too low to be close enough (Close is around -22dB)", __func__);
         return;
     }
     
