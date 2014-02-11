@@ -122,6 +122,7 @@
  */
 - (void)peripheralManagerDidUpdateState:(CBPeripheralManager *)peripheral
 {
+    DBGMSG(@"%s", __func__);
     // Opt out from any other state
     if (peripheral.state != CBPeripheralManagerStatePoweredOn) {
         return;
@@ -176,6 +177,7 @@
  */
 - (void)sendData
 {
+    DBGMSG(@"%s", __func__);
     // First up, check if we're meant to be sending an EOM
     static BOOL sendingEOM = NO;
     
@@ -266,6 +268,7 @@
  */
 - (void)peripheralManagerIsReadyToUpdateSubscribers:(CBPeripheralManager *)peripheral
 {
+    DBGMSG(@"%s", __func__);
     // Start sending again
     [self sendData];
 }
@@ -275,7 +278,7 @@
 - (NSError *)_errorWithCode:(NSInteger)code localizedDescription:(NSString *)localizedDescription
 {
     NSDictionary    *userInfo = [NSDictionary dictionaryWithObject:localizedDescription forKey:NSLocalizedDescriptionKey];
-    NSError         *error = [NSError errorWithDomain:@"RFCViewer" code:code userInfo:userInfo];
+    NSError         *error = [NSError errorWithDomain:@"Wibree" code:code userInfo:userInfo];
     return error;
 }
 

@@ -119,9 +119,9 @@
  */
 - (void)centralManagerDidUpdateState:(CBCentralManager *)central
 {
-    DBGMSG( @"%s [Main=%@]", __FUNCTION__, [NSThread isMainThread] ? @"YES" : @"NO ");
+    DBGMSG(@"%s [Main=%@]", __FUNCTION__, [NSThread isMainThread] ? @"YES" : @"NO ");
     if (central.state != CBCentralManagerStatePoweredOn) {
-        // In a real app, you'd deal with all the states correctly
+        DBGMSG(@"%s In a real app, you'd deal with all the states correctly", __func__);
         return;
     }
     
