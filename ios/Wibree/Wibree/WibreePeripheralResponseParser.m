@@ -152,7 +152,9 @@
 
 /** Catch when someone subscribes to our characteristic, then start sending them data
  */
-- (void)peripheralManager:(CBPeripheralManager *)peripheral central:(CBCentral *)central didSubscribeToCharacteristic:(CBCharacteristic *)characteristic
+- (void)peripheralManager:(CBPeripheralManager *)peripheral
+                  central:(CBCentral *)central
+didSubscribeToCharacteristic:(CBCharacteristic *)characteristic
 {
     DBGMSG(@"Central subscribed to characteristic");
     
