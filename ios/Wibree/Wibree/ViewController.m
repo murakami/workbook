@@ -21,6 +21,9 @@
     DBGMSG(@"%s", __func__);
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.myUniqueIdentifierLabel.text = [Document sharedDocument].uniqueIdentifier;
+    self.yourUniqueIdentifierLabel.text = @"";
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -34,6 +37,14 @@
         if (! tempSelf) return;
         
         DBGMSG(@"%s UUID(%@)", __func__, uniqueIdentifier);
+        self.yourUniqueIdentifierLabel.text = uniqueIdentifier;
+        
+        // Local Notification
+        UILocalNotification *localNotify = [[UILocalNotification alloc] init];
+        localNotify.alertBody = uniqueIdentifier;
+        localNotify.alertAction = @"Open";
+        localNotify.soundName = UILocalNotificationDefaultSoundName;
+        [[UIApplication sharedApplication] presentLocalNotificationNow:localNotify];
     }];
     
     [[Connector sharedConnector] startAdvertisingWithCompletionHandler:^(WibreePeripheralResponseParser *parser) {

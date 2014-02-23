@@ -153,13 +153,11 @@
                   RSSI:(NSNumber *)RSSI
 {
     //DBGMSG( @"%s [Main=%@]", __FUNCTION__, [NSThread isMainThread] ? @"YES" : @"NO ");
-    // Reject any where the value is above reasonable range
     if (RSSI.integerValue > -15) {
         DBGMSG(@"%s Reject any where the value is above reasonable range", __func__);
         return;
     }
     
-    // Reject if the signal strength is too low to be close enough (Close is around -22dB)
     if (RSSI.integerValue < -35) {
         DBGMSG(@"%s Reject if the signal strength is too low to be close enough (Close is around -22dB)", __func__);
         return;
@@ -297,6 +295,13 @@ didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic
     DBGMSG(@"Received: %@", stringFromData);
 }
 
+// RSSIの情報がアップデートされた
+- (void)peripheralDidUpdateRSSI:(CBPeripheral *)peripheral error:(NSError *)error
+{
+    DBGMSG(@"%s [Main=%@] RSSI%@,%d", __func__, [NSThread isMainThread] ? @"YES" : @"NO ", peripheral.RSSI, peripheral.state);
+}
+
+
 /** The peripheral letting us know whether our subscribe/unsubscribe happened or not
  */
 - (void)peripheral:(CBPeripheral *)peripheral
@@ -332,11 +337,13 @@ didUpdateNotificationStateForCharacteristic:(CBCharacteristic *)characteristic
 didDisconnectPeripheral:(CBPeripheral *)peripheral
                  error:(NSError *)error
 {
-    DBGMSG(@"Peripheral Disconnected");
+    DBGMSG(@"%s [Main=%@] Peripheral Disconnected", __FUNCTION__, [NSThread isMainThread] ? @"YES" : @"NO ");
     self.discoveredPeripheral = nil;
     
     // We're disconnected, so start scanning again
-    [self scan];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self scan];
+    });
 }
 
 /** Call this when things either go wrong, or you're done with the connection.

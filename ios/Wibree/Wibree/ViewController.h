@@ -10,4 +10,7 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *myUniqueIdentifierLabel;
+@property (weak, nonatomic) IBOutlet UILabel *yourUniqueIdentifierLabel;
+
 @end
