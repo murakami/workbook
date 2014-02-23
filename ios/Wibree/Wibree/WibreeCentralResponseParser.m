@@ -341,9 +341,12 @@ didDisconnectPeripheral:(CBPeripheral *)peripheral
     self.discoveredPeripheral = nil;
     
     // We're disconnected, so start scanning again
+    [self scan];
+    /*
     dispatch_async(dispatch_get_main_queue(), ^{
         [self scan];
     });
+    */
 }
 
 /** Call this when things either go wrong, or you're done with the connection.
