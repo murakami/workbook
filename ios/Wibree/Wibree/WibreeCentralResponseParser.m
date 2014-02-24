@@ -152,7 +152,11 @@
      advertisementData:(NSDictionary *)advertisementData
                   RSSI:(NSNumber *)RSSI
 {
-    //DBGMSG( @"%s [Main=%@]", __FUNCTION__, [NSThread isMainThread] ? @"YES" : @"NO ");
+    DBGMSG( @"%s [Main=%@] LocalName(%@) TxPowerLevel(%@) RSSI(%d)",
+           __FUNCTION__, [NSThread isMainThread] ? @"YES" : @"NO ",
+           [advertisementData objectForKey:CBAdvertisementDataLocalNameKey],
+           [advertisementData objectForKey:CBAdvertisementDataTxPowerLevelKey],
+           (int)RSSI.integerValue);
     if (RSSI.integerValue > -15) {
         DBGMSG(@"%s Reject any where the value is above reasonable range", __func__);
         return;
