@@ -107,9 +107,6 @@
     if ([self.delegate respondsToSelector:@selector(beaconCentralResponseParserDidCancel:)]) {
         [self.delegate beaconCentralResponseParserDidCancel:self];
     }
-    if (self.completionHandler) {
-        self.completionHandler(self);
-    }
 }
 
 #pragma mark - CLLocationManagerDelegate
@@ -120,9 +117,6 @@
     if ([self.delegate respondsToSelector:@selector(beaconCentralResponseParser:didEnterRegion:)]) {
         [self.delegate beaconCentralResponseParser:self didEnterRegion:region];
     }
-    if (self.scanningHandler) {
-        self.scanningHandler(self, kBeaconLocationStateDidEnterRegion, nil, region);
-    }
 }
 
 - (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region
@@ -131,9 +125,6 @@
     if ([self.delegate respondsToSelector:@selector(beaconCentralResponseParser:didExitRegion:)]) {
         [self.delegate beaconCentralResponseParser:self didExitRegion:region];
     }
-    if (self.scanningHandler) {
-        self.scanningHandler(self, kBeaconLocationStateDidExitRegion, nil, region);
-    }
 }
 
 - (void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
@@ -141,9 +132,6 @@
     DBGMSG(@"%s", __func__);
     if ([self.delegate respondsToSelector:@selector(beaconCentralResponseParser:didRangeBeacons:inRegion:)]) {
         [self.delegate beaconCentralResponseParser:self didRangeBeacons:beacons inRegion:region];
-    }
-    if (self.scanningHandler) {
-        self.scanningHandler(self, kBeaconLocationStateDidRangeBeaconsInRegion, beacons, region);
     }
 }
 

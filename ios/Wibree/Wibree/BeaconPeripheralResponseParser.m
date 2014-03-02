@@ -105,9 +105,6 @@
     if ([self.delegate respondsToSelector:@selector(beaconPeripheralResponseParserDidCancel:)]) {
         [self.delegate beaconPeripheralResponseParserDidCancel:self];
     }
-    if (self.completionHandler) {
-        self.completionHandler(self);
-    }
 }
 
 #pragma mark - CBPeripheralManagerDelegate
