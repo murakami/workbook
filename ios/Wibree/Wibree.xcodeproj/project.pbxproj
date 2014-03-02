@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5624EA0918C35633003DD137 /* BeaconCentralResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5624EA0818C35633003DD137 /* BeaconCentralResponseParser.m */; };
+		5624EA0C18C35647003DD137 /* BeaconPeripheralResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5624EA0B18C35647003DD137 /* BeaconPeripheralResponseParser.m */; };
 		5683C4FB18A7AD0C00A764B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5683C4FA18A7AD0C00A764B1 /* Foundation.framework */; };
 		5683C4FD18A7AD0C00A764B1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5683C4FC18A7AD0C00A764B1 /* CoreGraphics.framework */; };
 		5683C4FF18A7AD0C00A764B1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5683C4FE18A7AD0C00A764B1 /* UIKit.framework */; };
@@ -38,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5624EA0718C35633003DD137 /* BeaconCentralResponseParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconCentralResponseParser.h; sourceTree = "<group>"; };
+		5624EA0818C35633003DD137 /* BeaconCentralResponseParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconCentralResponseParser.m; sourceTree = "<group>"; };
+		5624EA0A18C35647003DD137 /* BeaconPeripheralResponseParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconPeripheralResponseParser.h; sourceTree = "<group>"; };
+		5624EA0B18C35647003DD137 /* BeaconPeripheralResponseParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconPeripheralResponseParser.m; sourceTree = "<group>"; };
 		5683C4F718A7AD0C00A764B1 /* Wibree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wibree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5683C4FA18A7AD0C00A764B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5683C4FC18A7AD0C00A764B1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -137,6 +143,10 @@
 				5683C55318A8744C00A764B1 /* WibreeCentralResponseParser.m */,
 				5683C55818A8C87E00A764B1 /* WibreePeripheralResponseParser.h */,
 				5683C55918A8C87E00A764B1 /* WibreePeripheralResponseParser.m */,
+				5624EA0718C35633003DD137 /* BeaconCentralResponseParser.h */,
+				5624EA0818C35633003DD137 /* BeaconCentralResponseParser.m */,
+				5624EA0A18C35647003DD137 /* BeaconPeripheralResponseParser.h */,
+				5624EA0B18C35647003DD137 /* BeaconPeripheralResponseParser.m */,
 				5683C51218A7AD0C00A764B1 /* Images.xcassets */,
 				5683C50118A7AD0C00A764B1 /* Supporting Files */,
 			);
@@ -274,7 +284,9 @@
 				5683C55118A8741F00A764B1 /* Connector.m in Sources */,
 				5683C50B18A7AD0C00A764B1 /* AppDelegate.m in Sources */,
 				5683C54E18A86BBC00A764B1 /* Document.m in Sources */,
+				5624EA0918C35633003DD137 /* BeaconCentralResponseParser.m in Sources */,
 				5683C55418A8744C00A764B1 /* WibreeCentralResponseParser.m in Sources */,
+				5624EA0C18C35647003DD137 /* BeaconPeripheralResponseParser.m in Sources */,
 				5683C50718A7AD0C00A764B1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

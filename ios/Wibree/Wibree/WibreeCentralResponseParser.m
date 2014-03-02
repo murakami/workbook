@@ -302,7 +302,7 @@ didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic
 // RSSIの情報がアップデートされた
 - (void)peripheralDidUpdateRSSI:(CBPeripheral *)peripheral error:(NSError *)error
 {
-    DBGMSG(@"%s [Main=%@] RSSI%@,%d", __func__, [NSThread isMainThread] ? @"YES" : @"NO ", peripheral.RSSI, peripheral.state);
+    DBGMSG(@"%s [Main=%@] RSSI%@,%d", __func__, [NSThread isMainThread] ? @"YES" : @"NO ", peripheral.RSSI, (int)peripheral.state);
 }
 
 

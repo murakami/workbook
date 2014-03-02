@@ -53,6 +53,31 @@
         
         DBGMSG(@"%s", __func__);
     }];
+    
+#if 0
+    [[Connector sharedConnector] scanForBeaconsWithCompletionHandler:^(BeaconCentralResponseParser *parser) {
+        ViewController *tempSelf = blockWeakSelf;
+        if (! tempSelf) return;
+        
+        DBGMSG(@"%s", __func__);
+    } scanningHandler:^(BeaconCentralResponseParser *parser, BeaconLocationState state, NSArray *beacons, CLRegion *region) {
+        ViewController *tempSelf = blockWeakSelf;
+        if (! tempSelf) return;
+
+        //if ((state == kBeaconLocationStateDidEnterRegion) || (state == kBeaconLocationStateDidExitRegion)) {
+            DBGMSG(@"%s state(%d)", __func__, (int)state);
+            DBGMSG(@"%s beacons:%@", __func__, beacons);
+            DBGMSG(@"%s region:%@", __func__, region);
+        //}
+    }];
+    
+    [[Connector sharedConnector] startBeaconAdvertisingWithCompletionHandler:^(BeaconPeripheralResponseParser *parser) {
+        ViewController *tempSelf = blockWeakSelf;
+        if (! tempSelf) return;
+        
+        DBGMSG(@"%s", __func__);
+    }];
+#endif
 }
 
 - (void)viewWillDisappear:(BOOL)animated
