@@ -71,6 +71,13 @@
             DBGMSG(@"%s beacons:%@", __func__, beacons);
             DBGMSG(@"%s region:%@", __func__, region);
         //}
+        /*
+        if ([region isKindOfClass:[CLBeaconRegion class]]) {
+            CLBeaconRegion  *beaconRegion = (CLBeaconRegion *)region;
+            DBGMSG(@"%s major:%@", __func__, beaconRegion.major);
+            DBGMSG(@"%s minor:%@", __func__, beaconRegion.minor);
+        }
+        */
     }];
     
     [[Connector sharedConnector] startBeaconAdvertisingWithCompletionHandler:^(BeaconPeripheralResponseParser *parser) {
