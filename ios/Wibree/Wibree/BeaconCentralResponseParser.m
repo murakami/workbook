@@ -135,6 +135,12 @@
     }
 }
 
+- (void)locationManager:(CLLocationManager *)manager monitoringDidFailForRegion:(CLRegion *)region withError:(NSError *)error
+{
+    DBGMSG(@"%s region:%@", __func__, region);
+    DBGMSG(@"%s error:%@", __func__, error);
+}
+
 #pragma mark - etc
 
 - (NSError *)_errorWithCode:(NSInteger)code localizedDescription:(NSString *)localizedDescription

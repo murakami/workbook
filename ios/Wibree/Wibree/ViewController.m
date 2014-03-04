@@ -32,6 +32,7 @@
     [super viewDidAppear:animated];
     
     __block ViewController * __weak blockWeakSelf = self;
+#if 1
     [[Connector sharedConnector] scanForPeripheralsWithCompletionHandler:^(WibreeCentralResponseParser *parser, NSString *uniqueIdentifier) {
         ViewController *tempSelf = blockWeakSelf;
         if (! tempSelf) return;
@@ -53,8 +54,9 @@
         
         DBGMSG(@"%s", __func__);
     }];
+#endif
     
-#if 0
+#if 1
     [[Connector sharedConnector] scanForBeaconsWithCompletionHandler:^(BeaconCentralResponseParser *parser) {
         ViewController *tempSelf = blockWeakSelf;
         if (! tempSelf) return;
