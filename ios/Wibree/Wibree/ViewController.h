@@ -12,5 +12,14 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *myUniqueIdentifierLabel;
 @property (weak, nonatomic) IBOutlet UILabel *yourUniqueIdentifierLabel;
+@property (weak, nonatomic) IBOutlet UISwitch   *wibreeCentralSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch   *wibreePeripheralSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch   *beaconCentralSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch   *beaconPeripheralSwitch;
+
+- (IBAction)toggleWibreeCentral:(id)sender;
+- (IBAction)toggleWibreePeripheral:(id)sender;
+- (IBAction)toggleBeaconCentral:(id)sender;
+- (IBAction)toggleBeaconPeripheral:(id)sender;
 
 @end

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B3116" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -30,30 +30,98 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="見つけた識別子:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zps-wt-4w5">
-                                <rect key="frame" x="20" y="273" width="124" height="21"/>
+                                <rect key="frame" x="20" y="78" width="124" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="UUID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPP-HG-WWo">
-                                <rect key="frame" x="20" y="302" width="280" height="21"/>
+                                <rect key="frame" x="20" y="107" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u2y-ht-LId">
+                                <rect key="frame" x="251" y="405" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="toggleWibreeCentral:" destination="vXZ-lx-hvc" eventType="valueChanged" id="oRh-hC-Zt2"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="WibreeCentral" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndU-2C-OTd">
+                                <rect key="frame" x="20" y="410" width="109" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="WibreePeripheral" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2lH-G9-gYi">
+                                <rect key="frame" x="20" y="449" width="132" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="BeaconCentral" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYh-Eq-fXO">
+                                <rect key="frame" x="20" y="488" width="114" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="BeaconPeripheral" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5L-Hc-hqJ">
+                                <rect key="frame" x="20" y="527" width="137" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GUK-bM-NQD">
+                                <rect key="frame" x="251" y="444" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="toggleWibreePeripheral:" destination="vXZ-lx-hvc" eventType="valueChanged" id="Nsr-n3-mY6"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hAB-1Y-Q2e">
+                                <rect key="frame" x="251" y="483" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="toggleBeaconCentral:" destination="vXZ-lx-hvc" eventType="valueChanged" id="Agi-rg-eag"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Tn-f6-t58">
+                                <rect key="frame" x="251" y="522" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="toggleBeaconPeripheral:" destination="vXZ-lx-hvc" eventType="valueChanged" id="LQX-un-BX9"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="46u-Dd-9bv" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="3gx-sc-hcY"/>
+                            <constraint firstItem="jG0-1r-CNy" firstAttribute="top" secondItem="6Tn-f6-t58" secondAttribute="bottom" constant="15" id="7hv-p6-3mC"/>
+                            <constraint firstItem="eYh-Eq-fXO" firstAttribute="top" secondItem="2lH-G9-gYi" secondAttribute="bottom" constant="18" id="83g-md-C9r"/>
+                            <constraint firstItem="2lH-G9-gYi" firstAttribute="top" secondItem="ndU-2C-OTd" secondAttribute="bottom" constant="18" id="BKF-GN-6gV"/>
                             <constraint firstAttribute="trailing" secondItem="OPP-HG-WWo" secondAttribute="trailing" constant="20" id="E2A-NT-vAh"/>
                             <constraint firstItem="OPP-HG-WWo" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="L3d-J8-d7p"/>
+                            <constraint firstItem="hAB-1Y-Q2e" firstAttribute="top" secondItem="GUK-bM-NQD" secondAttribute="bottom" constant="8" id="MSw-Q9-YK7"/>
+                            <constraint firstItem="6Tn-f6-t58" firstAttribute="top" secondItem="hAB-1Y-Q2e" secondAttribute="bottom" constant="8" id="Myh-ft-MuQ"/>
+                            <constraint firstItem="J5L-Hc-hqJ" firstAttribute="top" secondItem="eYh-Eq-fXO" secondAttribute="bottom" constant="18" id="RTZ-DM-G10"/>
+                            <constraint firstItem="jG0-1r-CNy" firstAttribute="top" secondItem="J5L-Hc-hqJ" secondAttribute="bottom" constant="20" id="Wyy-WU-iMQ"/>
                             <constraint firstAttribute="trailing" secondItem="46u-Dd-9bv" secondAttribute="trailing" constant="20" id="aG9-D5-7r0"/>
                             <constraint firstItem="OPP-HG-WWo" firstAttribute="top" secondItem="Zps-wt-4w5" secondAttribute="bottom" constant="8" id="iDc-9S-SNl"/>
+                            <constraint firstItem="GUK-bM-NQD" firstAttribute="top" secondItem="u2y-ht-LId" secondAttribute="bottom" constant="8" id="o9C-2I-Eum"/>
                             <constraint firstAttribute="centerY" secondItem="Zps-wt-4w5" secondAttribute="centerY" id="q43-2r-Pzx"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="beaconCentralSwitch" destination="hAB-1Y-Q2e" id="MTt-UM-wFS"/>
+                        <outlet property="beaconPeripheralSwitch" destination="6Tn-f6-t58" id="HMz-Qm-0jg"/>
                         <outlet property="myUniqueIdentifierLabel" destination="46u-Dd-9bv" id="xg9-L9-Y4e"/>
+                        <outlet property="wibreeCentralSwitch" destination="u2y-ht-LId" id="3XT-G6-H7F"/>
+                        <outlet property="wibreePeripheralSwitch" destination="GUK-bM-NQD" id="xum-CV-GDP"/>
                         <outlet property="yourUniqueIdentifierLabel" destination="OPP-HG-WWo" id="0ok-d9-hzV"/>
                     </connections>
                 </viewController>
