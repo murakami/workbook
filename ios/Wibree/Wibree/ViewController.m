@@ -24,6 +24,28 @@
     
     self.myUniqueIdentifierLabel.text = [Document sharedDocument].uniqueIdentifier;
     self.yourUniqueIdentifierLabel.text = @"";
+    
+    __block ViewController * __weak blockWeakSelf = self;
+    [[Connector sharedConnector] scanForPeripheralsWithCompletionHandler:^(WibreeCentralResponseParser *parser, NSString *uniqueIdentifier) {
+        ViewController *tempSelf = blockWeakSelf;
+        if (! tempSelf) return;
+        
+        DBGMSG(@"%s UUID(%@)", __func__, uniqueIdentifier);
+        self.yourUniqueIdentifierLabel.text = uniqueIdentifier;
+        
+        // Local Notification
+        UILocalNotification *localNotify = [[UILocalNotification alloc] init];
+        localNotify.alertBody = uniqueIdentifier;
+        localNotify.alertAction = @"Open";
+        localNotify.soundName = UILocalNotificationDefaultSoundName;
+        [[UIApplication sharedApplication] presentLocalNotificationNow:localNotify];
+    }];
+    [[Connector sharedConnector] startAdvertisingWithCompletionHandler:^(WibreePeripheralResponseParser *parser) {
+        ViewController *tempSelf = blockWeakSelf;
+        if (! tempSelf) return;
+        
+        DBGMSG(@"%s", __func__);
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -31,8 +53,8 @@
     DBGMSG(@"%s", __func__);
     [super viewWillAppear:animated];
     
-    self.wibreeCentralSwitch.on = YES;
-    self.wibreePeripheralSwitch.on = YES;
+    self.wibreeCentralSwitch.on = NO;
+    self.wibreePeripheralSwitch.on = NO;
     self.beaconCentralSwitch.on = NO;
     self.beaconPeripheralSwitch.on = NO;
 }
@@ -70,6 +92,7 @@
 - (IBAction)toggleWibreeCentral:(id)sender
 {
     DBGMSG(@"%s on(%d)", __func__, (int)self.wibreeCentralSwitch.on);
+#if 0
     if (self.wibreeCentralSwitch.on) {
         __block ViewController * __weak blockWeakSelf = self;
         [[Connector sharedConnector] scanForPeripheralsWithCompletionHandler:^(WibreeCentralResponseParser *parser, NSString *uniqueIdentifier) {
@@ -90,11 +113,13 @@
     else {
         [[Connector sharedConnector] cancelScan];
     }
+#endif
 }
 
 - (IBAction)toggleWibreePeripheral:(id)sender
 {
     DBGMSG(@"%s on(%d)", __func__, (int)self.wibreePeripheralSwitch.on);
+#if 0
     if (self.wibreePeripheralSwitch.on) {
         __block ViewController * __weak blockWeakSelf = self;
         [[Connector sharedConnector] startAdvertisingWithCompletionHandler:^(WibreePeripheralResponseParser *parser) {
@@ -107,11 +132,13 @@
     else {
         [[Connector sharedConnector] cancelAdvertising];
     }
+#endif
 }
 
 - (IBAction)toggleBeaconCentral:(id)sender
 {
     DBGMSG(@"%s on(%d)", __func__, (int)self.beaconCentralSwitch.on);
+#if 0
     if (self.beaconCentralSwitch.on) {
         __block ViewController * __weak blockWeakSelf = self;
         [[Connector sharedConnector] scanForBeaconsWithCompletionHandler:^(BeaconCentralResponseParser *parser) {
@@ -142,11 +169,13 @@
     else {
         [[Connector sharedConnector] cancelScanForBeacons];
     }
+#endif
 }
 
 - (IBAction)toggleBeaconPeripheral:(id)sender
 {
     DBGMSG(@"%s on(%d)", __func__, (int)self.beaconPeripheralSwitch.on);
+#if 0
     if (self.beaconPeripheralSwitch.on) {
         __block ViewController * __weak blockWeakSelf = self;
         [[Connector sharedConnector] startBeaconAdvertisingWithCompletionHandler:^(BeaconPeripheralResponseParser *parser) {
@@ -159,6 +188,7 @@
     else {
         [[Connector sharedConnector] cancelBeaconAdvertising];
     }
+#endif
 }
 
 @end
