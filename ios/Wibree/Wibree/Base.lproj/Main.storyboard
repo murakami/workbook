@@ -29,13 +29,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="見つけた識別子:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zps-wt-4w5">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="見つけた識別子:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zps-wt-4w5">
                                 <rect key="frame" x="20" y="78" width="124" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="UUID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPP-HG-WWo">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="UUID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPP-HG-WWo">
                                 <rect key="frame" x="20" y="107" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -111,9 +111,7 @@
                             <constraint firstItem="J5L-Hc-hqJ" firstAttribute="top" secondItem="eYh-Eq-fXO" secondAttribute="bottom" constant="18" id="RTZ-DM-G10"/>
                             <constraint firstItem="jG0-1r-CNy" firstAttribute="top" secondItem="J5L-Hc-hqJ" secondAttribute="bottom" constant="20" id="Wyy-WU-iMQ"/>
                             <constraint firstAttribute="trailing" secondItem="46u-Dd-9bv" secondAttribute="trailing" constant="20" id="aG9-D5-7r0"/>
-                            <constraint firstItem="OPP-HG-WWo" firstAttribute="top" secondItem="Zps-wt-4w5" secondAttribute="bottom" constant="8" id="iDc-9S-SNl"/>
                             <constraint firstItem="GUK-bM-NQD" firstAttribute="top" secondItem="u2y-ht-LId" secondAttribute="bottom" constant="8" id="o9C-2I-Eum"/>
-                            <constraint firstAttribute="centerY" secondItem="Zps-wt-4w5" secondAttribute="centerY" id="q43-2r-Pzx"/>
                         </constraints>
                     </view>
                     <connections>

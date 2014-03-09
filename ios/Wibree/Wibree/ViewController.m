@@ -123,18 +123,24 @@
             ViewController *tempSelf = blockWeakSelf;
             if (! tempSelf) return;
             
-            //if ((state == kBeaconLocationStateDidEnterRegion) || (state == kBeaconLocationStateDidExitRegion)) {
+            /* 見つからない */
+            if ((state == kBeaconLocationStateDidRangeBeaconsInRegion)
+                && ((! beacons) || (beacons.count == 0)))    return;
+            
             DBGMSG(@"%s state(%d)", __func__, (int)state);
             DBGMSG(@"%s beacons:%@", __func__, beacons);
             DBGMSG(@"%s region:%@", __func__, region);
-            //}
-            /*
-             if ([region isKindOfClass:[CLBeaconRegion class]]) {
-             CLBeaconRegion  *beaconRegion = (CLBeaconRegion *)region;
-             DBGMSG(@"%s major:%@", __func__, beaconRegion.major);
-             DBGMSG(@"%s minor:%@", __func__, beaconRegion.minor);
-             }
-             */
+            if (beacons) {
+                for (CLBeacon *beacon in beacons) {
+                    DBGMSG(@"%s \tbeacon:%@", __func__, beacon);
+                }
+            }
+            
+            /* CLProximityUnknown以外のビーコンだけを取り出す */
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"proximity != %d", CLProximityUnknown];
+            NSArray *validBeacons = [beacons filteredArrayUsingPredicate:predicate];
+            DBGMSG(@"%s validBeacons:%@", __func__, validBeacons);
+            DBGMSG(@"%s validFirstBeacon:%@", __func__, [validBeacons firstObject]);
         }];
     }
     else {

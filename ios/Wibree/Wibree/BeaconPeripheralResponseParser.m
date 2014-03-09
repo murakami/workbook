@@ -73,10 +73,15 @@
     
     /* ビーコン領域を生成 */
     NSUUID  *uuid = [[NSUUID alloc] initWithUUIDString:BEACON_SERVICE_UUID];
+#if 0
     self.beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:uuid
                                                                 major:12345
                                                                 minor:67890
                                                            identifier:@"demo.Wibree.BeaconCentralResponseParser"];
+#else
+    self.beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:uuid
+                                                           identifier:@"demo.Wibree.BeaconCentralResponseParser"];
+#endif
     if (! self.beaconRegion) {
         /* ビーコン領域の初期化失敗 */
         self.state = kBeaconPeripheralStateError;

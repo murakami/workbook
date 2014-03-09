@@ -343,7 +343,8 @@ NSString    *ConnectorDidFinishAll = @"ConnectorDidFinishAll";
 }
 
 - (void)beaconCentralResponseParser:(BeaconCentralResponseParser *)parser
-                    didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
+                    didRangeBeacons:(NSArray *)beacons
+                           inRegion:(CLBeaconRegion *)region
 {
     DBGMSG(@"%s", __func__);
     if ([self.parsers containsObject:parser]) {
