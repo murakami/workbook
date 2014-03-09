@@ -31,32 +31,10 @@
     DBGMSG(@"%s", __func__);
     [super viewWillAppear:animated];
     
-    self.wibreeCentralSwitch.on = NO;
-    self.wibreePeripheralSwitch.on = NO;
+    self.wibreeCentralSwitch.on = YES;
+    self.wibreePeripheralSwitch.on = YES;
     self.beaconCentralSwitch.on = NO;
     self.beaconPeripheralSwitch.on = NO;
-    
-    __block ViewController * __weak blockWeakSelf = self;
-    [[Connector sharedConnector] scanForPeripheralsWithCompletionHandler:^(WibreeCentralResponseParser *parser, NSString *uniqueIdentifier) {
-        ViewController *tempSelf = blockWeakSelf;
-        if (! tempSelf) return;
-        
-        DBGMSG(@"%s UUID(%@)", __func__, uniqueIdentifier);
-        self.yourUniqueIdentifierLabel.text = uniqueIdentifier;
-        
-        // Local Notification
-        UILocalNotification *localNotify = [[UILocalNotification alloc] init];
-        localNotify.alertBody = uniqueIdentifier;
-        localNotify.alertAction = @"Open";
-        localNotify.soundName = UILocalNotificationDefaultSoundName;
-        [[UIApplication sharedApplication] presentLocalNotificationNow:localNotify];
-    }];
-    [[Connector sharedConnector] startAdvertisingWithCompletionHandler:^(WibreePeripheralResponseParser *parser) {
-        ViewController *tempSelf = blockWeakSelf;
-        if (! tempSelf) return;
-        
-        DBGMSG(@"%s", __func__);
-    }];
 }
 
 - (void)viewDidAppear:(BOOL)animated
