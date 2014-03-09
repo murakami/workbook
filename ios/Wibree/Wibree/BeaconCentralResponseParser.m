@@ -129,6 +129,11 @@
 
 - (void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
 {
+    if ((! beacons) || (beacons.count == 0)) {
+        DBGMSG(@"%s 見つからない", __func__);
+        return;
+    }
+
     DBGMSG(@"%s", __func__);
     if ([self.delegate respondsToSelector:@selector(beaconCentralResponseParser:didRangeBeacons:inRegion:)]) {
         [self.delegate beaconCentralResponseParser:self didRangeBeacons:beacons inRegion:region];

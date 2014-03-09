@@ -35,6 +35,28 @@
     self.wibreePeripheralSwitch.on = NO;
     self.beaconCentralSwitch.on = NO;
     self.beaconPeripheralSwitch.on = NO;
+    
+    __block ViewController * __weak blockWeakSelf = self;
+    [[Connector sharedConnector] scanForPeripheralsWithCompletionHandler:^(WibreeCentralResponseParser *parser, NSString *uniqueIdentifier) {
+        ViewController *tempSelf = blockWeakSelf;
+        if (! tempSelf) return;
+        
+        DBGMSG(@"%s UUID(%@)", __func__, uniqueIdentifier);
+        self.yourUniqueIdentifierLabel.text = uniqueIdentifier;
+        
+        // Local Notification
+        UILocalNotification *localNotify = [[UILocalNotification alloc] init];
+        localNotify.alertBody = uniqueIdentifier;
+        localNotify.alertAction = @"Open";
+        localNotify.soundName = UILocalNotificationDefaultSoundName;
+        [[UIApplication sharedApplication] presentLocalNotificationNow:localNotify];
+    }];
+    [[Connector sharedConnector] startAdvertisingWithCompletionHandler:^(WibreePeripheralResponseParser *parser) {
+        ViewController *tempSelf = blockWeakSelf;
+        if (! tempSelf) return;
+        
+        DBGMSG(@"%s", __func__);
+    }];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -122,10 +144,6 @@
         } scanningHandler:^(BeaconCentralResponseParser *parser, BeaconLocationState state, NSArray *beacons, CLRegion *region) {
             ViewController *tempSelf = blockWeakSelf;
             if (! tempSelf) return;
-            
-            /* 見つからない */
-            if ((state == kBeaconLocationStateDidRangeBeaconsInRegion)
-                && ((! beacons) || (beacons.count == 0)))    return;
             
             DBGMSG(@"%s state(%d)", __func__, (int)state);
             DBGMSG(@"%s beacons:%@", __func__, beacons);
