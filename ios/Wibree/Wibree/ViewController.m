@@ -42,29 +42,6 @@
 {
     DBGMSG(@"%s", __func__);
     [super viewDidAppear:animated];
-    
-    __block ViewController * __weak blockWeakSelf = self;
-    [[Connector sharedConnector] scanForPeripheralsWithCompletionHandler:^(WibreeCentralResponseParser *parser, NSString *uniqueIdentifier) {
-        ViewController *tempSelf = blockWeakSelf;
-        if (! tempSelf) return;
-        
-        DBGMSG(@"%s UUID(%@)", __func__, uniqueIdentifier);
-        self.yourUniqueIdentifierLabel.text = uniqueIdentifier;
-        
-        // Local Notification
-        UILocalNotification *localNotify = [[UILocalNotification alloc] init];
-        localNotify.alertBody = uniqueIdentifier;
-        localNotify.alertAction = @"Open";
-        localNotify.soundName = UILocalNotificationDefaultSoundName;
-        [[UIApplication sharedApplication] presentLocalNotificationNow:localNotify];
-    }];
-    
-    [[Connector sharedConnector] startAdvertisingWithCompletionHandler:^(WibreePeripheralResponseParser *parser) {
-        ViewController *tempSelf = blockWeakSelf;
-        if (! tempSelf) return;
-        
-        DBGMSG(@"%s", __func__);
-    }];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -94,7 +71,7 @@
 - (IBAction)toggleWibreeCentral:(id)sender
 {
     DBGMSG(@"%s on(%d)", __func__, (int)self.wibreeCentralSwitch.on);
-#if 0
+#if 1
     if (self.wibreeCentralSwitch.on) {
         __block ViewController * __weak blockWeakSelf = self;
         [[Connector sharedConnector] scanForPeripheralsWithCompletionHandler:^(WibreeCentralResponseParser *parser, NSString *uniqueIdentifier) {
@@ -121,7 +98,7 @@
 - (IBAction)toggleWibreePeripheral:(id)sender
 {
     DBGMSG(@"%s on(%d)", __func__, (int)self.wibreePeripheralSwitch.on);
-#if 0
+#if 1
     if (self.wibreePeripheralSwitch.on) {
         __block ViewController * __weak blockWeakSelf = self;
         [[Connector sharedConnector] startAdvertisingWithCompletionHandler:^(WibreePeripheralResponseParser *parser) {
@@ -140,7 +117,7 @@
 - (IBAction)toggleBeaconCentral:(id)sender
 {
     DBGMSG(@"%s on(%d)", __func__, (int)self.beaconCentralSwitch.on);
-#if 0
+#if 1
     if (self.beaconCentralSwitch.on) {
         __block ViewController * __weak blockWeakSelf = self;
         [[Connector sharedConnector] scanForBeaconsWithCompletionHandler:^(BeaconCentralResponseParser *parser) {
@@ -177,7 +154,7 @@
 - (IBAction)toggleBeaconPeripheral:(id)sender
 {
     DBGMSG(@"%s on(%d)", __func__, (int)self.beaconPeripheralSwitch.on);
-#if 0
+#if 1
     if (self.beaconPeripheralSwitch.on) {
         __block ViewController * __weak blockWeakSelf = self;
         [[Connector sharedConnector] startBeaconAdvertisingWithCompletionHandler:^(BeaconPeripheralResponseParser *parser) {
