@@ -24,6 +24,24 @@
     
     self.myUniqueIdentifierLabel.text = [Document sharedDocument].uniqueIdentifier;
     self.yourUniqueIdentifierLabel.text = @"";
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    DBGMSG(@"%s", __func__);
+    [super viewWillAppear:animated];
+    
+    self.wibreeCentralSwitch.on = NO;
+    self.wibreePeripheralSwitch.on = NO;
+    self.beaconCentralSwitch.on = NO;
+    self.beaconPeripheralSwitch.on = NO;
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    DBGMSG(@"%s", __func__);
+    [super viewDidAppear:animated];
     
     __block ViewController * __weak blockWeakSelf = self;
     [[Connector sharedConnector] scanForPeripheralsWithCompletionHandler:^(WibreeCentralResponseParser *parser, NSString *uniqueIdentifier) {
@@ -40,29 +58,13 @@
         localNotify.soundName = UILocalNotificationDefaultSoundName;
         [[UIApplication sharedApplication] presentLocalNotificationNow:localNotify];
     }];
+    
     [[Connector sharedConnector] startAdvertisingWithCompletionHandler:^(WibreePeripheralResponseParser *parser) {
         ViewController *tempSelf = blockWeakSelf;
         if (! tempSelf) return;
         
         DBGMSG(@"%s", __func__);
     }];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    DBGMSG(@"%s", __func__);
-    [super viewWillAppear:animated];
-    
-    self.wibreeCentralSwitch.on = NO;
-    self.wibreePeripheralSwitch.on = NO;
-    self.beaconCentralSwitch.on = NO;
-    self.beaconPeripheralSwitch.on = NO;
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    DBGMSG(@"%s", __func__);
-    [super viewDidAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
