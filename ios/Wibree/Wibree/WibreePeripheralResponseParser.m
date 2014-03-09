@@ -125,11 +125,12 @@
     DBGMSG(@"%s", __func__);
     // Opt out from any other state
     if (peripheral.state != CBPeripheralManagerStatePoweredOn) {
+        DBGMSG(@"%s state(%d) not power on", __func__, (int)peripheral.state);
         return;
     }
     
     // We're in CBPeripheralManagerStatePoweredOn state...
-    DBGMSG(@"self.peripheralManager powered on.");
+    DBGMSG(@"%s self.peripheralManager powered on.", __func__);
     
     // ... so build our service.
     
@@ -156,7 +157,7 @@
                   central:(CBCentral *)central
 didSubscribeToCharacteristic:(CBCharacteristic *)characteristic
 {
-    DBGMSG(@"Central subscribed to characteristic");
+    DBGMSG(@"%s Central subscribed to characteristic", __func__);
     
     // Get the data
     self.dataToSend = [[Document sharedDocument].uniqueIdentifier dataUsingEncoding:NSUTF8StringEncoding];

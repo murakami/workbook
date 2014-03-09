@@ -121,7 +121,7 @@
 {
     DBGMSG(@"%s [Main=%@]", __FUNCTION__, [NSThread isMainThread] ? @"YES" : @"NO ");
     if (central.state != CBCentralManagerStatePoweredOn) {
-        DBGMSG(@"%s In a real app, you'd deal with all the states correctly", __func__);
+        DBGMSG(@"%s state(%d) In a real app, you'd deal with all the states correctly", __func__, (int)central.state);
         return;
     }
     
@@ -196,7 +196,7 @@ didFailToConnectPeripheral:(CBPeripheral *)peripheral
 - (void)centralManager:(CBCentralManager *)central
   didConnectPeripheral:(CBPeripheral *)peripheral
 {
-    DBGMSG(@"Peripheral Connected");
+    DBGMSG(@"%s Peripheral Connected", __func__);
     
     // Stop scanning
     [self.centralManager stopScan];
