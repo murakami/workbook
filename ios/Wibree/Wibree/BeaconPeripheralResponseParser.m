@@ -73,7 +73,7 @@
     
     /* ビーコン領域を生成 */
     NSUUID  *uuid = [[NSUUID alloc] initWithUUIDString:BEACON_SERVICE_UUID];
-#if 0
+#if 1
     self.beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:uuid
                                                                 major:12345
                                                                 minor:67890
