@@ -168,6 +168,7 @@ NSString    *ConnectorDidFinishAll = @"ConnectorDidFinishAll";
     }
     
     if ((parser.state == kWibreeCentralStateError) || (parser.state == kWibreeCentralStateCanceled)) {
+        DBGMSG(@"%s remove:%@", __func__, parser);
         [self.parsers removeObject:parser];
     }
 }
