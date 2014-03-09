@@ -88,7 +88,7 @@
     if (self.centralManager) {
         // Don't keep it going while we're not showing.
         [self.centralManager stopScan];
-        DBGMSG(@"Scanning stopped");
+        DBGMSG(@"%s Scanning stopped", __func__);
         
         self.centralManager = nil;
     }
@@ -140,7 +140,7 @@
     [self.centralManager scanForPeripheralsWithServices:@[[CBUUID UUIDWithString:WIBREE_SERVICE_UUID]]
                                                 options:@{ CBCentralManagerScanOptionAllowDuplicatesKey : @YES }];
     
-    DBGMSG(@"Scanning started");
+    DBGMSG(@"%s Scanning started: service's UUID(%@)", __func__, WIBREE_SERVICE_UUID);
 }
 
 /** This callback comes whenever a peripheral that is advertising the TRANSFER_SERVICE_UUID is discovered.

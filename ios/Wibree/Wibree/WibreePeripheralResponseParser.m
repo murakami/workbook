@@ -83,6 +83,7 @@
     }
     
     // All we advertise is our service's UUID
+    DBGMSG(@"%s start advertising: service's UUID(%@)", __func__, WIBREE_SERVICE_UUID);
     [self.peripheralManager startAdvertising:@{ CBAdvertisementDataServiceUUIDsKey : @[[CBUUID UUIDWithString:WIBREE_SERVICE_UUID]] }];
 }
 
