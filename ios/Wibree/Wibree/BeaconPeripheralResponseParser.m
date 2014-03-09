@@ -75,8 +75,8 @@
     NSUUID  *uuid = [[NSUUID alloc] initWithUUIDString:BEACON_SERVICE_UUID];
 #if 1
     self.beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:uuid
-                                                                major:12345
-                                                                minor:67890
+                                                                major:12
+                                                                minor:34
                                                            identifier:@"demo.Wibree.BeaconCentralResponseParser"];
 #else
     self.beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:uuid
