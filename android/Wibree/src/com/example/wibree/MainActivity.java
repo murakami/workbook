@@ -23,14 +23,17 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		/*		
+		/* BLE対応の確認 */
 		if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE)) {
             Toast.makeText(this, "not support", Toast.LENGTH_SHORT).show();
             finish();
         }
-		*/
+		
+		/* Bluetooth Adapter */
 		final BluetoothManager bluetoothManager = (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
 		mBluetoothAdapter = bluetoothManager.getAdapter();
+		
+		/* Bluetooth LEデバイスの検索 */
 		mBluetoothAdapter.startLeScan(mLeScanCallback);
 	}
 
@@ -84,7 +87,7 @@ public class MainActivity extends Activity {
 			}
 		};
 
-	public String IntToHex2(int i) {
+	private String IntToHex2(int i) {
 	    char hex_2[] = {Character.forDigit((i>>4) & 0x0f,16),Character.forDigit(i&0x0f, 16)};
 	    String hex_2_str = new String(hex_2);
 	    return hex_2_str.toUpperCase();
