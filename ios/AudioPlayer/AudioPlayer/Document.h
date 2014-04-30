@@ -8,8 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+@interface Playlist : NSObject
+@property (strong, nonatomic) NSString  *title;
+@end
+
+@interface Playlists : NSObject
+@property (strong, nonatomic) NSArray   *playlistArray;
+@end
+
 @interface Document : NSObject
 @property (strong, nonatomic) NSString  *version;
+@property (strong, nonatomic) Playlists *playlists;
 + (Document *)sharedInstance;
 - (void)clearDefaults;
 - (void)updateDefaults;

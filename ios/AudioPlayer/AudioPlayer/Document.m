@@ -8,21 +8,20 @@
 
 #import "Document.h"
 
+@implementation Playlist
+@end
+
+@implementation Playlists
+@end
+
 @interface Document ()
 @end
 
 @implementation Document
 
-@synthesize version = _version;
-
 + (Document *)sharedInstance
 {
     static Document *_sharedInstance = nil;
-    /*
-    if (!_sharedInstance) {
-		_sharedInstance = [[Document alloc] init];
-	}
-    */
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _sharedInstance = [[Document alloc] init];
@@ -52,7 +51,7 @@
 {
     DBGMSG(@"%s", __func__);
     self.version = nil;
-	//[super dealloc];
+    self.playlists = nil;
 }
 
 - (void)clearDefaults
