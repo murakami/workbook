@@ -34,6 +34,8 @@ typedef enum {
 
 extern NSString *AssetBrowserErrorDomain;
 
+typedef void (^AssetBrowserResponseParserCompletionHandler)(AssetBrowserResponseParser *parser);
+
 @protocol AssetBrowserResponseParserDelegate <NSObject>
 - (void)parserDidFinishLoading:(AssetBrowserResponseParser *)parser;
 - (void)parser:(AssetBrowserResponseParser *)parser didFailWithError:(NSError *)error;
@@ -42,11 +44,12 @@ extern NSString *AssetBrowserErrorDomain;
 
 @interface AssetBrowserResponseParser : NSObject
 
-@property (assign, nonatomic) AssetBrowserSourceType        sourceType;
-@property (readonly, nonatomic) AssetBrowserState           state;
-@property (strong, nonatomic) NSMutableArray                *assetBrowserItems;
-@property (readonly, nonatomic) NSError                     *error;
-@property (weak, nonatomic) id<AssetBrowserResponseParserDelegate>  delegate;
+@property (assign, nonatomic) AssetBrowserSourceType                    sourceType;
+@property (readonly, nonatomic) AssetBrowserState                       state;
+@property (strong, nonatomic) NSMutableArray                            *assetBrowserItems;
+@property (readonly, nonatomic) NSError                                 *error;
+@property (weak, nonatomic) id<AssetBrowserResponseParserDelegate>      delegate;
+@property (copy, nonatomic) AssetBrowserResponseParserCompletionHandler completionHandler;
 
 - (void)parse;
 - (void)cancel;

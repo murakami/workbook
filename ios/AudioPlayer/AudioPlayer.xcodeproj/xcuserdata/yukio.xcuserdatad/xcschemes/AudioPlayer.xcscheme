@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "56AE32CE1723F92B0074D5B9"
-               BuildableName = "AudioPlayerTests.octest"
+               BuildableName = "AudioPlayerTests.xctest"
                BlueprintName = "AudioPlayerTests"
                ReferencedContainer = "container:AudioPlayer.xcodeproj">
             </BuildableReference>

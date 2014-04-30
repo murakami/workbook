@@ -13,12 +13,12 @@
 @end
 
 @interface Playlists : NSObject
-@property (strong, nonatomic) NSArray   *playlistArray;
+@property (strong, nonatomic) NSArray   *playlistsArray;
 @end
 
 @interface Document : NSObject
 @property (strong, nonatomic) NSString  *version;
-@property (strong, nonatomic) Playlists *playlists;
+@property (strong, nonatomic) NSArray   *playlists;
 + (Document *)sharedInstance;
 - (void)clearDefaults;
 - (void)updateDefaults;

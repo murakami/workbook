@@ -7,29 +7,69 @@
 //
 
 #import <MediaPlayer/MediaPlayer.h>
+#import "Document.h"
+#import "Connector.h"
 #import "PlaylistsViewController.h"
 
 @interface PlaylistsViewController ()
-
+- (void)_init;
 @end
 
 @implementation PlaylistsViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    DBGMSG(@"%s", __func__);
-    self = [super initWithStyle:style];
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        [self _init];
     }
     return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self _init];
+    }
+    return self;
+}
+
+- (id)initWithStyle:(UITableViewStyle)style
+{
+    self = [super initWithStyle:style];
+    if (self) {
+        [self _init];
+    }
+    return self;
+}
+
+- (void)_init
+{
+    DBGMSG(@"%s", __func__);
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(_connectorDidFinishUpdateIPodLibrary:)
+                                                 name:ConnectorDidFinishUpdateIPodLibrary
+                                               object:nil];
+}
+
+- (void)dealloc
+{
+    DBGMSG(@"%s", __func__);
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(_connectorDidFinishUpdateIPodLibrary:)
+                                                 name:ConnectorDidFinishUpdateIPodLibrary
+                                               object:nil];
 }
 
 - (void)viewDidLoad
 {
     DBGMSG(@"%s", __func__);
     [super viewDidLoad];
+    
+    [[Connector sharedConnector] updateIPodLibrary:kAssetBrowserSourceTypePlaylists];
 
+#if 0
     MPMediaQuery    *playlistsQuery = [MPMediaQuery playlistsQuery];
     NSArray         *playlistsArray = [playlistsQuery collections];
     for (MPMediaPlaylist *playlist in playlistsArray) {
@@ -49,6 +89,7 @@
             }
         }
     }
+#endif
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -91,24 +132,20 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return [Document sharedInstance].playlists.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"PlaylistsCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
+    cell.textLabel.text = [[Document sharedInstance].playlists objectAtIndex:indexPath.row];
     
     return cell;
 }
@@ -163,6 +200,23 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+}
+
+#pragma mark -
+#pragma mark iPod Library
+
+- (void)_connectorDidFinishUpdateIPodLibrary:(NSNotification*)notification
+{
+    DBGMSG(@"%s", __func__);
+    AssetBrowserResponseParser  *parser = [notification.userInfo objectForKey:@"parser"];
+    if (parser.state == kAssetBrowserCodeCancel) {
+        return;
+    }
+    
+    if (kAssetBrowserSourceTypePlaylists == parser.sourceType) {
+        [Document sharedInstance].playlists = parser.assetBrowserItems;
+        [self.tableView reloadData];
+    }
 }
 
 @end
