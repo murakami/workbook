@@ -12,6 +12,7 @@
 		56080F3D173956AB00C2793F /* AssetBrowserResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 56080F3C173956AB00C2793F /* AssetBrowserResponseParser.m */; };
 		5689A93B17282CDB00D0915F /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5689A93A17282CDB00D0915F /* DetailViewController.m */; };
 		569D560F191095730083F1B2 /* ResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 569D560E191095730083F1B2 /* ResponseParser.m */; };
+		569D56121911D8310083F1B2 /* PlaylistsSongsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 569D56111911D8310083F1B2 /* PlaylistsSongsTableViewController.m */; };
 		56AE329F1723F92A0074D5B9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AE329E1723F92A0074D5B9 /* UIKit.framework */; };
 		56AE32A11723F92A0074D5B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AE32A01723F92A0074D5B9 /* Foundation.framework */; };
 		56AE32A31723F92A0074D5B9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AE32A21723F92A0074D5B9 /* CoreGraphics.framework */; };
@@ -64,6 +65,8 @@
 		5689A93A17282CDB00D0915F /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		569D560D191095730083F1B2 /* ResponseParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseParser.h; sourceTree = "<group>"; };
 		569D560E191095730083F1B2 /* ResponseParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseParser.m; sourceTree = "<group>"; };
+		569D56101911D8310083F1B2 /* PlaylistsSongsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistsSongsTableViewController.h; sourceTree = "<group>"; };
+		569D56111911D8310083F1B2 /* PlaylistsSongsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistsSongsTableViewController.m; sourceTree = "<group>"; };
 		56AE329B1723F92A0074D5B9 /* AudioPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56AE329E1723F92A0074D5B9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		56AE32A01723F92A0074D5B9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -181,6 +184,8 @@
 				56AE32C81723F92B0074D5B9 /* second@2x.png */,
 				56AE32E71723FE670074D5B9 /* PlaylistsViewController.h */,
 				56AE32E81723FE670074D5B9 /* PlaylistsViewController.m */,
+				569D56101911D8310083F1B2 /* PlaylistsSongsTableViewController.h */,
+				569D56111911D8310083F1B2 /* PlaylistsSongsTableViewController.m */,
 				56AE32EA1723FE810074D5B9 /* ArtistsViewController.h */,
 				56AE32EB1723FE810074D5B9 /* ArtistsViewController.m */,
 				56AE32ED1723FE8F0074D5B9 /* SongsViewController.h */,
@@ -355,6 +360,7 @@
 				56AE32AF1723F92A0074D5B9 /* AppDelegate.m in Sources */,
 				56AE32BE1723F92B0074D5B9 /* FirstViewController.m in Sources */,
 				56AE32C51723F92B0074D5B9 /* SecondViewController.m in Sources */,
+				569D56121911D8310083F1B2 /* PlaylistsSongsTableViewController.m in Sources */,
 				56AE32E91723FE670074D5B9 /* PlaylistsViewController.m in Sources */,
 				56AE32EC1723FE810074D5B9 /* ArtistsViewController.m in Sources */,
 				56AE32EF1723FE8F0074D5B9 /* SongsViewController.m in Sources */,

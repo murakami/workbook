@@ -55,8 +55,10 @@
     self.player = [AVPlayer playerWithPlayerItem:self.playerItem];
     
     /* 再生位置（先頭） */
+    AVURLAsset  *urlAsset = [AVURLAsset assetWithURL:url];
+    Float64 duration = CMTimeGetSeconds(urlAsset.duration);
     self.currentTimeSlider.minimumValue = 0.0;
-    self.currentTimeSlider.maximumValue = CMTimeGetSeconds(self.playerItem.duration);
+    self.currentTimeSlider.maximumValue = duration;
     self.currentTimeSlider.value = 0.0;
     
     /* 生成速度（停止） */

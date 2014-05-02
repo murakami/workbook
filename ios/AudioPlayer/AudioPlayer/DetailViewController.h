@@ -12,7 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UISlider       *currentTimeSlider;
 @property (weak, nonatomic) IBOutlet UISlider       *rateSlider;
-@property (strong, nonatomic) NSMutableDictionary   *dict;
+@property (strong, nonatomic) NSDictionary          *dict;
 
 - (IBAction)play:(id)sender;
 - (IBAction)stop:(id)sender;

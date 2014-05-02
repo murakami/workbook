@@ -113,14 +113,31 @@ NSString    *AssetBrowserErrorDomain = @"AssetBrowserErrorDomain";
 
 - (void)_parsePlaylists
 {
-    NSMutableArray  *resultArray = [[NSMutableArray alloc] init];
+    NSMutableArray  *playlistsArray = [[NSMutableArray alloc] init];
     MPMediaQuery    *playlistsQuery = [MPMediaQuery playlistsQuery];
-    NSArray         *playlistsArray = [playlistsQuery collections];
-    for (MPMediaPlaylist *playlist in playlistsArray) {
+    NSArray         *playlists = [playlistsQuery collections];
+    for (MPMediaPlaylist *playlist in playlists) {
         NSString    *title = [playlist valueForProperty:MPMediaPlaylistPropertyName];
         NSLog(@"mediaItem:%@", title);
         
-        [resultArray addObject:title];
+        NSMutableDictionary *playlistDictionary = [[NSMutableDictionary alloc] init];
+        [playlistDictionary setObject:title forKey:@"title"];
+        
+        NSMutableArray  *songsArray = [[NSMutableArray alloc] init];
+        NSArray         *songs = [playlist items];
+        for (MPMediaItem *song in songs) {
+            NSURL   *url = (NSURL*)[song valueForProperty:MPMediaItemPropertyAssetURL];
+            if (url) {
+                NSString    *songTitle = (NSString*)[song valueForProperty:MPMediaItemPropertyTitle];
+                NSLog(@"song:%@", (NSString *)[song valueForProperty:MPMediaItemPropertyTitle]);
+                NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+                [dict setObject:url forKey:@"URL"];
+                [dict setObject:songTitle forKey:@"title"];
+                [songsArray addObject:dict];
+            }
+        }
+        [playlistDictionary setObject:songsArray forKey:@"songs"];
+        [playlistsArray addObject:playlistDictionary];
         
 #if 0
         NSArray         *songs = [playlist items];
@@ -137,7 +154,7 @@ NSString    *AssetBrowserErrorDomain = @"AssetBrowserErrorDomain";
         }
 #endif
     }
-    self.assetBrowserItems = [resultArray copy];
+    self.assetBrowserItems = [playlistsArray copy];
 
 #if 0
     NSMutableArray  *PlaylistsList = [[NSMutableArray alloc] init];

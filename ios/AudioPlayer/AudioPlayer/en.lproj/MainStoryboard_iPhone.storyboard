@@ -4,6 +4,22 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller - Playlists-->
+        <scene sceneID="8EJ-QS-CXj">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="2X7-Vo-HfY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Playlists" id="Vei-ch-dye"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LLN-mF-UvJ">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="mGz-hd-1CU" kind="relationship" relationship="rootViewController" id="WYZ-VS-Xcp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wba-o2-FPE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="555" y="-517"/>
+        </scene>
         <!--Playlists View Controller - Playlists-->
         <scene sceneID="lDs-qY-Km8">
             <objects>
@@ -14,14 +30,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlaylistsCell" id="1Os-5n-qDp">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Os-5n-qDp" id="f57-TL-Fzm">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="xjP-Xl-yT8" kind="push" identifier="toDetail" id="0mc-hL-Jdi"/>
+                                    <segue destination="yv2-YD-cQX" kind="push" identifier="toSongs" id="HI1-mT-Xlg"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -31,10 +47,43 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Playlists" id="mk7-2X-bgv"/>
+                    <navigationItem key="navigationItem" id="bdY-ep-4rp"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NOV-FM-6ui" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="555" y="-481"/>
+            <point key="canvasLocation" x="957" y="-517"/>
+        </scene>
+        <!--Playlists Songs Table View Controller-->
+        <scene sceneID="viQ-c0-JaF">
+            <objects>
+                <tableViewController id="yv2-YD-cQX" customClass="PlaylistsSongsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="klk-Or-ccc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlaylistsSongsCell" id="Xfe-Jz-pSX">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xfe-Jz-pSX" id="esJ-UV-So4">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="xjP-Xl-yT8" kind="push" identifier="toDetail" id="rjT-OD-dBf"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="yv2-YD-cQX" id="iRr-iL-qbe"/>
+                            <outlet property="delegate" destination="yv2-YD-cQX" id="fUr-8u-GCH"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Udp-Fq-n1T"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nry-Lo-CXq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1349" y="-517"/>
         </scene>
         <!--Navigation Controller - Songs-->
         <scene sceneID="6en-sj-biL">
@@ -243,7 +292,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="mGz-hd-1CU" kind="relationship" relationship="viewControllers" id="tTH-lw-Cbt"/>
+                        <segue destination="2X7-Vo-HfY" kind="relationship" relationship="viewControllers" id="2nv-A7-fV5"/>
                         <segue destination="1Ca-F7-Puo" kind="relationship" relationship="viewControllers" id="IJI-1K-CPD"/>
                         <segue destination="dqG-rs-5qZ" kind="relationship" relationship="viewControllers" id="3uR-2S-xRc"/>
                         <segue destination="M7z-Ne-MyC" kind="relationship" relationship="viewControllers" id="QgK-gS-uin"/>
@@ -260,6 +309,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="0mc-hL-Jdi"/>
+        <segue reference="rjT-OD-dBf"/>
     </inferredMetricsTieBreakers>
 </document>
