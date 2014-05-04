@@ -19,6 +19,7 @@
 @interface Document : NSObject
 @property (strong, nonatomic) NSString  *version;
 @property (strong, nonatomic) NSArray   *playlists;
+@property (strong, nonatomic) NSArray   *artists;
 + (Document *)sharedInstance;
 - (void)clearDefaults;
 - (void)updateDefaults;

@@ -43,6 +43,9 @@
         if ([aVersion compare:self.version] != NSOrderedSame) {
             [self clearDefaults];
         }
+        
+        self.playlists = nil;
+        self.artists = nil;
 	}
 	return self;
 }
@@ -52,6 +55,7 @@
     DBGMSG(@"%s", __func__);
     self.version = nil;
     self.playlists = nil;
+    self.artists = nil;
 }
 
 - (void)clearDefaults

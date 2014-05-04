@@ -130,103 +130,72 @@ NSString    *AssetBrowserErrorDomain = @"AssetBrowserErrorDomain";
             if (url) {
                 NSString    *songTitle = (NSString*)[song valueForProperty:MPMediaItemPropertyTitle];
                 NSLog(@"song:%@", (NSString *)[song valueForProperty:MPMediaItemPropertyTitle]);
-                NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
-                [dict setObject:url forKey:@"URL"];
-                [dict setObject:songTitle forKey:@"title"];
-                [songsArray addObject:dict];
+                NSMutableDictionary *songDict = [[NSMutableDictionary alloc] init];
+                [songDict setObject:url forKey:@"URL"];
+                [songDict setObject:songTitle forKey:@"title"];
+                [songsArray addObject:songDict];
             }
         }
         [playlistDictionary setObject:songsArray forKey:@"songs"];
         [playlistsArray addObject:playlistDictionary];
-        
-#if 0
-        NSArray         *songs = [playlist items];
-        for (MPMediaItem *song in songs) {
-            NSURL   *url = (NSURL *)[song valueForProperty:MPMediaItemPropertyAssetURL];
-            if (url) {
-                NSString *songTitle = (NSString *)[song valueForProperty:MPMediaItemPropertyTitle];
-                NSLog(@"song:%@", songTitle);
-                //NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
-                //[dict setObject:url forKey:@"URL"];
-                //[dict setObject:title forKey:@"title"];
-                //[songsList addObject:dict];
-            }
-        }
-#endif
     }
     self.assetBrowserItems = [playlistsArray copy];
-
-#if 0
-    NSMutableArray  *PlaylistsList = [[NSMutableArray alloc] init];
-    MPMediaQuery    *playlistsQuery = [MPMediaQuery playlistsQuery];
-    NSArray         *playlistsArray = [playlistsQuery collections];
-    for (MPMediaPlaylist *playlist in playlistsArray) {
-        @autoreleasepool {
-            if (self.isCancel) {
-                NSDictionary    *userInfo = [NSDictionary dictionaryWithObject:@"cancel" forKey:NSLocalizedDescriptionKey];
-                NSError *error = [NSError errorWithDomain:@"AssetBrowserResponseParser" code:kAssetBrowserCodeCancel userInfo:userInfo];
-                self.error = error;
-                break;
-            }
-            
-            NSString    *title = [playlist valueForProperty:MPMediaPlaylistPropertyName];
-            if (title) {
-                NSMutableArray  *songsList = [[NSMutableArray alloc] init];
-                NSArray         *songs = [playlist items];
-                for (MPMediaItem *song in songs) {
-                    NSURL   *url = (NSURL *)[song valueForProperty:MPMediaItemPropertyAssetURL];
-                    if (url) {
-                        NSString *songTitle = (NSString *)[song valueForProperty:MPMediaItemPropertyTitle];
-                        NSLog(@"song:%@", songTitle);
-                        NSMutableDictionary *songDict = [[NSMutableDictionary alloc] init];
-                        [songDict setObject:url forKey:@"URL"];
-                        [songDict setObject:title forKey:@"title"];
-                        [songsList addObject:songDict];
-                    }
-                }
-                
-                NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
-                [dict setObject:title forKey:@"title"];
-                [dict setObject:songsList forKey:@"songs"];
-                
-                [PlaylistsList addObject:dict];
-            }
-        }
-    }
-#endif
 }
 
 - (void)_parseArtists
 {
     /* 芸術家一覧の取得 */
+    NSMutableArray  *artistsArray = [[NSMutableArray alloc] init];
     MPMediaQuery    *artistsQuery = [MPMediaQuery artistsQuery];
-    NSArray         *artistsArray = [artistsQuery collections];
-    for (MPMediaItemCollection *mediaItemCollection in artistsArray) {
-        @autoreleasepool {
-            MPMediaItem *mediaItem = [mediaItemCollection representativeItem];
-            NSString    *artistName = [mediaItem valueForProperty:MPMediaItemPropertyArtist];
-            NSLog(@"artist:%@", artistName);
+    NSArray         *artists = [artistsQuery collections];
+    for (MPMediaItemCollection *mediaItemCollection in artists) {
+        MPMediaItem *mediaItem = [mediaItemCollection representativeItem];
+        NSString    *artistName = [mediaItem valueForProperty:MPMediaItemPropertyArtist];
+        NSLog(@"artist:%@", artistName);
+        
+        NSMutableDictionary *artistDictionary = [[NSMutableDictionary alloc] init];
+        [artistDictionary setObject:artistName forKey:@"artist"];
+        
+        /* アルバム一覧の取得 */
+        NSMutableArray  *albumsArray = [[NSMutableArray alloc] init];
+        MPMediaQuery    *albumsQuery = [[MPMediaQuery alloc] init];
+        [albumsQuery addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:artistName
+                                                                         forProperty:MPMediaItemPropertyArtist]];
+        [albumsQuery setGroupingType:MPMediaGroupingAlbum];
+        NSArray *albums = [albumsQuery collections];
+        for (MPMediaItemCollection *album in albums) {
+            NSMutableDictionary *albumDict = [[NSMutableDictionary alloc] init];
             
-            /* アルバム一覧の取得 */
-            MPMediaQuery    *albumsQuery = [[MPMediaQuery alloc] init];
-            [albumsQuery addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:artistName
-                                                                             forProperty:MPMediaItemPropertyArtist]];
-            [albumsQuery setGroupingType:MPMediaGroupingAlbum];
-            NSArray *albums = [albumsQuery collections];
-            for (MPMediaItemCollection *album in albums) {
-                MPMediaItem *representativeItem = [album representativeItem];
-                NSString *albumTitle = [representativeItem valueForProperty:MPMediaItemPropertyAlbumTitle];
-                NSLog(@" album:%@", albumTitle);
+            MPMediaItem *representativeItem = [album representativeItem];
+            NSString *albumTitle = [representativeItem valueForProperty:MPMediaItemPropertyAlbumTitle];
+            NSLog(@" album:%@", albumTitle);
+            [albumDict setObject:albumTitle forKey:@"album title"];
+            
+            /* 曲一覧の取得 */
+            NSMutableArray  *songsArray = [[NSMutableArray alloc] init];
+            NSArray *songs = [album items];
+            for (MPMediaItem *song in songs) {
+                NSString *songTitle = [song valueForProperty: MPMediaItemPropertyTitle];
+                NSLog(@"  song:%@", songTitle);
                 
-                /* 曲一覧の取得 */
-                NSArray *songs = [album items];
-                for (MPMediaItem *song in songs) {
-                    NSString *songTitle = [song valueForProperty: MPMediaItemPropertyTitle];
+                NSURL   *url = (NSURL*)[song valueForProperty:MPMediaItemPropertyAssetURL];
+                if (url) {
+                    NSString    *songTitle = (NSString*)[song valueForProperty:MPMediaItemPropertyTitle];
                     NSLog(@"  song:%@", songTitle);
+                    NSMutableDictionary *songDict = [[NSMutableDictionary alloc] init];
+                    [songDict setObject:url forKey:@"URL"];
+                    [songDict setObject:songTitle forKey:@"title"];
+                    [songsArray addObject:songDict];
                 }
             }
+            [albumDict setObject:songsArray forKey:@"songs"];
+            
+            [albumsArray addObject:albumDict];
         }
+        [artistDictionary setObject:albumsArray forKey:@"albums"];
+        [artistsArray addObject:artistDictionary];
     }
+    self.assetBrowserItems = [artistsArray copy];
 }
 
 - (void)_parseSongs

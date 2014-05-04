@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5601075B191624AB00384D70 /* ArtistsAlbumsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5601075A191624AB00384D70 /* ArtistsAlbumsViewController.m */; };
 		56080F371737A38300C2793F /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 56080F361737A38300C2793F /* Document.m */; };
 		56080F3A1739533800C2793F /* Connector.m in Sources */ = {isa = PBXBuildFile; fileRef = 56080F391739533700C2793F /* Connector.m */; };
 		56080F3D173956AB00C2793F /* AssetBrowserResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 56080F3C173956AB00C2793F /* AssetBrowserResponseParser.m */; };
@@ -54,6 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		56010759191624AB00384D70 /* ArtistsAlbumsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtistsAlbumsViewController.h; sourceTree = "<group>"; };
+		5601075A191624AB00384D70 /* ArtistsAlbumsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtistsAlbumsViewController.m; sourceTree = "<group>"; };
 		56080F351737A38300C2793F /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
 		56080F361737A38300C2793F /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
 		56080F381739533700C2793F /* Connector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connector.h; sourceTree = "<group>"; };
@@ -188,6 +191,8 @@
 				569D56111911D8310083F1B2 /* PlaylistsSongsTableViewController.m */,
 				56AE32EA1723FE810074D5B9 /* ArtistsViewController.h */,
 				56AE32EB1723FE810074D5B9 /* ArtistsViewController.m */,
+				56010759191624AB00384D70 /* ArtistsAlbumsViewController.h */,
+				5601075A191624AB00384D70 /* ArtistsAlbumsViewController.m */,
 				56AE32ED1723FE8F0074D5B9 /* SongsViewController.h */,
 				56AE32EE1723FE8F0074D5B9 /* SongsViewController.m */,
 				56AE32F01723FEA30074D5B9 /* AlbumsViewController.h */,
@@ -363,6 +368,7 @@
 				569D56121911D8310083F1B2 /* PlaylistsSongsTableViewController.m in Sources */,
 				56AE32E91723FE670074D5B9 /* PlaylistsViewController.m in Sources */,
 				56AE32EC1723FE810074D5B9 /* ArtistsViewController.m in Sources */,
+				5601075B191624AB00384D70 /* ArtistsAlbumsViewController.m in Sources */,
 				56AE32EF1723FE8F0074D5B9 /* SongsViewController.m in Sources */,
 				569D560F191095730083F1B2 /* ResponseParser.m in Sources */,
 				56AE32F21723FEA30074D5B9 /* AlbumsViewController.m in Sources */,

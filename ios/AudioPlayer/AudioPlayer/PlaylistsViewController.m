@@ -20,6 +20,7 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
+    DBGMSG(@"%s", __func__);
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         [self _init];
@@ -29,6 +30,7 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
+    DBGMSG(@"%s", __func__);
     self = [super initWithCoder:aDecoder];
     if (self) {
         [self _init];
@@ -38,6 +40,7 @@
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
+    DBGMSG(@"%s", __func__);
     self = [super initWithStyle:style];
     if (self) {
         [self _init];
@@ -69,28 +72,6 @@
     [super viewDidLoad];
     
     [[Connector sharedConnector] updateIPodLibrary:kAssetBrowserSourceTypePlaylists];
-
-#if 0
-    MPMediaQuery    *playlistsQuery = [MPMediaQuery playlistsQuery];
-    NSArray         *playlistsArray = [playlistsQuery collections];
-    for (MPMediaPlaylist *playlist in playlistsArray) {
-        NSString    *title = [playlist valueForProperty:MPMediaPlaylistPropertyName];
-        NSLog(@"mediaItem:%@", title);
-        
-        NSArray         *songs = [playlist items];
-        for (MPMediaItem *song in songs) {
-            NSURL   *url = (NSURL *)[song valueForProperty:MPMediaItemPropertyAssetURL];
-            if (url) {
-                NSString *songTitle = (NSString *)[song valueForProperty:MPMediaItemPropertyTitle];
-                NSLog(@"song:%@", songTitle);
-                //NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
-                //[dict setObject:url forKey:@"URL"];
-                //[dict setObject:title forKey:@"title"];
-                //[songsList addObject:dict];
-            }
-        }
-    }
-#endif
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -125,8 +106,8 @@
 
 - (void)didReceiveMemoryWarning
 {
+    DBGMSG(@"%s", __func__);
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
