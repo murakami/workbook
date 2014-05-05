@@ -27,19 +27,20 @@
 {
     [super viewDidLoad];
 
+#if 0
     MPMediaQuery    *albumsQuery = [MPMediaQuery albumsQuery];
     NSArray         *albumsArray = [albumsQuery collections];
     for (MPMediaItemCollection *mediaItemCollection in albumsArray) {
         MPMediaItem *mediaItem = [mediaItemCollection representativeItem];
         NSString    *title = [mediaItem valueForProperty:MPMediaItemPropertyAlbumTitle];
-        NSLog(@"mediaItem:%@", title);
+        DBGMSG(@"mediaItem:%@", title);
         
         NSArray         *songs = [mediaItemCollection items];
         for (MPMediaItem *song in songs) {
             NSURL   *url = (NSURL *)[song valueForProperty:MPMediaItemPropertyAssetURL];
             if (url) {
                 NSString *songTitle = (NSString *)[song valueForProperty:MPMediaItemPropertyTitle];
-                NSLog(@"song:%@", songTitle);
+                DBGMSG(@"song:%@", songTitle);
                 //NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
                 //[dict setObject:url forKey:@"URL"];
                 //[dict setObject:title forKey:@"title"];
@@ -47,6 +48,7 @@
             }
         }
     }
+#endif
 }
 
 - (void)viewWillAppear:(BOOL)animated

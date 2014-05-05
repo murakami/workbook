@@ -118,7 +118,7 @@ NSString    *AssetBrowserErrorDomain = @"AssetBrowserErrorDomain";
     NSArray         *playlists = [playlistsQuery collections];
     for (MPMediaPlaylist *playlist in playlists) {
         NSString    *title = [playlist valueForProperty:MPMediaPlaylistPropertyName];
-        NSLog(@"mediaItem:%@", title);
+        DBGMSG(@"mediaItem:%@", title);
         
         NSMutableDictionary *playlistDictionary = [[NSMutableDictionary alloc] init];
         [playlistDictionary setObject:title forKey:@"title"];
@@ -129,7 +129,7 @@ NSString    *AssetBrowserErrorDomain = @"AssetBrowserErrorDomain";
             NSURL   *url = (NSURL*)[song valueForProperty:MPMediaItemPropertyAssetURL];
             if (url) {
                 NSString    *songTitle = (NSString*)[song valueForProperty:MPMediaItemPropertyTitle];
-                NSLog(@"song:%@", (NSString *)[song valueForProperty:MPMediaItemPropertyTitle]);
+                DBGMSG(@"song:%@", (NSString *)[song valueForProperty:MPMediaItemPropertyTitle]);
                 NSMutableDictionary *songDict = [[NSMutableDictionary alloc] init];
                 [songDict setObject:url forKey:@"URL"];
                 [songDict setObject:songTitle forKey:@"title"];
@@ -151,7 +151,7 @@ NSString    *AssetBrowserErrorDomain = @"AssetBrowserErrorDomain";
     for (MPMediaItemCollection *mediaItemCollection in artists) {
         MPMediaItem *mediaItem = [mediaItemCollection representativeItem];
         NSString    *artistName = [mediaItem valueForProperty:MPMediaItemPropertyArtist];
-        NSLog(@"artist:%@", artistName);
+        DBGMSG(@"artist:%@", artistName);
         
         NSMutableDictionary *artistDictionary = [[NSMutableDictionary alloc] init];
         [artistDictionary setObject:artistName forKey:@"artist"];
@@ -168,7 +168,7 @@ NSString    *AssetBrowserErrorDomain = @"AssetBrowserErrorDomain";
             
             MPMediaItem *representativeItem = [album representativeItem];
             NSString *albumTitle = [representativeItem valueForProperty:MPMediaItemPropertyAlbumTitle];
-            NSLog(@" album:%@", albumTitle);
+            DBGMSG(@" album:%@", albumTitle);
             [albumDict setObject:albumTitle forKey:@"album title"];
             
             /* 曲一覧の取得 */
@@ -176,12 +176,12 @@ NSString    *AssetBrowserErrorDomain = @"AssetBrowserErrorDomain";
             NSArray *songs = [album items];
             for (MPMediaItem *song in songs) {
                 NSString *songTitle = [song valueForProperty: MPMediaItemPropertyTitle];
-                NSLog(@"  song:%@", songTitle);
+                DBGMSG(@"  song:%@", songTitle);
                 
                 NSURL   *url = (NSURL*)[song valueForProperty:MPMediaItemPropertyAssetURL];
                 if (url) {
                     NSString    *songTitle = (NSString*)[song valueForProperty:MPMediaItemPropertyTitle];
-                    NSLog(@"  song:%@", songTitle);
+                    DBGMSG(@"  song:%@", songTitle);
                     NSMutableDictionary *songDict = [[NSMutableDictionary alloc] init];
                     [songDict setObject:url forKey:@"URL"];
                     [songDict setObject:songTitle forKey:@"title"];
@@ -233,14 +233,14 @@ NSString    *AssetBrowserErrorDomain = @"AssetBrowserErrorDomain";
         @autoreleasepool {
             MPMediaItem *mediaItem = [mediaItemCollection representativeItem];
             NSString    *title = [mediaItem valueForProperty:MPMediaItemPropertyAlbumTitle];
-            NSLog(@"mediaItem:%@", title);
+            DBGMSG(@"mediaItem:%@", title);
             
             NSArray         *songs = [mediaItemCollection items];
             for (MPMediaItem *song in songs) {
                 NSURL   *url = (NSURL *)[song valueForProperty:MPMediaItemPropertyAssetURL];
                 if (url) {
                     NSString *songTitle = (NSString *)[song valueForProperty:MPMediaItemPropertyTitle];
-                    NSLog(@"song:%@", songTitle);
+                    DBGMSG(@"song:%@", songTitle);
                     //NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
                     //[dict setObject:url forKey:@"URL"];
                     //[dict setObject:title forKey:@"title"];
