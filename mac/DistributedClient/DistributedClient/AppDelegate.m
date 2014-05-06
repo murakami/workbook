@@ -19,6 +19,12 @@
     NSLog(@"%s", __func__);
     // Insert code here to initialize your application
     
+    //[self _postNotes];
+}
+
+- (IBAction)postNotes:(id)sender
+{
+    NSLog(@"%s", __func__);
     [self _postNotes];
 }
 

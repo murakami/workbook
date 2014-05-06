@@ -36,6 +36,7 @@
 - (void)_handleDistributedNote:(NSNotification *)note
 {
     NSLog(@"%s Recieived Distributed Notification!:%@", __func__, note);
+    [self.label setStringValue:@"Recieived Distributed Notification!"];
 }
 
 @end
