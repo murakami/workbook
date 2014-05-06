@@ -13,5 +13,6 @@
 @property (assign) IBOutlet NSWindow *window;
 
 - (IBAction)postNotes:(id)sender;
+- (IBAction)postForDistributedObjects:(id)sender;
 
 @end

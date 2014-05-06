@@ -8,9 +8,14 @@
 
 #import "AppDelegate.h"
 
-@interface AppDelegate ()
+@protocol RemoteObjectProtocol
+- (oneway void)receiveString:(NSString *)string;
+@end
+
+@interface AppDelegate () <RemoteObjectProtocol>
 - (void)_registerForNotes;
 - (void)_handleDistributedNote:(NSNotification *)note;
+- (void)_registerForDistributedObjects;
 @end
 
 @implementation AppDelegate
@@ -21,6 +26,7 @@
     // Insert code here to initialize your application
     
     [self _registerForNotes];
+    [self _registerForDistributedObjects];
 }
 
 - (void)_registerForNotes
@@ -37,6 +43,22 @@
 {
     NSLog(@"%s Recieived Distributed Notification!:%@", __func__, note);
     [self.label setStringValue:@"Recieived Distributed Notification!"];
+}
+
+- (void)_registerForDistributedObjects
+{
+    NSLog(@"%s", __func__);
+    NSConnection    *conn = [NSConnection defaultConnection];
+    [conn setRootObject:self];
+    if ([conn registerName:@"DistributedServer"] == NO) {
+        NSLog(@"%s error", __func__);
+    }
+}
+
+- (oneway void)receiveString:(NSString *)string
+{
+    NSLog(@"%s", __func__);
+    [self.label setStringValue:string];
 }
 
 @end
