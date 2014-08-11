@@ -10,76 +10,14 @@
 
 #define BUFFER_OFFSET(i) ((char *)NULL + (i))
 
-// Uniform index.
-enum
-{
-    UNIFORM_MODELVIEWPROJECTION_MATRIX,
-    UNIFORM_NORMAL_MATRIX,
-    NUM_UNIFORMS
-};
-GLint uniforms[NUM_UNIFORMS];
-
-// Attribute index.
-enum
-{
-    ATTRIB_VERTEX,
-    ATTRIB_NORMAL,
-    NUM_ATTRIBUTES
-};
-
-GLfloat gCubeVertexData[216] = 
-{
-    // Data layout for each line below is:
-    // positionX, positionY, positionZ,     normalX, normalY, normalZ,
-    0.5f, -0.5f, -0.5f,        1.0f, 0.0f, 0.0f,
-    0.5f, 0.5f, -0.5f,         1.0f, 0.0f, 0.0f,
-    0.5f, -0.5f, 0.5f,         1.0f, 0.0f, 0.0f,
-    0.5f, -0.5f, 0.5f,         1.0f, 0.0f, 0.0f,
-    0.5f, 0.5f, -0.5f,          1.0f, 0.0f, 0.0f,
-    0.5f, 0.5f, 0.5f,         1.0f, 0.0f, 0.0f,
-    
-    0.5f, 0.5f, -0.5f,         0.0f, 1.0f, 0.0f,
-    -0.5f, 0.5f, -0.5f,        0.0f, 1.0f, 0.0f,
-    0.5f, 0.5f, 0.5f,          0.0f, 1.0f, 0.0f,
-    0.5f, 0.5f, 0.5f,          0.0f, 1.0f, 0.0f,
-    -0.5f, 0.5f, -0.5f,        0.0f, 1.0f, 0.0f,
-    -0.5f, 0.5f, 0.5f,         0.0f, 1.0f, 0.0f,
-    
-    -0.5f, 0.5f, -0.5f,        -1.0f, 0.0f, 0.0f,
-    -0.5f, -0.5f, -0.5f,       -1.0f, 0.0f, 0.0f,
-    -0.5f, 0.5f, 0.5f,         -1.0f, 0.0f, 0.0f,
-    -0.5f, 0.5f, 0.5f,         -1.0f, 0.0f, 0.0f,
-    -0.5f, -0.5f, -0.5f,       -1.0f, 0.0f, 0.0f,
-    -0.5f, -0.5f, 0.5f,        -1.0f, 0.0f, 0.0f,
-    
-    -0.5f, -0.5f, -0.5f,       0.0f, -1.0f, 0.0f,
-    0.5f, -0.5f, -0.5f,        0.0f, -1.0f, 0.0f,
-    -0.5f, -0.5f, 0.5f,        0.0f, -1.0f, 0.0f,
-    -0.5f, -0.5f, 0.5f,        0.0f, -1.0f, 0.0f,
-    0.5f, -0.5f, -0.5f,        0.0f, -1.0f, 0.0f,
-    0.5f, -0.5f, 0.5f,         0.0f, -1.0f, 0.0f,
-    
-    0.5f, 0.5f, 0.5f,          0.0f, 0.0f, 1.0f,
-    -0.5f, 0.5f, 0.5f,         0.0f, 0.0f, 1.0f,
-    0.5f, -0.5f, 0.5f,         0.0f, 0.0f, 1.0f,
-    0.5f, -0.5f, 0.5f,         0.0f, 0.0f, 1.0f,
-    -0.5f, 0.5f, 0.5f,         0.0f, 0.0f, 1.0f,
-    -0.5f, -0.5f, 0.5f,        0.0f, 0.0f, 1.0f,
-    
-    0.5f, -0.5f, -0.5f,        0.0f, 0.0f, -1.0f,
-    -0.5f, -0.5f, -0.5f,       0.0f, 0.0f, -1.0f,
-    0.5f, 0.5f, -0.5f,         0.0f, 0.0f, -1.0f,
-    0.5f, 0.5f, -0.5f,         0.0f, 0.0f, -1.0f,
-    -0.5f, -0.5f, -0.5f,       0.0f, 0.0f, -1.0f,
-    -0.5f, 0.5f, -0.5f,        0.0f, 0.0f, -1.0f
+GLfloat gVVertexData[] = {
+    0.0f, 0.0f, 0.0f,
+    -0.5f, -0.5f, 0.0f,
+    0.5f, -0.5f, 0.0f
 };
 
 @interface ViewController () {
     GLuint _program;
-    
-    GLKMatrix4 _modelViewProjectionMatrix;
-    GLKMatrix3 _normalMatrix;
-    float _rotation;
     
     GLuint _vertexArray;
     GLuint _vertexBuffer;
@@ -102,21 +40,21 @@ GLfloat gCubeVertexData[216] =
 {
     [super viewDidLoad];
     
+    /* OpenGL ES 2.0コンテキストを生成 */
     self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
-
+    
     if (!self.context) {
-        NSLog(@"Failed to create ES context");
+        DBGMSG(@"Failed to create ES context");
     }
     
     GLKView *view = (GLKView *)self.view;
     view.context = self.context;
-    view.drawableDepthFormat = GLKViewDrawableDepthFormat24;
     
     [self setupGL];
 }
 
 - (void)dealloc
-{    
+{
     [self tearDownGL];
     
     if ([EAGLContext currentContext] == self.context) {
@@ -127,7 +65,7 @@ GLfloat gCubeVertexData[216] =
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-
+    
     if ([self isViewLoaded] && ([[self view] window] == nil)) {
         self.view = nil;
         
@@ -138,34 +76,31 @@ GLfloat gCubeVertexData[216] =
         }
         self.context = nil;
     }
-
+    
     // Dispose of any resources that can be recreated.
 }
 
 - (void)setupGL
 {
+    /* コンテキストを設定 */
     [EAGLContext setCurrentContext:self.context];
     
     [self loadShaders];
     
-    self.effect = [[GLKBaseEffect alloc] init];
-    self.effect.light0.enabled = GL_TRUE;
-    self.effect.light0.diffuseColor = GLKVector4Make(1.0f, 0.4f, 0.4f, 1.0f);
-    
-    glEnable(GL_DEPTH_TEST);
-    
+    /* 頂点配列を生成し結合する */
     glGenVertexArraysOES(1, &_vertexArray);
     glBindVertexArrayOES(_vertexArray);
     
+    /* バッファオブジェクトを生成し、結合後、頂点データを設定 */
     glGenBuffers(1, &_vertexBuffer);
     glBindBuffer(GL_ARRAY_BUFFER, _vertexBuffer);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(gCubeVertexData), gCubeVertexData, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(gVVertexData), gVVertexData, GL_STATIC_DRAW);
     
+    /* 頂点属性配列を有効化し、バッファと関連づける */
     glEnableVertexAttribArray(GLKVertexAttribPosition);
-    glVertexAttribPointer(GLKVertexAttribPosition, 3, GL_FLOAT, GL_FALSE, 24, BUFFER_OFFSET(0));
-    glEnableVertexAttribArray(GLKVertexAttribNormal);
-    glVertexAttribPointer(GLKVertexAttribNormal, 3, GL_FLOAT, GL_FALSE, 24, BUFFER_OFFSET(12));
+    glVertexAttribPointer(GLKVertexAttribPosition, 3, GL_FLOAT, GL_FALSE, 0, BUFFER_OFFSET(0));
     
+    /* 頂点配列の結合を解除 */
     glBindVertexArrayOES(0);
 }
 
@@ -186,54 +121,25 @@ GLfloat gCubeVertexData[216] =
 
 #pragma mark - GLKView and GLKViewController delegate methods
 
+/* 今回は動かないので空。 */
 - (void)update
 {
-    float aspect = fabsf(self.view.bounds.size.width / self.view.bounds.size.height);
-    GLKMatrix4 projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(65.0f), aspect, 0.1f, 100.0f);
-    
-    self.effect.transform.projectionMatrix = projectionMatrix;
-    
-    GLKMatrix4 baseModelViewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, -4.0f);
-    baseModelViewMatrix = GLKMatrix4Rotate(baseModelViewMatrix, _rotation, 0.0f, 1.0f, 0.0f);
-    
-    // Compute the model view matrix for the object rendered with GLKit
-    GLKMatrix4 modelViewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, -1.5f);
-    modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, _rotation, 1.0f, 1.0f, 1.0f);
-    modelViewMatrix = GLKMatrix4Multiply(baseModelViewMatrix, modelViewMatrix);
-    
-    self.effect.transform.modelviewMatrix = modelViewMatrix;
-    
-    // Compute the model view matrix for the object rendered with ES2
-    modelViewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, 1.5f);
-    modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, _rotation, 1.0f, 1.0f, 1.0f);
-    modelViewMatrix = GLKMatrix4Multiply(baseModelViewMatrix, modelViewMatrix);
-    
-    _normalMatrix = GLKMatrix3InvertAndTranspose(GLKMatrix4GetMatrix3(modelViewMatrix), NULL);
-    
-    _modelViewProjectionMatrix = GLKMatrix4Multiply(projectionMatrix, modelViewMatrix);
-    
-    _rotation += self.timeSinceLastUpdate * 0.5f;
 }
 
+/* 描画。GLKViewデリゲートのメソッド。 */
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
-    glClearColor(0.65f, 0.65f, 0.65f, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    /* カラーバッファをクリア */
+    glClear(GL_COLOR_BUFFER_BIT);
     
-    glBindVertexArrayOES(_vertexArray);
-    
-    // Render the object with GLKit
-    [self.effect prepareToDraw];
-    
-    glDrawArrays(GL_TRIANGLES, 0, 36);
-    
-    // Render the object again with ES2
+    /* シャーダが含まれるプログラムオブジェクトを設定 */
     glUseProgram(_program);
     
-    glUniformMatrix4fv(uniforms[UNIFORM_MODELVIEWPROJECTION_MATRIX], 1, 0, _modelViewProjectionMatrix.m);
-    glUniformMatrix3fv(uniforms[UNIFORM_NORMAL_MATRIX], 1, 0, _normalMatrix.m);
+    /* 頂点配列を結合する */
+    glBindVertexArrayOES(_vertexArray);
     
-    glDrawArrays(GL_TRIANGLES, 0, 36);
+    /* GL_TRIANGLESプリミティブで描画 */
+    glDrawArrays(GL_TRIANGLES, 0, 3);
 }
 
 #pragma mark -  OpenGL ES 2 shader compilation
@@ -243,37 +149,32 @@ GLfloat gCubeVertexData[216] =
     GLuint vertShader, fragShader;
     NSString *vertShaderPathname, *fragShaderPathname;
     
-    // Create shader program.
+    /* プログラム・オブジェクトの生成 */
     _program = glCreateProgram();
     
-    // Create and compile vertex shader.
+    /* 頂点シェーダとフラグメント・シェーダのファイルを読み込み、コンパイルする */
+    // Load the vertex/fragment shaders
     vertShaderPathname = [[NSBundle mainBundle] pathForResource:@"Shader" ofType:@"vsh"];
     if (![self compileShader:&vertShader type:GL_VERTEX_SHADER file:vertShaderPathname]) {
-        NSLog(@"Failed to compile vertex shader");
+        DBGMSG(@"Failed to compile vertex shader");
         return NO;
     }
-    
-    // Create and compile fragment shader.
     fragShaderPathname = [[NSBundle mainBundle] pathForResource:@"Shader" ofType:@"fsh"];
     if (![self compileShader:&fragShader type:GL_FRAGMENT_SHADER file:fragShaderPathname]) {
-        NSLog(@"Failed to compile fragment shader");
+        DBGMSG(@"Failed to compile fragment shader");
         return NO;
     }
     
-    // Attach vertex shader to program.
+    /* シェーダ・オブジェクトを登録 */
     glAttachShader(_program, vertShader);
-    
-    // Attach fragment shader to program.
     glAttachShader(_program, fragShader);
     
-    // Bind attribute locations.
-    // This needs to be done prior to linking.
-    glBindAttribLocation(_program, GLKVertexAttribPosition, "position");
-    glBindAttribLocation(_program, GLKVertexAttribNormal, "normal");
+    /* 頂点シェーダ属性をGLKVertexAttribPosition(0)に結合する */
+    glBindAttribLocation(_program, GLKVertexAttribPosition, "vPosition");
     
-    // Link program.
+    /* プログラム・オブジェクトに関連づける */
     if (![self linkProgram:_program]) {
-        NSLog(@"Failed to link program: %d", _program);
+        DBGMSG(@"Failed to link program: %d", _program);
         
         if (vertShader) {
             glDeleteShader(vertShader);
@@ -290,10 +191,6 @@ GLfloat gCubeVertexData[216] =
         
         return NO;
     }
-    
-    // Get uniform locations.
-    uniforms[UNIFORM_MODELVIEWPROJECTION_MATRIX] = glGetUniformLocation(_program, "modelViewProjectionMatrix");
-    uniforms[UNIFORM_NORMAL_MATRIX] = glGetUniformLocation(_program, "normalMatrix");
     
     // Release vertex and fragment shaders.
     if (vertShader) {
@@ -315,7 +212,7 @@ GLfloat gCubeVertexData[216] =
     
     source = (GLchar *)[[NSString stringWithContentsOfFile:file encoding:NSUTF8StringEncoding error:nil] UTF8String];
     if (!source) {
-        NSLog(@"Failed to load vertex shader");
+        DBGMSG(@"Failed to load vertex shader");
         return NO;
     }
     
@@ -329,7 +226,7 @@ GLfloat gCubeVertexData[216] =
     if (logLength > 0) {
         GLchar *log = (GLchar *)malloc(logLength);
         glGetShaderInfoLog(*shader, logLength, &logLength, log);
-        NSLog(@"Shader compile log:\n%s", log);
+        DBGMSG(@"Shader compile log:\n%s", log);
         free(log);
     }
 #endif
@@ -346,6 +243,8 @@ GLfloat gCubeVertexData[216] =
 - (BOOL)linkProgram:(GLuint)prog
 {
     GLint status;
+    
+    // Link the program
     glLinkProgram(prog);
     
 #if defined(DEBUG)
@@ -354,13 +253,22 @@ GLfloat gCubeVertexData[216] =
     if (logLength > 0) {
         GLchar *log = (GLchar *)malloc(logLength);
         glGetProgramInfoLog(prog, logLength, &logLength, log);
-        NSLog(@"Program link log:\n%s", log);
+        DBGMSG(@"Program link log:\n%s", log);
         free(log);
     }
 #endif
     
+    // Check the link status
     glGetProgramiv(prog, GL_LINK_STATUS, &status);
     if (status == 0) {
+        GLint infoLen = 0;
+        glGetProgramiv(_program, GL_INFO_LOG_LENGTH, &infoLen);
+        if (1 < infoLen) {
+            char *infoLog = malloc(sizeof(char) * infoLen);
+            glGetProgramInfoLog(_program, infoLen, NULL, infoLog);
+            DBGMSG(@"%s Error linking program:\n%s\n", __func__, infoLog);
+            free(infoLog);
+        }
         return NO;
     }
     
@@ -376,7 +284,7 @@ GLfloat gCubeVertexData[216] =
     if (logLength > 0) {
         GLchar *log = (GLchar *)malloc(logLength);
         glGetProgramInfoLog(prog, logLength, &logLength, log);
-        NSLog(@"Program validate log:\n%s", log);
+        DBGMSG(@"Program validate log:\n%s", log);
         free(log);
     }
     
@@ -389,3 +297,5 @@ GLfloat gCubeVertexData[216] =
 }
 
 @end
+
+/* End Of File */

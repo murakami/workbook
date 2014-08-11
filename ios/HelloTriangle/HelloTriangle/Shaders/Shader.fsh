@@ -6,9 +6,11 @@
 //  Copyright (c) 2014年 村上幸雄. All rights reserved.
 //
 
-varying lowp vec4 colorVarying;
+/* precision宣言 16bit(half) */
+precision mediump float;
 
 void main()
 {
-    gl_FragColor = colorVarying;
+    /* 赤色を設定 */
+    gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
 }
