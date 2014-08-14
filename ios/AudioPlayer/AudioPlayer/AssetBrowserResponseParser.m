@@ -227,28 +227,40 @@ NSString    *AssetBrowserErrorDomain = @"AssetBrowserErrorDomain";
 
 - (void)_parseAlbums
 {
+    NSMutableArray  *albumsArray = [[NSMutableArray alloc] init];
     MPMediaQuery    *albumsQuery = [MPMediaQuery albumsQuery];
-    NSArray         *albumsArray = [albumsQuery collections];
-    for (MPMediaItemCollection *mediaItemCollection in albumsArray) {
-        @autoreleasepool {
-            MPMediaItem *mediaItem = [mediaItemCollection representativeItem];
-            NSString    *title = [mediaItem valueForProperty:MPMediaItemPropertyAlbumTitle];
-            DBGMSG(@"mediaItem:%@", title);
-            
-            NSArray         *songs = [mediaItemCollection items];
-            for (MPMediaItem *song in songs) {
-                NSURL   *url = (NSURL *)[song valueForProperty:MPMediaItemPropertyAssetURL];
+    NSArray         *albums = [albumsQuery collections];
+    for (MPMediaItemCollection *mediaItemCollection in albums) {
+        NSMutableDictionary *albumDict = [[NSMutableDictionary alloc] init];
+        
+        MPMediaItem *mediaItem = [mediaItemCollection representativeItem];
+        NSString    *title = [mediaItem valueForProperty:MPMediaItemPropertyAlbumTitle];
+        DBGMSG(@"mediaItem:%@", title);
+        [albumDict setObject:title forKey:@"album title"];
+        
+        NSMutableArray  *songsArray = [[NSMutableArray alloc] init];
+        NSArray         *songs = [mediaItemCollection items];
+        for (MPMediaItem *song in songs) {
+            NSURL   *url = (NSURL *)[song valueForProperty:MPMediaItemPropertyAssetURL];
+            if (url) {
+                NSString *songTitle = (NSString *)[song valueForProperty:MPMediaItemPropertyTitle];
+                DBGMSG(@"song:%@", songTitle);
+                
+                NSURL   *url = (NSURL*)[song valueForProperty:MPMediaItemPropertyAssetURL];
                 if (url) {
-                    NSString *songTitle = (NSString *)[song valueForProperty:MPMediaItemPropertyTitle];
-                    DBGMSG(@"song:%@", songTitle);
-                    //NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
-                    //[dict setObject:url forKey:@"URL"];
-                    //[dict setObject:title forKey:@"title"];
-                    //[songsList addObject:dict];
+                    NSString    *songTitle = (NSString*)[song valueForProperty:MPMediaItemPropertyTitle];
+                    DBGMSG(@"  song:%@", songTitle);
+                    NSMutableDictionary *songDict = [[NSMutableDictionary alloc] init];
+                    [songDict setObject:url forKey:@"URL"];
+                    [songDict setObject:songTitle forKey:@"title"];
+                    [songsArray addObject:songDict];
                 }
             }
+            [albumDict setObject:songsArray forKey:@"songs"];
+            [albumsArray addObject:albumDict];
         }
     }
+    self.assetBrowserItems = [albumsArray copy];
 }
 
 - (void)cancel

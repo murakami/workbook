@@ -20,6 +20,7 @@
 @property (strong, nonatomic) NSString  *version;
 @property (strong, nonatomic) NSArray   *playlists;
 @property (strong, nonatomic) NSArray   *artists;
+@property (strong, nonatomic) NSArray   *albums;
 + (Document *)sharedInstance;
 - (void)clearDefaults;
 - (void)updateDefaults;

@@ -30,6 +30,7 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
+    DBGMSG(@"%s", __func__);
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
     }
@@ -38,6 +39,7 @@
 
 - (void)viewDidLoad
 {
+    DBGMSG(@"%s", __func__);
     [super viewDidLoad];
     
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
@@ -82,6 +84,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    DBGMSG(@"%s", __func__);
     [super viewDidAppear:animated];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -97,6 +100,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
+    DBGMSG(@"%s", __func__);
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
     if (self.playerTimeObserver) {
@@ -109,11 +113,13 @@
 
 - (void)viewDidDisappear:(BOOL)animated
 {
+    DBGMSG(@"%s", __func__);
     [super viewDidDisappear:animated];
 }
 
 - (void)viewDidUnload
 {
+    DBGMSG(@"%s", __func__);
     [[AVAudioSession sharedInstance] setActive:NO error:nil];
     self.dict = nil;
     self.playerItem = nil;
@@ -123,6 +129,7 @@
 
 - (void)didReceiveMemoryWarning
 {
+    DBGMSG(@"%s", __func__);
     [super didReceiveMemoryWarning];
 }
 

@@ -7,157 +7,162 @@
 //
 
 #import <MediaPlayer/MediaPlayer.h>
+#import "Document.h"
+#import "Connector.h"
 #import "AlbumsViewController.h"
 
 @interface AlbumsViewController ()
+- (void)_init;
 @end
 
 @implementation AlbumsViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithStyle:style];
+    DBGMSG(@"%s", __func__);
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        [self _init];
     }
     return self;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    DBGMSG(@"%s", __func__);
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self _init];
+    }
+    return self;
+}
+
+- (id)initWithStyle:(UITableViewStyle)style
+{
+    DBGMSG(@"%s", __func__);
+    self = [super initWithStyle:style];
+    if (self) {
+        [self _init];
+    }
+    return self;
+}
+
+- (void)_init
+{
+    DBGMSG(@"%s", __func__);
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(_connectorDidFinishUpdateIPodLibrary:)
+                                                 name:ConnectorDidFinishUpdateIPodLibrary
+                                               object:nil];
+}
+
+- (void)dealloc
+{
+    DBGMSG(@"%s", __func__);
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(_connectorDidFinishUpdateIPodLibrary:)
+                                                 name:ConnectorDidFinishUpdateIPodLibrary
+                                               object:nil];
+}
+
 - (void)viewDidLoad
 {
+    DBGMSG(@"%s", __func__);
     [super viewDidLoad];
 
-#if 0
-    MPMediaQuery    *albumsQuery = [MPMediaQuery albumsQuery];
-    NSArray         *albumsArray = [albumsQuery collections];
-    for (MPMediaItemCollection *mediaItemCollection in albumsArray) {
-        MPMediaItem *mediaItem = [mediaItemCollection representativeItem];
-        NSString    *title = [mediaItem valueForProperty:MPMediaItemPropertyAlbumTitle];
-        DBGMSG(@"mediaItem:%@", title);
-        
-        NSArray         *songs = [mediaItemCollection items];
-        for (MPMediaItem *song in songs) {
-            NSURL   *url = (NSURL *)[song valueForProperty:MPMediaItemPropertyAssetURL];
-            if (url) {
-                NSString *songTitle = (NSString *)[song valueForProperty:MPMediaItemPropertyTitle];
-                DBGMSG(@"song:%@", songTitle);
-                //NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
-                //[dict setObject:url forKey:@"URL"];
-                //[dict setObject:title forKey:@"title"];
-                //[songsList addObject:dict];
-            }
-        }
-    }
-#endif
+    [[Connector sharedConnector] updateIPodLibrary:kAssetBrowserSourceTypeAlbums];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    DBGMSG(@"%s", __func__);
     [super viewWillAppear:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    DBGMSG(@"%s", __func__);
     [super viewDidAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
+    DBGMSG(@"%s", __func__);
     [super viewWillDisappear:animated];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
+    DBGMSG(@"%s", __func__);
     [super viewDidDisappear:animated];
 }
 
 - (void)viewDidUnload
 {
+    DBGMSG(@"%s", __func__);
     [super viewDidUnload];
 }
 
 - (void)didReceiveMemoryWarning
 {
+    DBGMSG(@"%s", __func__);
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return [Document sharedInstance].albums.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"AlbumsCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
+    cell.textLabel.text = [[[Document sharedInstance].artists objectAtIndex:indexPath.row] objectForKey:@"album title"];
     
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+#pragma mark -
+#pragma mark iPod Library
+
+- (void)_connectorDidFinishUpdateIPodLibrary:(NSNotification*)notification
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    DBGMSG(@"%s", __func__);
+    AssetBrowserResponseParser  *parser = [notification.userInfo objectForKey:@"parser"];
+    if (parser.state == kAssetBrowserCodeCancel) {
+        return;
+    }
+    
+    if (kAssetBrowserSourceTypeArtists == parser.sourceType) {
+        [Document sharedInstance].albums = parser.assetBrowserItems;
+        [self.tableView reloadData];
+    }
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    DBGMSG(@"%s", __func__);
+#if 0
+    if ([[segue identifier] isEqualToString:@"toSongs"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        ArtistsAlbumsViewController *albumsViewController = [segue destinationViewController];
+        albumsViewController.artistsIndex= indexPath.row;
+        DBGMSG(@"%s, artists index:%d", __func__, (int)indexPath.row);
+    }
+#endif
 }
 
 @end

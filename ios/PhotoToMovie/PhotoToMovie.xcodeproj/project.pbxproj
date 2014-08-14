@@ -1,0 +1,489 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		56D966BF199BA5E300E8E87A /* photo2movie.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 56D966BE199BA5E300E8E87A /* photo2movie.m4a */; };
+		56D966C1199BA94100E8E87A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56D966C0199BA94100E8E87A /* AVFoundation.framework */; };
+		56DC8B361999B1E7004FA0BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DC8B351999B1E7004FA0BC /* Foundation.framework */; };
+		56DC8B381999B1E7004FA0BC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DC8B371999B1E7004FA0BC /* CoreGraphics.framework */; };
+		56DC8B3A1999B1E7004FA0BC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DC8B391999B1E7004FA0BC /* UIKit.framework */; };
+		56DC8B401999B1E7004FA0BC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 56DC8B3E1999B1E7004FA0BC /* InfoPlist.strings */; };
+		56DC8B421999B1E7004FA0BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56DC8B411999B1E7004FA0BC /* main.m */; };
+		56DC8B461999B1E7004FA0BC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 56DC8B451999B1E7004FA0BC /* AppDelegate.m */; };
+		56DC8B491999B1E7004FA0BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56DC8B471999B1E7004FA0BC /* Main.storyboard */; };
+		56DC8B4C1999B1E7004FA0BC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56DC8B4B1999B1E7004FA0BC /* ViewController.m */; };
+		56DC8B4E1999B1E7004FA0BC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56DC8B4D1999B1E7004FA0BC /* Images.xcassets */; };
+		56DC8B551999B1E7004FA0BC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DC8B541999B1E7004FA0BC /* XCTest.framework */; };
+		56DC8B561999B1E7004FA0BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DC8B351999B1E7004FA0BC /* Foundation.framework */; };
+		56DC8B571999B1E7004FA0BC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DC8B391999B1E7004FA0BC /* UIKit.framework */; };
+		56DC8B5F1999B1E7004FA0BC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 56DC8B5D1999B1E7004FA0BC /* InfoPlist.strings */; };
+		56DC8B611999B1E7004FA0BC /* PhotoToMovieTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56DC8B601999B1E7004FA0BC /* PhotoToMovieTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		56DC8B581999B1E7004FA0BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56DC8B2A1999B1E6004FA0BC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56DC8B311999B1E6004FA0BC;
+			remoteInfo = PhotoToMovie;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		56D966BE199BA5E300E8E87A /* photo2movie.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = photo2movie.m4a; path = Resources/photo2movie.m4a; sourceTree = "<group>"; };
+		56D966C0199BA94100E8E87A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		56DC8B321999B1E7004FA0BC /* PhotoToMovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoToMovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		56DC8B351999B1E7004FA0BC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		56DC8B371999B1E7004FA0BC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		56DC8B391999B1E7004FA0BC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		56DC8B3D1999B1E7004FA0BC /* PhotoToMovie-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PhotoToMovie-Info.plist"; sourceTree = "<group>"; };
+		56DC8B3F1999B1E7004FA0BC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		56DC8B411999B1E7004FA0BC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		56DC8B431999B1E7004FA0BC /* PhotoToMovie-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PhotoToMovie-Prefix.pch"; sourceTree = "<group>"; };
+		56DC8B441999B1E7004FA0BC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		56DC8B451999B1E7004FA0BC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		56DC8B481999B1E7004FA0BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		56DC8B4A1999B1E7004FA0BC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		56DC8B4B1999B1E7004FA0BC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		56DC8B4D1999B1E7004FA0BC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		56DC8B531999B1E7004FA0BC /* PhotoToMovieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoToMovieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		56DC8B541999B1E7004FA0BC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		56DC8B5C1999B1E7004FA0BC /* PhotoToMovieTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PhotoToMovieTests-Info.plist"; sourceTree = "<group>"; };
+		56DC8B5E1999B1E7004FA0BC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		56DC8B601999B1E7004FA0BC /* PhotoToMovieTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoToMovieTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		56DC8B2F1999B1E6004FA0BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56DC8B381999B1E7004FA0BC /* CoreGraphics.framework in Frameworks */,
+				56DC8B3A1999B1E7004FA0BC /* UIKit.framework in Frameworks */,
+				56DC8B361999B1E7004FA0BC /* Foundation.framework in Frameworks */,
+				56D966C1199BA94100E8E87A /* AVFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56DC8B501999B1E7004FA0BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56DC8B551999B1E7004FA0BC /* XCTest.framework in Frameworks */,
+				56DC8B571999B1E7004FA0BC /* UIKit.framework in Frameworks */,
+				56DC8B561999B1E7004FA0BC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		56D966BD199BA5C600E8E87A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				56D966BE199BA5E300E8E87A /* photo2movie.m4a */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		56DC8B291999B1E6004FA0BC = {
+			isa = PBXGroup;
+			children = (
+				56DC8B3B1999B1E7004FA0BC /* PhotoToMovie */,
+				56DC8B5A1999B1E7004FA0BC /* PhotoToMovieTests */,
+				56DC8B341999B1E7004FA0BC /* Frameworks */,
+				56DC8B331999B1E7004FA0BC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		56DC8B331999B1E7004FA0BC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				56DC8B321999B1E7004FA0BC /* PhotoToMovie.app */,
+				56DC8B531999B1E7004FA0BC /* PhotoToMovieTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		56DC8B341999B1E7004FA0BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				56DC8B351999B1E7004FA0BC /* Foundation.framework */,
+				56DC8B371999B1E7004FA0BC /* CoreGraphics.framework */,
+				56DC8B391999B1E7004FA0BC /* UIKit.framework */,
+				56D966C0199BA94100E8E87A /* AVFoundation.framework */,
+				56DC8B541999B1E7004FA0BC /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		56DC8B3B1999B1E7004FA0BC /* PhotoToMovie */ = {
+			isa = PBXGroup;
+			children = (
+				56DC8B441999B1E7004FA0BC /* AppDelegate.h */,
+				56DC8B451999B1E7004FA0BC /* AppDelegate.m */,
+				56DC8B471999B1E7004FA0BC /* Main.storyboard */,
+				56DC8B4A1999B1E7004FA0BC /* ViewController.h */,
+				56DC8B4B1999B1E7004FA0BC /* ViewController.m */,
+				56DC8B4D1999B1E7004FA0BC /* Images.xcassets */,
+				56D966BD199BA5C600E8E87A /* Resources */,
+				56DC8B3C1999B1E7004FA0BC /* Supporting Files */,
+			);
+			path = PhotoToMovie;
+			sourceTree = "<group>";
+		};
+		56DC8B3C1999B1E7004FA0BC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				56DC8B3D1999B1E7004FA0BC /* PhotoToMovie-Info.plist */,
+				56DC8B3E1999B1E7004FA0BC /* InfoPlist.strings */,
+				56DC8B411999B1E7004FA0BC /* main.m */,
+				56DC8B431999B1E7004FA0BC /* PhotoToMovie-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		56DC8B5A1999B1E7004FA0BC /* PhotoToMovieTests */ = {
+			isa = PBXGroup;
+			children = (
+				56DC8B601999B1E7004FA0BC /* PhotoToMovieTests.m */,
+				56DC8B5B1999B1E7004FA0BC /* Supporting Files */,
+			);
+			path = PhotoToMovieTests;
+			sourceTree = "<group>";
+		};
+		56DC8B5B1999B1E7004FA0BC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				56DC8B5C1999B1E7004FA0BC /* PhotoToMovieTests-Info.plist */,
+				56DC8B5D1999B1E7004FA0BC /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		56DC8B311999B1E6004FA0BC /* PhotoToMovie */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56DC8B641999B1E7004FA0BC /* Build configuration list for PBXNativeTarget "PhotoToMovie" */;
+			buildPhases = (
+				56DC8B2E1999B1E6004FA0BC /* Sources */,
+				56DC8B2F1999B1E6004FA0BC /* Frameworks */,
+				56DC8B301999B1E6004FA0BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PhotoToMovie;
+			productName = PhotoToMovie;
+			productReference = 56DC8B321999B1E7004FA0BC /* PhotoToMovie.app */;
+			productType = "com.apple.product-type.application";
+		};
+		56DC8B521999B1E7004FA0BC /* PhotoToMovieTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56DC8B671999B1E7004FA0BC /* Build configuration list for PBXNativeTarget "PhotoToMovieTests" */;
+			buildPhases = (
+				56DC8B4F1999B1E7004FA0BC /* Sources */,
+				56DC8B501999B1E7004FA0BC /* Frameworks */,
+				56DC8B511999B1E7004FA0BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				56DC8B591999B1E7004FA0BC /* PBXTargetDependency */,
+			);
+			name = PhotoToMovieTests;
+			productName = PhotoToMovieTests;
+			productReference = 56DC8B531999B1E7004FA0BC /* PhotoToMovieTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		56DC8B2A1999B1E6004FA0BC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "村上幸雄";
+				TargetAttributes = {
+					56DC8B521999B1E7004FA0BC = {
+						TestTargetID = 56DC8B311999B1E6004FA0BC;
+					};
+				};
+			};
+			buildConfigurationList = 56DC8B2D1999B1E6004FA0BC /* Build configuration list for PBXProject "PhotoToMovie" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 56DC8B291999B1E6004FA0BC;
+			productRefGroup = 56DC8B331999B1E7004FA0BC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				56DC8B311999B1E6004FA0BC /* PhotoToMovie */,
+				56DC8B521999B1E7004FA0BC /* PhotoToMovieTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		56DC8B301999B1E6004FA0BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56DC8B4E1999B1E7004FA0BC /* Images.xcassets in Resources */,
+				56DC8B401999B1E7004FA0BC /* InfoPlist.strings in Resources */,
+				56DC8B491999B1E7004FA0BC /* Main.storyboard in Resources */,
+				56D966BF199BA5E300E8E87A /* photo2movie.m4a in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56DC8B511999B1E7004FA0BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56DC8B5F1999B1E7004FA0BC /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		56DC8B2E1999B1E6004FA0BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56DC8B4C1999B1E7004FA0BC /* ViewController.m in Sources */,
+				56DC8B461999B1E7004FA0BC /* AppDelegate.m in Sources */,
+				56DC8B421999B1E7004FA0BC /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56DC8B4F1999B1E7004FA0BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56DC8B611999B1E7004FA0BC /* PhotoToMovieTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		56DC8B591999B1E7004FA0BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 56DC8B311999B1E6004FA0BC /* PhotoToMovie */;
+			targetProxy = 56DC8B581999B1E7004FA0BC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		56DC8B3E1999B1E7004FA0BC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				56DC8B3F1999B1E7004FA0BC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		56DC8B471999B1E7004FA0BC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				56DC8B481999B1E7004FA0BC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		56DC8B5D1999B1E7004FA0BC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				56DC8B5E1999B1E7004FA0BC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		56DC8B621999B1E7004FA0BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		56DC8B631999B1E7004FA0BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		56DC8B651999B1E7004FA0BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PhotoToMovie/PhotoToMovie-Prefix.pch";
+				INFOPLIST_FILE = "PhotoToMovie/PhotoToMovie-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		56DC8B661999B1E7004FA0BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PhotoToMovie/PhotoToMovie-Prefix.pch";
+				INFOPLIST_FILE = "PhotoToMovie/PhotoToMovie-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		56DC8B681999B1E7004FA0BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PhotoToMovie.app/PhotoToMovie";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PhotoToMovie/PhotoToMovie-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "PhotoToMovieTests/PhotoToMovieTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		56DC8B691999B1E7004FA0BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PhotoToMovie.app/PhotoToMovie";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PhotoToMovie/PhotoToMovie-Prefix.pch";
+				INFOPLIST_FILE = "PhotoToMovieTests/PhotoToMovieTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		56DC8B2D1999B1E6004FA0BC /* Build configuration list for PBXProject "PhotoToMovie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56DC8B621999B1E7004FA0BC /* Debug */,
+				56DC8B631999B1E7004FA0BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		56DC8B641999B1E7004FA0BC /* Build configuration list for PBXNativeTarget "PhotoToMovie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56DC8B651999B1E7004FA0BC /* Debug */,
+				56DC8B661999B1E7004FA0BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		56DC8B671999B1E7004FA0BC /* Build configuration list for PBXNativeTarget "PhotoToMovieTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56DC8B681999B1E7004FA0BC /* Debug */,
+				56DC8B691999B1E7004FA0BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 56DC8B2A1999B1E6004FA0BC /* Project object */;
+}

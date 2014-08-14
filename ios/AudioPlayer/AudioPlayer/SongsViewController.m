@@ -28,6 +28,7 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
+    DBGMSG(@"%s", __func__);
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         [self _init];
@@ -37,6 +38,7 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
+    DBGMSG(@"%s", __func__);
     self = [super initWithCoder:aDecoder];
     if (self) {
         [self _init];
@@ -46,6 +48,7 @@
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
+    DBGMSG(@"%s", __func__);
     self = [super initWithStyle:style];
     if (self) {
         [self _init];
@@ -55,6 +58,7 @@
 
 - (void)_init
 {
+    DBGMSG(@"%s", __func__);
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(_connectorDidFinishUpdateIPodLibrary:)
                                                  name:ConnectorDidFinishUpdateIPodLibrary
@@ -63,6 +67,7 @@
 
 - (void)dealloc
 {
+    DBGMSG(@"%s", __func__);
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:ConnectorDidFinishUpdateIPodLibrary
                                                   object:nil];
@@ -70,6 +75,7 @@
 
 - (void)viewDidLoad
 {
+    DBGMSG(@"%s", __func__);
     [super viewDidLoad];
     
     self.songsList = [[NSMutableArray alloc] init];
@@ -80,26 +86,31 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    DBGMSG(@"%s", __func__);
     [super viewWillAppear:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    DBGMSG(@"%s", __func__);
     [super viewDidAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
+    DBGMSG(@"%s", __func__);
     [super viewWillDisappear:animated];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
+    DBGMSG(@"%s", __func__);
     [super viewDidDisappear:animated];
 }
 
 - (void)viewDidUnload
 {
+    DBGMSG(@"%s", __func__);
     self.songsList = nil;
     self.musicPlayerController = nil;
     self.dict = nil;
@@ -108,12 +119,13 @@
 
 - (void)didReceiveMemoryWarning
 {
+    DBGMSG(@"%s", __func__);
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    DBGMSG(@"%s", __func__);
     if ([[segue identifier] isEqualToString:@"toDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         self.dict = [self.songsList objectAtIndex:indexPath.row];
@@ -125,6 +137,7 @@
 
 - (void)_updateBrowserItems:(NSMutableArray*)newItems
 {
+    DBGMSG(@"%s", __func__);
     self.songsList = newItems;
     [self.tableView reloadData];
 }
@@ -159,6 +172,7 @@
 
 - (void)_connectorDidFinishUpdateIPodLibrary:(NSNotification*)notification
 {
+    DBGMSG(@"%s", __func__);
     AssetBrowserResponseParser  *parser = [notification.userInfo objectForKey:@"parser"];
     if (parser.state == kAssetBrowserCodeCancel) {
         return;
