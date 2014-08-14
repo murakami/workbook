@@ -106,7 +106,7 @@
     
     int frameCount = 0;
     int durationForEachImage = 1;
-    int32_t fps = 24;
+    int32_t fps = 1;
     
     for (UIImage *image in self.images) {
         if (assetWriterInputPixelBufferAdaptor.assetWriterInput.readyForMoreMediaData) {
