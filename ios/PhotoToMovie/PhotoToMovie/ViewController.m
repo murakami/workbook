@@ -136,19 +136,19 @@
 {
     NSDictionary *options = @{(NSString *)kCVPixelBufferCGImageCompatibilityKey:@(YES),
                               (NSString *)kCVPixelBufferCGBitmapContextCompatibilityKey:@(YES)};
-
+    
     CVPixelBufferRef pxbuffer = NULL;
-
+    
     CVPixelBufferCreate(kCFAllocatorDefault,
                         CGImageGetWidth(imageRef),
                         CGImageGetHeight(imageRef),
                         kCVPixelFormatType_32ARGB,
                         (__bridge CFDictionaryRef)options,
                         &pxbuffer);
-
+    
     CVPixelBufferLockBaseAddress(pxbuffer, 0);
     void *pxdata = CVPixelBufferGetBaseAddress(pxbuffer);
-
+    
     CGColorSpaceRef rgbColorSpace = CGColorSpaceCreateDeviceRGB();
     CGContextRef context = CGBitmapContextCreate(pxdata,
                                                  CGImageGetWidth(imageRef),
@@ -157,7 +157,7 @@
                                                  4 * CGImageGetWidth(imageRef),
                                                  rgbColorSpace,
                                                  (CGBitmapInfo)kCGImageAlphaNoneSkipFirst);
-
+    
     CGContextConcatCTM(context, CGAffineTransformMakeRotation(0));
     CGContextDrawImage(context, CGRectMake(0, 0, CGImageGetWidth(imageRef), CGImageGetHeight(imageRef)), imageRef);
     CGColorSpaceRelease(rgbColorSpace);
