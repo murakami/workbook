@@ -80,13 +80,21 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 let compositionVideoTrack: AVMutableCompositionTrack = mutableComposition!.addMutableTrackWithMediaType(AVMediaTypeVideo, preferredTrackID: CMPersistentTrackID(kCMPersistentTrackID_Invalid))
                 
                 /* 動画データをコンポジションに追加 */
+                error = nil
                 compositionVideoTrack.insertTimeRange(CMTimeRangeMake(insertionPoint, assetVideoTrack.timeRange.duration), ofTrack: assetVideoTrack, atTime: kCMTimeZero, error: &error)
+                if error != nil {
+                    NSLog("%s insertVideoTack error:%@", __FUNCTION__, error!)
+                }
                 
                 /* 音声コンポジショントラックの作成 */
                 let compositionAudioTrack: AVMutableCompositionTrack = mutableComposition!.addMutableTrackWithMediaType(AVMediaTypeAudio, preferredTrackID: CMPersistentTrackID(kCMPersistentTrackID_Invalid))
                 
                 /* 音声データをコンポジションに追加 */
+                error = nil
                 compositionAudioTrack.insertTimeRange(CMTimeRangeMake(insertionPoint, assetAudioTrack.timeRange.duration), ofTrack: assetAudioTrack, atTime: kCMTimeZero, error: &error)
+                if error != nil {
+                    NSLog("%s insertAudioTrach error:%@", __FUNCTION__, error!)
+                }
             }
             
             var instruction: AVMutableVideoCompositionInstruction
@@ -107,6 +115,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 instruction.timeRange = CMTimeRangeMake(kCMTimeZero, mutableComposition!.duration);
                 layerInstruction = AVMutableVideoCompositionLayerInstruction(assetTrack: assetVideoTrack);
                 layerInstruction.setTransform(t2, atTime: kCMTimeZero)
+                NSLog("%s instruction:%@", __FUNCTION__, instruction)
+                NSLog("%s layerInstruction:%@", __FUNCTION__, layerInstruction)
             }
             else {
                 mutableVideoComposition!.renderSize = CGSizeMake(mutableVideoComposition!.renderSize.height, mutableVideoComposition!.renderSize.width);
@@ -134,21 +144,28 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
             /* 出力URL */
             var documentsPath: NSString = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as NSString
-            //NSFileManager.defaultManager().createDirectoryAtPath(documentsPath, withIntermediateDirectories: true, attributes: nil, error: &error)
+            error = nil
+            NSFileManager.defaultManager().createDirectoryAtPath(documentsPath, withIntermediateDirectories: true, attributes: nil, error: &error)
+            if error != nil {
+                NSLog("%s createDir error:%@", __FUNCTION__, error!)
+            }
             var exportPath: NSString = documentsPath.stringByAppendingPathComponent("output.mp4")
-            //NSFileManager.defaultManager().removeItemAtPath(exportPath, error: &error)
+            error = nil
+            NSFileManager.defaultManager().removeItemAtPath(exportPath, error: &error)
+            if error != nil {
+                NSLog("%s removeFile error:%@", __FUNCTION__, error!)
+            }
             var exportUrl: NSURL = NSURL.fileURLWithPath(exportPath)!
             
             /* セッションを作成し、フォトライブラリに書き出す */
             exportSession = AVAssetExportSession(asset: mutableComposition!.copy() as AVAsset, presetName: AVAssetExportPresetHighestQuality)
-            exportSession!.videoComposition = mutableVideoComposition
+            exportSession!.videoComposition = mutableVideoComposition // ここをコメントアウトしたらファイルは出力されたが落ちた。そもそも、なぜ、出力された？
             exportSession!.outputURL = exportUrl
             exportSession!.outputFileType = AVFileTypeQuickTimeMovie
             
             exportSession!.exportAsynchronouslyWithCompletionHandler({
                 () -> Void in
                 NSLog("%@", __FUNCTION__)
-                //NSFileManager.defaultManager().removeItemAtPath(self.filePath(self.mov_extenstion), error: nil)
                 switch self.exportSession!.status {
                 case AVAssetExportSessionStatus.Completed:
                     NSLog("%@ AVAssetExportSessionStatus.Completed", __FUNCTION__)
