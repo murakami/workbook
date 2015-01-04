@@ -35,13 +35,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         mediaUI.sourceType = .SavedPhotosAlbum
         if let mediaTypes = UIImagePickerController.availableMediaTypesForSourceType(.SavedPhotosAlbum) {
             mediaUI.mediaTypes = mediaTypes
+            NSLog("%s mediaTypes:%@", __FUNCTION__, mediaTypes)
         }
         
-        //mediaUI.mediaTypes = [kUTTypeMovie as NSString]
-        //mediaUI.mediaTypes = [kUTTypeMovie!]
-        //mediaUI.mediaTypes = [kUTTypeMovie]
-        //mediaUI.mediaTypes = NSArray(object: kUTTypeImage)
-        //mediaUI.mediaTypes = [String(kUTTypeMovie)]
+        // mediaUI.mediaTypes = [kUTTypeMovie]
+        mediaUI.mediaTypes = ["public.movie"]
         
         mediaUI.allowsEditing = false
         
@@ -64,6 +62,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             var options = [String: Bool]()
             options[AVURLAssetPreferPreciseDurationAndTimingKey] = true
             var asset = AVURLAsset(URL: url, options: options)
+            NSLog("%s url:%@", __FUNCTION__, url)
             
             /* アセットから動画/音声トラックを取り出す */
             let assetVideoTrack: AVAssetTrack = asset.tracksWithMediaType(AVMediaTypeVideo)[0] as AVAssetTrack
@@ -96,6 +95,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                     NSLog("%s insertAudioTrach error:%@", __FUNCTION__, error!)
                 }
             }
+            var compositionVideoTrack: AVMutableCompositionTrack? = nil
+            var compositionAudioTrack: AVMutableCompositionTrack? = nil
+            for track in mutableComposition!.tracks {
+                if track.isKindOfClass(AVMutableCompositionTrack) {
+                    var mutableCompositionTrack = track as AVMutableCompositionTrack
+                    if track.mediaType == AVMediaTypeVideo {
+                        compositionVideoTrack = mutableCompositionTrack
+                    }
+                    else if track.mediaType == AVMediaTypeAudio {
+                        compositionAudioTrack = mutableCompositionTrack
+                    }
+                }
+            }
             
             var instruction: AVMutableVideoCompositionInstruction
             var layerInstruction: AVMutableVideoCompositionLayerInstruction
@@ -113,7 +125,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 /* 動画コンポジション命令 */
                 instruction = AVMutableVideoCompositionInstruction()
                 instruction.timeRange = CMTimeRangeMake(kCMTimeZero, mutableComposition!.duration);
-                layerInstruction = AVMutableVideoCompositionLayerInstruction(assetTrack: assetVideoTrack);
+                layerInstruction = AVMutableVideoCompositionLayerInstruction(assetTrack: /* assetVideoTrack */compositionVideoTrack);
                 layerInstruction.setTransform(t2, atTime: kCMTimeZero)
                 NSLog("%s instruction:%@", __FUNCTION__, instruction)
                 NSLog("%s layerInstruction:%@", __FUNCTION__, layerInstruction)
@@ -149,9 +161,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             if error != nil {
                 NSLog("%s createDir error:%@", __FUNCTION__, error!)
             }
-            var exportPath: NSString = documentsPath.stringByAppendingPathComponent("output.mp4")
+            let now = NSDate()
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.locale = NSLocale(localeIdentifier: "ja_JP")
+            dateFormatter.dateFormat = "yyyyMMddHHmmss"
+            let filename = String(format: "%@.mp4", arguments: [dateFormatter.stringFromDate(now)])
+            var exportPath: NSString = documentsPath.stringByAppendingPathComponent(filename)
             error = nil
-            NSFileManager.defaultManager().removeItemAtPath(exportPath, error: &error)
+            //NSFileManager.defaultManager().removeItemAtPath(exportPath, error: &error)
             if error != nil {
                 NSLog("%s removeFile error:%@", __FUNCTION__, error!)
             }
@@ -159,7 +176,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
             /* セッションを作成し、フォトライブラリに書き出す */
             exportSession = AVAssetExportSession(asset: mutableComposition!.copy() as AVAsset, presetName: AVAssetExportPresetHighestQuality)
-            exportSession!.videoComposition = mutableVideoComposition // ここをコメントアウトしたらファイルは出力されたが落ちた。そもそも、なぜ、出力された？
+            exportSession!.videoComposition = mutableVideoComposition
             exportSession!.outputURL = exportUrl
             exportSession!.outputFileType = AVFileTypeQuickTimeMovie
             
@@ -172,7 +189,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                     let assetsLib = ALAssetsLibrary()
                     assetsLib.writeVideoAtPathToSavedPhotosAlbum(exportUrl, completionBlock: {
                         (nsurl, error) -> Void in
-                        NSLog("%@ error:%@", __FUNCTION__, error)
+                        if error != nil {
+                            NSLog("%@ error:%@", __FUNCTION__, error)
+                        }
                     })
                 case AVAssetExportSessionStatus.Failed:
                     NSLog("%@ AVAssetExportSessionStatus.Failed exporter:%@ error:%@", __FUNCTION__, self.exportSession!, self.exportSession!.error)
