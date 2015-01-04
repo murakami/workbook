@@ -125,7 +125,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 /* 動画コンポジション命令 */
                 instruction = AVMutableVideoCompositionInstruction()
                 instruction.timeRange = CMTimeRangeMake(kCMTimeZero, mutableComposition!.duration);
-                layerInstruction = AVMutableVideoCompositionLayerInstruction(assetTrack: /* assetVideoTrack */compositionVideoTrack);
+                layerInstruction = AVMutableVideoCompositionLayerInstruction(assetTrack: compositionVideoTrack);
                 layerInstruction.setTransform(t2, atTime: kCMTimeZero)
                 NSLog("%s instruction:%@", __FUNCTION__, instruction)
                 NSLog("%s layerInstruction:%@", __FUNCTION__, layerInstruction)
