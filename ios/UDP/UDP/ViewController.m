@@ -7,9 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "UDP.h"
 
 @interface ViewController ()
-
+- (void)runServerOnPort:(NSUInteger)port;
+- (void)runClientWithHost:(NSString *)host port:(NSUInteger)port;
 @end
 
 @implementation ViewController
@@ -22,6 +24,19 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)send:(id)sender
+{
+    NSLog(@"%s", __func__);
+}
+
+- (void)runServerOnPort:(NSUInteger)port
+{
+}
+
+- (void)runClientWithHost:(NSString *)host port:(NSUInteger)port
+{
 }
 
 @end
