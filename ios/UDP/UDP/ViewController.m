@@ -12,8 +12,6 @@
 @interface ViewController () <UDPDelegate>
 @property UDP *server;
 @property UDP *client;
-@property (nonatomic, strong, readwrite) NSTimer *      sendTimer;
-@property (nonatomic, assign, readwrite) NSUInteger     sendCount;
 
 - (void)runServerOnPort:(NSUInteger)port;
 - (void)runClientWithHost:(NSString *)host port:(NSUInteger)port;
@@ -37,134 +35,67 @@
 - (IBAction)send:(id)sender
 {
     NSLog(@"%s", __func__);
+    NSData *data = [[NSString stringWithString:self.inputTextField.text] dataUsingEncoding:NSUTF8StringEncoding];
+    [self.client sendData:data];
 }
 
 - (void)runServerOnPort:(NSUInteger)port
 {
-    assert(self.server == nil);
-    
+    NSLog(@"%s", __func__);
     self.server = [[UDP alloc] init];
-    assert(self.server != nil);
-    
     self.server.delegate = self;
-    
     [self.server startServerOnPort:port];
-    
     while (self.server != nil) {
         [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
     }
-    
-    // The loop above is supposed to run forever.  If it doesn't, something must
-    // have failed and we want main to return EXIT_FAILURE.
-    
-    //return NO;
 }
 
 - (void)runClientWithHost:(NSString *)host port:(NSUInteger)port
 {
-    assert(host != nil);
-    assert( (port > 0) && (port < 65536) );
-    
-    assert(self.client == nil);
-    
+    NSLog(@"%s", __func__);
     self.client = [[UDP alloc] init];
-    assert(self.client != nil);
-    
     self.client.delegate = self;
-    
     [self.client startConnectedToHostName:host port:port];
-    
     while (self.client != nil) {
         [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
-    }
-    
-    // The loop above is supposed to run forever.  If it doesn't, something must
-    // have failed and we want main to return EXIT_FAILURE.
-    
-    //return NO;
-}
-
-- (void)sendPacket
-{
-    NSData *    data;
-    
-    assert(self.client != nil);
-    assert( ! self.client.isServer );
-    
-    data = [[NSString stringWithFormat:@"%zu bottles of beer on the wall", (99 - self.sendCount)] dataUsingEncoding:NSUTF8StringEncoding];
-    assert(data != nil);
-    
-    [self.client sendData:data];
-    
-    self.sendCount += 1;
-    if (self.sendCount > 99) {
-        self.sendCount = 0;
     }
 }
 
 - (void)udp:(UDP *)udp didReceiveData:(NSData *)data fromAddress:(NSData *)addr
 {
-    assert(udp == self.server);
-#pragma unused(udp)
-    assert(data != nil);
-    assert(addr != nil);
-    NSLog(@"received %@ from %@", DisplayStringFromData(data), DisplayAddressForAddress(addr));
+    NSLog(@"%s", __func__);
+    NSString *msg = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    self.outputLabel.text = msg;
 }
 
 - (void)udp:(UDP *)udp didReceiveError:(NSError *)error
 {
-    assert(udp == self.server);
-#pragma unused(echo)
-    assert(error != nil);
-    NSLog(@"received error: %@", DisplayErrorFromError(error));
+    NSLog(@"%s", __func__);
+    self.outputLabel.text = [error description];
 }
 
 - (void)udp:(UDP *)udp didSendData:(NSData *)data toAddress:(NSData *)addr
 {
-    assert(udp == self.client);
-#pragma unused(udp)
-    assert(data != nil);
-    assert(addr != nil);
-    NSLog(@"    sent %@ to   %@", DisplayStringFromData(data), DisplayAddressForAddress(addr));
+    NSLog(@"%s", __func__);
+    NSString *msg = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"%s data(%@)", __func__, msg);
 }
 
 - (void)udp:(UDP *)udp didFailToSendData:(NSData *)data toAddress:(NSData *)addr error:(NSError *)error
 {
-    assert(udp == self.client);
-#pragma unused(udp)
-    assert(data != nil);
-    assert(addr != nil);
-    assert(error != nil);
-    NSLog(@" sending %@ to   %@, error: %@", DisplayStringFromData(data), DisplayAddressForAddress(addr), DisplayErrorFromError(error));
+    NSLog(@"%s", __func__);
+    NSLog(@"failed with error: %@", [error description]);
 }
 
 - (void)udp:(UDP *)udp didStartWithAddress:(NSData *)address
 {
-    assert(udp == self.client);
-#pragma unused(udp)
-    assert(address != nil);
-    
-    if (self.client.isServer) {
-        NSLog(@"receiving on %@", DisplayAddressForAddress(address));
-    } else {
-        NSLog(@"sending to %@", DisplayAddressForAddress(address));
-    }
-    
-    if ( ! self.client.isServer ) {
-        [self sendPacket];
-        
-        assert(self.sendTimer == nil);
-        self.sendTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(sendPacket) userInfo:nil repeats:YES];
-    }
+    NSLog(@"%s", __func__);
 }
 
 - (void)udp:(UDP *)udp didStopWithError:(NSError *)error
 {
-    assert(udp == self.client);
-#pragma unused(udp)
-    assert(error != nil);
-    NSLog(@"failed with error: %@", DisplayErrorFromError(error));
-    self.echo = nil;
+    NSLog(@"%s", __func__);
+    NSLog(@"failed with error: %@", [error description]);
 }
 
 @end
