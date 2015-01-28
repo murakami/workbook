@@ -82,7 +82,6 @@
     } else  if (bytesWritten == 0) {
         err = EPIPE;
     } else {
-        assert( (NSUInteger) bytesWritten == [data length] );
         err = 0;
     }
     
@@ -125,9 +124,7 @@
         err = 0;
         
         dataObj = [NSData dataWithBytes:buffer length:(NSUInteger) bytesRead];
-        assert(dataObj != nil);
         addrObj = [NSData dataWithBytes:&addr  length:addrLen  ];
-        assert(addrObj != nil);
         
         if ( (self.delegate != nil) && [self.delegate respondsToSelector:@selector(udp:didReceiveData:fromAddress:)] ) {
             [self.delegate udp:self didReceiveData:dataObj fromAddress:addrObj];
@@ -184,7 +181,6 @@ static void SocketReadCallback(CFSocketRef s, CFSocketCallBackType type, CFDataR
             } else {
                 [address getBytes:&addr length:[address length]];
             }
-            assert(addr.sin_family == AF_INET);
             addr.sin_port = htons(port);
             err = connect(sock, (const struct sockaddr *) &addr, sizeof(addr));
         }
@@ -209,7 +205,6 @@ static void SocketReadCallback(CFSocketRef s, CFSocketCallBackType type, CFDataR
         sock = -1;
         
         rls = CFSocketCreateRunLoopSource(NULL, self->_cfSocket, 0);
-        assert(rls != NULL);
         
         CFRunLoopAddSource(CFRunLoopGetCurrent(), rls, kCFRunLoopDefaultMode);
         
@@ -350,7 +345,6 @@ static void HostResolveCallback(CFHostRef theHost, CFHostInfoType typeInfo, cons
 {
     NSLog(@"%s", __func__);
     if (self.isServer || (self.hostAddress == nil) ) {
-        assert(NO);
     } else {
         [self sendData:data toAddress:nil];
     }

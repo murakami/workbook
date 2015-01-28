@@ -45,9 +45,6 @@
     self.server = [[UDP alloc] init];
     self.server.delegate = self;
     [self.server startServerOnPort:port];
-    while (self.server != nil) {
-        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
-    }
 }
 
 - (void)runClientWithHost:(NSString *)host port:(NSUInteger)port
@@ -56,9 +53,6 @@
     self.client = [[UDP alloc] init];
     self.client.delegate = self;
     [self.client startConnectedToHostName:host port:port];
-    while (self.client != nil) {
-        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
-    }
 }
 
 - (void)udp:(UDP *)udp didReceiveData:(NSData *)data fromAddress:(NSData *)addr
