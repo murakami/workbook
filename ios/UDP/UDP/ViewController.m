@@ -57,7 +57,7 @@
 
 - (void)udp:(UDP *)udp didReceiveData:(NSData *)data fromAddress:(NSData *)addr
 {
-    NSLog(@"%s", __func__);
+    NSLog(@"%s data(%@)", __func__, [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
     NSString *msg = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     self.outputLabel.text = msg;
 }
@@ -70,9 +70,7 @@
 
 - (void)udp:(UDP *)udp didSendData:(NSData *)data toAddress:(NSData *)addr
 {
-    NSLog(@"%s", __func__);
-    NSString *msg = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSLog(@"%s data(%@)", __func__, msg);
+    NSLog(@"%s data(%@)", __func__, [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
 }
 
 - (void)udp:(UDP *)udp didFailToSendData:(NSData *)data toAddress:(NSData *)addr error:(NSError *)error
