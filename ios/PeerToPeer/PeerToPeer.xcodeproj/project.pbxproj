@@ -13,6 +13,8 @@
 		5603FC271A7CD16F00526763 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5603FC261A7CD16F00526763 /* Images.xcassets */; };
 		5603FC2A1A7CD16F00526763 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5603FC281A7CD16F00526763 /* LaunchScreen.xib */; };
 		5603FC361A7CD16F00526763 /* PeerToPeerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5603FC351A7CD16F00526763 /* PeerToPeerTests.swift */; };
+		5603FC401A7CD7D600526763 /* Transcript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5603FC3F1A7CD7D600526763 /* Transcript.swift */; };
+		5603FC421A7D081100526763 /* SessionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5603FC411A7D081100526763 /* SessionContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		5603FC2F1A7CD16F00526763 /* PeerToPeerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeerToPeerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5603FC341A7CD16F00526763 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5603FC351A7CD16F00526763 /* PeerToPeerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerToPeerTests.swift; sourceTree = "<group>"; };
+		5603FC3F1A7CD7D600526763 /* Transcript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transcript.swift; sourceTree = "<group>"; };
+		5603FC411A7D081100526763 /* SessionContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				5603FC1F1A7CD16F00526763 /* AppDelegate.swift */,
+				5603FC411A7D081100526763 /* SessionContainer.swift */,
+				5603FC3F1A7CD7D600526763 /* Transcript.swift */,
 				5603FC211A7CD16F00526763 /* ViewController.swift */,
 				5603FC231A7CD16F00526763 /* Main.storyboard */,
 				5603FC261A7CD16F00526763 /* Images.xcassets */,
@@ -212,8 +218,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5603FC421A7D081100526763 /* SessionContainer.swift in Sources */,
 				5603FC221A7CD16F00526763 /* ViewController.swift in Sources */,
 				5603FC201A7CD16F00526763 /* AppDelegate.swift in Sources */,
+				5603FC401A7CD7D600526763 /* Transcript.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
