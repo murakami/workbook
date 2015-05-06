@@ -8,11 +8,13 @@
 
 import UIKit
 import AVFoundation
+import AssetsLibrary
 
 class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate, AVCaptureAudioDataOutputSampleBufferDelegate {
     @IBOutlet weak var previewView: UIView!
     let captureSession = AVCaptureSession();
-    let videoAudioDataOutputQueue = dispatch_queue_create("VideoAudioDataOutputQueue", DISPATCH_QUEUE_SERIAL)
+    let videoAudioDataOutputQueue = dispatch_queue_create("com.example.SequenceGrabber.VideoAudioDataOutputQueue", DISPATCH_QUEUE_SERIAL)
+    let writeQueue = dispatch_queue_create("com.example.SequenceGrabber.writeQueue", DISPATCH_QUEUE_SERIAL)
     var frontFacingCameraDeviceInput : AVCaptureDeviceInput? = nil
     var backFacingCameraDeviceInput : AVCaptureDeviceInput? = nil
     var audioDeviceInput : AVCaptureDeviceInput? = nil
@@ -22,6 +24,9 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     var videoAssetWriterInput: AVAssetWriterInput? = nil
     var audioAssetWriterInput: AVAssetWriterInput? = nil
     let movieWriteQueue = dispatch_queue_create("MovieWriteQueue", DISPATCH_QUEUE_SERIAL)
+    var height: Int = 0
+    var width: Int = 0
+    var outputFilePath: String? = nil
     
     override func viewDidLoad() {
         println(__FUNCTION__)
@@ -103,6 +108,14 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             captureSession.addOutput(audioDataOutput)
         }
         
+        width = videoDataOutput.videoSettings["Width"] as! Int
+        height = videoDataOutput.videoSettings["Height"] as! Int
+        print("\(__FUNCTION__) width:\(width) height:\(height)")
+        
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        let documentsDirectory = paths[0] as! String
+        outputFilePath = "\(documentsDirectory)/junk.mp4"
+        
         /*
         let outputURL = NSURL(fileURLWithPath: "/tmp/demo.mov")
         var outError: NSError? = nil
@@ -149,6 +162,12 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         if captureSession.running {
             println("captureSession.stopRunning()")
             captureSession.stopRunning()
+            self.assetWriter?.finishWritingWithCompletionHandler({() -> Void in
+                self.assetWriter = nil
+                let assetsLib = ALAssetsLibrary()
+                assetsLib.writeVideoAtPathToSavedPhotosAlbum(NSURL(fileURLWithPath: self.outputFilePath!), completionBlock: {(assetURL: NSURL!, error: NSError!) -> Void in
+                })
+            })
         }
         else {
             println("captureSession.startRunning()")
@@ -156,9 +175,65 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         }
     }
     
-    func captureOutput(captureOutput: AVCaptureOutput!,
-        didOutputSampleBuffer sampleBuffer: CMSampleBuffer!,
-        fromConnection connection: AVCaptureConnection!) {
+    func captureOutput(captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!) {
+        dispatch_sync(writeQueue) {
+            if self.assetWriter == nil {
+                let fileManager = NSFileManager()
+                if fileManager.fileExistsAtPath(self.outputFilePath!) {
+                    fileManager.removeItemAtPath(self.outputFilePath!, error: nil)
+                }
+                
+                if captureOutput == self.videoDataOutput {
+                }
+                else if captureOutput == self.audioDataOutput {
+                    let fmt = CMSampleBufferGetFormatDescription(sampleBuffer)
+                    let asbd = CMAudioFormatDescriptionGetStreamBasicDescription(fmt)
+                    
+                    var outError: NSError? = nil
+                    let url = NSURL(fileURLWithPath: self.outputFilePath!)
+                    self.assetWriter = AVAssetWriter(URL: url, fileType: AVFileTypeQuickTimeMovie, error: &outError)
+                    
+                    let videoOutputSettings: Dictionary<String, AnyObject> = [
+                        AVVideoCodecKey : AVVideoCodecH264,
+                        AVVideoWidthKey : self.width,
+                        AVVideoHeightKey : self.height
+                    ]
+                    self.videoAssetWriterInput = AVAssetWriterInput(mediaType: AVMediaTypeVideo, outputSettings: videoOutputSettings)
+                    self.videoAssetWriterInput!.expectsMediaDataInRealTime = true
+                    self.assetWriter!.addInput(self.videoAssetWriterInput)
+                    
+                    let audioOutputSettings: Dictionary<String, AnyObject> = [
+                        AVFormatIDKey : kAudioFormatMPEG4AAC,
+                        AVNumberOfChannelsKey : Int(asbd.memory.mChannelsPerFrame),
+                        AVSampleRateKey : asbd.memory.mSampleRate,
+                        AVEncoderBitRateKey : 128000
+                    ]
+                    self.audioAssetWriterInput = AVAssetWriterInput(mediaType: AVMediaTypeAudio, outputSettings: audioOutputSettings)
+                    self.audioAssetWriterInput!.expectsMediaDataInRealTime = true
+                    self.assetWriter!.addInput(self.audioAssetWriterInput)
+                }
+            }
+        }
+        
+        if CMSampleBufferDataIsReady(sampleBuffer) != 0 {
+            if assetWriter != nil {
+                if self.assetWriter!.status == AVAssetWriterStatus.Unknown {
+                    let startTime = CMSampleBufferGetPresentationTimeStamp(sampleBuffer)
+                    self.assetWriter!.startWriting()
+                    self.assetWriter!.startSessionAtSourceTime(startTime)
+                }
+                
+                if captureOutput == self.videoDataOutput {
+                    self.videoAssetWriterInput!.appendSampleBuffer(sampleBuffer)
+                }
+                else if captureOutput == self.audioDataOutput {
+                    self.audioAssetWriterInput!.appendSampleBuffer(sampleBuffer)
+                }
+            }
+        }
+        
+            
+        /*
         let cmTime = CMSampleBufferGetPresentationTimeStamp(sampleBuffer)
         let value = cmTime.value
         let timescale = cmTime.timescale
@@ -173,15 +248,13 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             //println("\(__FUNCTION__) samples:\(asbd.memory.mSampleRate)")
             var pts = CMSampleBufferGetPresentationTimeStamp(sampleBuffer)
             println("\(__FUNCTION__) pts:\(pts)")
-            /*
-            dispatch_async(movieWriteQueue, {
-                if assetWriter?.status == AVAssetWriterStatusWriting {
-                    if videoAssetWriterInput?.readyForMoreMediaData {
-                        videoAssetWriterInput?.appendSampleBuffer(sampleBuffer)
-                    }
-                }
-            })
-            */
+            //dispatch_async(movieWriteQueue, {
+            //    if assetWriter?.status == AVAssetWriterStatusWriting {
+            //        if videoAssetWriterInput?.readyForMoreMediaData {
+            //            videoAssetWriterInput?.appendSampleBuffer(sampleBuffer)
+            //        }
+            //    }
+            //})
         }
         else if captureOutput == audioDataOutput {
             println("\(__FUNCTION__) audioDataOutput value:\(value) timescale:\(timescale) epoch:\(epoch)")
@@ -190,16 +263,15 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             println("\(__FUNCTION__) channels:\(asbd.memory.mChannelsPerFrame) samples:\(asbd.memory.mSampleRate)")
             var pts = CMSampleBufferGetPresentationTimeStamp(sampleBuffer)
             println("\(__FUNCTION__) pts:\(pts)")
-            /*
-            ispatch_async(movieWriteQueue, {
-                if assetWriter?.status == AVAssetWriterStatusWriting {
-                    if audioAssetWriterInput?.readyForMoreMediaData {
-                        audioAssetWriterInput?.appendSampleBuffer(sampleBuffer)
-                    }
-                }
-            })
-            */
+            //ispatch_async(movieWriteQueue, {
+            //    if assetWriter?.status == AVAssetWriterStatusWriting {
+            //        if audioAssetWriterInput?.readyForMoreMediaData {
+            //            audioAssetWriterInput?.appendSampleBuffer(sampleBuffer)
+            //        }
+            //    }
+            //})
         }
+        */
         /*
         assetWriter.startSessionAtSourceTime(<#startTime: CMTime#>)
         */
