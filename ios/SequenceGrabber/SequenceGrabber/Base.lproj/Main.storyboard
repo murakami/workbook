@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -21,25 +21,59 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="542"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKf-GF-uZY">
-                                <rect key="frame" x="277" y="550" width="46" height="30"/>
-                                <state key="normal" title="Touch">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKf-GF-uZY">
+                                <rect key="frame" x="211" y="550" width="55" height="30"/>
+                                <state key="normal" title="Capture">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="touch:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6U6-cZ-k7s"/>
+                                    <action selector="doCapture:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="LTE-hE-Hkd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoQ-AS-LQ6">
+                                <rect key="frame" x="282" y="550" width="37" height="30"/>
+                                <state key="normal" title="Store">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doStore:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="JXc-rd-o1q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mel-4j-cIP">
+                                <rect key="frame" x="335" y="550" width="34" height="30"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doSave:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="oc0-xE-W5W"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="mel-4j-cIP" firstAttribute="leading" secondItem="OKf-GF-uZY" secondAttribute="trailing" constant="8" id="2I8-lS-ZBO"/>
+                            <constraint firstItem="mel-4j-cIP" firstAttribute="leading" secondItem="zoQ-AS-LQ6" secondAttribute="trailing" constant="16" id="3eC-wb-EyX"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="zoQ-AS-LQ6" secondAttribute="bottom" constant="20" id="Aut-Xf-42z"/>
                             <constraint firstItem="OKf-GF-uZY" firstAttribute="top" secondItem="6uB-mZ-OkD" secondAttribute="bottom" constant="8" id="ItK-cu-0zf"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="mel-4j-cIP" secondAttribute="bottom" constant="20" id="Mfi-v9-csT"/>
                             <constraint firstItem="6uB-mZ-OkD" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="NyY-1l-27X"/>
                             <constraint firstItem="6uB-mZ-OkD" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="PCb-19-Cp1"/>
+                            <constraint firstAttribute="centerX" secondItem="OKf-GF-uZY" secondAttribute="centerX" id="Vqq-Hd-2d2"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="OKf-GF-uZY" secondAttribute="bottom" constant="20" id="XoT-In-TEG"/>
                             <constraint firstAttribute="centerX" secondItem="OKf-GF-uZY" secondAttribute="centerX" id="YUc-qz-Iz5"/>
+                            <constraint firstItem="mel-4j-cIP" firstAttribute="top" secondItem="6uB-mZ-OkD" secondAttribute="bottom" constant="8" id="Yt7-P8-rdT"/>
+                            <constraint firstAttribute="centerX" secondItem="zoQ-AS-LQ6" secondAttribute="centerX" id="cBK-Yv-UFW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6uB-mZ-OkD" secondAttribute="trailing" constant="-16" id="pAO-Rc-oti"/>
+                            <constraint firstItem="zoQ-AS-LQ6" firstAttribute="top" secondItem="6uB-mZ-OkD" secondAttribute="bottom" constant="8" id="rOf-yF-nE3"/>
+                            <constraint firstItem="zoQ-AS-LQ6" firstAttribute="leading" secondItem="OKf-GF-uZY" secondAttribute="trailing" constant="16" id="y1r-ZD-W1x"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Vqq-Hd-2d2"/>
+                                <exclude reference="YUc-qz-Iz5"/>
+                                <exclude reference="2I8-lS-ZBO"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="previewView" destination="6uB-mZ-OkD" id="Wco-7D-71g"/>

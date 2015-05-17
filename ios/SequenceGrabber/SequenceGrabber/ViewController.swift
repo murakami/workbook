@@ -27,6 +27,9 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     var height: Int = 0
     var width: Int = 0
     var outputFilePath: String? = nil
+    var storeFlag = false
+    var timeOffset = CMTimeMake(0, 0)
+    var storeAudioPts = CMTimeMake(0, 0)
     
     override func viewDidLoad() {
         println(__FUNCTION__)
@@ -115,31 +118,6 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
         let documentsDirectory = paths[0] as! String
         outputFilePath = "\(documentsDirectory)/junk.mp4"
-        
-        /*
-        let outputURL = NSURL(fileURLWithPath: "/tmp/demo.mov")
-        var outError: NSError? = nil
-        assetWriter = AVAssetWriter(URL: outputURL, fileType: AVFileTypeQuickTimeMovie, error: &outError)
-        
-        let videoOutputSettings: Dictionary<String, AnyObject> = [
-            AVVideoCodecKey : AVVideoCodecH264,
-            AVVideoWidthKey : width,
-            AVVideoHeightKey : height
-        ];
-        
-        let audioOutputSettings: Dictionary<String, AnyObject> = [
-            AVFormatIDKey : kAudioFormatMPEG4AAC,
-            AVNumberOfChannelsKey : channels,
-            AVSampleRateKey : samples,
-            AVEncoderBitRateKey : 128000
-        ]
-        
-        videoAssetWriterInput = AVAssetWriterInput.assetWriterInputWithMediaType(AVMediaTypeVideo, outputSettings:videoSettings)
-        audioAssetWriterInput = AVAssetWriterInput.assetWriterInputWithMediaType(AVMediaTypeAudio, outputSettings:audioSettings)
-        
-        assetWriter?.addInput(videoAssetWriterInput)
-        assetWriter?.addInput(audioAssetWriterInput)
-        */
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -157,11 +135,12 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func touch(sender: AnyObject) {
+    @IBAction func doCapture(sender: AnyObject) {
         println(__FUNCTION__)
         if captureSession.running {
             println("captureSession.stopRunning()")
             captureSession.stopRunning()
+            
             self.assetWriter?.finishWritingWithCompletionHandler({() -> Void in
                 self.assetWriter = nil
                 let assetsLib = ALAssetsLibrary()
@@ -172,10 +151,48 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         else {
             println("captureSession.startRunning()")
             captureSession.startRunning()
+            timeOffset = CMTimeMake(0, 0)
+            storeAudioPts = CMTimeMake(0, 0)
+        }
+    }
+    
+    @IBAction func doStore(sender: AnyObject) {
+        println(__FUNCTION__)
+        dispatch_sync(writeQueue) {
+            if self.storeFlag == true {
+                println("記録停止")
+                self.storeFlag = false
+            }
+            else {
+                println("記録開始")
+                self.storeFlag = true
+            }
+        }
+    }
+    
+    @IBAction func doSave(sender: AnyObject) {
+        println(__FUNCTION__)
+        if captureSession.running {
+            println("captureSession.stopRunning()")
+            captureSession.stopRunning()
+        }
+        dispatch_sync(writeQueue) {
+            self.assetWriter?.finishWritingWithCompletionHandler({() -> Void in
+                println(__FUNCTION__)
+                self.assetWriter = nil
+                let assetsLib = ALAssetsLibrary()
+                assetsLib.writeVideoAtPathToSavedPhotosAlbum(NSURL(fileURLWithPath: self.outputFilePath!), completionBlock: {(assetURL: NSURL!, error: NSError!) -> Void in
+                    println(__FUNCTION__)
+                })
+            })
         }
     }
     
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!) {
+        if (self.captureSession.running != true) || (self.storeFlag != true) {
+            println("記録停止中")
+            return
+        }
         dispatch_sync(writeQueue) {
             if self.assetWriter == nil {
                 let fileManager = NSFileManager()
@@ -216,70 +233,59 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         }
         
         if CMSampleBufferDataIsReady(sampleBuffer) != 0 {
-            if assetWriter != nil {
+            if self.assetWriter != nil {
                 if self.assetWriter!.status == AVAssetWriterStatus.Unknown {
                     let startTime = CMSampleBufferGetPresentationTimeStamp(sampleBuffer)
                     self.assetWriter!.startWriting()
                     self.assetWriter!.startSessionAtSourceTime(startTime)
                 }
                 
+                if captureOutput == self.audioDataOutput {
+                    var pts = CMSampleBufferGetPresentationTimeStamp(sampleBuffer)
+                    if (self.storeAudioPts.flags & CMTimeFlags.Valid).rawValue != 0 {
+                        println("isAudioPtsValid is valid")
+                        if (self.timeOffset.flags & CMTimeFlags.Valid).rawValue != 0 {
+                            println("isTimeOffsetPtsValid is valid")
+                            pts = CMTimeSubtract(pts, self.timeOffset);
+                        }
+                        let offset = CMTimeSubtract(pts, self.storeAudioPts);
+                        if self.timeOffset.value == 0 {
+                            println("timeOffset is \(self.timeOffset.value)")
+                            self.timeOffset = offset;
+                        }
+                        else {
+                            println("timeOffset is \(self.timeOffset.value)")
+                            self.timeOffset = CMTimeAdd(self.timeOffset, offset);
+                        }
+                    }
+                    self.storeAudioPts.flags = CMTimeFlags.allZeros
+                }
+                
+                var tempBuffer = sampleBuffer
+                if 0 < self.timeOffset.value {
+                    tempBuffer = self.ajustTimeStamp(sampleBuffer, offset: self.timeOffset)
+                }
+                
                 if captureOutput == self.videoDataOutput {
-                    self.videoAssetWriterInput!.appendSampleBuffer(sampleBuffer)
+                    println(__FUNCTION__ + "store video")
+                    self.videoAssetWriterInput!.appendSampleBuffer(tempBuffer)
                 }
                 else if captureOutput == self.audioDataOutput {
-                    self.audioAssetWriterInput!.appendSampleBuffer(sampleBuffer)
+                    println(__FUNCTION__ + "store audio")
+                    var pts = CMSampleBufferGetPresentationTimeStamp(tempBuffer)
+                    let duration = CMSampleBufferGetDuration(tempBuffer)
+                    if 0 < duration.value {
+                        pts = CMTimeAdd(pts, duration)
+                    }
+                    self.storeAudioPts = pts
+                    
+                    self.audioAssetWriterInput!.appendSampleBuffer(tempBuffer)
                 }
             }
         }
-        
-            
-        /*
-        let cmTime = CMSampleBufferGetPresentationTimeStamp(sampleBuffer)
-        let value = cmTime.value
-        let timescale = cmTime.timescale
-        //let seconds = value / timescale
-        let epoch = cmTime.epoch
-        if captureOutput == videoDataOutput {
-            println("\(__FUNCTION__) videoDataOutput value:\(value) timescale:\(timescale) epoch:\(epoch)")
-            let fmt = CMSampleBufferGetFormatDescription(sampleBuffer)
-            let asbd = CMAudioFormatDescriptionGetStreamBasicDescription(fmt)
-            //println("\(__FUNCTION__) channels:\(asbd.memory.mChannelsPerFrame) samples:\(asbd.memory.mSampleRate)")
-            //println("\(__FUNCTION__) channels:\(asbd.memory.mChannelsPerFrame)")
-            //println("\(__FUNCTION__) samples:\(asbd.memory.mSampleRate)")
-            var pts = CMSampleBufferGetPresentationTimeStamp(sampleBuffer)
-            println("\(__FUNCTION__) pts:\(pts)")
-            //dispatch_async(movieWriteQueue, {
-            //    if assetWriter?.status == AVAssetWriterStatusWriting {
-            //        if videoAssetWriterInput?.readyForMoreMediaData {
-            //            videoAssetWriterInput?.appendSampleBuffer(sampleBuffer)
-            //        }
-            //    }
-            //})
-        }
-        else if captureOutput == audioDataOutput {
-            println("\(__FUNCTION__) audioDataOutput value:\(value) timescale:\(timescale) epoch:\(epoch)")
-            let fmt = CMSampleBufferGetFormatDescription(sampleBuffer)
-            let asbd = CMAudioFormatDescriptionGetStreamBasicDescription(fmt)
-            println("\(__FUNCTION__) channels:\(asbd.memory.mChannelsPerFrame) samples:\(asbd.memory.mSampleRate)")
-            var pts = CMSampleBufferGetPresentationTimeStamp(sampleBuffer)
-            println("\(__FUNCTION__) pts:\(pts)")
-            //ispatch_async(movieWriteQueue, {
-            //    if assetWriter?.status == AVAssetWriterStatusWriting {
-            //        if audioAssetWriterInput?.readyForMoreMediaData {
-            //            audioAssetWriterInput?.appendSampleBuffer(sampleBuffer)
-            //        }
-            //    }
-            //})
-        }
-        */
-        /*
-        assetWriter.startSessionAtSourceTime(<#startTime: CMTime#>)
-        */
     }
     
-    func captureOutput(captureOutput: AVCaptureOutput!,
-        didDropSampleBuffer sampleBuffer: CMSampleBuffer!,
-        fromConnection connection: AVCaptureConnection!) {
+    func captureOutput(captureOutput: AVCaptureOutput!, didDropSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!) {
         let cmTime = CMSampleBufferGetPresentationTimeStamp(sampleBuffer)
         let value = cmTime.value
         let timescale = cmTime.timescale
@@ -299,6 +305,25 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         fromConnection connection: AVCaptureConnection!) {
     }
     */
+    
+    func ajustTimeStamp(sampleBuffer: CMSampleBufferRef, offset: CMTime) -> CMSampleBufferRef {
+        var count: CMItemCount = 0
+        CMSampleBufferGetSampleTimingInfoArray(sampleBuffer, 0, nil, &count);
+        var info = [CMSampleTimingInfo](count: count,
+            repeatedValue: CMSampleTimingInfo(duration: CMTimeMake(0, 0),
+                presentationTimeStamp: CMTimeMake(0, 0),
+                decodeTimeStamp: CMTimeMake(0, 0)))
+        CMSampleBufferGetSampleTimingInfoArray(sampleBuffer, count, &info, &count);
+        
+        for i in 0..<count {
+            info[i].decodeTimeStamp = CMTimeSubtract(info[i].decodeTimeStamp, offset);
+            info[i].presentationTimeStamp = CMTimeSubtract(info[i].presentationTimeStamp, offset);
+        }
+        
+        var out: Unmanaged<CMSampleBuffer>?
+        CMSampleBufferCreateCopyWithNewTiming(nil, sampleBuffer, count, &info, &out);
+        return out!.takeRetainedValue()
+    }
 
 }
 
