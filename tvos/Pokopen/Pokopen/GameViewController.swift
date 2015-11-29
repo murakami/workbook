@@ -2,7 +2,7 @@
 //  GameViewController.swift
 //  Pokopen
 //
-//  Created by 村上幸雄 on 2015/11/29.
+//  Created by 村上幸雄 on 2015/11/23.
 //  Copyright (c) 2015年 MURAKAMI Yukio. All rights reserved.
 //
 
@@ -10,8 +10,11 @@ import UIKit
 import SpriteKit
 
 class GameViewController: UIViewController {
+    
+    var containerViewController: ContainerViewController?
 
     override func viewDidLoad() {
+        print("GameViewController # viewDidLoad()")
         super.viewDidLoad()
 
         if let scene = GameScene(fileNamed: "GameScene") {

@@ -1,13 +1,69 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="9038" systemVersion="15A226f" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="499-42-d0g">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="hKr-VY-WuS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9026"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
+        <!--Container View Controller-->
+        <scene sceneID="1ii-Ys-61H">
+            <objects>
+                <viewController id="hKr-VY-WuS" customClass="ContainerViewController" customModule="Pokopen" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cX5-6Q-R4c"/>
+                        <viewControllerLayoutGuide type="bottom" id="RK5-EW-JYu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CIO-vD-spU">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="egv-rp-1ZJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="659" y="-1804"/>
+        </scene>
+        <!--Title View Controller-->
+        <scene sceneID="xk2-iz-bGz">
+            <objects>
+                <viewController storyboardIdentifier="TitleViewController" id="FID-wO-6H9" customClass="TitleViewController" customModule="Pokopen" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9EI-Ao-OSN"/>
+                        <viewControllerLayoutGuide type="bottom" id="5qK-1R-G9j"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SVX-Pq-awV">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ke-it-jo1">
+                                <rect key="frame" x="862" y="442" width="196" height="86"/>
+                                <animations/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Option"/>
+                                <connections>
+                                    <action selector="optionButtonTapped:" destination="FID-wO-6H9" eventType="primaryActionTriggered" id="gMd-mO-Yfh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bA1-Sn-zmk">
+                                <rect key="frame" x="878" y="552" width="165" height="86"/>
+                                <animations/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startButtonTapped:" destination="FID-wO-6H9" eventType="primaryActionTriggered" id="Vs5-oi-3Px"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PRd-By-MoJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="655" y="-617"/>
+        </scene>
         <!--Game View Controller-->
         <scene sceneID="dEh-eV-dlg">
             <objects>
-                <viewController id="499-42-d0g" customClass="GameViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameViewController" id="499-42-d0g" customClass="GameViewController" customModule="Pokopen" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TiC-Vw-u93"/>
                         <viewControllerLayoutGuide type="bottom" id="3TX-uQ-fmp"/>

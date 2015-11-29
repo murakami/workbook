@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56DDDC041C0B1D9A0092C6C2 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DDDC031C0B1D9A0092C6C2 /* ContainerViewController.swift */; };
 		56F634511C0B0C5B00946537 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F634501C0B0C5B00946537 /* AppDelegate.swift */; };
 		56F634531C0B0C5B00946537 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 56F634521C0B0C5B00946537 /* GameScene.sks */; };
 		56F634551C0B0C5B00946537 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F634541C0B0C5B00946537 /* GameScene.swift */; };
@@ -16,6 +17,7 @@
 		56F6345E1C0B0C5B00946537 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56F6345D1C0B0C5B00946537 /* Assets.xcassets */; };
 		56F634691C0B0C5B00946537 /* PokopenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F634681C0B0C5B00946537 /* PokopenTests.swift */; };
 		56F634741C0B0C5B00946537 /* PokopenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F634731C0B0C5B00946537 /* PokopenUITests.swift */; };
+		56F634821C0B111100946537 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F634811C0B111100946537 /* TitleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		56DDDC031C0B1D9A0092C6C2 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		56F6344D1C0B0C5B00946537 /* Pokopen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokopen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56F634501C0B0C5B00946537 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56F634521C0B0C5B00946537 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -51,6 +54,7 @@
 		56F6346F1C0B0C5B00946537 /* PokopenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokopenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		56F634731C0B0C5B00946537 /* PokopenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokopenUITests.swift; sourceTree = "<group>"; };
 		56F634751C0B0C5B00946537 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56F634811C0B111100946537 /* TitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,8 @@
 				56F634521C0B0C5B00946537 /* GameScene.sks */,
 				56F634541C0B0C5B00946537 /* GameScene.swift */,
 				56F634561C0B0C5B00946537 /* GameViewController.swift */,
+				56DDDC031C0B1D9A0092C6C2 /* ContainerViewController.swift */,
+				56F634811C0B111100946537 /* TitleViewController.swift */,
 				56F634581C0B0C5B00946537 /* Game.xcassets */,
 				56F6345A1C0B0C5B00946537 /* Main.storyboard */,
 				56F6345D1C0B0C5B00946537 /* Assets.xcassets */,
@@ -264,6 +270,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				56F634551C0B0C5B00946537 /* GameScene.swift in Sources */,
+				56F634821C0B111100946537 /* TitleViewController.swift in Sources */,
+				56DDDC041C0B1D9A0092C6C2 /* ContainerViewController.swift in Sources */,
 				56F634571C0B0C5B00946537 /* GameViewController.swift in Sources */,
 				56F634511C0B0C5B00946537 /* AppDelegate.swift in Sources */,
 			);
@@ -398,6 +406,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Pokopen/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Pokopen;
@@ -410,6 +419,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Pokopen/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Pokopen;
@@ -486,6 +496,7 @@
 				56F6347A1C0B0C5B00946537 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		56F6347B1C0B0C5B00946537 /* Build configuration list for PBXNativeTarget "PokopenTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +505,7 @@
 				56F6347D1C0B0C5B00946537 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		56F6347E1C0B0C5B00946537 /* Build configuration list for PBXNativeTarget "PokopenUITests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +514,7 @@
 				56F634801C0B0C5B00946537 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

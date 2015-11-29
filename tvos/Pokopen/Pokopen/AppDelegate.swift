@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Pokopen
 //
-//  Created by 村上幸雄 on 2015/11/29.
+//  Created by 村上幸雄 on 2015/11/23.
 //  Copyright © 2015年 MURAKAMI Yukio. All rights reserved.
 //
 
