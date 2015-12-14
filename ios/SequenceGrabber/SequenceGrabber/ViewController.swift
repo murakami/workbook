@@ -241,7 +241,9 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
                 }
                 
                 if captureOutput == self.audioDataOutput {
+                    println(__FUNCTION__ + "audio")
                     var pts = CMSampleBufferGetPresentationTimeStamp(sampleBuffer)
+                    CMTimeShow(pts)
                     if (self.storeAudioPts.flags & CMTimeFlags.Valid).rawValue != 0 {
                         println("isAudioPtsValid is valid")
                         if (self.timeOffset.flags & CMTimeFlags.Valid).rawValue != 0 {
@@ -260,6 +262,11 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
                     }
                     self.storeAudioPts.flags = CMTimeFlags.allZeros
                 }
+                else {
+                    println(__FUNCTION__ + "video")
+                    var pts = CMSampleBufferGetPresentationTimeStamp(sampleBuffer)
+                    CMTimeShow(pts)
+                }
                 
                 var tempBuffer = sampleBuffer
                 if 0 < self.timeOffset.value {
@@ -268,11 +275,14 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
                 
                 if captureOutput == self.videoDataOutput {
                     println(__FUNCTION__ + "store video")
+                    var pts = CMSampleBufferGetPresentationTimeStamp(tempBuffer)
+                    CMTimeShow(pts)
                     self.videoAssetWriterInput!.appendSampleBuffer(tempBuffer)
                 }
                 else if captureOutput == self.audioDataOutput {
                     println(__FUNCTION__ + "store audio")
                     var pts = CMSampleBufferGetPresentationTimeStamp(tempBuffer)
+                    CMTimeShow(pts)
                     let duration = CMSampleBufferGetDuration(tempBuffer)
                     if 0 < duration.value {
                         pts = CMTimeAdd(pts, duration)

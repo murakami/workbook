@@ -13,9 +13,39 @@ class TitleViewController: UIViewController {
     var containerViewController: ContainerViewController?
     
     override func viewDidLoad() {
-        print("TitleViewController # viewDidLoad()")
+        print(NSStringFromClass(self.dynamicType), __FUNCTION__)
         super.viewDidLoad()
         //self.view.backgroundColor = UIColor.yellowColor()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        print(NSStringFromClass(self.dynamicType), __FUNCTION__)
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        print(NSStringFromClass(self.dynamicType), __FUNCTION__)
+        super.viewDidAppear(animated)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        print(NSStringFromClass(self.dynamicType), __FUNCTION__)
+        super.viewDidDisappear(animated)
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        print(NSStringFromClass(self.dynamicType), __FUNCTION__)
+        super.viewDidDisappear(animated)
+    }
+    
+    override func willMoveToParentViewController(parent: UIViewController?) {
+        print(NSStringFromClass(self.dynamicType), __FUNCTION__)
+        super.willMoveToParentViewController(parent)
+    }
+    
+    override func didMoveToParentViewController(parent: UIViewController?) {
+        print(NSStringFromClass(self.dynamicType), __FUNCTION__)
+        super.didMoveToParentViewController(parent)
     }
     
     override func didReceiveMemoryWarning() {

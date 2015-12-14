@@ -15,6 +15,7 @@ class ContainerViewController: UIViewController {
     var gameViewController: GameViewController?
     
     override func viewDidLoad() {
+        print(NSStringFromClass(self.dynamicType), __FUNCTION__)
         super.viewDidLoad()
         
         let mainStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
@@ -30,6 +31,36 @@ class ContainerViewController: UIViewController {
         
         selectedViewController = titleViewController
         self.view.addSubview(selectedViewController!.view)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        print(NSStringFromClass(self.dynamicType), __FUNCTION__)
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        print(NSStringFromClass(self.dynamicType), __FUNCTION__)
+        super.viewDidAppear(animated)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        print(NSStringFromClass(self.dynamicType), __FUNCTION__)
+        super.viewDidDisappear(animated)
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        print(NSStringFromClass(self.dynamicType), __FUNCTION__)
+        super.viewDidDisappear(animated)
+    }
+    
+    override func willMoveToParentViewController(parent: UIViewController?) {
+        print(NSStringFromClass(self.dynamicType), __FUNCTION__)
+        super.willMoveToParentViewController(parent)
+    }
+    
+    override func didMoveToParentViewController(parent: UIViewController?) {
+        print(NSStringFromClass(self.dynamicType), __FUNCTION__)
+        super.didMoveToParentViewController(parent)
     }
     
     override func didReceiveMemoryWarning() {
