@@ -11,13 +11,13 @@
 		564DB70819179CF20079B5C3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 564DB70619179CF20079B5C3 /* InfoPlist.strings */; };
 		564DB70A19179CF20079B5C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 564DB70919179CF20079B5C3 /* main.m */; };
 		564DB70E19179CF20079B5C3 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 564DB70C19179CF20079B5C3 /* Credits.rtf */; };
-		564DB71119179CF20079B5C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 564DB71019179CF20079B5C3 /* AppDelegate.m */; };
 		564DB71419179CF20079B5C3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 564DB71219179CF20079B5C3 /* MainMenu.xib */; };
 		564DB71619179CF20079B5C3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 564DB71519179CF20079B5C3 /* Images.xcassets */; };
 		564DB71D19179CF20079B5C3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 564DB71C19179CF20079B5C3 /* XCTest.framework */; };
 		564DB71E19179CF20079B5C3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 564DB6FD19179CF10079B5C3 /* Cocoa.framework */; };
 		564DB72619179CF20079B5C3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 564DB72419179CF20079B5C3 /* InfoPlist.strings */; };
 		564DB72819179CF20079B5C3 /* DistributedClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 564DB72719179CF20079B5C3 /* DistributedClientTests.m */; };
+		56642A651C299598006E6D7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56642A641C299598006E6D7E /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +50,8 @@
 		564DB72319179CF20079B5C3 /* DistributedClientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DistributedClientTests-Info.plist"; sourceTree = "<group>"; };
 		564DB72519179CF20079B5C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		564DB72719179CF20079B5C3 /* DistributedClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DistributedClientTests.m; sourceTree = "<group>"; };
+		56642A631C299598006E6D7E /* DistributedClient-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DistributedClient-Bridging-Header.h"; sourceTree = "<group>"; };
+		56642A641C299598006E6D7E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,9 +119,11 @@
 			children = (
 				564DB70F19179CF20079B5C3 /* AppDelegate.h */,
 				564DB71019179CF20079B5C3 /* AppDelegate.m */,
+				56642A641C299598006E6D7E /* AppDelegate.swift */,
 				564DB71219179CF20079B5C3 /* MainMenu.xib */,
 				564DB71519179CF20079B5C3 /* Images.xcassets */,
 				564DB70419179CF20079B5C3 /* Supporting Files */,
+				56642A631C299598006E6D7E /* DistributedClient-Bridging-Header.h */,
 			);
 			path = DistributedClient;
 			sourceTree = "<group>";
@@ -198,6 +202,7 @@
 		564DB6F219179CF10079B5C3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "村上幸雄";
 				TargetAttributes = {
@@ -252,7 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				564DB71119179CF20079B5C3 /* AppDelegate.m in Sources */,
+				56642A651C299598006E6D7E /* AppDelegate.swift in Sources */,
 				564DB70A19179CF20079B5C3 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,11 +390,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DistributedClient/DistributedClient-Prefix.pch";
 				INFOPLIST_FILE = "DistributedClient/DistributedClient-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DistributedClient/DistributedClient-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -398,11 +407,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DistributedClient/DistributedClient-Prefix.pch";
 				INFOPLIST_FILE = "DistributedClient/DistributedClient-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DistributedClient/DistributedClient-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -466,6 +478,7 @@
 				564DB72D19179CF20079B5C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		564DB72E19179CF20079B5C3 /* Build configuration list for PBXNativeTarget "DistributedClientTests" */ = {
 			isa = XCConfigurationList;
@@ -474,6 +487,7 @@
 				564DB73019179CF20079B5C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
