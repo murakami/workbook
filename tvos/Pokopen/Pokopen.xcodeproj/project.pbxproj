@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56642A671C2AC8EE006E6D7E /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56642A661C2AC8EE006E6D7E /* Game.swift */; };
 		56DDDC041C0B1D9A0092C6C2 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DDDC031C0B1D9A0092C6C2 /* ContainerViewController.swift */; };
 		56F634511C0B0C5B00946537 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F634501C0B0C5B00946537 /* AppDelegate.swift */; };
 		56F634531C0B0C5B00946537 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 56F634521C0B0C5B00946537 /* GameScene.sks */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		56642A661C2AC8EE006E6D7E /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		56DDDC031C0B1D9A0092C6C2 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		56F6344D1C0B0C5B00946537 /* Pokopen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokopen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56F634501C0B0C5B00946537 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				56F634561C0B0C5B00946537 /* GameViewController.swift */,
 				56DDDC031C0B1D9A0092C6C2 /* ContainerViewController.swift */,
 				56F634811C0B111100946537 /* TitleViewController.swift */,
+				56642A661C2AC8EE006E6D7E /* Game.swift */,
 				56F634581C0B0C5B00946537 /* Game.xcassets */,
 				56F6345A1C0B0C5B00946537 /* Main.storyboard */,
 				56F6345D1C0B0C5B00946537 /* Assets.xcassets */,
@@ -270,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56F634551C0B0C5B00946537 /* GameScene.swift in Sources */,
+				56642A671C2AC8EE006E6D7E /* Game.swift in Sources */,
 				56F634821C0B111100946537 /* TitleViewController.swift in Sources */,
 				56DDDC041C0B1D9A0092C6C2 /* ContainerViewController.swift in Sources */,
 				56F634571C0B0C5B00946537 /* GameViewController.swift in Sources */,

@@ -12,24 +12,22 @@ import SpriteKit
 class GameViewController: UIViewController {
     
     var containerViewController: ContainerViewController?
+    var game: Game?
 
     override func viewDidLoad() {
         print(NSStringFromClass(self.dynamicType), __FUNCTION__)
         super.viewDidLoad()
-
-        if let scene = GameScene(fileNamed: "GameScene") {
-            // Configure the view.
-            let skView = self.view as! SKView
+        
+        game = Game()
+        if let aGame = game {
+            let scene = aGame.scene
+            scene!.scaleMode = .AspectFill
+            
+            let skView = view as! SKView
+            skView.presentScene(scene)
+            skView.ignoresSiblingOrder = true
             skView.showsFPS = true
             skView.showsNodeCount = true
-            
-            /* Sprite Kit applies additional optimizations to improve rendering performance */
-            skView.ignoresSiblingOrder = true
-            
-            /* Set the scale mode to scale to fit the window */
-            scene.scaleMode = .AspectFill
-            
-            skView.presentScene(scene)
         }
     }
     
