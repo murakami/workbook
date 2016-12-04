@@ -3,7 +3,7 @@
 //  Hand
 //
 //  Created by 村上幸雄 on 2016/04/29.
-//  Copyright © 2016年 MURAKAMI Yukio. All rights reserved.
+//  Copyright © 2016年 Bitz Co., Ltd. All rights reserved.
 //
 
 import UIKit
@@ -13,7 +13,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var detailDescriptionLabel: UILabel!
 
 
-    var detailItem: AnyObject? {
+    var detailItem: Card? {
         didSet {
             // Update the view.
             self.configureView()
@@ -24,7 +24,7 @@ class DetailViewController: UIViewController {
         // Update the user interface for the detail item.
         if let detail = self.detailItem {
             if let label = self.detailDescriptionLabel {
-                label.text = detail.description
+                label.text = detail.title
             }
         }
     }

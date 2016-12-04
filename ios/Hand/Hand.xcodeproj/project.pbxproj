@@ -15,6 +15,8 @@
 		5630B9C41CD39515005E24CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5630B9C21CD39515005E24CD /* LaunchScreen.storyboard */; };
 		5630B9CF1CD39515005E24CD /* HandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5630B9CE1CD39515005E24CD /* HandTests.swift */; };
 		5630B9DA1CD39515005E24CD /* HandUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5630B9D91CD39515005E24CD /* HandUITests.swift */; };
+		563859661DE3410300DCD665 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563859651DE3410300DCD665 /* Document.swift */; };
+		563859681DE73D8B00DCD665 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563859671DE73D8B00DCD665 /* CardCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		5630B9D51CD39515005E24CD /* HandUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HandUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5630B9D91CD39515005E24CD /* HandUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandUITests.swift; sourceTree = "<group>"; };
 		5630B9DB1CD39515005E24CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		563859651DE3410300DCD665 /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		563859671DE73D8B00DCD665 /* CardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				5630B9B71CD39514005E24CD /* AppDelegate.swift */,
 				5630B9B91CD39514005E24CD /* MasterViewController.swift */,
 				5630B9BB1CD39514005E24CD /* DetailViewController.swift */,
+				563859651DE3410300DCD665 /* Document.swift */,
+				563859671DE73D8B00DCD665 /* CardCell.swift */,
 				5630B9BD1CD39515005E24CD /* Main.storyboard */,
 				5630B9C01CD39515005E24CD /* Assets.xcassets */,
 				5630B9C21CD39515005E24CD /* LaunchScreen.storyboard */,
@@ -192,17 +198,20 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
-				ORGANIZATIONNAME = "MURAKAMI Yukio";
+				ORGANIZATIONNAME = "Bitz Co., Ltd.";
 				TargetAttributes = {
 					5630B9B31CD39514005E24CD = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0810;
 					};
 					5630B9C91CD39515005E24CD = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0810;
 						TestTargetID = 5630B9B31CD39514005E24CD;
 					};
 					5630B9D41CD39515005E24CD = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0810;
 						TestTargetID = 5630B9B31CD39514005E24CD;
 					};
 				};
@@ -259,6 +268,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				563859681DE73D8B00DCD665 /* CardCell.swift in Sources */,
+				563859661DE3410300DCD665 /* Document.swift in Sources */,
 				5630B9BC1CD39514005E24CD /* DetailViewController.swift in Sources */,
 				5630B9BA1CD39514005E24CD /* MasterViewController.swift in Sources */,
 				5630B9B81CD39514005E24CD /* AppDelegate.swift in Sources */,
@@ -407,6 +418,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Hand;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -418,6 +430,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Hand;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -429,6 +442,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.HandTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hand.app/Hand";
 			};
 			name = Debug;
@@ -441,6 +455,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.HandTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hand.app/Hand";
 			};
 			name = Release;
@@ -452,6 +467,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.HandUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Hand;
 			};
 			name = Debug;
@@ -463,6 +479,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.HandUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Hand;
 			};
 			name = Release;
@@ -486,6 +503,7 @@
 				5630B9E01CD39515005E24CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5630B9E11CD39515005E24CD /* Build configuration list for PBXNativeTarget "HandTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +512,7 @@
 				5630B9E31CD39515005E24CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5630B9E41CD39515005E24CD /* Build configuration list for PBXNativeTarget "HandUITests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +521,7 @@
 				5630B9E61CD39515005E24CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
