@@ -70,7 +70,7 @@ class HandDataSource: DataSource {
 }
 
 class HandVC: UITableViewController {
-    private var dataSource = HandDataSource()
+    internal var dataSource = HandDataSource()
 }
 
 class MasterViewController: HandVC {
