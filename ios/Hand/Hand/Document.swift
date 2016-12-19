@@ -26,7 +26,14 @@ struct Deck {
     }
 }
 
-struct Hand {
+protocol DataType {
+    var numberOfItems: Int {get}
+    func addNewItem(at index: Int) -> Self
+    func deleteItem(at index: Int) -> Self
+    func moveItem(fromIndex: Int, toIndex: Int) -> Self
+}
+
+struct Hand: DataType {
     private var deck = Deck()
     private var cards = [Card]()
     
@@ -38,11 +45,11 @@ struct Hand {
         self.cards = cards
     }
     
-    public var numberOfCards: Int {
+    public var numberOfItems: Int {
         return cards.count
     }
     
-    public func addNewCard(at index: Int) -> Hand {
+    public func addNewItem(at index: Int) -> Hand {
         return insertCard(card: deck.nextCard(), at: index)
     }
     
@@ -52,14 +59,14 @@ struct Hand {
         return Hand(deck: deck, cards: mutableCards)
     }
     
-    public func deleteCard(at index: Int) -> Hand {
+    public func deleteItem(at index: Int) -> Hand {
         var mutableCards = cards
         mutableCards.remove(at: index)
         return Hand(deck: deck, cards: mutableCards)
     }
     
-    public func moveCard(fromIndex: Int, toIndex: Int) -> Hand {
-        return deleteCard(at: fromIndex).insertCard(card: cards[fromIndex], at: toIndex)
+    public func moveItem(fromIndex: Int, toIndex: Int) -> Hand {
+        return deleteItem(at: fromIndex).insertCard(card: cards[fromIndex], at: toIndex)
     }
     
     subscript(index: Int) -> Card {
@@ -87,22 +94,29 @@ class Document: NSObject {
         self._uniqueIdentifier = ""
     }
     
-    private var hand = Hand()
+    private var dataObject: DataType = Hand()
     
-    public var numberOfCards: Int {
-        return hand.numberOfCards
+    var conditionForAdding: Bool {
+        return dataObject.numberOfItems < 5
     }
     
-    public func addNewCard(at index: Int) {
-        hand.addNewCard(at: index)
+    public var numberOfItems: Int {
+        return dataObject.numberOfItems
     }
     
-    public func getCard(at index: Int) -> Card {
+    public func addNewItem(at index: Int) {
+        dataObject = dataObject.addNewItem(at: index)
+    }
+    
+    public func getItem(at index: Int) -> Card {
+        guard let hand = dataObject as? Hand else {
+            fatalError("Could not create Card Cell or Hand instance")
+        }
         return hand[index]
     }
     
     public func deleteCard(at index: Int) {
-        hand.deleteCard(at: index)
+        dataObject = dataObject.deleteItem(at: index)
     }
     
     func load() {
