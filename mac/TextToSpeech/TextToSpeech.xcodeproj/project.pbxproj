@@ -206,7 +206,7 @@
 			name = TextToSpeechTests;
 			productName = TextToSpeechTests;
 			productReference = 5618F78114F9099100212237 /* TextToSpeechTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -214,6 +214,7 @@
 		5618F75714F9099000212237 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastTestingUpgradeCheck = 0730;
 				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = "ビッツ有限会社";
 			};
@@ -452,6 +453,7 @@
 				5618F79414F9099100212237 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5618F79514F9099100212237 /* Build configuration list for PBXNativeTarget "TextToSpeechTests" */ = {
 			isa = XCConfigurationList;
@@ -460,6 +462,7 @@
 				5618F79714F9099100212237 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
