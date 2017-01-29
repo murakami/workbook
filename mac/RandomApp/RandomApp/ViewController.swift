@@ -15,6 +15,11 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let now = NSDate()
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = NSLocale(localeIdentifier: "ja_JP") as Locale!
+        dateFormatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
+        textField?.stringValue = dateFormatter.string(from: now as Date)
     }
 
     override var representedObject: Any? {
