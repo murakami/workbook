@@ -8,7 +8,15 @@
 
 import Cocoa
 
+class Person {
+}
+
 class Document: NSDocument {
+    
+    public static let updateKey = NSNotification.Name("updateUI")
+    
+    private var employees = [Person]()
+    private var currentIndex: Int = 0
 
     override init() {
         super.init()
@@ -39,6 +47,28 @@ class Document: NSDocument {
         throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
     }
 
-
+    public func nextEmployee() {
+        updateUI()
+    }
+    
+    public func previousEmployee() {
+    }
+    
+    public func deleteEmployee() {
+    }
+    
+    public func newEmployee() {
+    }
+    
+    private func createNewEmployee() {
+    }
+    
+    private func updateEmployee() {
+    }
+    
+    private func updateUI() {
+        NotificationCenter.default.post(name: Document.updateKey, object: nil, userInfo: nil)
+    }
+   
 }
 
