@@ -18,6 +18,10 @@ class ViewController: NSViewController {
     @IBOutlet public weak var box: NSBox!
     
     var myDocument: Document?
+    
+    override func awakeFromNib() {
+        self.view.window?.initialFirstResponder = self.nameField
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,11 +51,11 @@ class ViewController: NSViewController {
     }
 
     @IBAction func nextEmployee(sender: AnyObject) {
-        self.myDocument?.nextEmployee()
+        self.myDocument?.nextEmployee(personName: nameField.stringValue, expectedRaise: raiseField.floatValue)
     }
     
     @IBAction func previousEmployee(sender: AnyObject) {
-        self.myDocument?.previousEmployee()
+        self.myDocument?.previousEmployee(personName: nameField.stringValue, expectedRaise: raiseField.floatValue)
     }
     
     @IBAction func deleteEmployee(sender: AnyObject) {
@@ -59,11 +63,18 @@ class ViewController: NSViewController {
     }
     
     @IBAction func newEmployee(sender: AnyObject) {
-        self.myDocument?.newEmployee()
+        self.myDocument?.newEmployee(personName: nameField.stringValue, expectedRaise: raiseField.floatValue)
     }
     
     @objc private func updateUI(notification: Notification) {
-        print(#function)
+        let recordText = "Record \((self.myDocument?.currentIndex)! + 1) of \(self.myDocument?.employees.count)"
+        let currentEmployee = self.myDocument?.employees[(self.myDocument?.currentIndex)!]
+        nameField.stringValue = (currentEmployee?.personName)!
+        raiseField.floatValue = (currentEmployee?.expectedRaise)!
+        box.title = recordText
+        previousButton.isEnabled = ((self.myDocument?.currentIndex)! > 0)
+        nextButton.isEnabled = ((self.myDocument?.currentIndex)! < ((self.myDocument?.employees.count)! - 1))
+        deleteButton.isEnabled = ((self.myDocument?.employees.count)! > 1)
     }
 
 }

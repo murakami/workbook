@@ -9,18 +9,21 @@
 import Cocoa
 
 class Person {
+    public var personName: String = "New Employee"
+    public var expectedRaise: Float = 0.0
 }
 
 class Document: NSDocument {
     
     public static let updateKey = NSNotification.Name("updateUI")
     
-    private var employees = [Person]()
-    private var currentIndex: Int = 0
+    public var employees = [Person]()
+    public var currentIndex: Int = 0
 
     override init() {
         super.init()
         // Add your subclass-specific initialization here.
+        createNewEmployee()
     }
 
     override class func autosavesInPlace() -> Bool {
@@ -47,23 +50,42 @@ class Document: NSDocument {
         throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
     }
 
-    public func nextEmployee() {
+    public func nextEmployee(personName: String, expectedRaise: Float) {
+        updateEmployee(personName: personName, expectedRaise: expectedRaise)
+        currentIndex += 1
         updateUI()
     }
     
-    public func previousEmployee() {
+    public func previousEmployee(personName: String, expectedRaise: Float) {
+        updateEmployee(personName: personName, expectedRaise: expectedRaise)
+        currentIndex -= 1
+        updateUI()
     }
     
     public func deleteEmployee() {
+        employees.remove(at: currentIndex)
+        if currentIndex != 0 {
+            currentIndex -= 1
+        }
+        updateUI()
     }
     
-    public func newEmployee() {
+    public func newEmployee(personName: String, expectedRaise: Float) {
+        updateEmployee(personName: personName, expectedRaise: expectedRaise)
+        createNewEmployee()
+        updateUI()
     }
     
     private func createNewEmployee() {
+        let newEmployee = Person()
+        employees.append(newEmployee)
+        currentIndex = employees.count - 1
     }
     
-    private func updateEmployee() {
+    private func updateEmployee(personName: String, expectedRaise: Float) {
+        var currentEmployee = employees[currentIndex]
+        currentEmployee.personName = personName
+        currentEmployee.expectedRaise = expectedRaise
     }
     
     private func updateUI() {
