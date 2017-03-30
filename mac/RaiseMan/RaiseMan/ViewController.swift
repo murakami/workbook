@@ -8,19 +8,14 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
     
+    @IBOutlet public weak var tableView: NSTableView!
     @IBOutlet public weak var deleteButton: NSButton!
-    @IBOutlet public weak var nextButton: NSButton!
-    @IBOutlet public weak var previousButton: NSButton!
-    @IBOutlet public weak var nameField: NSTextField!
-    @IBOutlet public weak var raiseField: NSTextField!
-    @IBOutlet public weak var box: NSBox!
     
     var myDocument: Document?
     
     override func awakeFromNib() {
-        self.view.window?.initialFirstResponder = self.nameField
     }
 
     override func viewDidLoad() {
@@ -49,33 +44,67 @@ class ViewController: NSViewController {
         NotificationCenter.default.removeObserver(self, name: Document.updateKey, object: nil)
         super.viewWillDisappear()
     }
-
-    @IBAction func nextEmployee(sender: AnyObject) {
-        self.myDocument?.nextEmployee(personName: nameField.stringValue, expectedRaise: raiseField.floatValue)
-    }
     
-    @IBAction func previousEmployee(sender: AnyObject) {
-        self.myDocument?.previousEmployee(personName: nameField.stringValue, expectedRaise: raiseField.floatValue)
+    @IBAction func newEmployee(sender: AnyObject) {
+        self.myDocument?.newEmployee()
     }
     
     @IBAction func deleteEmployee(sender: AnyObject) {
-        self.myDocument?.deleteEmployee()
-    }
-    
-    @IBAction func newEmployee(sender: AnyObject) {
-        self.myDocument?.newEmployee(personName: nameField.stringValue, expectedRaise: raiseField.floatValue)
+        let row = tableView.selectedRow
+        if row != -1 {
+            self.myDocument?.deleteEmployee(index: row)
+        }
+        else {
+            NSBeep()
+        }
     }
     
     @objc private func updateUI(notification: Notification) {
-        let recordText = "Record \((self.myDocument?.currentIndex)! + 1) of \(self.myDocument?.employees.count)"
-        let currentEmployee = self.myDocument?.employees[(self.myDocument?.currentIndex)!]
-        nameField.stringValue = (currentEmployee?.personName)!
-        raiseField.floatValue = (currentEmployee?.expectedRaise)!
-        box.title = recordText
-        previousButton.isEnabled = ((self.myDocument?.currentIndex)! > 0)
-        nextButton.isEnabled = ((self.myDocument?.currentIndex)! < ((self.myDocument?.employees.count)! - 1))
-        deleteButton.isEnabled = ((self.myDocument?.employees.count)! > 1)
+        tableView.reloadData()
+        deleteButton.isEnabled = (1 < (myDocument?.employees.count)!)
     }
-
+    
+    /* 行数 */
+    func numberOfRows(in tableView: NSTableView) -> Int {
+        var count: Int = 0
+        if let document = myDocument {
+            count = document.employees.count
+        }
+        return count
+    }
+    
+    /* カラム:行に表示するインスタンスを返す */
+    func tableView(_ aTableView: NSTableView,
+                   objectValueFor tableColumn: NSTableColumn?,
+                   row: Int) -> Any? {
+        let identifier = tableColumn?.identifier
+        let person = myDocument?.employees[row]
+        return person?.value(forKey: identifier!)
+    }
+    
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        let cell = tableView.make(withIdentifier: (tableColumn?.identifier)!, owner: self) as! NSTableCellView
+        let person = myDocument?.employees[row]
+        if let tcol = tableColumn {
+            let identifier = tcol.identifier
+            if(identifier == "personName") {
+                cell.textField?.stringValue = person?.value(forKey: identifier) as! String
+            }
+            else if(identifier == "expectedRaise") {
+                cell.textField?.floatValue = person?.value(forKey: identifier) as! Float
+            }
+        }
+        return cell
+    }
+    
+    /* 入力されたインスタンスを受け取る */
+    func tableView(_ aTableView: NSTableView,
+                   setObjectValue object: Any?,
+                   for tableColumn: NSTableColumn?,
+                   row: Int) {
+        let identifier = tableColumn?.identifier
+        let person = myDocument?.employees[row]
+        person?.setValue(object, forKey: identifier!)
+    }
 }
 

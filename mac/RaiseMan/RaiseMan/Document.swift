@@ -8,22 +8,15 @@
 
 import Cocoa
 
-class Person {
-    public var personName: String = "New Employee"
-    public var expectedRaise: Float = 0.0
-}
-
 class Document: NSDocument {
     
     public static let updateKey = NSNotification.Name("updateUI")
     
     public var employees = [Person]()
-    public var currentIndex: Int = 0
 
     override init() {
         super.init()
         // Add your subclass-specific initialization here.
-        createNewEmployee()
     }
 
     override class func autosavesInPlace() -> Bool {
@@ -35,6 +28,9 @@ class Document: NSDocument {
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
         let windowController = storyboard.instantiateController(withIdentifier: "Document Window Controller") as! NSWindowController
         self.addWindowController(windowController)
+        
+        /* ViewControllerにDocumentを覚えさせる */
+        windowController.contentViewController?.representedObject = self
     }
 
     override func data(ofType typeName: String) throws -> Data {
@@ -49,43 +45,20 @@ class Document: NSDocument {
         // If you override either of these, you should also override -isEntireFileLoaded to return false if the contents are lazily loaded.
         throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
     }
-
-    public func nextEmployee(personName: String, expectedRaise: Float) {
-        updateEmployee(personName: personName, expectedRaise: expectedRaise)
-        currentIndex += 1
-        updateUI()
-    }
-    
-    public func previousEmployee(personName: String, expectedRaise: Float) {
-        updateEmployee(personName: personName, expectedRaise: expectedRaise)
-        currentIndex -= 1
-        updateUI()
-    }
-    
-    public func deleteEmployee() {
-        employees.remove(at: currentIndex)
-        if currentIndex != 0 {
-            currentIndex -= 1
-        }
-        updateUI()
-    }
-    
-    public func newEmployee(personName: String, expectedRaise: Float) {
-        updateEmployee(personName: personName, expectedRaise: expectedRaise)
-        createNewEmployee()
-        updateUI()
-    }
     
     private func createNewEmployee() {
         let newEmployee = Person()
         employees.append(newEmployee)
-        currentIndex = employees.count - 1
     }
     
-    private func updateEmployee(personName: String, expectedRaise: Float) {
-        var currentEmployee = employees[currentIndex]
-        currentEmployee.personName = personName
-        currentEmployee.expectedRaise = expectedRaise
+    public func newEmployee() {
+        createNewEmployee()
+        updateUI()
+    }
+    
+    public func deleteEmployee(index: Int) {
+        employees.remove(at: index)
+        updateUI()
     }
     
     private func updateUI() {

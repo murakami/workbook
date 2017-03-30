@@ -14,6 +14,7 @@
 		5644A0DA1E4CB5B40067C9D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5644A0D81E4CB5B40067C9D2 /* Main.storyboard */; };
 		5644A0E51E4CB5B40067C9D2 /* RaiseManTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5644A0E41E4CB5B40067C9D2 /* RaiseManTests.swift */; };
 		5644A0F01E4CB5B40067C9D2 /* RaiseManUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5644A0EF1E4CB5B40067C9D2 /* RaiseManUITests.swift */; };
+		56F2499D1E802B3400338BE5 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F2499C1E802B3400338BE5 /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		5644A0EB1E4CB5B40067C9D2 /* RaiseManUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaiseManUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5644A0EF1E4CB5B40067C9D2 /* RaiseManUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaiseManUITests.swift; sourceTree = "<group>"; };
 		5644A0F11E4CB5B40067C9D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56F2499C1E802B3400338BE5 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				5644A0D01E4CB5B40067C9D2 /* AppDelegate.swift */,
 				5644A0D21E4CB5B40067C9D2 /* ViewController.swift */,
 				5644A0D41E4CB5B40067C9D2 /* Document.swift */,
+				56F2499C1E802B3400338BE5 /* Person.swift */,
 				5644A0D61E4CB5B40067C9D2 /* Assets.xcassets */,
 				5644A0D81E4CB5B40067C9D2 /* Main.storyboard */,
 				5644A0DB1E4CB5B40067C9D2 /* Info.plist */,
@@ -263,6 +266,7 @@
 			files = (
 				5644A0D31E4CB5B40067C9D2 /* ViewController.swift in Sources */,
 				5644A0D11E4CB5B40067C9D2 /* AppDelegate.swift in Sources */,
+				56F2499D1E802B3400338BE5 /* Person.swift in Sources */,
 				5644A0D51E4CB5B40067C9D2 /* Document.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -509,6 +513,7 @@
 				5644A0F61E4CB5B40067C9D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5644A0F71E4CB5B40067C9D2 /* Build configuration list for PBXNativeTarget "RaiseManTests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +522,7 @@
 				5644A0F91E4CB5B40067C9D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5644A0FA1E4CB5B40067C9D2 /* Build configuration list for PBXNativeTarget "RaiseManUITests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +531,7 @@
 				5644A0FC1E4CB5B40067C9D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
