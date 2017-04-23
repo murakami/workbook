@@ -8,9 +8,14 @@
 
 import Foundation
 
-class Person: NSObject {
+class Person: NSObject, NSCoding {
     public var personName: String = "New Employee"
     public var expectedRaise: Float = 0.0
+    
+    required init?(coder aDecoder: NSCoder) {
+        self.personName = aDecoder.decodeObject() as! String
+        self.expectedRaise = aDecoder.decodeFloat(forKey: "expectedRaise")
+    }
     
     override func setNilValueForKey(_ key: String) {
         if key == "expectedRaise" {
@@ -19,5 +24,10 @@ class Person: NSObject {
         else {
             super.setNilValueForKey(key)
         }
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(personName)
+        aCoder.encode(expectedRaise, forKey: "expectedRaise")
     }
 }
