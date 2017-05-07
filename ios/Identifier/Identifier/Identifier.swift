@@ -72,7 +72,7 @@ class Identifier {
             query[kSecAttrLabel as String] = "UUID" as AnyObject?  /* ユーザへ表示する文字列 */
             query[kSecAttrDescription as String] = "a universally unique identifier." as AnyObject? /* アイテムの説明 */
             query[kSecAttrAccessible as String] = kSecAttrAccessibleAfterFirstUnlock as AnyObject?  /* 再起動後最初のアンロック以降 次の再起動まで */
-            query[kSecValueData as String] = uuidString as AnyObject?
+            query[kSecValueData as String] = uuidString.data(using: String.Encoding.utf8) as AnyObject?
             query[kSecAttrCreationDate as String] = Date() as AnyObject?
             query[kSecAttrSynchronizable as String] = kCFBooleanTrue    /* iCloud同期 */
             
@@ -151,7 +151,7 @@ class Identifier {
             query[kSecAttrLabel as String] = "UUID" as AnyObject?  /* ユーザへ表示する文字列 */
             query[kSecAttrDescription as String] = "a universally unique identifier." as AnyObject? /* アイテムの説明 */
             query[kSecAttrAccessible as String] = kSecAttrAccessibleAfterFirstUnlock as AnyObject?  /* 再起動後最初のアンロック以降 次の再起動まで */
-            query[kSecValueData as String] = uuidString as AnyObject?
+            query[kSecValueData as String] = uuidString.data(using: String.Encoding.utf8) as AnyObject?
             query[kSecAttrCreationDate as String] = Date() as AnyObject?
             query[kSecAttrSynchronizable as String] = kCFBooleanTrue    /* iCloud同期 */
             
