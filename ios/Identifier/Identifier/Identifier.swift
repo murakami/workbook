@@ -78,7 +78,7 @@ class Identifier {
             
             /* 登録 */
             let result = SecItemAdd(query as CFDictionary, nil)
-            if result == noErr {
+            if result != noErr {
                 print("[ERROR] Couldn't add the Keychain Item. result = \(result) query = \(query)")
                 return ""
             }
@@ -157,7 +157,7 @@ class Identifier {
             
             /* 登録 */
             let result = SecItemAdd(query as CFDictionary, nil)
-            if result == noErr {
+            if result != noErr {
                 print("[ERROR] Couldn't add the Keychain Item. result = \(result) query = \(query)")
             }
         }
