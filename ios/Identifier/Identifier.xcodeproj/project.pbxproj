@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56DF6BFB1EBF0D2000FA205E /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DF6BFA1EBF0D2000FA205E /* Identifier.swift */; };
 		56EF3DA91EACE39300F11812 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EF3DA81EACE39300F11812 /* AppDelegate.swift */; };
 		56EF3DAB1EACE39300F11812 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EF3DAA1EACE39300F11812 /* ViewController.swift */; };
 		56EF3DAE1EACE39300F11812 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56EF3DAC1EACE39300F11812 /* Main.storyboard */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		56DF6BFA1EBF0D2000FA205E /* Identifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identifier.swift; sourceTree = "<group>"; };
+		56DF6BFC1EBF5F4900FA205E /* Identifier.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Identifier.entitlements; sourceTree = "<group>"; };
 		56EF3DA51EACE39300F11812 /* Identifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Identifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56EF3DA81EACE39300F11812 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56EF3DAA1EACE39300F11812 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +77,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56DF6BFD1EBF5F4E00FA205E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		56EF3D9C1EACE39300F11812 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +91,7 @@
 				56EF3DBC1EACE39300F11812 /* IdentifierTests */,
 				56EF3DC71EACE39300F11812 /* IdentifierUITests */,
 				56EF3DA61EACE39300F11812 /* Products */,
+				56DF6BFD1EBF5F4E00FA205E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,9 +108,11 @@
 		56EF3DA71EACE39300F11812 /* Identifier */ = {
 			isa = PBXGroup;
 			children = (
+				56DF6BFC1EBF5F4900FA205E /* Identifier.entitlements */,
 				56EF3DA81EACE39300F11812 /* AppDelegate.swift */,
 				56EF3DAA1EACE39300F11812 /* ViewController.swift */,
 				56EF3DAC1EACE39300F11812 /* Main.storyboard */,
+				56DF6BFA1EBF0D2000FA205E /* Identifier.swift */,
 				56EF3DAF1EACE39300F11812 /* Assets.xcassets */,
 				56EF3DB11EACE39300F11812 /* LaunchScreen.storyboard */,
 				56EF3DB41EACE39300F11812 /* Info.plist */,
@@ -195,6 +208,17 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = XKY95WKF3J;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					56EF3DB81EACE39300F11812 = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -263,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56EF3DAB1EACE39300F11812 /* ViewController.swift in Sources */,
+				56DF6BFB1EBF0D2000FA205E /* Identifier.swift in Sources */,
 				56EF3DA91EACE39300F11812 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,10 +442,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Identifier/Identifier.entitlements;
 				DEVELOPMENT_TEAM = XKY95WKF3J;
 				INFOPLIST_FILE = Identifier/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.Identifier;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.bitz.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -430,10 +456,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Identifier/Identifier.entitlements;
 				DEVELOPMENT_TEAM = XKY95WKF3J;
 				INFOPLIST_FILE = Identifier/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.Identifier;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.bitz.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -516,6 +543,7 @@
 				56EF3DCF1EACE39300F11812 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		56EF3DD01EACE39300F11812 /* Build configuration list for PBXNativeTarget "IdentifierTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +552,7 @@
 				56EF3DD21EACE39300F11812 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		56EF3DD31EACE39300F11812 /* Build configuration list for PBXNativeTarget "IdentifierUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +561,7 @@
 				56EF3DD51EACE39300F11812 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -9,10 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var label: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.label.text = ""
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +24,17 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func get(sender: AnyObject) {
+        self.label.text = Identifier.sharedInstance.uuid
+    }
+    
+    @IBAction func reset(sender: AnyObject) {
+        Identifier.sharedInstance.reset()
+    }
+    
+    @IBAction func update(sender: AnyObject) {
+        Identifier.sharedInstance.update(uuidString: "Update to dummy value.")
+    }
 
 }
 
