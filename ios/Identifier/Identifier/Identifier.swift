@@ -44,13 +44,13 @@ class Identifier {
         }
         print("status[\(status)]")
         if result == noErr {
-            var valueQuery = [String : AnyObject]()
+            var valueQuery = queryResult as! [String : AnyObject]
             valueQuery[kSecClass as String] = kSecClassGenericPassword
             valueQuery[kSecReturnData as String] = kCFBooleanTrue   /* 検索をデータで受け取る（パスワード） */
             
             var valueQueryResult: AnyObject?
             let valueStatus = withUnsafeMutablePointer(to: &valueQueryResult) {
-                SecItemCopyMatching(valueQuery as CFDictionary, UnsafeMutablePointer($0))
+                result = SecItemCopyMatching(valueQuery as CFDictionary, UnsafeMutablePointer($0))
             }
             print("valueStatus[\(valueStatus)]")
             if result == noErr {
@@ -93,6 +93,7 @@ class Identifier {
         query[kSecClass as String] = kSecClassGenericPassword       /* パスワードクラス */
         query[kSecAttrService as String] = self.service as AnyObject?    /* サービス名 */
         query[kSecAttrAccount as String] = Identifier.IDENTIFIER_KEY as AnyObject?    /* アカウント */
+        query[kSecAttrSynchronizable as String] = kCFBooleanTrue    /* iCloud同期 */
         
         /* 削除 */
         let result = SecItemDelete(query as CFDictionary)
@@ -131,7 +132,7 @@ class Identifier {
             query[kSecAttrSynchronizable as String] = kCFBooleanTrue    /* iCloud同期 */
             
             var attributesToUpdate = [String : AnyObject]()
-            attributesToUpdate[kSecValueData as String] = uuidString as AnyObject?
+            attributesToUpdate[kSecValueData as String] = uuidString.data(using: String.Encoding.utf8) as AnyObject?
             attributesToUpdate[kSecAttrCreationDate as String] = Date() as AnyObject?
             
             /* 更新 */

@@ -33,7 +33,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func update(sender: AnyObject) {
-        Identifier.sharedInstance.update(uuidString: "Update to dummy value.")
+        let uuidString = NSUUID().uuidString
+        Identifier.sharedInstance.update(uuidString: uuidString)
     }
 
 }
