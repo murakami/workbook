@@ -63,25 +63,25 @@ class Identifier {
         }
         
         if uuidString.isEmpty {
-            uuidString = NSUUID().uuidString
-            
-            var query = [String : AnyObject]()
-            query[kSecClass as String] = kSecClassGenericPassword       /* パスワードクラス */
-            query[kSecAttrService as String] = self.service as AnyObject?    /* サービス名 */
-            query[kSecAttrAccount as String] = Identifier.IDENTIFIER_KEY as AnyObject?    /* アカウント */
-            query[kSecAttrLabel as String] = "UUID" as AnyObject?  /* ユーザへ表示する文字列 */
-            query[kSecAttrDescription as String] = "a universally unique identifier." as AnyObject? /* アイテムの説明 */
-            query[kSecAttrAccessible as String] = kSecAttrAccessibleAfterFirstUnlock as AnyObject?  /* 再起動後最初のアンロック以降 次の再起動まで */
-            query[kSecValueData as String] = uuidString.data(using: String.Encoding.utf8) as AnyObject?
-            query[kSecAttrCreationDate as String] = Date() as AnyObject?
-            query[kSecAttrSynchronizable as String] = kCFBooleanTrue    /* iCloud同期 */
-            
-            /* 登録 */
-            let result = SecItemAdd(query as CFDictionary, nil)
-            if result != noErr {
-                print("[ERROR] Couldn't add the Keychain Item. result = \(result) query = \(query)")
-                return ""
-            }
+//            uuidString = NSUUID().uuidString
+//            
+//            var query = [String : AnyObject]()
+//            query[kSecClass as String] = kSecClassGenericPassword       /* パスワードクラス */
+//            query[kSecAttrService as String] = self.service as AnyObject?    /* サービス名 */
+//            query[kSecAttrAccount as String] = Identifier.IDENTIFIER_KEY as AnyObject?    /* アカウント */
+//            query[kSecAttrLabel as String] = "UUID" as AnyObject?  /* ユーザへ表示する文字列 */
+//            query[kSecAttrDescription as String] = "a universally unique identifier." as AnyObject? /* アイテムの説明 */
+//            query[kSecAttrAccessible as String] = kSecAttrAccessibleAfterFirstUnlock as AnyObject?  /* 再起動後最初のアンロック以降 次の再起動まで */
+//            query[kSecValueData as String] = uuidString.data(using: String.Encoding.utf8) as AnyObject?
+//            query[kSecAttrCreationDate as String] = Date() as AnyObject?
+//            query[kSecAttrSynchronizable as String] = kCFBooleanTrue    /* iCloud同期 */
+//            
+//            /* 登録 */
+//            let result = SecItemAdd(query as CFDictionary, nil)
+//            if result != noErr {
+//                print("[ERROR] Couldn't add the Keychain Item. result = \(result) query = \(query)")
+//                return ""
+//            }
         }
         
         print("UUID[\(uuidString)]")
