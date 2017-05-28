@@ -39,20 +39,20 @@ class Identifier {
         var result = noErr
         /* 検索 */
         var queryResult: AnyObject?
-        let status = withUnsafeMutablePointer(to: &queryResult) {
-            result = SecItemCopyMatching(query as CFDictionary, UnsafeMutablePointer($0))
+        result = withUnsafeMutablePointer(to: &queryResult) {
+            SecItemCopyMatching(query as CFDictionary, UnsafeMutablePointer($0))
         }
-        print("status[\(status)]")
+        print("result[\(result)]")
         if result == noErr {
             var valueQuery = queryResult as! [String : AnyObject]
             valueQuery[kSecClass as String] = kSecClassGenericPassword
             valueQuery[kSecReturnData as String] = kCFBooleanTrue   /* 検索をデータで受け取る（パスワード） */
             
             var valueQueryResult: AnyObject?
-            let valueStatus = withUnsafeMutablePointer(to: &valueQueryResult) {
-                result = SecItemCopyMatching(valueQuery as CFDictionary, UnsafeMutablePointer($0))
+            result = withUnsafeMutablePointer(to: &valueQueryResult) {
+                SecItemCopyMatching(valueQuery as CFDictionary, UnsafeMutablePointer($0))
             }
-            print("valueStatus[\(valueStatus)]")
+            print("result[\(result)]")
             if result == noErr {
                 if let passwordData = valueQueryResult as? Data {
                     if let password = String(data: passwordData, encoding: String.Encoding.utf8) {
@@ -120,10 +120,10 @@ class Identifier {
         var result = noErr
         /* 検索 */
         var queryResult: AnyObject?
-        let status = withUnsafeMutablePointer(to: &queryResult) {
-            result = SecItemCopyMatching(query as CFDictionary, UnsafeMutablePointer($0))
+        result = withUnsafeMutablePointer(to: &queryResult) {
+            SecItemCopyMatching(query as CFDictionary, UnsafeMutablePointer($0))
         }
-        print("status[\(status)]")
+        print("result[\(result)]")
         if result == noErr {
             query = [String : AnyObject]()
             query[kSecClass as String] = kSecClassGenericPassword       /* パスワードクラス */
