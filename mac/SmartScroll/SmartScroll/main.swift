@@ -16,10 +16,16 @@ let kOurProductID = 0x50    /* Product ID of device */
 
 private var gNotifyPort: IONotificationPortRef? = nil
 
+private var gAddedIter: io_iterator_t = 0
+
 private var gRawAddedIter: io_iterator_t = 0
 private var gRawRemovedIter: io_iterator_t = 0
 private var gBulkTestAddedIter: io_iterator_t = 0
 private var gBulkTestRemovedIter: io_iterator_t = 0
+
+func DeviceAdded(_ refCon: UnsafeMutableRawPointer?, _ iterator: io_iterator_t) {
+    print(#function)
+}
 
 var masterPort: mach_port_t = 0
 let usbVendor: Int32 = Int32(kOurVendorID)
@@ -38,6 +44,11 @@ let runLoopSource = IONotificationPortGetRunLoopSource(gNotifyPort).takeUnretain
 private var gRunLoop: CFRunLoop? = CFRunLoopGetCurrent()
 CFRunLoopAddSource(gRunLoop, runLoopSource, CFRunLoopMode.defaultMode)
 
+let _ = IOServiceAddMatchingNotification(gNotifyPort, kIOFirstMatchNotification, matchingDict! as CFDictionary, DeviceAdded, nil, &gAddedIter)
+
+DeviceAdded(nil, gAddedIter)
+
 CFRunLoopRun()
 
+print("END")
 exit(0)
