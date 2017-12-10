@@ -13,6 +13,8 @@
 		5652484A1FDD3EAA00BB9626 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 565248481FDD3EAA00BB9626 /* Main.storyboard */; };
 		565248561FDD3EAA00BB9626 /* DestroyerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565248551FDD3EAA00BB9626 /* DestroyerTests.swift */; };
 		565248611FDD3EAB00BB9626 /* DestroyerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565248601FDD3EAB00BB9626 /* DestroyerUITests.swift */; };
+		5652486F1FDD416F00BB9626 /* DestroyerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5652486E1FDD416F00BB9626 /* DestroyerView.swift */; };
+		565248711FDD7E6B00BB9626 /* Destroyer.metal in Sources */ = {isa = PBXBuildFile; fileRef = 565248701FDD7E6B00BB9626 /* Destroyer.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		5652485C1FDD3EAB00BB9626 /* DestroyerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DestroyerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		565248601FDD3EAB00BB9626 /* DestroyerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestroyerUITests.swift; sourceTree = "<group>"; };
 		565248621FDD3EAB00BB9626 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5652486E1FDD416F00BB9626 /* DestroyerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestroyerView.swift; sourceTree = "<group>"; };
+		565248701FDD7E6B00BB9626 /* Destroyer.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Destroyer.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 			children = (
 				565248421FDD3EAA00BB9626 /* AppDelegate.swift */,
 				565248441FDD3EAA00BB9626 /* ViewController.swift */,
+				5652486E1FDD416F00BB9626 /* DestroyerView.swift */,
+				565248701FDD7E6B00BB9626 /* Destroyer.metal */,
 				565248461FDD3EAA00BB9626 /* Assets.xcassets */,
 				565248481FDD3EAA00BB9626 /* Main.storyboard */,
 				5652484B1FDD3EAA00BB9626 /* Info.plist */,
@@ -258,7 +264,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				565248451FDD3EAA00BB9626 /* ViewController.swift in Sources */,
+				565248711FDD7E6B00BB9626 /* Destroyer.metal in Sources */,
 				565248431FDD3EAA00BB9626 /* AppDelegate.swift in Sources */,
+				5652486F1FDD416F00BB9626 /* DestroyerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
