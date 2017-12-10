@@ -15,52 +15,52 @@ class ContainerViewController: UIViewController {
     var gameViewController: GameViewController?
     
     override func viewDidLoad() {
-        print(NSStringFromClass(self.dynamicType), __FUNCTION__)
+        print(NSStringFromClass(type(of: self)), #function)
         super.viewDidLoad()
         
         let mainStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
-        titleViewController = mainStoryboard.instantiateViewControllerWithIdentifier("TitleViewController") as? TitleViewController
+        titleViewController = mainStoryboard.instantiateViewController(withIdentifier: "TitleViewController") as? TitleViewController
         titleViewController!.containerViewController = self
-        gameViewController = mainStoryboard.instantiateViewControllerWithIdentifier("GameViewController") as? GameViewController
+        gameViewController = mainStoryboard.instantiateViewController(withIdentifier: "GameViewController") as? GameViewController
         gameViewController!.containerViewController = self
         
         self.addChildViewController(titleViewController!)
         self.addChildViewController(gameViewController!)
-        titleViewController!.didMoveToParentViewController(self)
-        gameViewController!.didMoveToParentViewController(self)
+        titleViewController!.didMove(toParentViewController: self)
+        gameViewController!.didMove(toParentViewController: self)
         
         selectedViewController = titleViewController
         self.view.addSubview(selectedViewController!.view)
     }
     
-    override func viewWillAppear(animated: Bool) {
-        print(NSStringFromClass(self.dynamicType), __FUNCTION__)
+    override func viewWillAppear(_ animated: Bool) {
+        print(NSStringFromClass(type(of: self)), #function)
         super.viewWillAppear(animated)
     }
     
-    override func viewDidAppear(animated: Bool) {
-        print(NSStringFromClass(self.dynamicType), __FUNCTION__)
+    override func viewDidAppear(_ animated: Bool) {
+        print(NSStringFromClass(type(of: self)), #function)
         super.viewDidAppear(animated)
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        print(NSStringFromClass(self.dynamicType), __FUNCTION__)
+    override func viewWillDisappear(_ animated: Bool) {
+        print(NSStringFromClass(type(of: self)), #function)
         super.viewDidDisappear(animated)
     }
     
-    override func viewDidDisappear(animated: Bool) {
-        print(NSStringFromClass(self.dynamicType), __FUNCTION__)
+    override func viewDidDisappear(_ animated: Bool) {
+        print(NSStringFromClass(type(of: self)), #function)
         super.viewDidDisappear(animated)
     }
     
-    override func willMoveToParentViewController(parent: UIViewController?) {
-        print(NSStringFromClass(self.dynamicType), __FUNCTION__)
-        super.willMoveToParentViewController(parent)
+    override func willMove(toParentViewController parent: UIViewController?) {
+        print(NSStringFromClass(type(of: self)), #function)
+        super.willMove(toParentViewController: parent)
     }
     
-    override func didMoveToParentViewController(parent: UIViewController?) {
-        print(NSStringFromClass(self.dynamicType), __FUNCTION__)
-        super.didMoveToParentViewController(parent)
+    override func didMove(toParentViewController parent: UIViewController?) {
+        print(NSStringFromClass(type(of: self)), #function)
+        super.didMove(toParentViewController: parent)
     }
     
     override func didReceiveMemoryWarning() {
@@ -68,7 +68,7 @@ class ContainerViewController: UIViewController {
     }
     
     func toGameViewController() {
-        transitionFromViewController(titleViewController!, toViewController: gameViewController!, duration: 1.0, options: .TransitionCrossDissolve, animations: nil, completion: { (finished: Bool) -> Void in self.selectedViewController = self.gameViewController })
+        transition(from: titleViewController!, to: gameViewController!, duration: 1.0, options: .transitionCrossDissolve, animations: nil, completion: { (finished: Bool) -> Void in self.selectedViewController = self.gameViewController })
     }
 }
 

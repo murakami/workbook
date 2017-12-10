@@ -15,13 +15,13 @@ class GameViewController: UIViewController {
     var game: Game?
 
     override func viewDidLoad() {
-        print(NSStringFromClass(self.dynamicType), __FUNCTION__)
+        print(NSStringFromClass(type(of: self)), #function)
         super.viewDidLoad()
         
         game = Game()
         if let aGame = game {
             let scene = aGame.scene
-            scene!.scaleMode = .AspectFill
+            scene!.scaleMode = .aspectFill
             
             let skView = view as! SKView
             skView.presentScene(scene)
@@ -31,34 +31,34 @@ class GameViewController: UIViewController {
         }
     }
     
-    override func viewWillAppear(animated: Bool) {
-        print(NSStringFromClass(self.dynamicType), __FUNCTION__)
+    override func viewWillAppear(_ animated: Bool) {
+        print(NSStringFromClass(type(of: self)), #function)
         super.viewWillAppear(animated)
     }
     
-    override func viewDidAppear(animated: Bool) {
-        print(NSStringFromClass(self.dynamicType), __FUNCTION__)
+    override func viewDidAppear(_ animated: Bool) {
+        print(NSStringFromClass(type(of: self)), #function)
         super.viewDidAppear(animated)
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        print(NSStringFromClass(self.dynamicType), __FUNCTION__)
+    override func viewWillDisappear(_ animated: Bool) {
+        print(NSStringFromClass(type(of: self)), #function)
         super.viewDidDisappear(animated)
     }
     
-    override func viewDidDisappear(animated: Bool) {
-        print(NSStringFromClass(self.dynamicType), __FUNCTION__)
+    override func viewDidDisappear(_ animated: Bool) {
+        print(NSStringFromClass(type(of: self)), #function)
         super.viewDidDisappear(animated)
     }
     
-    override func willMoveToParentViewController(parent: UIViewController?) {
-        print(NSStringFromClass(self.dynamicType), __FUNCTION__)
-        super.willMoveToParentViewController(parent)
+    override func willMove(toParentViewController parent: UIViewController?) {
+        print(NSStringFromClass(type(of: self)), #function)
+        super.willMove(toParentViewController: parent)
     }
     
-    override func didMoveToParentViewController(parent: UIViewController?) {
-        print(NSStringFromClass(self.dynamicType), __FUNCTION__)
-        super.didMoveToParentViewController(parent)
+    override func didMove(toParentViewController parent: UIViewController?) {
+        print(NSStringFromClass(type(of: self)), #function)
+        super.didMove(toParentViewController: parent)
     }
 
     override func didReceiveMemoryWarning() {
