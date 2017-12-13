@@ -14,11 +14,13 @@ struct Vertex {
     float4 color;
 };
 
+/* バーテックスシェーダ */
 vertex Vertex vertex_func(constant Vertex *vertices [[buffer(0)]],
                           uint vid [[vertex_id]]) {
     return vertices[vid];
 }
 
+/* フラグメントシェーダ */
 fragment float4 fragment_func(Vertex vert [[stage_in]]) {
     float3 inColor = float3(vert.color.x, vert.color.y, vert.color.z);
     float4 outColor = float4(inColor.x, inColor.y, inColor.z, 1);
