@@ -156,7 +156,8 @@ class Document {
         /* イベントの削除 */
         do {
             try store.remove(event, span: .thisEvent)
-        } catch let error {
+        }
+        catch let error {
             print(error)
         }
         /* イベントの検索 */
