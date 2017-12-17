@@ -14,6 +14,7 @@
 		56ECAC331FE4F938006F5FBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56ECAC311FE4F938006F5FBB /* LaunchScreen.storyboard */; };
 		56ECAC3E1FE4F938006F5FBB /* GettingThingsDoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ECAC3D1FE4F938006F5FBB /* GettingThingsDoneTests.swift */; };
 		56ECAC491FE4F938006F5FBB /* GettingThingsDoneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ECAC481FE4F938006F5FBB /* GettingThingsDoneUITests.swift */; };
+		56ECAC571FE50551006F5FBB /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ECAC561FE50551006F5FBB /* Document.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		56ECAC441FE4F938006F5FBB /* GettingThingsDoneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GettingThingsDoneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		56ECAC481FE4F938006F5FBB /* GettingThingsDoneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GettingThingsDoneUITests.swift; sourceTree = "<group>"; };
 		56ECAC4A1FE4F938006F5FBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56ECAC561FE50551006F5FBB /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				56ECAC281FE4F938006F5FBB /* AppDelegate.swift */,
 				56ECAC2A1FE4F938006F5FBB /* ViewController.swift */,
+				56ECAC561FE50551006F5FBB /* Document.swift */,
 				56ECAC2C1FE4F938006F5FBB /* Main.storyboard */,
 				56ECAC2F1FE4F938006F5FBB /* Assets.xcassets */,
 				56ECAC311FE4F938006F5FBB /* LaunchScreen.storyboard */,
@@ -261,6 +264,7 @@
 			files = (
 				56ECAC2B1FE4F938006F5FBB /* ViewController.swift in Sources */,
 				56ECAC291FE4F938006F5FBB /* AppDelegate.swift in Sources */,
+				56ECAC571FE50551006F5FBB /* Document.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
