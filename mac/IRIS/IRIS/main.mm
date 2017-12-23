@@ -7,78 +7,63 @@
 //
 
 #import <iostream>
+#import <sstream>
 #import <Foundation/Foundation.h>
 #import <OpenGL/gl.h>
 #import <OpenGL/glu.h>
 #import <GLUT/glut.h>
 
-int width = 600;
-int height = 500;
-BOOL    isWireframe = NO;
-GLuint  listID; /* ディスプレイリストID */
+int gWidth = 600;
+int gHeight = 500;
+const int QUIT_VALUE(99);
+GLuint  gListID; /* ディスプレイリストID */
+//GLuint  bufferID;
 
-void resize(int w, int h)
+inline GLvoid *bufferObjectPtr(unsigned int idx)
 {
-    /* 視体積を設定 */
-    //gluPerspective(40.0, (GLdouble)w / (GLdouble)h, 1.0, 200.0);
-    
-    /* ウィンドウ・サイズとOpenGLの座標を対応づける */
-    glViewport(0, 0, w, h);
-    //glViewport(0, 0, (w < h ? w : h), (w < h ? w : h));
-    
-    /* 投影行列とアスペクト比を更新する */
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    //gluPerspective(40.0, (GLdouble)w / (GLdouble)h, 1.0, 200.0);
-    
-    /* 透視投影 left right bottm top near far */
-    glFrustum(-1.0, 1.0, -1.0, 1.0, 1.5, 20.0);
-    
-    /* 表示ルーチン用にモデルビューモードに設定する */
-    glMatrixMode(GL_MODELVIEW);
-    
-    glLoadIdentity();
-    assert(glGetError() == GL_NO_ERROR);
-    
-    width = w;
-    height = h;
+    return (GLvoid *)(((char *)NULL) + idx);
 }
 
 void display(void)
 {
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    /* カラーバッファの初期化 */
+    glClear(GL_COLOR_BUFFER_BIT);
     
-    /* 白 */
-    glColor3f(1.0, 1.0, 1.0);
+    /* モデリング変換、z軸の負の方向に幾何形状を4単位移動する。 */
+    glLoadIdentity();   /* 単位行列 */
+    glTranslatef(0.0f, 0.0f, -4.0f);
     
-    /* 単位行列 */
-    glLoadIdentity();
-    
-    /* 視野変換 eyex eyey eyez centerx centery centerz upx upy upz */
-    gluLookAt(0.0, 0.0, 5.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
-    
-    /* モデリング変換 */
-    glScalef(2.0, 2.0, 2.0);    /* 拡大縮小 x y z */
-    
-    /* ティーポット描画 */
-    if (! isWireframe)
-        glutSolidTeapot(0.5);
-    else
-        glutWireTeapot(0.5);
+    /* 幾何形状を描画する。 */
+    glCallList(gListID);
     
     /* バッファの入れ替え */
     glutSwapBuffers();
+    
     assert(glGetError() == GL_NO_ERROR);
+}
+
+void resize(int w, int h)
+{
+    /* ウィンドウ・サイズとOpenGLの座標を対応づける */
+    glViewport(0, 0, w, h);
+    
+    /* 投影行列とアスペクト比を更新する */
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    gluPerspective(50.0, (GLdouble)w / (GLdouble)h, 1.0, 10.0);
+    
+    /* 表示ルーチン用にモデルビューモードに設定する */
+    glMatrixMode(GL_MODELVIEW);
+    
+    assert(glGetError() == GL_NO_ERROR);
+    
+    gWidth = w;
+    gHeight = h;
 }
 
 void keyboard(unsigned char key, int x, int y)
 {
     DBGMSG(@"%s", __func__);
-    switch((unsigned char)key) {
-        case 'w':
-            isWireframe = !isWireframe;
-            break;
-    }
 }
 
 void special(int key, int x, int y)
@@ -101,33 +86,89 @@ void idle(void)
     glutPostRedisplay();
 }
 
+void main_menu_callback(int value)
+{
+    if (value == QUIT_VALUE)
+        exit(EXIT_SUCCESS);
+}
+
 void init(void)
 {
     DBGMSG(@"%s", __func__);
+    assert(glGetError() == GL_NO_ERROR);
 
     /* ディザ処理を無効にする */
     glDisable(GL_DITHER);
-    
-    /*
-    glEnable(GL_LIGHTING);
-    glEnable(GL_LIGHT0);
-    GLfloat ambient[4] = {0.5, 0.5, 0.5, 1.0};
-    glMaterialfv(GL_FRONT, GL_AMBIENT, ambient);
-    GLfloat blue[4] = {0.3, 0.3, 1.0, 1.0};
-    glMaterialfv(GL_FRONT, GL_DIFFUSE, blue);
-    GLfloat white[4] = {0.1, 0.1, 0.1, 1.0};
-    glMaterialfv(GL_FRONT, GL_SPECULAR, white);
-    GLfloat position[4] = {0.5, 0.5, -1.0, 1.0};
-    glLightfv(GL_LIGHT0, GL_POSITION, position);
-    */
-    
     assert(glGetError() == GL_NO_ERROR);
     
-    /* リサイズ処理 */
-    glutReshapeFunc(resize);
+    std::string ver((const char*)glGetString(GL_VERSION));
+    assert(! ver.empty());
+    std::istringstream verStream(ver);
+    
+    int major, minor;
+    char dummySep;
+    verStream >> major >> dummySep >> minor;
+    const bool useVertexArrays = ((major >= 1) && (minor >= 1));
+    NSLog(@"OpenGL Ver. %d.%d", major, minor);
+    
+    /* 三角形の頂点を定義する */
+    const GLfloat data[] = {
+        -1.0f, -1.0f, 0.0f,
+        1.0f, -1.0f, 0.0f,
+        0.0f, 1.0f, 0.0f
+    };
+    
+    if (useVertexArrays) {
+        /* バッファIDを取得する */
+        //glGenBuffers(1, &bufferID);
+        
+        /* バッファオブジェクトをバインドする */
+        //glBindBuffer(GL_ARRAY_BUFFER, bufferID);
+        
+        /* 配列の値をバッファオブジェクトにコピーする */
+        //glBufferData(GL_ARRAY_BUFFER, 3 * 3 * sizeof(GLfloat), data, GL_STATIC_DRAW);
+        
+        glEnableClientState(GL_VERTEX_ARRAY);
+        assert(glGetError() == GL_NO_ERROR);
+        
+        glVertexPointer(3, GL_FLAT, 0, data);
+        //glVertexPointer(3, GL_FLAT, 0, bufferObjectPtr(0));
+        
+        GLenum glErrorCode = glGetError();
+        NSLog(@"%s (error code:0x%x)", __func__, glErrorCode);
+        assert(glErrorCode == GL_NO_ERROR);
+    }
+    assert(glGetError() == GL_NO_ERROR);
+    
+    /* ディスプレイリストを作成する。 */
+    gListID = glGenLists(1);
+    glNewList(gListID, GL_COMPILE);
+    assert(glGetError() == GL_NO_ERROR);
+
+    if (useVertexArrays) {
+        glDrawArrays(GL_TRIANGLES, 0, 3);
+        //glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, &gListID);
+        //glDisableClientState(GL_VERTEX_ARRAY);
+    }
+    else {
+        glBegin(GL_TRIANGLES);
+        glVertex3fv(&data[0]);
+        glVertex3fv(&data[3]);
+        glVertex3fv(&data[6]);
+        glEnd();
+    }
+    assert(glGetError() == GL_NO_ERROR);
+    
+    glEndList();
+    
+    //NSLog(@"%s (error code:0x%x)", __func__, glGetError());
+    assert(glGetError() == GL_NO_ERROR);
     
     /* 描画 */
     glutDisplayFunc(display);
+
+    /* リサイズ処理 */
+    glutReshapeFunc(resize);
     
     /* キーボード */
     glutKeyboardFunc(keyboard);
@@ -143,6 +184,11 @@ void init(void)
     
     /* バックグランド処理 */
     glutIdleFunc(idle);
+    
+    /* コンテキスト・メニュー */
+    glutCreateMenu(main_menu_callback);
+    glutAddMenuEntry("Quit", QUIT_VALUE);
+    glutAttachMenu(GLUT_RIGHT_BUTTON);
 }
 
 int main(int argc, const char * argv[])
@@ -152,11 +198,11 @@ int main(int argc, const char * argv[])
         
         glutInit(&argc, (char **)argv);
         
-        /* RGBAカラーモード ダブルバッファ デプスバッファ */
-        glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE | GLUT_DEPTH);
+        /* RGBカラーモード ダブルバッファ */
+        glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE);
         
         /* 初期ウィンドウ・サイズ */
-        glutInitWindowSize(width, height);
+        glutInitWindowSize(gWidth, gHeight);
         
         /* 初期ウィンドウ位置 */
         glutInitWindowPosition(500, 100);
