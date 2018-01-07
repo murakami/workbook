@@ -13,6 +13,9 @@
 		56CA866C1FFB783D00AE0656 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56CA866A1FFB783D00AE0656 /* Main.storyboard */; };
 		56CA86781FFB783D00AE0656 /* CrimsonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CA86771FFB783D00AE0656 /* CrimsonTests.swift */; };
 		56CA86831FFB783D00AE0656 /* CrimsonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CA86821FFB783D00AE0656 /* CrimsonUITests.swift */; };
+		56CA86931FFC52B500AE0656 /* MyGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CA86921FFC52B500AE0656 /* MyGLView.m */; };
+		56CA86972001C5F400AE0656 /* MyShader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 56CA86942001C13D00AE0656 /* MyShader.vsh */; };
+		56CA86982001C5F400AE0656 /* MyShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 56CA86962001C19E00AE0656 /* MyShader.fsh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,11 @@
 		56CA867E1FFB783D00AE0656 /* CrimsonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrimsonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		56CA86821FFB783D00AE0656 /* CrimsonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrimsonUITests.swift; sourceTree = "<group>"; };
 		56CA86841FFB783D00AE0656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56CA86901FFC52B500AE0656 /* Crimson-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Crimson-Bridging-Header.h"; sourceTree = "<group>"; };
+		56CA86911FFC52B500AE0656 /* MyGLView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyGLView.h; sourceTree = "<group>"; };
+		56CA86921FFC52B500AE0656 /* MyGLView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyGLView.m; sourceTree = "<group>"; };
+		56CA86942001C13D00AE0656 /* MyShader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = MyShader.vsh; sourceTree = "<group>"; };
+		56CA86962001C19E00AE0656 /* MyShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = MyShader.fsh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,10 +106,14 @@
 			children = (
 				56CA86641FFB783D00AE0656 /* AppDelegate.swift */,
 				56CA86661FFB783D00AE0656 /* ViewController.swift */,
+				56CA86911FFC52B500AE0656 /* MyGLView.h */,
+				56CA86921FFC52B500AE0656 /* MyGLView.m */,
+				56CA86952001C14600AE0656 /* Resources */,
 				56CA86681FFB783D00AE0656 /* Assets.xcassets */,
 				56CA866A1FFB783D00AE0656 /* Main.storyboard */,
 				56CA866D1FFB783D00AE0656 /* Info.plist */,
 				56CA866E1FFB783D00AE0656 /* Crimson.entitlements */,
+				56CA86901FFC52B500AE0656 /* Crimson-Bridging-Header.h */,
 			);
 			path = Crimson;
 			sourceTree = "<group>";
@@ -122,6 +134,15 @@
 				56CA86841FFB783D00AE0656 /* Info.plist */,
 			);
 			path = CrimsonUITests;
+			sourceTree = "<group>";
+		};
+		56CA86952001C14600AE0656 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				56CA86942001C13D00AE0656 /* MyShader.vsh */,
+				56CA86962001C19E00AE0656 /* MyShader.fsh */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +213,7 @@
 				TargetAttributes = {
 					56CA86601FFB783D00AE0656 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					56CA86721FFB783D00AE0656 = {
@@ -231,6 +253,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56CA86972001C5F400AE0656 /* MyShader.vsh in Resources */,
+				56CA86982001C5F400AE0656 /* MyShader.fsh in Resources */,
 				56CA86691FFB783D00AE0656 /* Assets.xcassets in Resources */,
 				56CA866C1FFB783D00AE0656 /* Main.storyboard in Resources */,
 			);
@@ -258,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56CA86671FFB783D00AE0656 /* ViewController.swift in Sources */,
+				56CA86931FFC52B500AE0656 /* MyGLView.m in Sources */,
 				56CA86651FFB783D00AE0656 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,6 +440,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Crimson/Crimson.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -423,6 +449,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Crimson;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Crimson/Crimson-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -431,6 +459,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Crimson/Crimson.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -439,6 +468,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Crimson;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Crimson/Crimson-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
