@@ -113,7 +113,7 @@
     
     /* ビューポートのサイズ */
     NSSize size = dirtyRect.size;
-    size = [self convertSizeToBacking:size];
+    size = [self convertSizeToBacking:size];    /* Retina対応 */
     CGFloat width = size.width;
     CGFloat height = size.height;
     NSRect viewportRect;
