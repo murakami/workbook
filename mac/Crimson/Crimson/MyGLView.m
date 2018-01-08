@@ -112,11 +112,13 @@
     // Drawing code here.
     
     /* ビューポートのサイズ */
+    NSSize size = dirtyRect.size;
+    size = [self convertSizeToBacking:size];
+    CGFloat width = size.width;
+    CGFloat height = size.height;
     NSRect viewportRect;
-    CGFloat width = dirtyRect.size.width;
-    CGFloat height = dirtyRect.size.height;
-    viewportRect.origin.x = width / 2.0;
-    viewportRect.origin.y = height / 2.0;
+    viewportRect.origin.x = 0.0;
+    viewportRect.origin.y = 0.0;
     viewportRect.size.width = width;
     viewportRect.size.height = height;
     
