@@ -17,8 +17,8 @@
 @property (nonatomic, assign) GLuint program;
 @property (nonatomic, assign) GLuint vertexShader;
 @property (nonatomic, assign) GLuint fragmentShader;
-@property (nonatomic, assign) GLuint vbo;
-@property (nonatomic, assign) GLuint vao;
+@property (nonatomic, assign) GLuint vbo;   /* vertex buffer object */
+@property (nonatomic, assign) GLuint vao;   /* vertex array object */
 - (GLchar *)readResource:(NSString *)name ofType:(NSString *)ext;
 @end
 
@@ -64,43 +64,42 @@
     
     NSOpenGLContext *glContext = [self openGLContext];
     
-    self.vertexShader = glCreateShader(GL_VERTEX_SHADER);
-    const GLchar *vertexSource = [self readResource:@"MyShader" ofType:@"vsh"];
-    glShaderSource(self.vertexShader, 1, &vertexSource, NULL);
-    glCompileShader(self.vertexShader);
+    self.vertexShader = glCreateShader(GL_VERTEX_SHADER);   /* 頂点シェーダ・ハンドル */
+    const GLchar *vertexSource = [self readResource:@"MyShader" ofType:@"vsh"]; /* シェーダのソースコードの読み込み */
+    glShaderSource(self.vertexShader, 1, &vertexSource, NULL);  /* シェーダのソースコードを設定 */
+    glCompileShader(self.vertexShader); /* コンパイル */
     free((void *)vertexSource);
  
-    self.fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-    const GLchar *fragmentSource = [self readResource:@"MyShader" ofType:@"fsh"];
-    glShaderSource(self.fragmentShader, 1, &fragmentSource, NULL);
-    glCompileShader(self.fragmentShader);
+    self.fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);   /* フラグメント・シェーダ・ハンドル */
+    const GLchar *fragmentSource = [self readResource:@"MyShader" ofType:@"fsh"];    /* シェーダのソースコードの読み込み */
+    glShaderSource(self.fragmentShader, 1, &fragmentSource, NULL);  /* シェーダのソースコードを設定 */
+    glCompileShader(self.fragmentShader);   /* コンパイル */
     free((void *)fragmentSource);
     
-    self.program = glCreateProgram();
+    self.program = glCreateProgram();   /* プログラム・ハンドル */
     
-    glAttachShader(self.program, self.vertexShader);
-    glAttachShader(self.program, self.fragmentShader);
-    glLinkProgram(self.program);
+    glAttachShader(self.program, self.vertexShader);    /* プログラムに頂点シェーダを割り当てる */
+    glAttachShader(self.program, self.fragmentShader);  /* プログラムにフラグメント・シェーダを割り当てる */
+    glLinkProgram(self.program);    /* リンク */
     
-    glGenBuffers(1, &_vbo);
-    glBindBuffer(GL_ARRAY_BUFFER, self.vbo);
+    glGenBuffers(1, &_vbo); /* VBOを作成 */
+    glBindBuffer(GL_ARRAY_BUFFER, self.vbo);    /* 頂点シェーダに渡すデータ配列 */
     GLfloat data[] = {
-        -0.8f, -0.8f, 0.0f,
-        1.0f, 0.0f, 0.0f, 1.0f,
+        -0.8f, -0.8f, 0.0f,     /* 頂点の座標 */
+        1.0f, 0.0f, 0.0f, 1.0f, /* 頂点の色情報 */
         
-        0.8f, -0.8f, 0.0f,
-        0.0f, 1.0f, 0.0f, 1.0f,
+        0.8f, -0.8f, 0.0f,      /* 頂点の座標 */
+        0.0f, 1.0f, 0.0f, 1.0f, /* 頂点の色情報 */
         
-        0.0f,  0.8f, 0.0f,
-        0.0f, 0.0f, 1.0f, 1.0f,
+        0.0f,  0.8f, 0.0f,      /* 頂点の座標 */
+        0.0f, 0.0f, 1.0f, 1.0f, /* 頂点の色情報 */
     };
-    glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat) * 7 * 3, data, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat) * 7 * 3, data, GL_STATIC_DRAW);   /* GPUに転送 */
     
-    glGenVertexArrays(1, &_vao);
-    glBindVertexArray(self.vao);
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 7, (GLfloat *)0);
-    glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 7, ((GLfloat *)0) + 3);
-    
+    glGenVertexArrays(1, &_vao);    /* VAOを作成 */
+    glBindVertexArray(self.vao);    /* OpenGLコンテキストに結びつける */
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 7, (GLfloat *)0); /* インデックス0: 頂点の色情報 */
+    glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 7, ((GLfloat *)0) + 3);   /* インデックス1: 頂点の色情報 */
     
     glClearColor(0.2f, 0.4f, 0.6f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
@@ -112,15 +111,26 @@
     
     // Drawing code here.
     
-    glUseProgram(self.program);
+    /* ビューポートのサイズ */
+    NSRect viewportRect;
+    CGFloat width = dirtyRect.size.width;
+    CGFloat height = dirtyRect.size.height;
+    viewportRect.origin.x = width / 2.0;
+    viewportRect.origin.y = height / 2.0;
+    viewportRect.size.width = width;
+    viewportRect.size.height = height;
+    
+    glViewport(viewportRect.origin.x, viewportRect.origin.y, viewportRect.size.width, viewportRect.size.height);    /* ビューポートの指定 */
+    
+    glUseProgram(self.program); /* レンダリングで使用するシェーダを設定 */
     
     glClearColor(0.2f, 0.4f, 0.6f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
     
-    glBindVertexArray(self.vao);
-    glEnableVertexAttribArray(0);
-    glEnableVertexAttribArray(1);
-    glDrawArrays(GL_TRIANGLES, 0, 3);
+    glBindVertexArray(self.vao);    /* VAOを結びつける */
+    glEnableVertexAttribArray(0);   /* 頂点属性を指定 */
+    glEnableVertexAttribArray(1);   /* 頂点属性を指定 */
+    glDrawArrays(GL_TRIANGLES, 0, 3);   /* レンダリング */
     
     [[self openGLContext] flushBuffer];
 }
