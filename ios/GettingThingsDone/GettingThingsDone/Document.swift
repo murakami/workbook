@@ -110,6 +110,8 @@ class Document {
     public func demo() {
         /* イベントストアへの接続 */
         let store = EKEventStore()
+        
+        /* イベント追加の権限取得 */
         let status = EKEventStore.authorizationStatus(for: .event)
         var isAuth = false
         switch status {
@@ -128,6 +130,7 @@ class Document {
                 if granted {
                 }
                 else {
+                    /* 使用拒否 */
                     return
                 }
             })
