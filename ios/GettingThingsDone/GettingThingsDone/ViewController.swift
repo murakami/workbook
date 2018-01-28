@@ -14,7 +14,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        Document.sharedInstance.demo()
+        Document.sharedInstance.demoEvent()
+        Document.sharedInstance.demoReminder()
     }
 
     override func didReceiveMemoryWarning() {

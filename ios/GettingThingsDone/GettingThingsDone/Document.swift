@@ -107,9 +107,11 @@ class Document {
         return path;
     }
     
-    public func demo() {
+    let eventStore = EKEventStore()
+    
+    public func demoEvent() {
         /* イベントストアへの接続 */
-        let store = EKEventStore()
+        //let eventStore = EKEventStore()
         
         /* イベント追加の権限取得 */
         let status = EKEventStore.authorizationStatus(for: .event)
@@ -125,7 +127,7 @@ class Document {
             isAuth = true
         }
         if !isAuth {
-            store.requestAccess(to: .event, completion: {
+            eventStore.requestAccess(to: .event, completion: {
                 (granted, error) in
                 if granted {
                 }
@@ -137,35 +139,130 @@ class Document {
         }
         
         /* イベントの登録 */
-        let event = EKEvent(eventStore: store)
-        event.title = "BUKURO.swift 2017-12"
-        event.startDate = Calendar.current.date(from: DateComponents(year: 2017, month: 12, day: 6, hour: 19, minute: 30, second: 00))
-        event.endDate = Calendar.current.date(from: DateComponents(year: 2017, month: 12, day: 6, hour: 22, minute: 00, second: 00))
-        event.calendar = store.defaultCalendarForNewEvents
+        let event = EKEvent(eventStore: eventStore)
+        event.title = "BUKURO.swift 2019-01"
+        event.startDate = Calendar.current.date(from: DateComponents(year: 2019, month: 1, day: 10, hour: 19, minute: 30, second: 00))
+        event.endDate = Calendar.current.date(from: DateComponents(year: 2019, month: 1, day: 10, hour: 22, minute: 00, second: 00))
+        event.calendar = eventStore.defaultCalendarForNewEvents
         do {
-            try store.save(event, span: .thisEvent)
+            try eventStore.save(event, span: .thisEvent)
         }
         catch let error {
             print(error)
         }
         /* イベントの検索 */
-        let startDate = Calendar.current.date(from: DateComponents(year: 2017, month: 12, day: 1, hour: 00, minute: 00, second: 00))
-        let endDate = Calendar.current.date(from: DateComponents(year: 2017, month: 12, day: 31, hour: 23, minute: 59, second: 59))
-        let defaultCalendar = store.defaultCalendarForNewEvents
-        let predicate = store.predicateForEvents(withStart: startDate!, end: endDate!, calendars: [defaultCalendar!])
-        var events = store.events(matching: predicate)
+        let startDate = Calendar.current.date(from: DateComponents(year: 2019, month: 1, day: 1, hour: 00, minute: 00, second: 00))
+        let endDate = Calendar.current.date(from: DateComponents(year: 2019, month: 1, day: 31, hour: 23, minute: 59, second: 59))
+        let defaultCalendar = eventStore.defaultCalendarForNewEvents
+        let predicate = eventStore.predicateForEvents(withStart: startDate!, end: endDate!, calendars: [defaultCalendar!])
+        var events = eventStore.events(matching: predicate)
         print(events)
 
         /* イベントの削除 */
         do {
-            try store.remove(event, span: .thisEvent)
+            try eventStore.remove(event, span: .thisEvent)
         }
         catch let error {
             print(error)
         }
         /* イベントの検索 */
-        events = store.events(matching: predicate)
+        events = eventStore.events(matching: predicate)
         print(events)
+    }
+    
+    public func demoReminder() {
+        /* イベントストアへの接続 */
+        //let eventStore = EKEventStore()
+
+        /* リマインダー追加の権限取得 */
+        let status = EKEventStore.authorizationStatus(for: .reminder)
+        var isAuth = false
+        switch status {
+        case .notDetermined:
+            isAuth = false
+        case .restricted:
+            isAuth = false
+        case .denied:
+            isAuth = false
+        case .authorized:
+            isAuth = true
+        }
+        if !isAuth {
+            eventStore.requestAccess(to: .event, completion: {
+                (granted, error) in
+                if granted {
+                    print("付与された")
+                }
+                else {
+                    print(error ?? "no error")
+                    print("使用拒否")
+                    return
+                }
+            })
+        }
+        
+        /* リマインダーの登録 */
+        let reminder = EKReminder(eventStore: eventStore)
+        let calendars = eventStore.calendars(for: .reminder)
+        for cal in calendars {
+            print(cal)
+        }
+        reminder.calendar = eventStore.defaultCalendarForNewReminders()
+        reminder.title = "BUKURO.swift"
+        /*
+        let startDateComponents = NSDateComponents()
+        startDateComponents.year = 2019
+        startDateComponents.month = 1
+        startDateComponents.day = 1
+        startDateComponents.hour = 23
+        startDateComponents.minute = 30
+        startDateComponents.second = 0
+        reminder.startDateComponents = startDateComponents as DateComponents
+        let dueDateComponents = NSDateComponents()
+        dueDateComponents.year = 2019
+        dueDateComponents.month = 1
+        dueDateComponents.day = 2
+        dueDateComponents.hour = 1
+        dueDateComponents.minute = 30
+        dueDateComponents.second = 0
+        reminder.dueDateComponents = dueDateComponents as DateComponents
+         */
+        //reminder.isCompleted = false
+        //reminder.priority = 0
+        do {
+            try eventStore.save(reminder, commit: true)
+        }
+        catch let error {
+            print(error)
+        }
+        
+        /* リマインダーの検索 */
+        let startDate = Calendar.current.date(from: DateComponents(year: 2018, month: 1, day: 1, hour: 00, minute: 00, second: 00))
+        let endDate = Calendar.current.date(from: DateComponents(year: 2019, month: 1, day: 31, hour: 23, minute: 59, second: 59))
+        let defaultCalendar = eventStore.defaultCalendarForNewEvents
+        let predicate = eventStore.predicateForIncompleteReminders(withDueDateStarting: startDate!, ending: endDate!, calendars: [defaultCalendar!])
+        eventStore.fetchReminders(matching: predicate, completion: {
+            (reminders) in
+            for reminder in reminders! {
+                print(reminder)
+            }
+        })
+
+        /* リマインダーの削除 */
+        do {
+            try eventStore.remove(reminder, commit: true)
+        }
+        catch let error {
+            print(error)
+        }
+        
+        /* リマインダーの検索 */
+        eventStore.fetchReminders(matching: predicate, completion: {
+            (reminders) in
+            for reminder in reminders! {
+                print(reminder)
+            }
+        })
     }
 }
 
