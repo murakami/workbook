@@ -139,6 +139,7 @@ class Document {
         }
         
         /* イベントの登録 */
+        print("イベントの登録")
         let event = EKEvent(eventStore: eventStore)
         event.title = "BUKURO.swift 2019-01"
         event.startDate = Calendar.current.date(from: DateComponents(year: 2019, month: 1, day: 10, hour: 19, minute: 30, second: 00))
@@ -151,6 +152,7 @@ class Document {
             print(error)
         }
         /* イベントの検索 */
+        print("イベントの検索")
         let startDate = Calendar.current.date(from: DateComponents(year: 2019, month: 1, day: 1, hour: 00, minute: 00, second: 00))
         let endDate = Calendar.current.date(from: DateComponents(year: 2019, month: 1, day: 31, hour: 23, minute: 59, second: 59))
         let defaultCalendar = eventStore.defaultCalendarForNewEvents
@@ -159,6 +161,7 @@ class Document {
         print(events)
 
         /* イベントの削除 */
+        print("イベントの削除")
         do {
             try eventStore.remove(event, span: .thisEvent)
         }
@@ -166,8 +169,19 @@ class Document {
             print(error)
         }
         /* イベントの検索 */
+        print("イベントの検索")
         events = eventStore.events(matching: predicate)
         print(events)
+        
+        /* 掃除 */
+        for event in events {
+            do {
+                try eventStore.remove(event, span: .thisEvent)
+            }
+            catch let error {
+                print(error)
+            }
+        }
     }
     
     public func demoReminder() {
@@ -202,6 +216,7 @@ class Document {
         }
         
         /* リマインダーの登録 */
+        print("リマインダーの登録")
         let reminder = EKReminder(eventStore: eventStore)
         let calendars = eventStore.calendars(for: .reminder)
         for cal in calendars {
@@ -237,6 +252,7 @@ class Document {
         }
         
         /* リマインダーの検索 */
+        print("リマインダーの検索")
         let startDate = Calendar.current.date(from: DateComponents(year: 2018, month: 1, day: 1, hour: 00, minute: 00, second: 00))
         let endDate = Calendar.current.date(from: DateComponents(year: 2019, month: 1, day: 31, hour: 23, minute: 59, second: 59))
         let defaultCalendar = eventStore.defaultCalendarForNewEvents
@@ -249,6 +265,7 @@ class Document {
         })
 
         /* リマインダーの削除 */
+        print("リマインダーの削除")
         do {
             try eventStore.remove(reminder, commit: true)
         }
@@ -257,6 +274,7 @@ class Document {
         }
         
         /* リマインダーの検索 */
+        print("リマインダーの検索")
         eventStore.fetchReminders(matching: predicate, completion: {
             (reminders) in
             for reminder in reminders! {

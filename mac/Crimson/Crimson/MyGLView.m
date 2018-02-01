@@ -111,23 +111,27 @@
     
     // Drawing code here.
     
-    /* ビューポートのサイズ */
+    /* ウィンドウ全体を描画するようにビューポートを更新する */
     NSSize size = dirtyRect.size;
     size = [self convertSizeToBacking:size];    /* Retina対応 */
-    CGFloat width = size.width;
-    CGFloat height = size.height;
-    NSRect viewportRect;
-    viewportRect.origin.x = 0.0;
-    viewportRect.origin.y = 0.0;
-    viewportRect.size.width = width;
-    viewportRect.size.height = height;
+    glViewport(0, 0, size.width, size.height);  /* ビューポートの指定 */
     
-    glViewport(viewportRect.origin.x, viewportRect.origin.y, viewportRect.size.width, viewportRect.size.height);    /* ビューポートの指定 */
+    /* 投影行列とアスペクト比を更新する */
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    gluPerspective(50.0, (GLdouble)size.width / (GLdouble)size.height, 1.0, 10.0);
+    
+    /* 表示処理用にモデルビューモードに設定する */
+    glMatrixMode(GL_MODELVIEW);
     
     glUseProgram(self.program); /* レンダリングで使用するシェーダを設定 */
     
     glClearColor(0.2f, 0.4f, 0.6f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
+    
+    /* モデリング変換、z軸の負の方向に幾何形状を4単位移動する。 */
+    glLoadIdentity();
+    glTranslatef(0.0, 0.0, -4.0);
     
     glBindVertexArray(self.vao);    /* VAOを結びつける */
     glEnableVertexAttribArray(0);   /* 頂点属性を指定 */
