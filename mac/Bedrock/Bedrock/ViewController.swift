@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import Toolbox
 
 class ViewController: NSViewController {
 
@@ -16,6 +17,9 @@ class ViewController: NSViewController {
         // Do any additional setup after loading the view.
         let exam = Exam()
         exam.dbgmsg()
+        
+        let qd = QuickDraw()
+        qd.dbgmsg()
     }
 
     override var representedObject: Any? {
