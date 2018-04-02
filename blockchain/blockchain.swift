@@ -2,15 +2,15 @@
 
 import Foundation
 
+struct Block {
+}
+
+struct Transaction {
+}
+
 class Blockchain {
-	func registerNode() {
-	}
-
-	func validChain() {
-	}
-
-	func resolveConflicts() {
-	}
+	var chain: [Block] = []
+	var currentTransactions: [Transaction] = []
 
 	func newBlock() {
 	}
@@ -18,16 +18,10 @@ class Blockchain {
 	func newTransaction() {
 	}
 
+	func hash(block: Block) {
+	}
+
 	func lastBlock() {
-	}
-
-	func hash() {
-	}
-
-	func proofOfWork() {
-	}
-
-	func validProof() {
 	}
 }
 
