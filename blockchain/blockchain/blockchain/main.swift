@@ -114,17 +114,9 @@ class Blockchain {
         let encoder = JSONEncoder()
         let guess = try! encoder.encode(proofArray)
         let guessHash = guess.sha256()!
-        //print("proof:\(proof) guessHash:\(guessHash)")
-        if let data: NSData = guessHash as NSData {
-            var buffer = Array<Int8>(repeating: 0, count: data.length)
-            data.getBytes(&buffer, length: data.length)
-            //print("buffer[0]:\(buffer[0]) buffer[1]:\(buffer[1]) buffer[2]:\(buffer[2]) buffer[3]:\(buffer[3])")
-            //return buffer[0] == 0 && buffer[1] == 0 && buffer[2] == 0 && buffer[3] == 0
-            //return buffer[0] == 0 && buffer[1] == 0 && buffer[2] == 0
-            return buffer[0] == 0 && buffer[1] == 0
-            //return buffer[0] == 0
-        }
-        return  false
+        //return guessHash[0] == 0 && guessHash[1] == 0 && guessHash[2] == 0 && guessHash[3] == 0
+        //return guessHash[0] == 0 && guessHash[1] == 0 && guessHash[2] == 0
+        return guessHash[0] == 0 && guessHash[1] == 0
     }
 }
 

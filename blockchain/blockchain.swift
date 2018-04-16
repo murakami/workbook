@@ -26,14 +26,14 @@ extension Data {
     // https://stackoverflow.com/questions/25388747/sha256-in-swift
     func sha256() -> Data? {
         /*
-        guard let res = NSMutableData(length: Int(CC_SHA256_DIGEST_LENGTH)) else { return nil }
-        CC_SHA256((self as NSData).bytes, CC_LONG(self.count), res.mutableBytes.assumingMemoryBound(to: UInt8.self))
-        return res as Data
-        */
+         guard let res = NSMutableData(length: Int(CC_SHA256_DIGEST_LENGTH)) else { return nil }
+         CC_SHA256((self as NSData).bytes, CC_LONG(self.count), res.mutableBytes.assumingMemoryBound(to: UInt8.self))
+         return res as Data
+         */
         var hashData = Data(count: Int(CC_SHA256_DIGEST_LENGTH))
         _ = hashData.withUnsafeMutableBytes {digestBytes in
             self.withUnsafeBytes {messageBytes in
-                CC_SHA256(messageBytes, CC_LONG(data.count), digestBytes)
+                CC_SHA256(messageBytes, CC_LONG(self.count), digestBytes)
             }
         }
         return hashData
@@ -45,7 +45,7 @@ class Blockchain {
     var currentTransactions: [Transaction] = []
     
     init() {
-        newBlock(proof: 100, previousHash: "1".data(using: .utf8))
+        _ = newBlock(proof: 100, previousHash: "1".data(using: .utf8))
     }
     
     func newBlock(proof: Int, previousHash: Data? = nil) -> Block {
@@ -57,11 +57,12 @@ class Blockchain {
             // 前のブロックのハッシュ
             prevHash = lastBlock().hash()
         }
-        let block = Block(index: chain.count+1,
-                          timestamp: Date().timeIntervalSince1970,
-                          transactions: currentTransactions,    /* 複数のトランザクションがあり得る？ */
-                          proof: proof,
-                          previousHash: prevHash)
+        let block = Block(
+            index: chain.count+1,
+            timestamp: Date().timeIntervalSince1970,
+            transactions: currentTransactions,    /* 複数のトランザクションがあり得る？ */
+            proof: proof,
+            previousHash: prevHash)
         
         // 現在のトランザクションリストをリセット
         currentTransactions = []
@@ -94,7 +95,7 @@ class Blockchain {
         return last
     }
     
-    func proofOfWork(lastProof: Int) -> Int {
+    class func proofOfWork(lastProof: Int) -> Int {
         var proof: Int = 0
         while validProof(lastProof: lastProof, proof: proof) == false {
             proof += 1
@@ -102,18 +103,81 @@ class Blockchain {
         return proof
     }
     
-    func validProof(lastProof: Int, proof: Int) -> Bool {
+    class func validProof(lastProof: Int, proof: Int) -> Bool {
         let proofArray = [lastProof, proof]
         let encoder = JSONEncoder()
         let guess = try! encoder.encode(proofArray)
         let guessHash = guess.sha256()!
-        if let data: NSData = guessHash {
-            var buffer = Array<Int8>(count: data.length, repeatedValue: 0)
-            data.getBytes(&buffer, length: data.length)
-            return buffer[0] == 0 && buffer[1] == 0 && buffer[2] == 0 && buffer[3] == 0
-        }
-        return  false
+        //return guessHash[0] == 0 && guessHash[1] == 0 && guessHash[2] == 0 && guessHash[3] == 0
+        //return guessHash[0] == 0 && guessHash[1] == 0 && guessHash[2] == 0
+        return guessHash[0] == 0 && guessHash[1] == 0
     }
+}
+
+class BlockchainManager {
+    /* ブロックチェーンクラスのインスタンス */
+    let blockchain = Blockchain()
+    
+    /* 新規トランザクションを作る */
+    func newTransactions(sender: String, recipient: String, amount: Int) -> Int {
+        return blockchain.newTransaction(sender:sender, recipient:recipient, amount:amount)
+    }
+    
+    /* 新規ブロックを採掘する */
+    func mine(recipient: String) -> Block {
+        // 次のプルーフを見つけるためプルーフ・オブ・ワークアルゴリズムを使用する
+        let lastBlock = blockchain.lastBlock()
+        let lastProof = lastBlock.proof
+        let proof = Blockchain.proofOfWork(lastProof: lastProof)
+        
+        // プルーフを見つけたことに対する報酬を得る
+        // 送信者は、採掘者が新しいコインを採掘したことを表すために"0"とする
+        _ = blockchain.newTransaction(sender: "0", recipient: recipient, amount: 1)
+        
+        // チェーンに新しいブロックを加えることで、新しいブロックを採掘する
+        let block = blockchain.newBlock(proof: proof)
+        
+        return block
+    }
+    
+    /* フルブロックチェーンを返す */
+    func fullChain() -> [Block] {
+        return blockchain.chain
+    }
+}
+
+/*
+let blockchain = Blockchain()
+print("\(blockchain.chain)")
+
+blockchain.newTransaction(sender: "999", recipient: "demo", amount: 111)
+print("\(blockchain.currentTransactions)")
+
+blockchain.newBlock(proof: 100, previousHash: nil)
+print("\(blockchain.chain)")
+
+exit(0)
+*/
+
+let blockchainManager = BlockchainManager()
+
+/* 新しいブロックの採掘 */
+var block = blockchainManager.mine(recipient: "demo")
+print("採掘したブロックチェーン: \(block)")
+
+/* 新しいブロックの採掘 */
+block = blockchainManager.mine(recipient: "demo")
+print("採掘したブロックチェーン: \(block)")
+
+/* 新しいブロックの採掘 */
+block = blockchainManager.mine(recipient: "demo")
+print("採掘したブロックチェーン: \(block)")
+
+/* フルブロックチェーンを */
+let fullChain = blockchainManager.fullChain()
+//print("フルブロックチェーン: \(fullChain)")
+for block in fullChain {
+    print("ブロック: \(block)")
 }
 
 /* End Of File */
