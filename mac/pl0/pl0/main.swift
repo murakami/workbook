@@ -8,4 +8,5 @@
 
 import Foundation
 
+print("\(#function)")
 let parser = Parser()
