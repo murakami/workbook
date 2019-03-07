@@ -1,0 +1,586 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5681D146221F009E00CB341D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5681D145221F009E00CB341D /* AppDelegate.swift */; };
+		5681D148221F009E00CB341D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5681D147221F009E00CB341D /* ViewController.swift */; };
+		5681D14A221F009E00CB341D /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5681D149221F009E00CB341D /* Document.swift */; };
+		5681D14C221F009F00CB341D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5681D14B221F009F00CB341D /* Assets.xcassets */; };
+		5681D14F221F009F00CB341D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5681D14D221F009F00CB341D /* Main.storyboard */; };
+		5681D15B221F009F00CB341D /* VisiCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5681D15A221F009F00CB341D /* VisiCalcTests.swift */; };
+		5681D166221F009F00CB341D /* VisiCalcUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5681D165221F009F00CB341D /* VisiCalcUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5681D157221F009F00CB341D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5681D13A221F009E00CB341D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5681D141221F009E00CB341D;
+			remoteInfo = VisiCalc;
+		};
+		5681D162221F009F00CB341D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5681D13A221F009E00CB341D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5681D141221F009E00CB341D;
+			remoteInfo = VisiCalc;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5681D142221F009E00CB341D /* VisiCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisiCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5681D145221F009E00CB341D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5681D147221F009E00CB341D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5681D149221F009E00CB341D /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		5681D14B221F009F00CB341D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5681D14E221F009F00CB341D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5681D150221F009F00CB341D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5681D151221F009F00CB341D /* VisiCalc.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VisiCalc.entitlements; sourceTree = "<group>"; };
+		5681D156221F009F00CB341D /* VisiCalcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VisiCalcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5681D15A221F009F00CB341D /* VisiCalcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisiCalcTests.swift; sourceTree = "<group>"; };
+		5681D15C221F009F00CB341D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5681D161221F009F00CB341D /* VisiCalcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VisiCalcUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5681D165221F009F00CB341D /* VisiCalcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisiCalcUITests.swift; sourceTree = "<group>"; };
+		5681D167221F009F00CB341D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5681D13F221F009E00CB341D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5681D153221F009F00CB341D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5681D15E221F009F00CB341D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5681D139221F009E00CB341D = {
+			isa = PBXGroup;
+			children = (
+				5681D144221F009E00CB341D /* VisiCalc */,
+				5681D159221F009F00CB341D /* VisiCalcTests */,
+				5681D164221F009F00CB341D /* VisiCalcUITests */,
+				5681D143221F009E00CB341D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5681D143221F009E00CB341D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5681D142221F009E00CB341D /* VisiCalc.app */,
+				5681D156221F009F00CB341D /* VisiCalcTests.xctest */,
+				5681D161221F009F00CB341D /* VisiCalcUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5681D144221F009E00CB341D /* VisiCalc */ = {
+			isa = PBXGroup;
+			children = (
+				5681D145221F009E00CB341D /* AppDelegate.swift */,
+				5681D147221F009E00CB341D /* ViewController.swift */,
+				5681D149221F009E00CB341D /* Document.swift */,
+				5681D14B221F009F00CB341D /* Assets.xcassets */,
+				5681D14D221F009F00CB341D /* Main.storyboard */,
+				5681D150221F009F00CB341D /* Info.plist */,
+				5681D151221F009F00CB341D /* VisiCalc.entitlements */,
+			);
+			path = VisiCalc;
+			sourceTree = "<group>";
+		};
+		5681D159221F009F00CB341D /* VisiCalcTests */ = {
+			isa = PBXGroup;
+			children = (
+				5681D15A221F009F00CB341D /* VisiCalcTests.swift */,
+				5681D15C221F009F00CB341D /* Info.plist */,
+			);
+			path = VisiCalcTests;
+			sourceTree = "<group>";
+		};
+		5681D164221F009F00CB341D /* VisiCalcUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5681D165221F009F00CB341D /* VisiCalcUITests.swift */,
+				5681D167221F009F00CB341D /* Info.plist */,
+			);
+			path = VisiCalcUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5681D141221F009E00CB341D /* VisiCalc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5681D16A221F009F00CB341D /* Build configuration list for PBXNativeTarget "VisiCalc" */;
+			buildPhases = (
+				5681D13E221F009E00CB341D /* Sources */,
+				5681D13F221F009E00CB341D /* Frameworks */,
+				5681D140221F009E00CB341D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VisiCalc;
+			productName = VisiCalc;
+			productReference = 5681D142221F009E00CB341D /* VisiCalc.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5681D155221F009F00CB341D /* VisiCalcTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5681D16D221F009F00CB341D /* Build configuration list for PBXNativeTarget "VisiCalcTests" */;
+			buildPhases = (
+				5681D152221F009F00CB341D /* Sources */,
+				5681D153221F009F00CB341D /* Frameworks */,
+				5681D154221F009F00CB341D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5681D158221F009F00CB341D /* PBXTargetDependency */,
+			);
+			name = VisiCalcTests;
+			productName = VisiCalcTests;
+			productReference = 5681D156221F009F00CB341D /* VisiCalcTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5681D160221F009F00CB341D /* VisiCalcUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5681D170221F009F00CB341D /* Build configuration list for PBXNativeTarget "VisiCalcUITests" */;
+			buildPhases = (
+				5681D15D221F009F00CB341D /* Sources */,
+				5681D15E221F009F00CB341D /* Frameworks */,
+				5681D15F221F009F00CB341D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5681D163221F009F00CB341D /* PBXTargetDependency */,
+			);
+			name = VisiCalcUITests;
+			productName = VisiCalcUITests;
+			productReference = 5681D161221F009F00CB341D /* VisiCalcUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5681D13A221F009E00CB341D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Bitz Co., Ltd.";
+				TargetAttributes = {
+					5681D141221F009E00CB341D = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					5681D155221F009F00CB341D = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 5681D141221F009E00CB341D;
+					};
+					5681D160221F009F00CB341D = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 5681D141221F009E00CB341D;
+					};
+				};
+			};
+			buildConfigurationList = 5681D13D221F009E00CB341D /* Build configuration list for PBXProject "VisiCalc" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5681D139221F009E00CB341D;
+			productRefGroup = 5681D143221F009E00CB341D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5681D141221F009E00CB341D /* VisiCalc */,
+				5681D155221F009F00CB341D /* VisiCalcTests */,
+				5681D160221F009F00CB341D /* VisiCalcUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5681D140221F009E00CB341D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5681D14C221F009F00CB341D /* Assets.xcassets in Resources */,
+				5681D14F221F009F00CB341D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5681D154221F009F00CB341D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5681D15F221F009F00CB341D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5681D13E221F009E00CB341D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5681D148221F009E00CB341D /* ViewController.swift in Sources */,
+				5681D146221F009E00CB341D /* AppDelegate.swift in Sources */,
+				5681D14A221F009E00CB341D /* Document.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5681D152221F009F00CB341D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5681D15B221F009F00CB341D /* VisiCalcTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5681D15D221F009F00CB341D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5681D166221F009F00CB341D /* VisiCalcUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5681D158221F009F00CB341D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5681D141221F009E00CB341D /* VisiCalc */;
+			targetProxy = 5681D157221F009F00CB341D /* PBXContainerItemProxy */;
+		};
+		5681D163221F009F00CB341D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5681D141221F009E00CB341D /* VisiCalc */;
+			targetProxy = 5681D162221F009F00CB341D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5681D14D221F009F00CB341D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5681D14E221F009F00CB341D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5681D168221F009F00CB341D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5681D169221F009F00CB341D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		5681D16B221F009F00CB341D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = VisiCalc/VisiCalc.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 698ZXBT8GQ;
+				INFOPLIST_FILE = VisiCalc/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.VisiCalc;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		5681D16C221F009F00CB341D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = VisiCalc/VisiCalc.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 698ZXBT8GQ;
+				INFOPLIST_FILE = VisiCalc/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.VisiCalc;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		5681D16E221F009F00CB341D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 698ZXBT8GQ;
+				INFOPLIST_FILE = VisiCalcTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.VisiCalcTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VisiCalc.app/Contents/MacOS/VisiCalc";
+			};
+			name = Debug;
+		};
+		5681D16F221F009F00CB341D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 698ZXBT8GQ;
+				INFOPLIST_FILE = VisiCalcTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.VisiCalcTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VisiCalc.app/Contents/MacOS/VisiCalc";
+			};
+			name = Release;
+		};
+		5681D171221F009F00CB341D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 698ZXBT8GQ;
+				INFOPLIST_FILE = VisiCalcUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.VisiCalcUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_TARGET_NAME = VisiCalc;
+			};
+			name = Debug;
+		};
+		5681D172221F009F00CB341D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 698ZXBT8GQ;
+				INFOPLIST_FILE = VisiCalcUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.VisiCalcUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_TARGET_NAME = VisiCalc;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5681D13D221F009E00CB341D /* Build configuration list for PBXProject "VisiCalc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5681D168221F009F00CB341D /* Debug */,
+				5681D169221F009F00CB341D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5681D16A221F009F00CB341D /* Build configuration list for PBXNativeTarget "VisiCalc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5681D16B221F009F00CB341D /* Debug */,
+				5681D16C221F009F00CB341D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5681D16D221F009F00CB341D /* Build configuration list for PBXNativeTarget "VisiCalcTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5681D16E221F009F00CB341D /* Debug */,
+				5681D16F221F009F00CB341D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5681D170221F009F00CB341D /* Build configuration list for PBXNativeTarget "VisiCalcUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5681D171221F009F00CB341D /* Debug */,
+				5681D172221F009F00CB341D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5681D13A221F009E00CB341D /* Project object */;
+}
