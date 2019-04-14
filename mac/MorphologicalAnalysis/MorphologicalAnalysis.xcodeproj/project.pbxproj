@@ -1,0 +1,582 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		564DEAB02263759F002269CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564DEAAF2263759F002269CF /* AppDelegate.swift */; };
+		564DEAB22263759F002269CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564DEAB12263759F002269CF /* ViewController.swift */; };
+		564DEAB4226375A1002269CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 564DEAB3226375A1002269CF /* Assets.xcassets */; };
+		564DEAB7226375A1002269CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 564DEAB5226375A1002269CF /* Main.storyboard */; };
+		564DEAC3226375A1002269CF /* MorphologicalAnalysisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564DEAC2226375A1002269CF /* MorphologicalAnalysisTests.swift */; };
+		564DEACE226375A1002269CF /* MorphologicalAnalysisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564DEACD226375A1002269CF /* MorphologicalAnalysisUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		564DEABF226375A1002269CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 564DEAA42263759F002269CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 564DEAAB2263759F002269CF;
+			remoteInfo = MorphologicalAnalysis;
+		};
+		564DEACA226375A1002269CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 564DEAA42263759F002269CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 564DEAAB2263759F002269CF;
+			remoteInfo = MorphologicalAnalysis;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		564DEAAC2263759F002269CF /* MorphologicalAnalysis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MorphologicalAnalysis.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		564DEAAF2263759F002269CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		564DEAB12263759F002269CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		564DEAB3226375A1002269CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		564DEAB6226375A1002269CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		564DEAB8226375A1002269CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		564DEAB9226375A1002269CF /* MorphologicalAnalysis.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MorphologicalAnalysis.entitlements; sourceTree = "<group>"; };
+		564DEABE226375A1002269CF /* MorphologicalAnalysisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MorphologicalAnalysisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		564DEAC2226375A1002269CF /* MorphologicalAnalysisTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorphologicalAnalysisTests.swift; sourceTree = "<group>"; };
+		564DEAC4226375A1002269CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		564DEAC9226375A1002269CF /* MorphologicalAnalysisUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MorphologicalAnalysisUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		564DEACD226375A1002269CF /* MorphologicalAnalysisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorphologicalAnalysisUITests.swift; sourceTree = "<group>"; };
+		564DEACF226375A1002269CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		564DEAA92263759F002269CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		564DEABB226375A1002269CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		564DEAC6226375A1002269CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		564DEAA32263759F002269CF = {
+			isa = PBXGroup;
+			children = (
+				564DEAAE2263759F002269CF /* MorphologicalAnalysis */,
+				564DEAC1226375A1002269CF /* MorphologicalAnalysisTests */,
+				564DEACC226375A1002269CF /* MorphologicalAnalysisUITests */,
+				564DEAAD2263759F002269CF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		564DEAAD2263759F002269CF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				564DEAAC2263759F002269CF /* MorphologicalAnalysis.app */,
+				564DEABE226375A1002269CF /* MorphologicalAnalysisTests.xctest */,
+				564DEAC9226375A1002269CF /* MorphologicalAnalysisUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		564DEAAE2263759F002269CF /* MorphologicalAnalysis */ = {
+			isa = PBXGroup;
+			children = (
+				564DEAAF2263759F002269CF /* AppDelegate.swift */,
+				564DEAB12263759F002269CF /* ViewController.swift */,
+				564DEAB3226375A1002269CF /* Assets.xcassets */,
+				564DEAB5226375A1002269CF /* Main.storyboard */,
+				564DEAB8226375A1002269CF /* Info.plist */,
+				564DEAB9226375A1002269CF /* MorphologicalAnalysis.entitlements */,
+			);
+			path = MorphologicalAnalysis;
+			sourceTree = "<group>";
+		};
+		564DEAC1226375A1002269CF /* MorphologicalAnalysisTests */ = {
+			isa = PBXGroup;
+			children = (
+				564DEAC2226375A1002269CF /* MorphologicalAnalysisTests.swift */,
+				564DEAC4226375A1002269CF /* Info.plist */,
+			);
+			path = MorphologicalAnalysisTests;
+			sourceTree = "<group>";
+		};
+		564DEACC226375A1002269CF /* MorphologicalAnalysisUITests */ = {
+			isa = PBXGroup;
+			children = (
+				564DEACD226375A1002269CF /* MorphologicalAnalysisUITests.swift */,
+				564DEACF226375A1002269CF /* Info.plist */,
+			);
+			path = MorphologicalAnalysisUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		564DEAAB2263759F002269CF /* MorphologicalAnalysis */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 564DEAD2226375A1002269CF /* Build configuration list for PBXNativeTarget "MorphologicalAnalysis" */;
+			buildPhases = (
+				564DEAA82263759F002269CF /* Sources */,
+				564DEAA92263759F002269CF /* Frameworks */,
+				564DEAAA2263759F002269CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MorphologicalAnalysis;
+			productName = MorphologicalAnalysis;
+			productReference = 564DEAAC2263759F002269CF /* MorphologicalAnalysis.app */;
+			productType = "com.apple.product-type.application";
+		};
+		564DEABD226375A1002269CF /* MorphologicalAnalysisTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 564DEAD5226375A1002269CF /* Build configuration list for PBXNativeTarget "MorphologicalAnalysisTests" */;
+			buildPhases = (
+				564DEABA226375A1002269CF /* Sources */,
+				564DEABB226375A1002269CF /* Frameworks */,
+				564DEABC226375A1002269CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				564DEAC0226375A1002269CF /* PBXTargetDependency */,
+			);
+			name = MorphologicalAnalysisTests;
+			productName = MorphologicalAnalysisTests;
+			productReference = 564DEABE226375A1002269CF /* MorphologicalAnalysisTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		564DEAC8226375A1002269CF /* MorphologicalAnalysisUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 564DEAD8226375A1002269CF /* Build configuration list for PBXNativeTarget "MorphologicalAnalysisUITests" */;
+			buildPhases = (
+				564DEAC5226375A1002269CF /* Sources */,
+				564DEAC6226375A1002269CF /* Frameworks */,
+				564DEAC7226375A1002269CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				564DEACB226375A1002269CF /* PBXTargetDependency */,
+			);
+			name = MorphologicalAnalysisUITests;
+			productName = MorphologicalAnalysisUITests;
+			productReference = 564DEAC9226375A1002269CF /* MorphologicalAnalysisUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		564DEAA42263759F002269CF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Bitz Co., Ltd.";
+				TargetAttributes = {
+					564DEAAB2263759F002269CF = {
+						CreatedOnToolsVersion = 10.2;
+					};
+					564DEABD226375A1002269CF = {
+						CreatedOnToolsVersion = 10.2;
+						TestTargetID = 564DEAAB2263759F002269CF;
+					};
+					564DEAC8226375A1002269CF = {
+						CreatedOnToolsVersion = 10.2;
+						TestTargetID = 564DEAAB2263759F002269CF;
+					};
+				};
+			};
+			buildConfigurationList = 564DEAA72263759F002269CF /* Build configuration list for PBXProject "MorphologicalAnalysis" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 564DEAA32263759F002269CF;
+			productRefGroup = 564DEAAD2263759F002269CF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				564DEAAB2263759F002269CF /* MorphologicalAnalysis */,
+				564DEABD226375A1002269CF /* MorphologicalAnalysisTests */,
+				564DEAC8226375A1002269CF /* MorphologicalAnalysisUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		564DEAAA2263759F002269CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				564DEAB4226375A1002269CF /* Assets.xcassets in Resources */,
+				564DEAB7226375A1002269CF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		564DEABC226375A1002269CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		564DEAC7226375A1002269CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		564DEAA82263759F002269CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				564DEAB22263759F002269CF /* ViewController.swift in Sources */,
+				564DEAB02263759F002269CF /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		564DEABA226375A1002269CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				564DEAC3226375A1002269CF /* MorphologicalAnalysisTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		564DEAC5226375A1002269CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				564DEACE226375A1002269CF /* MorphologicalAnalysisUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		564DEAC0226375A1002269CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 564DEAAB2263759F002269CF /* MorphologicalAnalysis */;
+			targetProxy = 564DEABF226375A1002269CF /* PBXContainerItemProxy */;
+		};
+		564DEACB226375A1002269CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 564DEAAB2263759F002269CF /* MorphologicalAnalysis */;
+			targetProxy = 564DEACA226375A1002269CF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		564DEAB5226375A1002269CF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				564DEAB6226375A1002269CF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		564DEAD0226375A1002269CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		564DEAD1226375A1002269CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		564DEAD3226375A1002269CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MorphologicalAnalysis/MorphologicalAnalysis.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 698ZXBT8GQ;
+				INFOPLIST_FILE = MorphologicalAnalysis/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.MorphologicalAnalysis;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		564DEAD4226375A1002269CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MorphologicalAnalysis/MorphologicalAnalysis.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 698ZXBT8GQ;
+				INFOPLIST_FILE = MorphologicalAnalysis/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.MorphologicalAnalysis;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		564DEAD6226375A1002269CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 698ZXBT8GQ;
+				INFOPLIST_FILE = MorphologicalAnalysisTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.MorphologicalAnalysisTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MorphologicalAnalysis.app/Contents/MacOS/MorphologicalAnalysis";
+			};
+			name = Debug;
+		};
+		564DEAD7226375A1002269CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 698ZXBT8GQ;
+				INFOPLIST_FILE = MorphologicalAnalysisTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.MorphologicalAnalysisTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MorphologicalAnalysis.app/Contents/MacOS/MorphologicalAnalysis";
+			};
+			name = Release;
+		};
+		564DEAD9226375A1002269CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 698ZXBT8GQ;
+				INFOPLIST_FILE = MorphologicalAnalysisUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.MorphologicalAnalysisUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = MorphologicalAnalysis;
+			};
+			name = Debug;
+		};
+		564DEADA226375A1002269CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 698ZXBT8GQ;
+				INFOPLIST_FILE = MorphologicalAnalysisUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.MorphologicalAnalysisUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = MorphologicalAnalysis;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		564DEAA72263759F002269CF /* Build configuration list for PBXProject "MorphologicalAnalysis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				564DEAD0226375A1002269CF /* Debug */,
+				564DEAD1226375A1002269CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		564DEAD2226375A1002269CF /* Build configuration list for PBXNativeTarget "MorphologicalAnalysis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				564DEAD3226375A1002269CF /* Debug */,
+				564DEAD4226375A1002269CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		564DEAD5226375A1002269CF /* Build configuration list for PBXNativeTarget "MorphologicalAnalysisTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				564DEAD6226375A1002269CF /* Debug */,
+				564DEAD7226375A1002269CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		564DEAD8226375A1002269CF /* Build configuration list for PBXNativeTarget "MorphologicalAnalysisUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				564DEAD9226375A1002269CF /* Debug */,
+				564DEADA226375A1002269CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 564DEAA42263759F002269CF /* Project object */;
+}
