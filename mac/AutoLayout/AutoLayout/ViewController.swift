@@ -42,23 +42,22 @@ class ViewController: NSViewController {
         let redView = RedView()
         self.view.addSubview(redView)
         redView.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addConstraints([
-            NSLayoutConstraint(item: redView, attribute: .Top, relatedBy: .Equal,
-                               toItem: self.view, attribute: .Top, multiplier: 1.0, constant: 10),
-            NSLayoutConstraint(item: redView, attribute: .Left, relatedBy: .Equal,
-                               toItem: self.view, attribute: .Left, multiplier: 1.0, constant: 10),
-            NSLayoutConstraint(item: redView, attribute: .Right, relatedBy: .Equal,
-                               toItem: self.view, attribute: .Right, multiplier: 1.0, constant: -10),
-            NSLayoutConstraint(item: redView, attribute: .Height, relatedBy: .Equal,
-                               toItem: self.view, attribute: .Height, multiplier: 0.0, constant: 100),
+        self.view.addConstraints(
+            [
+                NSLayoutConstraint(item: redView, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1.0, constant: 20.0),
+                NSLayoutConstraint(item: redView, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1.0, constant: 20.0),
+                NSLayoutConstraint(item: redView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1.0, constant: 100.0),
+                NSLayoutConstraint(item: redView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 100.0)
             ]
         )
         
         let greenView = GreenView()
+        greenView.setFrameSize(NSMakeSize(50.0, 50.0))
         self.view.addSubview(greenView)
         greenView.translatesAutoresizingMaskIntoConstraints = false
         
         let blueView = BlueView()
+        blueView.setFrameSize(NSMakeSize(25.0, 25.0))
         self.view.addSubview(blueView)
         blueView.translatesAutoresizingMaskIntoConstraints = false
     }
