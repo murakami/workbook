@@ -9,6 +9,8 @@
 import Cocoa
 
 class ViewController: NSViewController {
+    
+    @IBOutlet weak var textField: NSTextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +24,33 @@ class ViewController: NSViewController {
         }
     }
 
+    @IBAction func hotter(_ sender: Any?) {
+        self.makeItHotter()
+    }
+
+    @IBAction func colder(_ sender: Any?) {
+        self.makeItColder()
+    }
+    
+    func makeItHotter() {
+        var temperature = self.textField.intValue
+        temperature = temperature + 10
+        self.undoManager?.registerUndo(withTarget: self, handler: {
+            vc in
+            vc.makeItColder()
+        })
+        self.textField.intValue = temperature
+    }
+    
+    func makeItColder() {
+        var temperature = self.textField.intValue
+        temperature = temperature - 10
+        self.undoManager?.registerUndo(withTarget: self, handler: {
+            vc in
+            vc.makeItHotter()
+        })
+        self.textField.intValue = temperature
+    }
 
 }
 

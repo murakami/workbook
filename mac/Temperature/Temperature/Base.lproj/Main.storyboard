@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -21,7 +22,11 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
-                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
+                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
+                                            <connections>
+                                                <action selector="showPreferencesWindow:" target="Voe-Tx-rLC" id="KnU-YA-uDR"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
                                         <menuItem title="Services" id="NMo-om-nkz">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -673,7 +678,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Temperature" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -703,15 +708,133 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Temperature" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="91"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ivI-FT-XeA">
+                                <rect key="frame" x="20" y="49" width="440" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="fvs-zN-AdU"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="NvP-xi-D32">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <binding destination="xMm-Zd-Zg5" name="value" keyPath="values.temperature" id="Dny-wB-kQK"/>
+                                </connections>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XAp-4u-dmQ">
+                                <rect key="frame" x="345" y="13" width="121" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="109" id="A7G-S1-opr"/>
+                                    <constraint firstAttribute="height" constant="21" id="cQq-xi-zUl"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="makeItColder" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Vbc-sF-dtv">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="colder:" target="XfG-lQ-9wD" id="s7m-i0-VMU"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GnS-TS-8Ng">
+                                <rect key="frame" x="226" y="13" width="119" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Odk-gi-Wej"/>
+                                    <constraint firstAttribute="width" constant="107" id="q6P-ay-Kw4"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="makeItHotter" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="HSw-Rz-5C8">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="hotter:" target="XfG-lQ-9wD" id="IkV-tS-wCQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="XAp-4u-dmQ" firstAttribute="top" secondItem="ivI-FT-XeA" secondAttribute="bottom" constant="8" id="157-sB-Xgr"/>
+                            <constraint firstItem="GnS-TS-8Ng" firstAttribute="top" secondItem="ivI-FT-XeA" secondAttribute="bottom" constant="8" id="5Iw-hd-KOZ"/>
+                            <constraint firstItem="XAp-4u-dmQ" firstAttribute="leading" secondItem="GnS-TS-8Ng" secondAttribute="trailing" constant="12" id="BSN-hA-Z4I"/>
+                            <constraint firstItem="ivI-FT-XeA" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="RoS-1c-I6w"/>
+                            <constraint firstAttribute="trailing" secondItem="ivI-FT-XeA" secondAttribute="trailing" constant="20" id="p3T-pK-LJT"/>
+                            <constraint firstItem="ivI-FT-XeA" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="uTY-C2-cqW"/>
+                            <constraint firstAttribute="trailing" secondItem="XAp-4u-dmQ" secondAttribute="trailing" constant="20" id="v2N-hV-RUK"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textField" destination="ivI-FT-XeA" id="okc-St-D17"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController id="xMm-Zd-Zg5"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="75" y="565.5"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="nFe-j4-MCA">
+            <objects>
+                <windowController storyboardIdentifier="PrefsWindow" id="Gid-hb-d3v" sceneMemberID="viewController">
+                    <window key="window" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="VM4-Zy-t9l" customClass="PreferencesWindow" customModule="Temperature" customModuleProvider="target">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="163" y="199" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+                        <connections>
+                            <outlet property="delegate" destination="Gid-hb-d3v" id="D5g-yl-A2w"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="Yuz-gn-qJD" kind="relationship" relationship="window.shadowedContentViewController" id="3oh-bi-tSK"/>
+                    </connections>
+                </windowController>
+                <customObject id="U1C-yu-Rpx" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="851"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="EB3-EF-VEQ">
+            <objects>
+                <viewController id="Yuz-gn-qJD" sceneMemberID="viewController">
+                    <view key="view" id="vqJ-xr-45A">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="62"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="M3I-jn-Yhn">
+                                <rect key="frame" x="20" y="20" width="440" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="440" id="Shd-1b-dwk"/>
+                                    <constraint firstAttribute="height" constant="22" id="gXo-mt-j65"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="ZoC-Eb-KXZ">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <binding destination="zIQ-Qj-2vh" name="value" keyPath="values.temperature" id="myN-6r-x7a"/>
+                                    </connections>
+                                </textFieldCell>
+                                <connections>
+                                    <binding destination="zIQ-Qj-2vh" name="value" keyPath="values.temperature" id="6Nb-Xv-I7H"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="M3I-jn-Yhn" secondAttribute="bottom" constant="20" id="6rT-yU-jhA"/>
+                            <constraint firstAttribute="trailing" secondItem="M3I-jn-Yhn" secondAttribute="trailing" constant="20" id="IJn-gh-MTa"/>
+                            <constraint firstItem="M3I-jn-Yhn" firstAttribute="leading" secondItem="vqJ-xr-45A" secondAttribute="leading" constant="20" id="gpx-eW-cWN"/>
+                            <constraint firstItem="M3I-jn-Yhn" firstAttribute="top" secondItem="vqJ-xr-45A" secondAttribute="top" constant="20" id="vm6-hB-g2d"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="2MB-Or-lar" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="zIQ-Qj-2vh"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="1170"/>
         </scene>
     </scenes>
 </document>
