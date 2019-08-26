@@ -14,6 +14,7 @@
 		56546D0B231435D500D4BEF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56546D09231435D500D4BEF6 /* LaunchScreen.storyboard */; };
 		56546D16231435D500D4BEF6 /* TweetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56546D15231435D500D4BEF6 /* TweetsTests.swift */; };
 		56546D21231435D500D4BEF6 /* TweetsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56546D20231435D500D4BEF6 /* TweetsUITests.swift */; };
+		56546D2F2314380D00D4BEF6 /* brownout.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 56546D2E2314380D00D4BEF6 /* brownout.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		56546D1C231435D500D4BEF6 /* TweetsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TweetsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		56546D20231435D500D4BEF6 /* TweetsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetsUITests.swift; sourceTree = "<group>"; };
 		56546D22231435D500D4BEF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56546D2E2314380D00D4BEF6 /* brownout.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = brownout.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				56546D07231435D500D4BEF6 /* Assets.xcassets */,
 				56546D09231435D500D4BEF6 /* LaunchScreen.storyboard */,
 				56546D0C231435D500D4BEF6 /* Info.plist */,
+				56546D2E2314380D00D4BEF6 /* brownout.jpg */,
 			);
 			path = Tweets;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				56546D0B231435D500D4BEF6 /* LaunchScreen.storyboard in Resources */,
 				56546D08231435D500D4BEF6 /* Assets.xcassets in Resources */,
 				56546D06231435D300D4BEF6 /* Main.storyboard in Resources */,
+				56546D2F2314380D00D4BEF6 /* brownout.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,7 +437,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 698ZXBT8GQ;
+				DEVELOPMENT_TEAM = XKY95WKF3J;
 				INFOPLIST_FILE = Tweets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -451,7 +455,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 698ZXBT8GQ;
+				DEVELOPMENT_TEAM = XKY95WKF3J;
 				INFOPLIST_FILE = Tweets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
