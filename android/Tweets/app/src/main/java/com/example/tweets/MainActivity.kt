@@ -49,10 +49,8 @@ class MainActivity : AppCompatActivity() {
     fun shareCompat() {
         val message = "shareCompat"
         val imagePath = "http://www.bitz.co.jp/images/brownout/appstore.jpg"
-
         val builder = ShareCompat.IntentBuilder.from(this)
 
-        // データをセットする
         builder.setChooserTitle("Choose App")
         builder.setText(message)
         if (imagePath != null) {
@@ -62,7 +60,6 @@ class MainActivity : AppCompatActivity() {
         else {
             builder.setType("text/plain")
         }
-        // アプリ選択画面を起動
         builder.startChooser()
     }
 }
