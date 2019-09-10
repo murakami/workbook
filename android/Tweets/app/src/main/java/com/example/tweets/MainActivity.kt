@@ -8,6 +8,7 @@ import android.content.Intent
 import android.net.Uri
 import android.util.Log
 import androidx.core.app.ShareCompat
+import java.io.File
 
 
 class MainActivity : AppCompatActivity() {
@@ -48,18 +49,10 @@ class MainActivity : AppCompatActivity() {
 
     fun shareCompat() {
         val message = "shareCompat"
-        val imagePath = "http://www.bitz.co.jp/images/brownout/appstore.jpg"
         val builder = ShareCompat.IntentBuilder.from(this)
-
         builder.setChooserTitle("Choose App")
         builder.setText(message)
-        if (imagePath != null) {
-            builder.setType("image/png")
-            builder.addStream(Uri.parse(imagePath))
-        }
-        else {
-            builder.setType("text/plain")
-        }
+        builder.setType("text/plain")
         builder.startChooser()
     }
 }
