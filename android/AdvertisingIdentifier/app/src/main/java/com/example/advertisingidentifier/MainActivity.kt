@@ -3,6 +3,7 @@ package com.example.advertisingidentifier
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import androidx.ads.identifier.AdvertisingIdClient
 import androidx.ads.identifier.AdvertisingIdInfo
 import com.google.common.util.concurrent.FutureCallback
@@ -16,6 +17,26 @@ class MainActivity : AppCompatActivity() {
         Log.d("MainActivity", "onCreate")
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        determineAdvertisingInfo()
+
+        val button = findViewById<Button>(R.id.button)
+        button.setOnClickListener {
+            Log.d("MainActivity", "button # onClickListener")
+            determineAdvertisingInfo()
+        }
+    }
+
+    override fun onStart() {
+        Log.d("MainActivity", "onStart")
+        super.onStart()
+
+        determineAdvertisingInfo()
+    }
+
+    override fun onResume() {
+        Log.d("MainActivity", "onResume")
+        super.onResume()
 
         determineAdvertisingInfo()
     }
