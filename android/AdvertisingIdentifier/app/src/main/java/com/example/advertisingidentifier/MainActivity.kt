@@ -44,8 +44,7 @@ class MainActivity : AppCompatActivity() {
     private fun determineAdvertisingInfo() {
         if (AdvertisingIdClient.isAdvertisingIdProviderAvailable(this)) {
             Log.d("MainActivity", "isAdvertisingIdProviderAvailable");
-            val advertisingIdInfoListenableFuture =
-                    AdvertisingIdClient.getAdvertisingIdInfo(applicationContext)
+            val advertisingIdInfoListenableFuture = AdvertisingIdClient.getAdvertisingIdInfo(applicationContext)
 
             addCallback(advertisingIdInfoListenableFuture,
                     object : FutureCallback<AdvertisingIdInfo> {
