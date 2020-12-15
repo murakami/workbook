@@ -14,6 +14,7 @@
 		56D187A72588332B00932967 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56D187A62588332B00932967 /* Assets.xcassets */; };
 		56D187AA2588332B00932967 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56D187A82588332B00932967 /* LaunchScreen.storyboard */; };
 		56D187AD2588332B00932967 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D187AC2588332B00932967 /* main.m */; };
+		56D187B925883C0500932967 /* PerformanceMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D187B825883C0500932967 /* PerformanceMonitor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		56D187A92588332B00932967 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56D187AB2588332B00932967 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56D187AC2588332B00932967 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		56D187B725883C0500932967 /* PerformanceMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PerformanceMonitor.h; sourceTree = "<group>"; };
+		56D187B825883C0500932967 /* PerformanceMonitor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PerformanceMonitor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 				56D1879E2588332A00932967 /* SceneDelegate.m */,
 				56D187A02588332A00932967 /* ViewController.h */,
 				56D187A12588332A00932967 /* ViewController.m */,
+				56D187B725883C0500932967 /* PerformanceMonitor.h */,
+				56D187B825883C0500932967 /* PerformanceMonitor.m */,
 				56D187A32588332A00932967 /* Main.storyboard */,
 				56D187A62588332B00932967 /* Assets.xcassets */,
 				56D187A82588332B00932967 /* LaunchScreen.storyboard */,
@@ -146,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56D187A22588332A00932967 /* ViewController.m in Sources */,
+				56D187B925883C0500932967 /* PerformanceMonitor.m in Sources */,
 				56D1879C2588332A00932967 /* AppDelegate.m in Sources */,
 				56D187AD2588332B00932967 /* main.m in Sources */,
 				56D1879F2588332A00932967 /* SceneDelegate.m in Sources */,
@@ -225,7 +231,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -278,7 +284,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
