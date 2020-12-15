@@ -48,6 +48,8 @@
 {
     NSMutableString *text = [[NSMutableString alloc] initWithString:@""];
     
+    [[PerformanceMonitor sharedInstance] updateCpuInfo];
+    
     PerformanceMonitor *pm = [PerformanceMonitor sharedInstance];
     [text appendFormat:@"物理メモリサイズ[byte]:%ld\n", [pm hwMemSize]];
     [text appendFormat:@"ユーザメモリサイズ[byte]:%ld\n", [pm hwUserMem]];
