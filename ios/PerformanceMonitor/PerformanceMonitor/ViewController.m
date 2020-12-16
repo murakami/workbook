@@ -59,6 +59,8 @@
     [text appendFormat:@"デバイス 画面 スケール値:%1.1lf\n", [pm nativeScale]];
 
     self.textView.text = text;
+    
+    self.label.text = [NSString stringWithFormat:@"%2.2lf[fps]", pm.fps];
 }
 
 @end

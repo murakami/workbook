@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpB-E2-Y3p">
-                                <rect key="frame" x="160" y="44" width="94" height="30"/>
+                                <rect key="frame" x="20" y="44" width="94" height="30"/>
                                 <state key="normal" title="Measurement"/>
                                 <connections>
                                     <action selector="measurement:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qc0-Ey-Wef"/>
@@ -32,20 +32,30 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LO6-dp-rAP">
+                                <rect key="frame" x="238" y="44" width="156" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="LO6-dp-rAP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="26e-ew-J9y"/>
                             <constraint firstItem="EBm-9r-3P9" firstAttribute="top" secondItem="cpB-E2-Y3p" secondAttribute="bottom" constant="8" symbolic="YES" id="3pL-jH-gBh"/>
                             <constraint firstItem="EBm-9r-3P9" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="AQ0-MJ-Ymi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LO6-dp-rAP" secondAttribute="trailing" constant="20" id="POb-L8-ckF"/>
+                            <constraint firstItem="cpB-E2-Y3p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Tgm-cH-JLl"/>
                             <constraint firstItem="cpB-E2-Y3p" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gwp-tw-vE9"/>
+                            <constraint firstItem="LO6-dp-rAP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="kOb-y8-Ic0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EBm-9r-3P9" secondAttribute="trailing" constant="20" id="odQ-G7-bzu"/>
-                            <constraint firstItem="cpB-E2-Y3p" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vz5-Li-xuy"/>
                             <constraint firstItem="EBm-9r-3P9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="wr7-Pv-KRY"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="button" destination="cpB-E2-Y3p" id="K3P-td-EJX"/>
+                        <outlet property="label" destination="LO6-dp-rAP" id="eJA-fR-bOs"/>
                         <outlet property="textView" destination="EBm-9r-3P9" id="adY-7H-jgg"/>
                     </connections>
                 </viewController>

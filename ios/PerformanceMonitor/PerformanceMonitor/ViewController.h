@@ -9,6 +9,7 @@
 
 @interface ViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *button;
+@property (weak, nonatomic) IBOutlet UILabel *label;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 - (IBAction)measurement:(id)sender;
 @end

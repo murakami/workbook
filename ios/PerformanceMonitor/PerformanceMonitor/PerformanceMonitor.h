@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic) double    cpuUser;
 @property (assign, nonatomic) double    cpuSys;
 @property (assign, nonatomic) double    cpuIdle;
+@property (assign, nonatomic) double    fps;
 + (PerformanceMonitor *)sharedInstance;
 - (NSInteger)hwMemSize;
 - (NSInteger)hwUserMem;

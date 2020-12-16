@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 #import <mach/mach.h>
 #import <mach/mach_time.h>
 #import <sys/types.h>
@@ -46,7 +47,10 @@ static NSString *const kBatteryStateFull = @"Full";
 @end
 
 @interface PerformanceMonitor ()
+@property (strong, nonatomic) CADisplayLink *caDisplayLink;
+@property (assign, nonatomic) CFTimeInterval prevTimestamp;
 - (void)hostCpuLoadInfo:(host_cpu_load_info_t)cpucounters;
+- (void)displayLinkAction:(CADisplayLink *)sender;
 @end
 
 @implementation PerformanceMonitor
@@ -69,12 +73,20 @@ static NSString *const kBatteryStateFull = @"Full";
         _cpuUser = 0.0;
         _cpuSys = 0.0;
         _cpuIdle = 0.0;
+        _fps = 0.0;
+        _caDisplayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(displayLinkAction:)];
+        _caDisplayLink.paused = NO;
+        [_caDisplayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+        _prevTimestamp = 0.0;
     }
     return self;
 }
 
 - (void)dealloc
 {
+    [_caDisplayLink removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+    self.caDisplayLink.paused = YES;
+    self.caDisplayLink = nil;
 }
 
 - (NSInteger)hwMemSize
@@ -222,6 +234,13 @@ static NSString *const kBatteryStateFull = @"Full";
 - (double)nativeScale
 {
     return DeviceResolution.nativeScale;
+}
+
+- (void)displayLinkAction:(CADisplayLink *)sender
+{
+    double diff = (double)(sender.timestamp - self.prevTimestamp);
+    self.fps = 1.0 / diff;
+    self.prevTimestamp = sender.timestamp;
 }
 
 @end
