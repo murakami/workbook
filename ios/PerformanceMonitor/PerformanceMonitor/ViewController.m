@@ -35,13 +35,7 @@
 
 - (void)update:(NSTimer*)timer
 {
-    [[PerformanceMonitor sharedInstance] updateCpuInfo];
-    NSMutableString *text = [[NSMutableString alloc] initWithString:self.textView.text];
-    [text appendFormat:@"CPU usage: %.1lf%%%% user, %.1lf%%%% sys, %.1lf%%%% idle\n",
-     [PerformanceMonitor sharedInstance].cpuUser,
-     [PerformanceMonitor sharedInstance].cpuSys,
-     [PerformanceMonitor sharedInstance].cpuIdle];
-    self.textView.text = text;
+    [self measurement:nil];
 }
 
 - (IBAction)measurement:(id)sender
@@ -55,9 +49,8 @@
     [text appendFormat:@"ユーザメモリサイズ[byte]:%ld\n", [pm hwUserMem]];
     [text appendFormat:@"仮想記憶の空きメモリサイズ[byte]:%ld\n", [pm freeMemory]];
     [text appendFormat:@"Machタスクで領域確保したサイズ[byte]:%ld\n", [pm processMemory]];
-    [text appendFormat:@"Machタスクで領域確保したサイズ[byte]:%ld\n", [pm processMemory]];
     [text appendFormat:@"CPU usage: %.1lf%%%% user, %.1lf%%%% sys, %.1lf%%%% idle\n", pm.cpuUser, pm.cpuSys, pm.cpuIdle];
-    [text appendFormat:@"端末のディスクの%%freesize[%%]:%ld\n", [pm diskFreeSize]];
+    [text appendFormat:@"端末のディスクの%%freesize[byte]:%ld\n", [pm diskFreeSize]];
     [text appendFormat:@"バッテリーのレベル:%1.1f\n", [pm batteryLevel]];
     [text appendFormat:@"バッテリーの状態:%@\n", [pm batteryState]];
     [text appendFormat:@"ラスタライズ 画面 幅:%.0lf\n", [pm currentModeWidth]];
