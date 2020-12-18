@@ -11,6 +11,7 @@
 @interface ViewController ()
 @property (strong, nonatomic) NSTimer   *timer;
 - (void)update:(NSTimer*)timer;
+- (void)load:(NSTimer*)timer;
 @end
 
 @implementation ViewController
@@ -19,11 +20,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:5.0f
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0f
                                                   target:self
                                                 selector:@selector(update:)
                                                 userInfo:nil
                                                  repeats:YES];
+    /*
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.5f
+                                                  target:self
+                                                selector:@selector(load:)
+                                                userInfo:nil
+                                                 repeats:YES];
+     */
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -31,11 +39,27 @@
     [super viewWillAppear:animated];
     
     [self measurement:nil];
+    
+    /*
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        for (int i = 0; i < 100000; i++) {
+            NSLog(@"%s %d", __func__, i);
+            //sleep(1);
+        }
+    });
+     */
 }
 
 - (void)update:(NSTimer*)timer
 {
     [self measurement:nil];
+}
+
+- (void)load:(NSTimer*)timer
+{
+    for (int i = 0; i < 10; i++) {
+        sleep(1);
+    }
 }
 
 - (IBAction)measurement:(id)sender

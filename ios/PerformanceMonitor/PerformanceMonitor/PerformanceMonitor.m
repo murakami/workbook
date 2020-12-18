@@ -84,7 +84,7 @@ static NSString *const kBatteryStateFull = @"Full";
 
 - (void)dealloc
 {
-    [_caDisplayLink removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+    [self.caDisplayLink removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
     self.caDisplayLink.paused = YES;
     self.caDisplayLink = nil;
 }
