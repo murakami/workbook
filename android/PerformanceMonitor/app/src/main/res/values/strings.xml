@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">PerformanceMonitor</string>
+    <string name="measurement">Measurement</string>
 </resources>
