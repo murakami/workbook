@@ -16,6 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 public class PerformanceMonitor implements Choreographer.FrameCallback {
     private final static String TAG = "PerformanceMonitor";
+    //DebugPerformanceMonitor mDebugPerformanceMonitor;
 
     /**
      * ActivityのContext.
@@ -34,6 +35,7 @@ public class PerformanceMonitor implements Choreographer.FrameCallback {
         mContext = context;
         mChoreographer = Choreographer.getInstance();
         startMeasuringFPS();
+        //mDebugPerformanceMonitor = new DebugPerformanceMonitor(context);
     }
 
     private ActivityManager.MemoryInfo getMemoryInfoOfActivityManager() {
@@ -594,6 +596,7 @@ public class PerformanceMonitor implements Choreographer.FrameCallback {
         mFps = (double)TimeUnit.SECONDS.toNanos(1) / (double)diff;
         mPrevFrameTimeNanos = frameTimeNanos;
         mChoreographer.postFrameCallback(this);
+        Log.d(TAG, "doFrame() tid:" + android.os.Process.myTid());
     }
 
     /**
@@ -602,5 +605,53 @@ public class PerformanceMonitor implements Choreographer.FrameCallback {
      */
     public double getFps() {
         return mFps;
+    }
+}
+
+class DebugPerformanceMonitor implements Choreographer.FrameCallback {
+    /**
+     * ActivityのContext.
+     */
+    private Context mContext = null;
+
+    /**
+     *  FPS測定.
+     */
+    private Choreographer mChoreographer;
+
+    /**
+     * コンストラクタ.
+     */
+    DebugPerformanceMonitor(Context context) {
+        mContext = context;
+        mChoreographer = Choreographer.getInstance();
+        startMeasuringFPS();
+    }
+
+    /**
+     * FPSの計測を開始する.
+     */
+    private void startMeasuringFPS() {
+        mChoreographer.postFrameCallback(this);
+    }
+
+    /**
+     * FPSの計測を停止する.
+     */
+    private void stopMeasuringFPS() {
+        mChoreographer.removeFrameCallback(this);
+    }
+
+    @Override
+    public void doFrame(long frameTimeNanos) {
+        for (int i = 0; i < 10; i++) {
+            try {
+                Thread.sleep(1);
+            }
+            catch (InterruptedException e) {
+                Log.e("DebugPerformanceMonitor", "InterruptedException:" + e);
+            }
+        }
+        mChoreographer.postFrameCallback(this);
     }
 }

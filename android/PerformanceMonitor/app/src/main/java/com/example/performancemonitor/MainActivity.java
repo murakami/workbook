@@ -1,13 +1,14 @@
 package com.example.performancemonitor;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -16,11 +17,14 @@ public class MainActivity extends AppCompatActivity {
     private PerformanceMonitor mPerformanceMonitor = null;
     Handler mHandler;
     Timer mTimer;
+    //Timer mDebugTimer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Log.d(TAG, "onCreate() tid:" + android.os.Process.myTid());
 
         mPerformanceMonitor = new PerformanceMonitor(this);
         mHandler = new Handler(Looper.getMainLooper());
@@ -34,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         mTimer.schedule(new TimerTask() {
             @Override
             public void run() {
+                Log.d(TAG, "run() tid:" + android.os.Process.myTid());
                 mHandler.post(new Runnable() {
                     @Override
                     public void run() {
@@ -42,6 +47,39 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
             }, 5000, 5000);
+
+        /*
+        mDebugTimer = new Timer();
+        mTimer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                //mHandler.post(new Runnable() {
+                //    @Override
+                //    public void run() {
+                //        try {
+                //            Thread.sleep(1000);
+                //        }
+                //        catch (InterruptedException e) {
+                //            Log.e(TAG, "InterruptedException:" + e);
+                //        }
+                //    }
+                //});
+                try {
+                    Thread.sleep(1000);
+                }
+                catch (InterruptedException e) {
+                    Log.e(TAG, "InterruptedException:" + e);
+                }
+            }
+        }, 1000, 1000);
+         */
+
+        // Create a GLSurfaceView instance and set it
+        // as the ContentView for this Activity.
+        GLSurfaceView gLView = new MyGLSurfaceView(this);
+        //setContentView(gLView);
+        ViewGroup linearLayout = findViewById(R.id.linearLayout);
+        linearLayout.addView(gLView);
     }
 
     void measurement() {
@@ -98,3 +136,5 @@ public class MainActivity extends AppCompatActivity {
         textFPS.setText(String.format("%2.2f[fps]", mPerformanceMonitor.getFps()));
     }
 }
+
+/* End Of File */
