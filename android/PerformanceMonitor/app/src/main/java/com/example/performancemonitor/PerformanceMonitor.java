@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.BatteryManager;
 import android.os.Debug;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.Choreographer;
 
@@ -17,6 +20,7 @@ import java.util.concurrent.TimeUnit;
 public class PerformanceMonitor implements Choreographer.FrameCallback {
     private final static String TAG = "PerformanceMonitor";
     //DebugPerformanceMonitor mDebugPerformanceMonitor;
+    Handler mHandler;
 
     /**
      * ActivityのContext.
@@ -36,6 +40,7 @@ public class PerformanceMonitor implements Choreographer.FrameCallback {
         mChoreographer = Choreographer.getInstance();
         startMeasuringFPS();
         //mDebugPerformanceMonitor = new DebugPerformanceMonitor(context);
+        mHandler = new Handler(Looper.getMainLooper());
     }
 
     private ActivityManager.MemoryInfo getMemoryInfoOfActivityManager() {
@@ -596,7 +601,7 @@ public class PerformanceMonitor implements Choreographer.FrameCallback {
         mFps = (double)TimeUnit.SECONDS.toNanos(1) / (double)diff;
         mPrevFrameTimeNanos = frameTimeNanos;
         mChoreographer.postFrameCallback(this);
-        Log.d(TAG, "doFrame() tid:" + android.os.Process.myTid());
+        //Log.d(TAG, "doFrame() tid:" + android.os.Process.myTid());
     }
 
     /**
@@ -605,6 +610,30 @@ public class PerformanceMonitor implements Choreographer.FrameCallback {
      */
     public double getFps() {
         return mFps;
+    }
+
+    private double mFpsOnGLThread;
+    private long mPrevUptimeMillisOnGLThread = 0;
+
+    public void updateFpsOnGLThread() {
+        final long currentUptimeMillis = SystemClock.uptimeMillis();
+        mHandler.post(new Runnable() {
+            @Override
+            public void run() {
+                measuringFpsOnGLThread(currentUptimeMillis);
+            }
+        });
+    }
+
+    private void measuringFpsOnGLThread(long currentUptimeMillis) {
+        long diff = currentUptimeMillis - mPrevUptimeMillisOnGLThread;
+        mFpsOnGLThread = (double)TimeUnit.SECONDS.toMillis(1) / (double)diff;
+        mPrevUptimeMillisOnGLThread = currentUptimeMillis;
+        //Log.d(TAG, "measuringFpsOnGLThread() tid:" + android.os.Process.myTid());
+    }
+
+    public double getFpsOnGLThread() {
+        return mFpsOnGLThread;
     }
 }
 

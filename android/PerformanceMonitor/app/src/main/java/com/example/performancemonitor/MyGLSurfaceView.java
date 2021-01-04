@@ -7,14 +7,16 @@ import android.util.Log;
 public class MyGLSurfaceView extends GLSurfaceView {
 
     private final MyGLRenderer renderer;
+    private PerformanceMonitor mPerformanceMonitor;
 
-    public MyGLSurfaceView(Context context){
+    public MyGLSurfaceView(Context context, PerformanceMonitor performanceMonitor){
         super(context);
+        mPerformanceMonitor = performanceMonitor;
 
         // Create an OpenGL ES 2.0 context
         setEGLContextClientVersion(2);
 
-        renderer = new MyGLRenderer();
+        renderer = new MyGLRenderer(mPerformanceMonitor);
 
         // Set the Renderer for drawing on the GLSurfaceView
         setRenderer(renderer);

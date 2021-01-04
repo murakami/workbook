@@ -9,6 +9,12 @@ import javax.microedition.khronos.opengles.GL10;
 
 public class MyGLRenderer implements GLSurfaceView.Renderer {
 
+    private PerformanceMonitor mPerformanceMonitor;
+
+    public MyGLRenderer(PerformanceMonitor performanceMonitor) {
+        mPerformanceMonitor = performanceMonitor;
+    }
+
     public void onSurfaceCreated(GL10 unused, EGLConfig config) {
         // Set the background frame color
         GLES20.glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
@@ -16,9 +22,10 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
     }
 
     public void onDrawFrame(GL10 unused) {
+        mPerformanceMonitor.updateFpsOnGLThread();
         // Redraw background color
         GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT);
-        Log.d("MyGLRenderer", "onDrawFrame() tid:" + android.os.Process.myTid());
+        //Log.d("MyGLRenderer", "onDrawFrame() tid:" + android.os.Process.myTid());
     }
 
     public void onSurfaceChanged(GL10 unused, int width, int height) {
