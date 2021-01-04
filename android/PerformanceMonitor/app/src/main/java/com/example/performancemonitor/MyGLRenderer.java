@@ -3,7 +3,7 @@ package com.example.performancemonitor;
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.util.Log;
-
+//import java.lang.Thread;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
@@ -26,6 +26,14 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
         // Redraw background color
         GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT);
         //Log.d("MyGLRenderer", "onDrawFrame() tid:" + android.os.Process.myTid());
+        /*
+        try {
+            Thread.sleep(1000);
+        }
+        catch (InterruptedException e) {
+            Log.e("MyGLRenderer", "InterruptedException:" + e);
+        }
+         */
     }
 
     public void onSurfaceChanged(GL10 unused, int width, int height) {

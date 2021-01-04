@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private PerformanceMonitor mPerformanceMonitor = null;
     Handler mHandler;
     Timer mTimer;
-    Timer mDebugTimer;
+    //Timer mDebugTimer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
             }
             }, 5000, 5000);
 
+        /*
         mDebugTimer = new Timer();
         mTimer.schedule(new TimerTask() {
             @Override
@@ -72,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
                 //}
             }
         }, 1000, 1000);
+         */
 
         ViewGroup vg = findViewById(R.id.linearLayout);
         vg.addView(new MyGLSurfaceView(this, mPerformanceMonitor));
