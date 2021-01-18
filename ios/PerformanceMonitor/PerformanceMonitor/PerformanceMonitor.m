@@ -10,8 +10,8 @@
 #import <QuartzCore/QuartzCore.h>
 #import <mach/mach.h>
 #import <mach/mach_time.h>
-#import <sys/types.h>
 #import <sys/sysctl.h>
+#import <sys/types.h>
 #import "PerformanceMonitor.h"
 
 #ifdef    DEBUG
