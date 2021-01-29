@@ -123,6 +123,8 @@ public class MainActivity extends AppCompatActivity {
         str.append(String.format("バッテリー値(0〜バッテリー最大値):%d\n", mPerformanceMonitor.getBatteryLevel()));
         str.append(String.format("バッテリー最大値:%d\n", mPerformanceMonitor.getBatteryScale()));
         str.append(String.format("バッテリー状態:%s\n", mPerformanceMonitor.getBatteryStatusString()));
+        str.append("ストレージ\n");
+        str.append(String.format("  ディスク(/sdcard/Documents)空き容量[byte]:%d\n", mPerformanceMonitor.getDiskFreeSize("/sdcard/Documents")));
         str.append("ディスプレイ\n");
         str.append(String.format("  利用可能領域の横幅[px]:%.0f\n", mPerformanceMonitor.getWidthPixels()));
         str.append(String.format("  利用可能領域の高さ[px]:%.0f\n", mPerformanceMonitor.getHeightPixels()));

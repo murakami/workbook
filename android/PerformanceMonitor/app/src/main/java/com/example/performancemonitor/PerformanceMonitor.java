@@ -8,6 +8,7 @@ import android.os.BatteryManager;
 import android.os.Debug;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.StatFs;
 import android.os.SystemClock;
 import android.util.Log;
 import android.view.Choreographer;
@@ -542,6 +543,27 @@ public class PerformanceMonitor implements Choreographer.FrameCallback {
         }
 
         return batteryState;
+    }
+
+    /**
+     * ディスクの空き容量を返す.
+     * @discussion 数値はそのまま利用可能な容量ではなく、
+     * システム用にとっておかなければならない容量を 200MB - 500MB 程、考慮する必要がある.
+     * @param path 取得するパス.
+     * @return ディスク容量[byte].
+     */
+    public long getDiskFreeSize(String path) {
+        long freeBytes = 0;
+        try {
+            StatFs statFs = new StatFs(path);
+            long availableBlocks = statFs.getAvailableBlocksLong();
+            long blockSize = statFs.getBlockSizeLong();
+            freeBytes = availableBlocks * blockSize;
+        }
+        catch (IllegalArgumentException e) {
+            Log.w(TAG, "if the file system access fails: " + e);
+        }
+        return freeBytes;
     }
 
     /**
