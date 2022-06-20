@@ -57,6 +57,12 @@ class ViewController: UIViewController, ASAuthorizationControllerDelegate {
             } else {
                 print("userID: \(userID)")
             }
+            if let identityToken = appleIDCredential.identityToken {
+                print("identityToken: \(identityToken)")
+            }
+            if let authorizationCode = appleIDCredential.authorizationCode {
+                print("authorizationCode: \(authorizationCode)")
+            }
         }
     }
     
