@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56D6C1D728C031D100D1A495 /* NSAttributedString+Hyperlink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D6C1D628C031D100D1A495 /* NSAttributedString+Hyperlink.swift */; };
 		56F7D30528C0306300A77ECC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F7D30428C0306300A77ECC /* AppDelegate.swift */; };
 		56F7D30728C0306300A77ECC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F7D30628C0306300A77ECC /* ViewController.swift */; };
 		56F7D30928C0306600A77ECC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56F7D30828C0306600A77ECC /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		56D6C1D628C031D100D1A495 /* NSAttributedString+Hyperlink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Hyperlink.swift"; sourceTree = "<group>"; };
 		56F7D30128C0306300A77ECC /* EmbeddingHyperlinks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmbeddingHyperlinks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56F7D30428C0306300A77ECC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56F7D30628C0306300A77ECC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 			children = (
 				56F7D30428C0306300A77ECC /* AppDelegate.swift */,
 				56F7D30628C0306300A77ECC /* ViewController.swift */,
+				56D6C1D628C031D100D1A495 /* NSAttributedString+Hyperlink.swift */,
 				56F7D30828C0306600A77ECC /* Assets.xcassets */,
 				56F7D30A28C0306600A77ECC /* Main.storyboard */,
 				56F7D30D28C0306600A77ECC /* EmbeddingHyperlinks.entitlements */,
@@ -132,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56F7D30728C0306300A77ECC /* ViewController.swift in Sources */,
+				56D6C1D728C031D100D1A495 /* NSAttributedString+Hyperlink.swift in Sources */,
 				56F7D30528C0306300A77ECC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
