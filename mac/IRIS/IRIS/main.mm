@@ -131,7 +131,7 @@ void init(void)
         glEnableClientState(GL_VERTEX_ARRAY);
         assert(glGetError() == GL_NO_ERROR);
         
-        glVertexPointer(3, GL_FLAT, 0, data);
+        glVertexPointer(3, GL_FLOAT, 0, data);
         //glVertexPointer(3, GL_FLAT, 0, bufferObjectPtr(0));
         
         GLenum glErrorCode = glGetError();
